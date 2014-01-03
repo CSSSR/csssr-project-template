@@ -1,0 +1,50 @@
+mixin li(tool, desc)
+	li.list__item
+		span.mark= tool
+		|  - 
+		= desc
+
+mixin li_file(file)
+	li.list__item.list__item_file= file
+
+mixin li_folder(folder, files)
+	li.list__item.list__item_folder= folder
+		if files
+			ul.list.list_files
+				each file in files
+					+li_file(file)
+
+h2.h2 ЧТО ВКЛЮЧЕНО
+h3.h3 Инструменты:
+ul.list
+	+li('concat', 'объединение скриптов в один файл')
+	+li('uglify', 'обфускация кода')
+	+li('jade', 'препроцессор html')
+	+li('stylus', 'препроцессор css')
+	+li('autoprefixer', 'подстановка префиксов для заданных браузеров')
+	+li('imagemin', 'сжатие картинок')
+	+li('connect', 'сервер приложения')
+	+li('watch', 'отслеживание изменений файлов и их компиляция')
+	+li('livereload', 'перезагрузка страницы после компиляции файлов')
+
+
+h2.h2 СТРУКТУРА ФАЙЛОВ
+.container
+	.col
+		h3.h3 Исходники
+		ul.list.list_files
+			+li_folder('img')
+			+li_folder('inc', ['header.jade', 'content.jade', 'footer.jade'])
+			+li_folder('js', ['jquery.min.js', 'main.js'])
+			+li_folder('styl', ['main.styl', 'normalize.styl'])
+			+li_file('index.jade')
+	.col.col_middle
+		.arrow-caption Компиляция
+		.arrow
+	.col
+		h3.h3 Готовые файлы
+		ul.list.list_files
+			+li_folder('css', ['main.min.css'])
+			+li_folder('img')
+			+li_folder('js', ['main.min.js'])
+			+li_file('index.html')
