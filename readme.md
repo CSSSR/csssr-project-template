@@ -14,7 +14,7 @@
 
 
 ### Установка
-Перед установкой должен быть установлен [NodeJS](http://nodejs.org/) и [git](http://git-scm.com/).
+Перед установкой должен быть установлен [Node.js](http://nodejs.org/) и [git](http://git-scm.com/).
 
 1. `git clone https://github.com/CSSSR/csssr-project-template.git` - скачиваем
 2. `npm install` - устанавливаем пакеты
@@ -33,3 +33,4 @@
 * [stylus](http://learnboost.github.io/stylus/)
 * [Grunt для тех, кто считает штуки вроде него странными и сложными](http://frontender.info/grunt-is-not-weird-and-hard/)
 * [Сборка сайтов на независимых блоках из Jade и Stylus с использованием Grunt.js](http://oleggromov.com/slides/independent-blocks-assemble/)
+* [Grunt: система сборки для фронтенд-разработчиков](http://sapegin.ru/pres/grunt/)
