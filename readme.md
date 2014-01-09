@@ -24,7 +24,7 @@
 
 
 ### Приступаем к работе
-1. `git clone https://github.com/CSSSR/csssr-project-template.git new-project` - скачиваем в папку `new-project`
+1. `git clone https://github.com/CSSSR/csssr-project-template.git new-project` - cкачать в папку `new-project`
 2. `npm install` - устанавливаем пакеты
 3. `grunt` - запускаем и работаем
 
