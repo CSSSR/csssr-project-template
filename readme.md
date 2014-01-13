@@ -14,8 +14,6 @@
 
 
 ### Подготовка к работе
-Перед установкой должен быть установлен и [git](http://git-scm.com/).
-
 1. Устанавливаем [Node.js](http://nodejs.org/download/), включающий в себя NPM (Node Packet Manager).
 2. `npm install -g grunt` - устанавливаем Grunt.
 3. Ознакомьтесь со [статьей по установке git](http://git-scm.com/book/ru/Введение-Установка-Git) под Вашу операционную систему
