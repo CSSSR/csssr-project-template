@@ -1,6 +1,6 @@
 {
 	"name": "csssr-project-template",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"author": "GC92",
 	"devDependencies": {
 		"grunt": "~0.4.1",
@@ -10,6 +10,7 @@
 		"grunt-contrib-stylus": "~0.11.0",
 		"grunt-autoprefixer": "~0.6.3",
 		"grunt-contrib-cssmin": "~0.7.0",
+		"grunt-contrib-copy": "~0.5.0",
 		"jpegtran-bin": "0.2.0",
 		"grunt-contrib-imagemin": "~0.4.0",
 		"grunt-contrib-connect": "~0.6.0",

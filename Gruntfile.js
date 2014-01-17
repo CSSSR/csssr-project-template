@@ -34,7 +34,7 @@ module.exports = function (grunt) {
 		stylus: {
 			compile: {
 				files: [{
-					cwd: 'src/styl',
+					cwd: 'src/stylus',
 					src: 'main.styl',
 					dest: 'dest/css',
 					expand: true,
@@ -66,6 +66,18 @@ module.exports = function (grunt) {
 				files: {
 					'dest/css/main.min.css': 'dest/css/main.min.css'
 				}
+			}
+		},
+
+		copy: {
+			fonts: {
+				files: [{
+					expand: true,
+					cwd: 'src/fonts/',
+					src: '*',
+					dest: 'dest/fonts/',
+					filter: 'isFile'
+				}]
 			}
 		},
 
@@ -105,8 +117,12 @@ module.exports = function (grunt) {
 				tasks: ['jade']
 			},
 			stylus: {
-				files: ['src/styl/**/*.styl'],
+				files: ['src/stylus/**/*.styl'],
 				tasks: ['stylus', 'autoprefixer', 'cssmin']
+			},
+			copy: {
+				files: ['src/fonts/**/*'],
+				tasks: ['copy']
 			},
 			imagemin: {
 				files: ['src/img/**/*.{png,jpg,gif}'],
@@ -122,6 +138,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
@@ -133,6 +150,7 @@ module.exports = function (grunt) {
 		'stylus',
 		'autoprefixer',
 		'cssmin',
+		'copy',
 		'imagemin',
 		'connect',
 		'watch'

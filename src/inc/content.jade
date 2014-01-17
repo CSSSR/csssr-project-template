@@ -33,10 +33,11 @@ h2.h2 СТРУКТУРА ФАЙЛОВ
 	.col
 		h3.h3 Исходники
 		ul.list.list_files
+			+li_folder('fonts')
 			+li_folder('img')
 			+li_folder('inc', ['header.jade', 'content.jade', 'footer.jade'])
 			+li_folder('js', ['jquery.min.js', 'main.js'])
-			+li_folder('styl', ['main.styl', 'normalize.styl'])
+			+li_folder('stylus', ['main.styl', 'normalize.styl'])
 			+li_file('index.jade')
 	.col.col_middle
 		.arrow-caption Компиляция
@@ -45,6 +46,7 @@ h2.h2 СТРУКТУРА ФАЙЛОВ
 		h3.h3 Готовые файлы
 		ul.list.list_files
 			+li_folder('css', ['main.min.css'])
+			+li_folder('fonts')
 			+li_folder('img')
 			+li_folder('js', ['main.min.js'])
 			+li_file('index.html')
