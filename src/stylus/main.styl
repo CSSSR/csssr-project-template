@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Cuprum:400,700&subset=latin,cyrillic)
 @import 'normalize'
+@import 'sprite'
 
 body
 	background #f0f0f0 url(../img/chruch.png)
@@ -63,9 +64,7 @@ body
 	width 33%
 
 .arrow
-	background url(../img/arrow.png)
-	height 32px
-	width 32px
+	sprite($arrow)
 	margin: 0 auto
 	&-caption
 		margin-top 72px
@@ -85,18 +84,14 @@ body
 		&_folder
 			&:before
 				content ''
-				background url(../img/folder.png) no-repeat
-				height 16px
-				width 16px
+				sprite($folder)
 				margin-right 6px
 				display inline-block
 				vertical-align middle
 		&_file
 			&:before
 				content ''
-				background url(../img/document-code.png) no-repeat
-				height 16px
-				width 16px
+				sprite($document-code)
 				margin-right 6px
 				display inline-block
 				vertical-align middle

@@ -1,0 +1,53 @@
+$arrow_x = 0px;
+$arrow_y = 0px;
+$arrow_offset_x = 0px;
+$arrow_offset_y = 0px;
+$arrow_width = 32px;
+$arrow_height = 32px;
+$arrow_total_width = 56px;
+$arrow_total_height = 56px;
+$arrow_image = '../img/sprite.png';
+$arrow = 0px 0px 0px 0px 32px 32px 56px 56px '../img/sprite.png';
+$document-code_x = 40px;
+$document-code_y = 0px;
+$document-code_offset_x = -40px;
+$document-code_offset_y = 0px;
+$document-code_width = 16px;
+$document-code_height = 16px;
+$document-code_total_width = 56px;
+$document-code_total_height = 56px;
+$document-code_image = '../img/sprite.png';
+$document-code = 40px 0px -40px 0px 16px 16px 56px 56px '../img/sprite.png';
+$folder_x = 0px;
+$folder_y = 40px;
+$folder_offset_x = 0px;
+$folder_offset_y = -40px;
+$folder_width = 16px;
+$folder_height = 16px;
+$folder_total_width = 56px;
+$folder_total_height = 56px;
+$folder_image = '../img/sprite.png';
+$folder = 0px 40px 0px -40px 16px 16px 56px 56px '../img/sprite.png';
+
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}
