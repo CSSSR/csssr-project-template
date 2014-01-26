@@ -5,7 +5,7 @@ module.exports = function (grunt) {
 		concat: {
 			dist: {
 				src: [
-					'src/js/libs/jquery-2.0.3.min.js',
+					'src/js/libs/jquery-2.1.0.min.js',
 					'src/js/main.js'
 				],
 				dest: 'dest/js/main.min.js'
