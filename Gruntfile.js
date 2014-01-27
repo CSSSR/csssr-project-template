@@ -92,6 +92,7 @@ module.exports = function (grunt) {
 			dest: {
 				src: [
 					'src/js/libs/jquery-2.1.0.min.js',
+					'src/js/libs/jquery.bem.js',
 					'src/js/main.js'
 				],
 				dest: 'dest/js/main.min.js'
