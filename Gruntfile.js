@@ -72,7 +72,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-
 		jade: {
 			compile: {
 				files: [{
@@ -90,12 +89,14 @@ module.exports = function (grunt) {
 				separator: ';'
 			},
 			dest: {
-				src: [
-					'src/js/libs/jquery-2.1.0.min.js',
-					'src/js/libs/jquery.bem.js',
-					'src/js/main.js'
-				],
-				dest: 'dest/js/main.min.js'
+				files: [{
+					src: [
+						'src/js/libs/jquery-2.1.0.min.js',
+						'src/js/libs/**/*.js',
+						'src/js/main.js'
+					],
+					dest: 'dest/js/main.min.js'
+				}]
 			}
 		},
 
@@ -133,7 +134,7 @@ module.exports = function (grunt) {
 		watch: {
 			sprite: {
 				files: ['src/img/sprite/*.png'],
-				tasks: ['sprite', 'imagemin']
+				tasks: ['sprite']
 			},
 			imagemin: {
 				files: ['src/img/**/*.{png,jpg,gif}'],
@@ -153,7 +154,7 @@ module.exports = function (grunt) {
 			},
 			copy: {
 				files: ['src/fonts/**/*'],
-				tasks: ['copy']
+				tasks: ['copy:fonts']
 			},
 			livereload: {
 				options: {
