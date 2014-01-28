@@ -58,7 +58,6 @@ module.exports = function (grunt) {
 					'ios 5'
 				]
 			},
-
 			main: {
 				src: 'dest/css/main.min.css'
 			}
