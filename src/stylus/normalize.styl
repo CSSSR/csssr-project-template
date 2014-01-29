@@ -111,11 +111,13 @@ a
  ========================================================================== */
 
 /**
- * Fix bug in Android with not working `-webkit-text-size-adjust: 100%;`
+ * Fix not working `-webkit-text-size-adjust: 100%;` in Android.
+ * Use this mixin for fix.
  */
 
-*
+fix-android()
 	background-image linear-gradient(transparent, transparent)
+
 /**
  * Address styling not present in IE 8/9, Safari 5, and Chrome.
  */
