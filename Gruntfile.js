@@ -29,7 +29,7 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: 'src/img/',
 					src: ['**/*.{png,jpg,gif}', '!sprite/*'],
-					dest: 'dest/img/'
+					dest: 'public/img/'
 				}]
 			}
 		},
@@ -39,7 +39,7 @@ module.exports = function (grunt) {
 				files: [{
 					cwd: 'src/stylus',
 					src: 'main.styl',
-					dest: 'dest/css',
+					dest: 'public/css',
 					expand: true,
 					ext: '.min.css'
 				}]
@@ -59,14 +59,14 @@ module.exports = function (grunt) {
 				]
 			},
 			main: {
-				src: 'dest/css/main.min.css'
+				src: 'public/css/main.min.css'
 			}
 		},
 
 		cssmin: {
 			combine: {
 				files: {
-					'dest/css/main.min.css': 'dest/css/main.min.css'
+					'public/css/main.min.css': 'public/css/main.min.css'
 				}
 			}
 		},
@@ -76,7 +76,7 @@ module.exports = function (grunt) {
 				files: [{
 					cwd: 'src',
 					src: ['**/*.jade', '!inc/**/*.jade'],
-					dest: 'dest',
+					dest: 'public',
 					expand: true,
 					ext: '.html'
 				}]
@@ -87,14 +87,14 @@ module.exports = function (grunt) {
 			options: {
 				separator: ';'
 			},
-			dest: {
+			public: {
 				files: [{
 					src: [
 						'src/js/libs/jquery-2.1.0.min.js',
 						'src/js/libs/**/*.js',
 						'src/js/main.js'
 					],
-					dest: 'dest/js/main.min.js'
+					dest: 'public/js/main.min.js'
 				}]
 			}
 		},
@@ -104,8 +104,8 @@ module.exports = function (grunt) {
 				report: 'min'
 			},
 			build: {
-				src: 'dest/js/main.min.js',
-				dest: 'dest/js/main.min.js'
+				src: 'public/js/main.min.js',
+				dest: 'public/js/main.min.js'
 			}
 		},
 
@@ -115,7 +115,7 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: 'src/fonts/',
 					src: '*',
-					dest: 'dest/fonts/',
+					dest: 'public/fonts/',
 					filter: 'isFile'
 				}]
 			}
@@ -125,7 +125,7 @@ module.exports = function (grunt) {
 			server: {
 				options: {
 					port: 3000,
-					base: 'dest'
+					base: 'public'
 				}
 			}
 		},
@@ -159,7 +159,7 @@ module.exports = function (grunt) {
 				options: {
 					livereload: true
 				},
-				files: ['dest/**/*']
+				files: ['public/**/*']
 			}
 		}
 
