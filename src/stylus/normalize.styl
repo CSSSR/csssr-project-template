@@ -38,13 +38,16 @@ summary
 	display block
 
 /**
- * Correct `inline-block` display not defined in IE 8/9.
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
 
 audio
 canvas
+progress
 video
-	display inline-block
+  display inline-block /* 1 */
+  vertical-align baseline /* 2 */
 
 /**
  * Prevent modern browsers from displaying `audio` without controls.
@@ -76,7 +79,7 @@ template
  */
 
 html
-	 font-family sans-serif /* 1 */
+	font-family sans-serif /* 1 */
 	-ms-text-size-adjust 100% /* 2 */
 	-webkit-text-size-adjust 100% /* 2 */
 	-webkit-tap-highlight-color rgba(0, 0, 0, 0) /* 3 */
@@ -145,7 +148,6 @@ dfn
  */
 
 hr
-	-moz-box-sizing content-box
 	box-sizing content-box
 	height 0
 
@@ -207,17 +209,6 @@ svg:not(:root)
 	overflow hidden
 
 /* ==========================================================================
- Figures
- ========================================================================== */
-
-/**
- * Address margin not present in IE 8/9 and Safari 5.
- */
-
-figure
-	margin 0
-
-/* ==========================================================================
  Forms
  ========================================================================== */
 
@@ -240,6 +231,13 @@ input
 button
 select
 	text-transform none
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10.
+ */
+
+button
+  overflow visible
 
 /**
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
@@ -275,6 +273,16 @@ input[type="radio"]
 	padding 0 /* 2 */
 
 /**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+
+input[type="number"]::-webkit-inner-spin-button
+input[type="number"]::-webkit-outer-spin-button
+	height: auto;
+
+/**
  * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
@@ -282,8 +290,6 @@ input[type="radio"]
 
 input[type="search"]
 	-webkit-appearance textfield /* 1 */
-	-moz-box-sizing content-box
-	-webkit-box-sizing content-box /* 2 */
 	box-sizing content-box
 
 /**
