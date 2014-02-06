@@ -1,7 +1,5 @@
 module.exports = function (grunt) {
-	
 	grunt.initConfig({
-
 		sprite: {
 			all: {
 				src: 'src/img/sprite/*.png',
@@ -29,14 +27,23 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: 'src/img/',
 					src: ['**/*.{png,jpg,gif}', '!sprite/*'],
-					dest: 'public/img/'
+					dest: 'dev/img/'
 				}]
 			}
 		},
 
 		stylus: {
+			options: {
+				compress: false
+			},
 			compile: {
 				files: [{
+					cwd: 'src/stylus',
+					src: 'main.styl',
+					dest: 'dev/css',
+					expand: true,
+					ext: '.css'
+				}, {
 					cwd: 'src/stylus',
 					src: 'main.styl',
 					dest: 'public/css',
@@ -50,17 +57,21 @@ module.exports = function (grunt) {
 			options: {
 				browsers: [
 					'ie 9',
-					'ff 3.5',
-					'opera 11',
-					'safari 5',
-					'chrome 7',
+					'ff 25',
+					'opera 12',
+					'safari 6',
+					'chrome 30',
 					'android 4',
 					'ios 5'
 				]
 			},
 			main: {
-				src: 'public/css/main.min.css'
+				src: ['dev/css/main.css', 'public/css/main.min.css']
 			}
+		},
+
+		cssbeautifier: {
+			files : 'dev/css/main.css'
 		},
 
 		cssmin: {
@@ -72,7 +83,21 @@ module.exports = function (grunt) {
 		},
 
 		jade: {
-			compile: {
+			dev: {
+				options: {
+					data: {
+						isDev: true
+					}
+				},
+				files: [{
+					cwd: 'src',
+					src: ['**/*.jade', '!inc/**/*.jade'],
+					dest: 'dev',
+					expand: true,
+					ext: '.html'
+				}]
+			},
+			public: {
 				files: [{
 					cwd: 'src',
 					src: ['**/*.jade', '!inc/**/*.jade'],
@@ -81,6 +106,23 @@ module.exports = function (grunt) {
 					ext: '.html'
 				}]
 			}
+		},
+
+		prettify: {
+			options: {
+				brace_style: 'expand',
+				indent: 1,
+				indent_char: '	',
+				condense: true,
+				indent_inner_html: true
+			},
+			all: {
+				expand: true,
+				cwd: 'dev',
+				ext: '.html',
+				src: ['**/*.html'],
+				dest: 'dev'
+			},
 		},
 		
 		concat: {
@@ -117,15 +159,45 @@ module.exports = function (grunt) {
 					src: '*',
 					dest: 'public/fonts/',
 					filter: 'isFile'
+				}, {
+					expand: true,
+					cwd: 'src/fonts/',
+					src: '*',
+					dest: 'dev/fonts/',
+					filter: 'isFile'
+				}]
+			},
+			js: {
+				files: [{
+					expand: true,
+					cwd: 'src/js/',
+					src: '**/*',
+					dest: 'dev/js/',
+					filter: 'isFile'
+				}]
+			},
+			img: {
+				files: [{
+					expand: true,
+					cwd: 'dev/img/',
+					src: '**/*',
+					dest: 'public/img/',
+					filter: 'isFile'
 				}]
 			}
 		},
 
 		connect: {
-			server: {
+			public: {
 				options: {
 					port: 3000,
 					base: 'public'
+				}
+			},
+			dev: {
+				options: {
+					port: 4000,
+					base: 'dev'
 				}
 			}
 		},
@@ -141,19 +213,23 @@ module.exports = function (grunt) {
 			},
 			stylus: {
 				files: ['src/stylus/**/*.styl'],
-				tasks: ['stylus', 'autoprefixer', 'cssmin']
+				tasks: ['stylus', 'autoprefixer', 'cssbeautifier', 'cssmin']
 			},
 			jade: {
 				files: ['src/**/*.jade', '!inc/**/*.jade'],
-				tasks: ['jade']
+				tasks: ['jade', 'prettify']
 			},
 			js: {
 				files: ['src/js/**/*.js'],
-				tasks: ['concat', 'uglify']
+				tasks: ['concat', 'uglify', 'jade', 'copy:js']
 			},
-			copy: {
+			copyFonts: {
 				files: ['src/fonts/**/*'],
 				tasks: ['copy:fonts']
+			},
+			copyImg: {
+				files: ['dev/img/**/*'],
+				tasks: ['copy:img']
 			},
 			livereload: {
 				options: {
@@ -169,8 +245,10 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-autoprefixer');
+	grunt.loadNpmTasks('grunt-cssbeautifier');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jade');
+	grunt.loadNpmTasks('grunt-prettify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
@@ -182,8 +260,10 @@ module.exports = function (grunt) {
 		'imagemin',
 		'stylus',
 		'autoprefixer',
+		'cssbeautifier',
 		'cssmin',
 		'jade',
+		'prettify',
 		'concat',
 		'uglify',
 		'copy',

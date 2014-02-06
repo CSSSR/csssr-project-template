@@ -1,15 +1,10 @@
 doctype html
 html(lang='ru')
-	head
-		meta(http-equiv='X-UA-Compatible', content='ie=edge')
-		meta(charset='utf-8')
-		meta(name='viewport', content='width=640')
-		link(href='css/main.min.css', rel='stylesheet')
-		title CSSSR Project Template
+	include inc/head
 	body
 		.main
 			include inc/header
 			include inc/content
 			include inc/footer
-		script(src='js/main.min.js')
-		script(src='http://localhost:35729/livereload.js')
+
+		include inc/script

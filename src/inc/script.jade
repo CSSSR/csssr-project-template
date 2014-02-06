@@ -1,0 +1,12 @@
+mixin script(scripts)
+	- each src in scripts
+		script(src=src)
+
+- if (isDev)
+	+script([
+		'js/libs/jquery-2.1.0.min.js',
+		'js/libs/jquery.bem.js',
+		'js/main.js'
+	])
+- else
+	+script(['js/main.min.js'])

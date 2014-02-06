@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=640">
+		<link href="css/main.css" rel="stylesheet">
+		<title>CSSSR Project Template</title>
+	</head>
+	<body>
+		<div class="main">
+			<div class="logo"></div>
+			<h1 class="h1 dark">CSSSR Project Template</h1>
+			<h2 class="h2">ЧТО ВКЛЮЧЕНО</h2>
+			<h3 class="h3">Инструменты:</h3>
+			<ul class="list">
+				<li class="list__item"><span class="mark">spritesmith</span> - генератор спрайтов и css переменных</li>
+				<li class="list__item"><span class="mark">imagemin</span> - сжатие картинок</li>
+				<li class="list__item"><span class="mark">stylus</span> - препроцессор css</li>
+				<li class="list__item"><span class="mark">cssmin</span> - минификация css</li>
+				<li class="list__item"><span class="mark">autoprefixer</span> - подстановка префиксов для заданных браузеров</li>
+				<li class="list__item"><span class="mark">jade</span> - препроцессор html</li>
+				<li class="list__item"><span class="mark">concat</span> - объединение скриптов в один файл</li>
+				<li class="list__item"><span class="mark">uglify</span> - обфускация кода</li>
+				<li class="list__item"><span class="mark">copy</span> - создание копий файлов</li>
+				<li class="list__item"><span class="mark">connect</span> - сервер приложения</li>
+				<li class="list__item"><span class="mark">watch</span> - отслеживание изменений файлов и их компиляция</li>
+				<li class="list__item"><span class="mark">livereload</span> - перезагрузка страницы после компиляции файлов</li>
+			</ul>
+			<h2 class="h2">СТРУКТУРА ФАЙЛОВ</h2>
+			<div class="container">
+				<div class="col">
+					<h3 class="h3">Исходники</h3>
+					<ul class="list list_files">
+						<li class="list__item list__item_folder">fonts</li>
+						<li class="list__item list__item_folder">img</li>
+						<li class="list__item list__item_folder">inc
+							<ul class="list list_files">
+								<li class="list__item list__item_file">header.jade</li>
+								<li class="list__item list__item_file">content.jade</li>
+								<li class="list__item list__item_file">footer.jade</li>
+							</ul>
+						</li>
+						<li class="list__item list__item_folder">js
+							<ul class="list list_files">
+								<li class="list__item list__item_file">jquery.min.js</li>
+								<li class="list__item list__item_file">main.js</li>
+							</ul>
+						</li>
+						<li class="list__item list__item_folder">stylus
+							<ul class="list list_files">
+								<li class="list__item list__item_file">main.styl</li>
+								<li class="list__item list__item_file">normalize.styl</li>
+							</ul>
+						</li>
+						<li class="list__item list__item_file">index.jade</li>
+					</ul>
+				</div>
+				<div class="col col_middle">
+					<div class="arrow-caption">Компиляция</div>
+					<div class="arrow"></div>
+				</div>
+				<div class="col">
+					<h3 class="h3">Готовые файлы</h3>
+					<ul class="list list_files">
+						<li class="list__item list__item_folder">css
+							<ul class="list list_files">
+								<li class="list__item list__item_file">main.min.css</li>
+							</ul>
+						</li>
+						<li class="list__item list__item_folder">fonts</li>
+						<li class="list__item list__item_folder">img</li>
+						<li class="list__item list__item_folder">js
+							<ul class="list list_files">
+								<li class="list__item list__item_file">main.min.js</li>
+							</ul>
+						</li>
+						<li class="list__item list__item_file">index.html</li>
+					</ul>
+				</div>
+			</div>
+			<div class="copyright dark">©GC92, 2014</div>
+		</div>
+		<script src="js/libs/jquery-2.1.0.min.js"></script>
+		<script src="js/libs/jquery.bem.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
