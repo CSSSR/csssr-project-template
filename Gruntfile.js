@@ -25,9 +25,9 @@ module.exports = function (grunt) {
 			images: {
 				files: [{
 					expand: true,
-					cwd: 'src/img/',
+					cwd: 'src/img',
 					src: ['**/*.{png,jpg,gif}', '!sprite/*'],
-					dest: 'dev/img/'
+					dest: 'dev/img'
 				}]
 			}
 		},
@@ -71,11 +71,11 @@ module.exports = function (grunt) {
 		},
 
 		cssbeautifier: {
-			files : 'dev/css/main.css'
+			files : 'dev/css/**/*.css'
 		},
 
 		cssmin: {
-			combine: {
+			public: {
 				files: {
 					'public/css/main.min.css': 'public/css/main.min.css'
 				}
@@ -155,33 +155,33 @@ module.exports = function (grunt) {
 			fonts: {
 				files: [{
 					expand: true,
-					cwd: 'src/fonts/',
+					cwd: 'src/fonts',
 					src: '*',
-					dest: 'public/fonts/',
+					dest: 'public/fonts',
 					filter: 'isFile'
 				}, {
 					expand: true,
-					cwd: 'src/fonts/',
+					cwd: 'src/fonts',
 					src: '*',
-					dest: 'dev/fonts/',
+					dest: 'dev/fonts',
 					filter: 'isFile'
 				}]
 			},
 			js: {
 				files: [{
 					expand: true,
-					cwd: 'src/js/',
+					cwd: 'src/js',
 					src: '**/*',
-					dest: 'dev/js/',
+					dest: 'dev/js',
 					filter: 'isFile'
 				}]
 			},
 			img: {
 				files: [{
 					expand: true,
-					cwd: 'dev/img/',
+					cwd: 'dev/img',
 					src: '**/*',
-					dest: 'public/img/',
+					dest: 'public/img',
 					filter: 'isFile'
 				}]
 			}
@@ -221,7 +221,7 @@ module.exports = function (grunt) {
 			},
 			js: {
 				files: ['src/js/**/*.js'],
-				tasks: ['concat', 'uglify', 'jade', 'copy:js']
+				tasks: ['concat', 'uglify', 'copy:js']
 			},
 			copyFonts: {
 				files: ['src/fonts/**/*'],
