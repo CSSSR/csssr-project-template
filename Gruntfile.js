@@ -90,7 +90,7 @@ module.exports = function (grunt) {
 					}
 				},
 				files: [{
-					cwd: 'src',
+					cwd: 'src/jade',
 					src: ['**/*.jade', '!inc/**/*.jade'],
 					dest: 'dev',
 					expand: true,
@@ -99,7 +99,7 @@ module.exports = function (grunt) {
 			},
 			public: {
 				files: [{
-					cwd: 'src',
+					cwd: 'src/jade',
 					src: ['**/*.jade', '!inc/**/*.jade'],
 					dest: 'public',
 					expand: true,
@@ -216,7 +216,7 @@ module.exports = function (grunt) {
 				tasks: ['stylus', 'autoprefixer', 'cssbeautifier', 'cssmin']
 			},
 			jade: {
-				files: ['src/**/*.jade', '!inc/**/*.jade'],
+				files: ['src/jade/**/*.jade'],
 				tasks: ['jade', 'prettify']
 			},
 			js: {

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=640">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link href="css/main.css" rel="stylesheet">
 		<title>CSSSR Project Template</title>
 	</head>
@@ -11,6 +11,7 @@
 		<div class="main">
 			<div class="logo"></div>
 			<h1 class="h1 dark">CSSSR Project Template</h1>
+			<p class="description">Шаблон проекта для быстрого старта.</p>
 			<h2 class="h2">ЧТО ВКЛЮЧЕНО</h2>
 			<h3 class="h3">Инструменты:</h3>
 			<ul class="list">
@@ -25,7 +26,7 @@
 				<li class="list__item"><span class="mark">concat</span> - объединение скриптов в один файл</li>
 				<li class="list__item"><span class="mark">uglify</span> - обфускация кода</li>
 				<li class="list__item"><span class="mark">copy</span> - создание копий файлов</li>
-				<li class="list__item"><span class="mark">connect</span> - сервер приложения</li>
+				<li class="list__item"><span class="mark">connect</span> - сервер проекта</li>
 				<li class="list__item"><span class="mark">watch</span> - отслеживание изменений файлов и их компиляция</li>
 				<li class="list__item"><span class="mark">livereload</span> - перезагрузка страницы после компиляции файлов</li>
 			</ul>
@@ -33,29 +34,38 @@
 			<div class="container">
 				<div class="col">
 					<h3 class="h3">Исходники</h3>
-					<ul class="list list_files">
-						<li class="list__item list__item_folder">fonts</li>
-						<li class="list__item list__item_folder">img</li>
-						<li class="list__item list__item_folder">inc
-							<ul class="list list_files">
-								<li class="list__item list__item_file">header.jade</li>
-								<li class="list__item list__item_file">content.jade</li>
-								<li class="list__item list__item_file">footer.jade</li>
+					<ul class="list list_type_files">
+						<li class="list__item list__item_type_folder">fonts</li>
+						<li class="list__item list__item_type_folder">img
+							<ul class="list list_type_files">
+								<li class="list__item list__item_type_folder">sprite</li>
 							</ul>
 						</li>
-						<li class="list__item list__item_folder">js
-							<ul class="list list_files">
-								<li class="list__item list__item_file">jquery.min.js</li>
-								<li class="list__item list__item_file">main.js</li>
+						<li class="list__item list__item_type_folder">jade
+							<ul class="list list_type_files">
+								<li class="list__item list__item_type_folder">inc
+									<ul class="list list_type_files">
+										<li class="list__item list__item_type_file">head.jade</li>
+										<li class="list__item list__item_type_file">header.jade</li>
+										<li class="list__item list__item_type_file">footer.jade</li>
+										<li class="list__item list__item_type_file">script.jade</li>
+									</ul>
+								</li>
+								<li class="list__item list__item_type_file">index.jade</li>
 							</ul>
 						</li>
-						<li class="list__item list__item_folder">stylus
-							<ul class="list list_files">
-								<li class="list__item list__item_file">main.styl</li>
-								<li class="list__item list__item_file">normalize.styl</li>
+						<li class="list__item list__item_type_folder">js
+							<ul class="list list_type_files">
+								<li class="list__item list__item_type_file">jquery.min.js</li>
+								<li class="list__item list__item_type_file">main.js</li>
 							</ul>
 						</li>
-						<li class="list__item list__item_file">index.jade</li>
+						<li class="list__item list__item_type_folder">stylus
+							<ul class="list list_type_files">
+								<li class="list__item list__item_type_file">normalize.styl</li>
+								<li class="list__item list__item_type_file">main.styl</li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 				<div class="col col_middle">
@@ -64,22 +74,24 @@
 				</div>
 				<div class="col">
 					<h3 class="h3">Готовые файлы</h3>
-					<ul class="list list_files">
-						<li class="list__item list__item_folder">css
-							<ul class="list list_files">
-								<li class="list__item list__item_file">main.min.css</li>
+					<ul class="list list_type_files">
+						<li class="list__item list__item_type_folder">css
+							<ul class="list list_type_files">
+								<li class="list__item list__item_type_file">main.min.css</li>
 							</ul>
 						</li>
-						<li class="list__item list__item_folder">fonts</li>
-						<li class="list__item list__item_folder">img</li>
-						<li class="list__item list__item_folder">js
-							<ul class="list list_files">
-								<li class="list__item list__item_file">main.min.js</li>
+						<li class="list__item list__item_type_folder">fonts</li>
+						<li class="list__item list__item_type_folder">img</li>
+						<li class="list__item list__item_type_folder">js
+							<ul class="list list_type_files">
+								<li class="list__item list__item_type_file">main.min.js</li>
 							</ul>
 						</li>
-						<li class="list__item list__item_file">index.html</li>
+						<li class="list__item list__item_type_file">index.html</li>
 					</ul>
 				</div>
+			</div>
+			<div class="fork-on-github"><a href="https://github.com/CSSSR/csssr-project-template" class="fork-on-github__link">Fork me on GitHub</a>
 			</div>
 			<div class="copyright dark">©GC92, 2014</div>
 		</div>
