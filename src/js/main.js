@@ -1,5 +1,5 @@
 $(function () {
 
-	// write code here
+	console.info('CSSSR Project Template');
 	
 });

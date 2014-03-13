@@ -159,6 +159,11 @@ textarea {
     background-image: none;
 }
 
+input,
+textarea {
+    border-radius: 0;
+}
+
 [placeholder]:focus::-webkit-input-placeholder {
     color: transparent;
 }
