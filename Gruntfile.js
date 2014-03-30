@@ -2,7 +2,7 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		sprite: {
 			all: {
-				src: 'src/img/sprite/*.png',
+				src: 'src/img/sprite/**/*.png',
 				destImg: 'src/img/sprite.png',
 				cssFormat: 'stylus',
 				destCSS: 'src/stylus/sprite.styl',
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: 'src/img',
-					src: ['**/*.{png,jpg,gif}', '!sprite/*'],
+					src: ['**/*.{png,jpg,gif}', '!sprite/**/*.png'],
 					dest: 'dev/img'
 				}]
 			}
@@ -184,6 +184,21 @@ module.exports = function (grunt) {
 					dest: 'public/img',
 					filter: 'isFile'
 				}]
+			},
+			favicon: {
+				files: [{
+					expand: true,
+					cwd: 'src',
+					src: 'favicon.ico',
+					dest: 'dev',
+					filter: 'isFile'
+				}, {
+					expand: true,
+					cwd: 'src',
+					src: 'favicon.ico',
+					dest: 'public',
+					filter: 'isFile'
+				}]
 			}
 		},
 
@@ -208,15 +223,19 @@ module.exports = function (grunt) {
 				tasks: ['sprite']
 			},
 			imagemin: {
-				files: ['src/img/**/*.{png,jpg,gif}'],
-				tasks: ['imagemin']
+				files: ['src/img/**/*.{png,jpg,gif}', '!src/img/sprite/**/*.png'],
+				tasks: ['newer:imagemin']
 			},
 			stylus: {
 				files: ['src/stylus/**/*.styl'],
 				tasks: ['stylus', 'autoprefixer', 'cssbeautifier', 'cssmin']
 			},
 			jade: {
-				files: ['src/jade/**/*.jade'],
+				files: ['src/jade/**/*.jade', '!src/jade/inc/*'],
+				tasks: ['newer:jade', 'newer:prettify']
+			},
+			jadeInc: {
+				files: ['src/jade/inc/**/*.jade'],
 				tasks: ['jade', 'prettify']
 			},
 			js: {
@@ -225,11 +244,15 @@ module.exports = function (grunt) {
 			},
 			copyFonts: {
 				files: ['src/fonts/**/*'],
-				tasks: ['copy:fonts']
+				tasks: ['newer:copy:fonts']
 			},
 			copyImg: {
 				files: ['dev/img/**/*'],
-				tasks: ['copy:img']
+				tasks: ['newer:copy:img']
+			},
+			copyFavicon: {
+				files: ['src/favicon.ico'],
+				tasks: ['copy:favicon']
 			},
 			livereload: {
 				options: {
@@ -252,21 +275,22 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-newer');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.registerTask('default', [
 		'sprite',
-		'imagemin',
+		'newer:imagemin',
 		'stylus',
 		'autoprefixer',
 		'cssbeautifier',
 		'cssmin',
-		'jade',
-		'prettify',
+		'newer:jade',
+		'newer:prettify',
 		'concat',
 		'uglify',
-		'copy',
+		'newer:copy',
 		'connect',
 		'watch'
 	]);
