@@ -1,11 +1,11 @@
 mixin script(scripts)
-	- each src in scripts
+	each src in scripts
 		script(src=src)
 
-- if (isDev)
+if isDev
 	+script([
 		'js/libs/jquery-2.1.0.min.js',
 		'js/main.js'
 	])
-- else
+else
 	+script(['js/main.min.js'])

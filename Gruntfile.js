@@ -17,16 +17,14 @@ module.exports = function (grunt) {
 
 		imagemin: {
 			options: {
-				optimizationLevel: 1,
-				pngquant: true,
-				progressive: false,
-				interlaced: false
+				optimizationLevel: 3,
+				pngquant: true
 			},
 			images: {
 				files: [{
 					expand: true,
 					cwd: 'src/img',
-					src: ['**/*.{png,jpg,gif}', '!sprite/**/*.png'],
+					src: ['**/*.{png,jpg,gif}', '!sprite/**/*'],
 					dest: 'dev/img'
 				}]
 			}
@@ -57,10 +55,10 @@ module.exports = function (grunt) {
 			options: {
 				browsers: [
 					'ie 9',
-					'ff 25',
+					'ff 27',
 					'opera 12',
 					'safari 6',
-					'chrome 30',
+					'chrome 32',
 					'android 4',
 					'ios 5'
 				]
@@ -171,8 +169,17 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: 'src/js',
-					src: '**/*',
+					src: '**/*.js',
 					dest: 'dev/js',
+					filter: 'isFile'
+				}]
+			},
+			svg: {
+				files: [{
+					expand: true,
+					cwd: 'src/img/svg',
+					src: '**/*.svg',
+					dest: 'dev/img',
 					filter: 'isFile'
 				}]
 			},
@@ -219,11 +226,11 @@ module.exports = function (grunt) {
 
 		watch: {
 			sprite: {
-				files: ['src/img/sprite/*.png'],
+				files: ['src/img/sprite/**/*.png'],
 				tasks: ['sprite']
 			},
 			imagemin: {
-				files: ['src/img/**/*.{png,jpg,gif}', '!src/img/sprite/**/*.png'],
+				files: ['src/img/**/*.{png,jpg,gif}', '!src/img/sprite/**/*'],
 				tasks: ['newer:imagemin']
 			},
 			stylus: {
@@ -231,7 +238,7 @@ module.exports = function (grunt) {
 				tasks: ['stylus', 'autoprefixer', 'cssbeautifier', 'cssmin']
 			},
 			jade: {
-				files: ['src/jade/**/*.jade', '!src/jade/inc/*'],
+				files: ['src/jade/**/*.jade', '!src/jade/inc/**/*'],
 				tasks: ['newer:jade', 'newer:prettify']
 			},
 			jadeInc: {
@@ -246,8 +253,12 @@ module.exports = function (grunt) {
 				files: ['src/fonts/**/*'],
 				tasks: ['newer:copy:fonts']
 			},
+			copySvg: {
+				files: ['src/img/img/**/*.svg'],
+				tasks: ['newer:copy:svg']
+			},
 			copyImg: {
-				files: ['dev/img/**/*'],
+				files: ['dev/img/**/*.{png,jpg,gif}'],
 				tasks: ['newer:copy:img']
 			},
 			copyFavicon: {
