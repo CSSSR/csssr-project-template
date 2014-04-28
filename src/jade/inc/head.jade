@@ -31,25 +31,25 @@ head
 
 	//- Windows Phone 
 	<!--[if IE]>
-	meta(http-equiv='imagetoolbar' content='no')
-	meta(http-equiv='msthemecompatible' content='no')
+	meta(name='imagetoolbar' content='no')
+	meta(name='msthemecompatible' content='no')
 	<![endif]-->
 	
 	//- Blackberry and etc 
-	meta(http-equiv='cleartype' content='on')
+	meta(name='cleartype' content='on')
 	meta(name='HandheldFriendly' content='True')
 
 	//- No parse telephone and address
 	meta(name='format-detection' content='telephone=no')
 	meta(name='format-detection' content='address=no')
 
+	block head
 	//- SEO 
 	title= page.title
-	meta(name='description' content='Description')
-	meta(name='keywords' content='Keywords')
-	meta(name='author' content='CSSSR')
-	meta(name='copyright' content='©CSSSR')
-	meta(name='reply-to' content='hr@csssr.com')
+	meta(name='description' content=page.description)
+	meta(name='keywords' content=page.keywords)
+	meta(name='copyright' content=page.copyright)
+	meta(name='reply-to' content=page.replyTo)
 
 	link(href='favicon.ico' rel='shortcut icon')
 

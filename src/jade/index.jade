@@ -1,119 +1,115 @@
-- var page = { title: 'CSSSR Project Template' };
-doctype html
-html(lang='ru-RU')
-	include inc/head
-	body
-		.main
-			include inc/header
-			
-			mixin tools(list)
-				ul.list
-					each item in list
-						li.list__item
-							span.mark= item[0]
-							|  - 
-							= item[1]
+extends inc/layout
 
-			mixin file(file)
-				li.list__item.list__item_type_file= file
+block head
+	- page.title = 'CSSSR Project Template';
 
-			mixin folder(item)
-				li.list__item.list__item_type_folder= item.folder
-					if item.content
-						+tree(item.content)
+block content
+	mixin tools(list)
+		ul.list
+			each item in list
+				li.list__item
+					span.mark= item[0]
+					|  - 
+					= item[1]
 
-			mixin tree(tree)
-				ul.list.list_type_files
-					each item in tree
-						if item.folder
-							+folder(item)
-						else if item.file
-							+file(item.file)
+	mixin file(file)
+		li.list__item.list__item_type_file= file
+
+	mixin folder(item)
+		li.list__item.list__item_type_folder= item.folder
+			if item.content
+				+tree(item.content)
+
+	mixin tree(tree)
+		ul.list.list_type_files
+			each item in tree
+				if item.folder
+					+folder(item)
+				else if item.file
+					+file(item.file)
 
 
-			h2.h2 ЧТО ВКЛЮЧЕНО
-			h3.h3 Инструменты:
-			+tools([
-				['spritesmith', 'генератор спрайтов и css переменных'],
-				['imagemin', 'сжатие картинок'],
-				['stylus', 'препроцессор css'],
-				['cssmin', 'минификация css'],
-				['autoprefixer', 'подстановка префиксов для заданных браузеров'],
-				['cssbeautifier', 'форматирование css'],
-				['jade', 'препроцессор html'],
-				['prettify', 'форматирование html'],
-				['concat', 'объединение скриптов в один файл'],
-				['uglify', 'обфускация кода'],
-				['copy', 'создание копий файлов'],
-				['connect', 'сервер проекта'],
-				['watch', 'отслеживание изменений файлов и их компиляция'],
-				['livereload', 'перезагрузка страницы после компиляции файлов']
+	h2.h2 ЧТО ВКЛЮЧЕНО
+
+	h3.h3 Инструменты:
+	+tools([
+		['spritesmith', 'генератор спрайтов и css переменных'],
+		['imagemin', 'сжатие картинок'],
+		['stylus', 'препроцессор css'],
+		['cssmin', 'минификация css'],
+		['autoprefixer', 'подстановка префиксов для заданных браузеров'],
+		['cssbeautifier', 'форматирование css'],
+		['jade', 'препроцессор html'],
+		['prettify', 'форматирование html'],
+		['concat', 'объединение скриптов в один файл'],
+		['uglify', 'обфускация кода'],
+		['copy', 'создание копий файлов'],
+		['connect', 'сервер проекта'],
+		['watch', 'отслеживание изменений файлов и их компиляция'],
+		['livereload', 'перезагрузка страницы после компиляции файлов']
+	])
+
+	h2.h2 СТРУКТУРА ФАЙЛОВ
+
+	.container
+		.col
+			h3.h3 Исходники
+			+tree([
+				{ folder: 'fonts' },
+				{
+					folder: 'img',
+					content: [
+						{ folder: 'sprite' }
+					]
+				}, {
+					folder: 'jade',
+					content: [
+						{
+							folder: 'inc',
+							content: [
+								{ file: 'head.jade' },
+								{ file: 'header.jade' },
+								{ file: 'footer.jade' },
+								{ file: 'script.jade' }
+							]
+						},
+						{ file: 'index.jade' }
+					]
+				}, {
+					folder: 'js',
+					content: [
+						{ file: 'jquery.min.js' },
+						{ file: 'main.js' }
+					]
+				}, {
+					folder: 'stylus',
+					content: [
+						{ file: 'normalize.styl' },
+						{ file: 'main.styl' }
+					]
+				}
 			])
 
-			h2.h2 СТРУКТУРА ФАЙЛОВ
-			.container
-				.col
-					h3.h3 Исходники
-					+tree([
-						{ folder: 'fonts' },
-						{
-							folder: 'img',
-							content: [
-								{ folder: 'sprite' }
-							]
-						}, {
-							folder: 'jade',
-							content: [
-								{
-									folder: 'inc',
-									content: [
-										{ file: 'head.jade' },
-										{ file: 'header.jade' },
-										{ file: 'footer.jade' },
-										{ file: 'script.jade' }
-									]
-								},
-								{ file: 'index.jade' }
-							]
-						}, {
-							folder: 'js',
-							content: [
-								{ file: 'jquery.min.js' },
-								{ file: 'main.js' }
-							]
-						}, {
-							folder: 'stylus',
-							content: [
-								{ file: 'normalize.styl' },
-								{ file: 'main.styl' }
-							]
-						}
-					])
+		.col
+			.arrow-caption Компиляция
+			.arrow
 
-				.col.col_middle
-					.arrow-caption Компиляция
-					.arrow
-
-				.col
-					h3.h3 Готовые файлы
-					+tree([
-						{
-							folder: 'css',
-							content: [
-								{ file: 'main.min.css' }
-							]
-						},
-						{ folder: 'fonts' },
-						{ folder: 'img' },
-						{
-							folder: 'js',
-							content: [
-								{ file: 'main.min.js' }
-							]
-						},
-						{ file: 'index.html' }
-					])
-
-			include inc/footer
-
-		include inc/script
+		.col
+			h3.h3 Готовые файлы
+			+tree([
+				{
+					folder: 'css',
+					content: [
+						{ file: 'main.min.css' }
+					]
+				},
+				{ folder: 'fonts' },
+				{ folder: 'img' },
+				{
+					folder: 'js',
+					content: [
+						{ file: 'main.min.js' }
+					]
+				},
+				{ file: 'index.html' }
+			])

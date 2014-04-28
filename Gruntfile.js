@@ -1,3 +1,11 @@
+var page = {
+	title: 'CSSSR Project Template',
+	description: 'A template for a quick start',
+	keywords: 'csssr, project, template, frontend, grunt, jade, stylus',
+	copyright: '©CSSSR',
+	replyTo: 'hr@csssr.com'
+};
+
 module.exports = function (grunt) {
 	grunt.initConfig({
 		sprite: {
@@ -16,10 +24,6 @@ module.exports = function (grunt) {
 		},
 
 		imagemin: {
-			options: {
-				optimizationLevel: 3,
-				pngquant: true
-			},
 			images: {
 				files: [{
 					expand: true,
@@ -84,21 +88,27 @@ module.exports = function (grunt) {
 			dev: {
 				options: {
 					data: {
-						isDev: true
+						isDev: true,
+						page: page
 					}
 				},
 				files: [{
 					cwd: 'src/jade',
-					src: ['**/*.jade', '!inc/**/*.jade'],
+					src: ['**/*.jade', '!inc/**/*'],
 					dest: 'dev',
 					expand: true,
 					ext: '.html'
 				}]
 			},
 			public: {
+				options: {
+					data: {
+						page: page
+					}
+				},
 				files: [{
 					cwd: 'src/jade',
-					src: ['**/*.jade', '!inc/**/*.jade'],
+					src: ['**/*.jade', '!inc/**/*'],
 					dest: 'public',
 					expand: true,
 					ext: '.html'
@@ -121,6 +131,20 @@ module.exports = function (grunt) {
 				src: ['**/*.html'],
 				dest: 'dev'
 			},
+		},
+
+		jshint: {
+			options: {
+				curly: true,
+				eqeqeq: true,
+				eqnull: true,
+				browser: true,
+				force: true,
+				globals: {
+					jQuery: true
+				}
+			},
+			all: ['Gruntfile.js', 'src/js/**/*.js', '!src/js/libs/**/*']
 		},
 		
 		concat: {
@@ -247,7 +271,7 @@ module.exports = function (grunt) {
 			},
 			js: {
 				files: ['src/js/**/*.js'],
-				tasks: ['concat', 'uglify', 'copy:js']
+				tasks: ['jshint', 'concat', 'uglify', 'copy:js']
 			},
 			copyFonts: {
 				files: ['src/fonts/**/*'],
@@ -258,7 +282,7 @@ module.exports = function (grunt) {
 				tasks: ['newer:copy:svg']
 			},
 			copyImg: {
-				files: ['dev/img/**/*.{png,jpg,gif}'],
+				files: ['dev/img/**/*'],
 				tasks: ['newer:copy:img']
 			},
 			copyFavicon: {
@@ -275,33 +299,43 @@ module.exports = function (grunt) {
 
 	});
 
-	grunt.loadNpmTasks('grunt-spritesmith');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-contrib-stylus');
-	grunt.loadNpmTasks('grunt-autoprefixer');
-	grunt.loadNpmTasks('grunt-cssbeautifier');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-jade');
-	grunt.loadNpmTasks('grunt-prettify');
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-newer');
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	function loadNpmTasks(tasks) {
+		tasks.forEach(function (task, i) {
+			grunt.loadNpmTasks(task);
+		});
+	}
+
+	loadNpmTasks([
+		'grunt-spritesmith',
+		'grunt-contrib-imagemin',
+		'grunt-contrib-stylus',
+		'grunt-autoprefixer',
+		'grunt-cssbeautifier',
+		'grunt-contrib-cssmin',
+		'grunt-contrib-jade',
+		'grunt-prettify',
+		'grunt-contrib-jshint',
+		'grunt-contrib-concat',
+		'grunt-contrib-uglify',
+		'grunt-contrib-copy',
+		'grunt-newer',
+		'grunt-contrib-connect',
+		'grunt-contrib-watch'
+	]);
 
 	grunt.registerTask('default', [
 		'sprite',
-		'newer:imagemin',
+		'imagemin',
 		'stylus',
 		'autoprefixer',
 		'cssbeautifier',
 		'cssmin',
-		'newer:jade',
-		'newer:prettify',
+		'jade',
+		'prettify',
+		'jshint',
 		'concat',
 		'uglify',
-		'newer:copy',
+		'copy',
 		'connect',
 		'watch'
 	]);

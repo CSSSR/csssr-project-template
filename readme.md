@@ -2,20 +2,20 @@
 Шаблон проекта для быстрого старта.
 
 ### Инструменты
-* `spritesmith` - генератор спрайтов и css переменных.
+* `spritesmith` - генератор спрайтов и CSS переменных.
 * `imagemin` - сжатие картинок.
-* `stylus` - препроцессор css.
-* `cssmin` - минификация css.
+* `stylus` - препроцессор CSS.
+* `cssmin` - минификация CSS.
 * `autoprefixer` - подстановка префиксов для заданных браузеров.
-* `cssbeautifier` - форматирование css.
-* `jade` - препроцессор html.
-* `prettify` - форматирование html.
+* `cssbeautifier` - форматирование CSS.
+* `jade` - препроцессор HTML.
+* `prettify` - форматирование HTML.
+* `jshint` - проверка JavaScript на качество кода с подсказками.
 * `concat` - объединение скриптов в один файл.
 * `uglify` - обфускация кода.
 * `copy` - создание копий файлов.
 * `connect` - сервер проекта.
 * `watch` - отслеживание изменений файлов и их компиляция.
-* `livereload` - перезагрузка страницы после компиляции файлов.
 
 
 ### Подготовка к работе
@@ -28,9 +28,9 @@
 
 
 ### Приступаем к работе
-1. `git clone https://github.com/CSSSR/csssr-project-template.git new-project` - cкачать в папку `new-project`
-2. `npm install` - устанавливаем пакеты
-3. `grunt` - запускаем и работаем
+1. `git clone https://github.com/CSSSR/csssr-project-template.git new-project` - cкачать в папку `new-project`.
+2. `npm install` - устанавливаем пакеты.
+3. `grunt` - запускаем и работаем.
 
 #### Структура папок
 
@@ -40,7 +40,7 @@ dev | Версия для разработчиков (заказчика) | `127
 public | Минифицированная версия | `127.0.0.1:3000`
 src | Исходники | 
 
-Если нужна автоперезагрузка страницы после компиляции, то можете попробова расширение ![grunt-devtools](https://github.com/vladikoff/grunt-devtools) для Chrome.
+Если нужна автоперезагрузка страницы после компиляции, то можно попробовать расширение [grunt-devtools](https://github.com/vladikoff/grunt-devtools) для Chrome.
 
 
 ### Полезные ссылки
