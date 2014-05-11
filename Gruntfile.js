@@ -77,10 +77,15 @@ module.exports = function (grunt) {
 		},
 
 		cssmin: {
+			options: {
+				report: 'min'
+			},
 			public: {
-				files: {
-					'public/css/main.min.css': 'public/css/main.min.css'
-				}
+				expand: true,
+				cwd: 'public/css/',
+				src: ['**/*.css'],
+				dest: 'public/css/',
+				ext: '.min.css'
 			}
 		},
 
@@ -154,7 +159,7 @@ module.exports = function (grunt) {
 			public: {
 				files: [{
 					src: [
-						'src/js/libs/jquery-2.1.0.min.js',
+						'src/js/libs/jquery-2.1.1.min.js',
 						'src/js/libs/**/*.js',
 						'src/js/main.js'
 					],
@@ -294,6 +299,9 @@ module.exports = function (grunt) {
 					livereload: true
 				},
 				files: ['public/**/*']
+			},
+			grunfile: {
+				files: 'Gruntfile.js'
 			}
 		}
 
