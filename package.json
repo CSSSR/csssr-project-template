@@ -1,6 +1,6 @@
 {
 	"name": "csssr-project-template",
-	"version": "0.5.6",
+	"version": "0.5.7",
 	"author": "GC92",
 	"devDependencies": {
 		"grunt": "~0.4.4",

@@ -151,7 +151,7 @@ module.exports = function (grunt) {
 			},
 			all: ['Gruntfile.js', 'src/js/**/*.js', '!src/js/libs/**/*']
 		},
-		
+
 		concat: {
 			options: {
 				separator: ';'
@@ -170,7 +170,10 @@ module.exports = function (grunt) {
 
 		uglify: {
 			options: {
-				report: 'min'
+				report: 'min',
+				mangle: {
+					except: ['jQuery']
+				}
 			},
 			build: {
 				src: 'public/js/main.min.js',
@@ -283,7 +286,7 @@ module.exports = function (grunt) {
 				tasks: ['newer:copy:fonts']
 			},
 			copySvg: {
-				files: ['src/img/img/**/*.svg'],
+				files: ['src/img/svg/**/*.svg'],
 				tasks: ['newer:copy:svg']
 			},
 			copyImg: {
@@ -300,7 +303,7 @@ module.exports = function (grunt) {
 				},
 				files: ['public/**/*']
 			},
-			grunfile: {
+			grunt: {
 				files: 'Gruntfile.js'
 			}
 		}
