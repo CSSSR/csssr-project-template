@@ -1,22 +1,55 @@
 {
 	"name": "csssr-project-template",
-	"version": "0.5.7",
-	"author": "GC92",
+	"version": "0.6.0",
+	"title": "CSSSR Project Template",
+	"description": "A template for a quick start.",
+	"keywords": [
+		"csssr",
+		"project",
+		"template",
+		"frontend",
+		"grunt",
+		"jade",
+		"stylus"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/CSSSR/csssr-project-template.git"
+	},
+	"author": {
+		"name": "GC92",
+		"url": "https://github.com/GC92"
+	},
+	"copyright": "©CSSSR",
+	"bugs": {
+		"url": "https://github.com/CSSSR/csssr-project-template/issues/",
+		"email": "production@csssr.com"
+	},
+	"homepage": "https://github.com/CSSSR/csssr-project-template/",
+	"engines": {
+		"node": ">= 0.10.0"
+	},
 	"devDependencies": {
-		"grunt": "~0.4.4",
-		"grunt-newer": "~0.7.0",
-		"grunt-contrib-stylus": "^0.15.1",
+		"grunt": "~0.4.5",
 		"grunt-autoprefixer": "~0.7.3",
-		"grunt-cssbeautifier": "^0.1.9",
+		"grunt-contrib-clean": "0.5.0",
+		"grunt-contrib-concat": "~0.4.0",
+		"grunt-contrib-connect": "~0.7.1",
+		"grunt-contrib-copy": "~0.5.0",
 		"grunt-contrib-cssmin": "~0.9.0",
 		"grunt-contrib-jade": "~0.11.0",
-		"grunt-prettify": "~0.3.4",
-		"grunt-contrib-concat": "~0.4.0",
 		"grunt-contrib-jshint": "~0.10.0",
+		"grunt-contrib-stylus": "^0.15.1",
 		"grunt-contrib-uglify": "~0.4.0",
-		"grunt-contrib-copy": "~0.5.0",
-		"grunt-contrib-connect": "~0.7.1",
-		"grunt-contrib-watch": "~0.6.1"
+		"grunt-contrib-watch": "~0.6.1",
+		"grunt-cssbeautifier": "^0.1.9",
+		"grunt-newer": "~0.7.0",
+		"grunt-prettify": "~0.3.4",
+		"load-grunt-tasks": "^0.4.0"
+	},
+	"dependencies": {
+		"grunt-spritesmith": "^1.26.0",
+		"grunt-contrib-imagemin": "^0.7.0"
 	},
 	"scripts": {
 		"preinstall": "npm cache clear && npm i grunt-contrib-imagemin grunt-spritesmith"

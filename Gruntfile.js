@@ -1,21 +1,23 @@
-var page = {
-	title: 'CSSSR Project Template',
-	description: 'A template for a quick start',
-	keywords: 'csssr, project, template, frontend, grunt, jade, stylus',
-	copyright: '©CSSSR',
-	replyTo: 'hr@csssr.com'
-};
-
 module.exports = function (grunt) {
+
+	require('load-grunt-tasks')(grunt);
+
 	grunt.initConfig({
+
+		pkg: grunt.file.readJSON('package.json'),
+
+		clean: {
+			dist: ['dist']
+		},
+
 		sprite: {
 			all: {
-				src: 'src/img/sprite/**/*.png',
-				destImg: 'src/img/sprite.png',
+				src: 'app/images/sprite/**/*.png',
+				destImg: 'app/images/sprite.png',
 				cssFormat: 'stylus',
-				destCSS: 'src/stylus/sprite.styl',
+				destCSS: 'app/styles/sprite.styl',
 				algorithm: 'binary-tree',
-				padding: 8,
+				padding: 4,
 				engine: 'pngsmith',
 				imgOpts: {
 					format: 'png'
@@ -27,9 +29,9 @@ module.exports = function (grunt) {
 			images: {
 				files: [{
 					expand: true,
-					cwd: 'src/img',
+					cwd: 'app/images',
 					src: ['**/*.{png,jpg,gif}', '!sprite/**/*'],
-					dest: 'dev/img'
+					dest: 'dist/images'
 				}]
 			}
 		},
@@ -40,17 +42,11 @@ module.exports = function (grunt) {
 			},
 			compile: {
 				files: [{
-					cwd: 'src/stylus',
+					cwd: 'app/styles',
 					src: 'main.styl',
-					dest: 'dev/css',
+					dest: 'dist/styles',
 					expand: true,
 					ext: '.css'
-				}, {
-					cwd: 'src/stylus',
-					src: 'main.styl',
-					dest: 'public/css',
-					expand: true,
-					ext: '.min.css'
 				}]
 			}
 		},
@@ -67,54 +63,32 @@ module.exports = function (grunt) {
 					'ios 5'
 				]
 			},
-			main: {
-				src: ['dev/css/main.css', 'public/css/main.min.css']
+			all: {
+				src: ['dist/styles/**/*.css']
 			}
 		},
 
 		cssbeautifier: {
-			files : 'dev/css/**/*.css'
-		},
-
-		cssmin: {
-			options: {
-				report: 'min'
-			},
-			public: {
-				expand: true,
-				cwd: 'public/css/',
-				src: ['**/*.css'],
-				dest: 'public/css/',
-				ext: '.min.css'
-			}
+			files: 'dist/styles/**/*.css'
 		},
 
 		jade: {
-			dev: {
+			dist: {
 				options: {
 					data: {
-						isDev: true,
-						page: page
+						page: {
+							title: '<%= pkg.title %>',
+							description: '<%= pkg.description %>',
+							keywords: '<%= pkg.keywords.join(\', \') %>',
+							copyright: '<%= pkg.copyright %>',
+							replyTo: '<%= pkg.bugs.email %>'
+						}
 					}
 				},
 				files: [{
-					cwd: 'src/jade',
-					src: ['**/*.jade', '!inc/**/*'],
-					dest: 'dev',
-					expand: true,
-					ext: '.html'
-				}]
-			},
-			public: {
-				options: {
-					data: {
-						page: page
-					}
-				},
-				files: [{
-					cwd: 'src/jade',
-					src: ['**/*.jade', '!inc/**/*'],
-					dest: 'public',
+					cwd: 'app/templates',
+					src: ['**/*.jade', '!partials/**/*'],
+					dest: 'dist',
 					expand: true,
 					ext: '.html'
 				}]
@@ -131,10 +105,10 @@ module.exports = function (grunt) {
 			},
 			all: {
 				expand: true,
-				cwd: 'dev',
+				cwd: 'dist',
 				ext: '.html',
 				src: ['**/*.html'],
-				dest: 'dev'
+				dest: 'dist'
 			},
 		},
 
@@ -149,78 +123,38 @@ module.exports = function (grunt) {
 					jQuery: true
 				}
 			},
-			all: ['Gruntfile.js', 'src/js/**/*.js', '!src/js/libs/**/*']
-		},
-
-		concat: {
-			options: {
-				separator: ';'
-			},
-			public: {
-				files: [{
-					src: [
-						'src/js/libs/jquery-2.1.1.min.js',
-						'src/js/libs/**/*.js',
-						'src/js/main.js'
-					],
-					dest: 'public/js/main.min.js'
-				}]
-			}
-		},
-
-		uglify: {
-			options: {
-				report: 'min',
-				mangle: {
-					except: ['jQuery']
-				}
-			},
-			build: {
-				src: 'public/js/main.min.js',
-				dest: 'public/js/main.min.js'
-			}
+			all: [
+				'Gruntfile.js',
+				'app/scripts/**/*.js',
+				'!app/scripts/libs/**/*'
+			]
 		},
 
 		copy: {
 			fonts: {
 				files: [{
 					expand: true,
-					cwd: 'src/fonts',
+					cwd: 'app/fonts',
 					src: '*',
-					dest: 'public/fonts',
-					filter: 'isFile'
-				}, {
-					expand: true,
-					cwd: 'src/fonts',
-					src: '*',
-					dest: 'dev/fonts',
+					dest: 'dist/fonts',
 					filter: 'isFile'
 				}]
 			},
-			js: {
+			scripts: {
 				files: [{
 					expand: true,
-					cwd: 'src/js',
+					cwd: 'app/scripts',
 					src: '**/*.js',
-					dest: 'dev/js',
+					dest: 'dist/scripts',
 					filter: 'isFile'
 				}]
 			},
 			svg: {
 				files: [{
 					expand: true,
-					cwd: 'src/img/svg',
+					cwd: 'app/images/svg',
 					src: '**/*.svg',
-					dest: 'dev/img',
-					filter: 'isFile'
-				}]
-			},
-			img: {
-				files: [{
-					expand: true,
-					cwd: 'dev/img',
-					src: '**/*',
-					dest: 'public/img',
+					dest: 'dist/images',
 					filter: 'isFile'
 				}]
 			},
@@ -229,79 +163,57 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: 'src',
 					src: 'favicon.ico',
-					dest: 'dev',
-					filter: 'isFile'
-				}, {
-					expand: true,
-					cwd: 'src',
-					src: 'favicon.ico',
-					dest: 'public',
+					dest: 'dist',
 					filter: 'isFile'
 				}]
 			}
 		},
 
 		connect: {
-			public: {
+			dist: {
 				options: {
 					port: 3000,
-					base: 'public'
-				}
-			},
-			dev: {
-				options: {
-					port: 4000,
-					base: 'dev'
+					base: 'dist'
 				}
 			}
 		},
 
 		watch: {
 			sprite: {
-				files: ['src/img/sprite/**/*.png'],
+				files: ['app/images/sprite/**/*.png'],
 				tasks: ['sprite']
 			},
 			imagemin: {
-				files: ['src/img/**/*.{png,jpg,gif}', '!src/img/sprite/**/*'],
+				files: ['app/images/**/*.{png,jpg,gif}', '!app/images/sprite/**/*'],
 				tasks: ['newer:imagemin']
 			},
 			stylus: {
-				files: ['src/stylus/**/*.styl'],
-				tasks: ['stylus', 'autoprefixer', 'cssbeautifier', 'cssmin']
+				files: ['app/styles/**/*.styl'],
+				tasks: ['stylus', 'autoprefixer', 'cssbeautifier']
 			},
 			jade: {
-				files: ['src/jade/**/*.jade', '!src/jade/inc/**/*'],
+				files: ['app/templates/**/*.jade', '!app/templates/partials/**/*'],
 				tasks: ['newer:jade', 'newer:prettify']
 			},
-			jadeInc: {
-				files: ['src/jade/inc/**/*.jade'],
+			jadePartials: {
+				files: ['app/templates/partials/**/*.jade'],
 				tasks: ['jade', 'prettify']
 			},
-			js: {
-				files: ['src/js/**/*.js'],
-				tasks: ['jshint', 'concat', 'uglify', 'copy:js']
+			scripts: {
+				files: ['app/scripts/**/*.js'],
+				tasks: ['jshint', 'copy:scripts']
 			},
 			copyFonts: {
-				files: ['src/fonts/**/*'],
+				files: ['app/fonts/**/*'],
 				tasks: ['newer:copy:fonts']
 			},
 			copySvg: {
-				files: ['src/img/svg/**/*.svg'],
+				files: ['app/images/svg/**/*.svg'],
 				tasks: ['newer:copy:svg']
 			},
-			copyImg: {
-				files: ['dev/img/**/*'],
-				tasks: ['newer:copy:img']
-			},
 			copyFavicon: {
-				files: ['src/favicon.ico'],
+				files: ['app/favicon.ico'],
 				tasks: ['copy:favicon']
-			},
-			livereload: {
-				options: {
-					livereload: true
-				},
-				files: ['public/**/*']
 			},
 			grunt: {
 				files: 'Gruntfile.js'
@@ -310,44 +222,27 @@ module.exports = function (grunt) {
 
 	});
 
-	function loadNpmTasks(tasks) {
-		tasks.forEach(function (task, i) {
-			grunt.loadNpmTasks(task);
-		});
-	}
-
-	loadNpmTasks([
-		'grunt-spritesmith',
-		'grunt-contrib-imagemin',
-		'grunt-contrib-stylus',
-		'grunt-autoprefixer',
-		'grunt-cssbeautifier',
-		'grunt-contrib-cssmin',
-		'grunt-contrib-jade',
-		'grunt-prettify',
-		'grunt-contrib-jshint',
-		'grunt-contrib-concat',
-		'grunt-contrib-uglify',
-		'grunt-contrib-copy',
-		'grunt-newer',
-		'grunt-contrib-connect',
-		'grunt-contrib-watch'
-	]);
-
-	grunt.registerTask('default', [
+	grunt.registerTask('build', [
+		'clean:dist',
 		'sprite',
 		'imagemin',
 		'stylus',
 		'autoprefixer',
 		'cssbeautifier',
-		'cssmin',
 		'jade',
 		'prettify',
 		'jshint',
-		'concat',
-		'uglify',
-		'copy',
-		'connect',
+		'copy'
+	]);
+
+	grunt.registerTask('serve', [
+		'connect:dist:keepalive'
+	]);
+
+	grunt.registerTask('default', [
+		'build',
+		'connect:dist',
 		'watch'
 	]);
+
 };

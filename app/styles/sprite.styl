@@ -1,0 +1,63 @@
+$arrow-270_x = 0px;
+$arrow-270_y = 0px;
+$arrow-270_offset_x = 0px;
+$arrow-270_offset_y = 0px;
+$arrow-270_width = 32px;
+$arrow-270_height = 32px;
+$arrow-270_total_width = 68px;
+$arrow-270_total_height = 52px;
+$arrow-270_image = '../images/sprite.png';
+$arrow-270 = 0px 0px 0px 0px 32px 32px 68px 52px '../images/sprite.png';
+$arrow_x = 36px;
+$arrow_y = 0px;
+$arrow_offset_x = -36px;
+$arrow_offset_y = 0px;
+$arrow_width = 32px;
+$arrow_height = 32px;
+$arrow_total_width = 68px;
+$arrow_total_height = 52px;
+$arrow_image = '../images/sprite.png';
+$arrow = 36px 0px -36px 0px 32px 32px 68px 52px '../images/sprite.png';
+$document-code_x = 0px;
+$document-code_y = 36px;
+$document-code_offset_x = 0px;
+$document-code_offset_y = -36px;
+$document-code_width = 16px;
+$document-code_height = 16px;
+$document-code_total_width = 68px;
+$document-code_total_height = 52px;
+$document-code_image = '../images/sprite.png';
+$document-code = 0px 36px 0px -36px 16px 16px 68px 52px '../images/sprite.png';
+$folder_x = 20px;
+$folder_y = 36px;
+$folder_offset_x = -20px;
+$folder_offset_y = -36px;
+$folder_width = 16px;
+$folder_height = 16px;
+$folder_total_width = 68px;
+$folder_total_height = 52px;
+$folder_image = '../images/sprite.png';
+$folder = 20px 36px -20px -36px 16px 16px 68px 52px '../images/sprite.png';
+
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}

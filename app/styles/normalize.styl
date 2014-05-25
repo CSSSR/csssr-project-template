@@ -3,10 +3,9 @@
 
 // Reset default styles.
 *
-	font-size 100%
-	font inherit
 	margin 0
 	padding 0
+	font inherit
 	box-sizing border-box
 
 	&:before
@@ -66,6 +65,7 @@ html
 
 // Set 100% line-height
 body
+	font-size 100%
 	line-height 1
 	-webkit-font-smoothing subpixel-antialiased !important
 
@@ -97,6 +97,7 @@ ul
 
 // Improve readability of pre-formatted text in all browsers.
 pre
+	tab-size 4
 	white-space pre-wrap
 
 // Set consistent quote types.
@@ -191,7 +192,7 @@ select[multiple]
 textarea
 	background-image none
 
-// Remove border-radius in iOS.
+// Remove `border-radius` in iOS.
 input
 textarea
 	border-radius 0

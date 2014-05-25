@@ -1,4 +1,4 @@
-extends inc/layout
+extends partials/layout
 
 block head
 	- page.title = 'CSSSR Project Template';
@@ -9,8 +9,7 @@ block content
 			each item in list
 				li.list__item
 					span.mark= item[0]
-					|  - 
-					= item[1]
+					= ' - ' + item[1]
 
 	mixin file(file)
 		li.list__item.list__item_type_file= file
@@ -33,21 +32,18 @@ block content
 
 	h3.h3 Инструменты:
 	+tools([
+		['clean', 'очистка папки от файлов'],
 		['spritesmith', 'генератор спрайтов и CSS переменных'],
 		['imagemin', 'сжатие картинок'],
 		['stylus', 'препроцессор CSS'],
-		['cssmin', 'минификация CSS'],
 		['autoprefixer', 'подстановка префиксов для заданных браузеров'],
 		['cssbeautifier', 'форматирование CSS'],
 		['jade', 'препроцессор HTML'],
 		['prettify', 'форматирование HTML'],
 		['jshint', 'проверка JavaScript на качество кода с подсказками'],
-		['concat', 'объединение скриптов в один файл'],
-		['uglify', 'обфускация кода'],
 		['copy', 'создание копий файлов'],
 		['connect', 'сервер проекта'],
-		['watch', 'отслеживание изменений файлов и их компиляция'],
-		['livereload', 'перезагрузка страницы после компиляции файлов']
+		['watch', 'отслеживание изменений файлов и их компиляция']
 	])
 
 	h2.h2 СТРУКТУРА ФАЙЛОВ
@@ -58,35 +54,32 @@ block content
 			+tree([
 				{ folder: 'fonts' },
 				{
-					folder: 'img',
-					content: [
-						{ folder: 'sprite' }
-					]
+					folder: 'images'
 				}, {
-					folder: 'jade',
-					content: [
-						{
-							folder: 'inc',
-							content: [
-								{ file: 'head.jade' },
-								{ file: 'header.jade' },
-								{ file: 'footer.jade' },
-								{ file: 'script.jade' }
-							]
-						},
-						{ file: 'index.jade' }
-					]
-				}, {
-					folder: 'js',
+					folder: 'scripts',
 					content: [
 						{ file: 'jquery.min.js' },
 						{ file: 'main.js' }
 					]
 				}, {
-					folder: 'stylus',
+					folder: 'styles',
 					content: [
-						{ file: 'normalize.styl' },
-						{ file: 'main.styl' }
+						{ file: 'main.styl' },
+						{ file: 'normalize.styl' }
+					]
+				}, {
+					folder: 'templates',
+					content: [
+						{
+							folder: 'partials',
+							content: [
+								{ file: 'footer.jade' },
+								{ file: 'head.jade' },
+								{ file: 'header.jade' },
+								{ file: 'scripts.jade' }
+							]
+						},
+						{ file: 'index.jade' }
 					]
 				}
 			])
@@ -98,18 +91,19 @@ block content
 		.col
 			h3.h3 Готовые файлы
 			+tree([
+				{ folder: 'fonts' },
+				{ folder: 'images' },
 				{
-					folder: 'css',
+					folder: 'scripts',
 					content: [
-						{ file: 'main.min.css' }
+						{ file: 'jquery.min.js' },
+						{ file: 'main.js' }
 					]
 				},
-				{ folder: 'fonts' },
-				{ folder: 'img' },
 				{
-					folder: 'js',
+					folder: 'styles',
 					content: [
-						{ file: 'main.min.js' }
+						{ file: 'main.css' }
 					]
 				},
 				{ file: 'index.html' }
