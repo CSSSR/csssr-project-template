@@ -4,30 +4,6 @@ block head
 	- page.title = 'CSSSR Project Template';
 
 block content
-	mixin tools(list)
-		ul.list
-			each item in list
-				li.list__item
-					span.mark= item[0]
-					= ' - ' + item[1]
-
-	mixin file(file)
-		li.list__item.list__item_type_file= file
-
-	mixin folder(item)
-		li.list__item.list__item_type_folder= item.folder
-			if item.content
-				+tree(item.content)
-
-	mixin tree(tree)
-		ul.list.list_type_files
-			each item in tree
-				if item.folder
-					+folder(item)
-				else if item.file
-					+file(item.file)
-
-
 	h2.h2 ЧТО ВКЛЮЧЕНО
 
 	h3.h3 Инструменты:
@@ -108,3 +84,6 @@ block content
 				},
 				{ file: 'index.html' }
 			])
+
+block scripts
+	+script(['main.js'])

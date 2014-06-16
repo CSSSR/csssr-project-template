@@ -2,14 +2,14 @@
     margin: 0;
     padding: 0;
     font: inherit;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
+    will-change: all;
 }
 
 *:before,
 *:after {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
+    will-change: all;
 }
 
 article,
@@ -69,7 +69,6 @@ a {
 }
 
 hr {
-    -moz-box-sizing: content-box;
     box-sizing: content-box;
     height: 0;
 }
@@ -127,7 +126,6 @@ html input[disabled] {
 
 input[type="checkbox"],
 input[type="radio"] {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -138,7 +136,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
     -webkit-appearance: textfield;
-    -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
 
@@ -168,6 +165,7 @@ textarea {
 input,
 textarea {
     border-radius: 0;
+    box-shadow: none;
 }
 
 [placeholder]:focus::-webkit-input-placeholder {
@@ -175,6 +173,10 @@ textarea {
 }
 
 [placeholder]:focus::-moz-placeholder {
+    color: transparent;
+}
+
+[placeholder]:focus:-ms-input-placeholder {
     color: transparent;
 }
 
@@ -301,7 +303,7 @@ body {
 
 @media screen and (max-width: 540px) {
     .arrow {
-        background-image: url("../images/sprite.png");
+        background-image: url("../../images/sprite.png");
         background-position: 0px 0px;
         width: 32px;
         height: 32px;
@@ -310,7 +312,7 @@ body {
 
 @media screen and (min-width: 541px) {
     .arrow {
-        background-image: url("../images/sprite.png");
+        background-image: url("../../images/sprite.png");
         background-position: -36px 0px;
         width: 32px;
         height: 32px;
@@ -353,7 +355,7 @@ body {
     vertical-align: middle;
     margin-right: 6px;
     content: '';
-    background-image: url("../images/sprite.png");
+    background-image: url("../../images/sprite.png");
     background-position: -20px -36px;
     width: 16px;
     height: 16px;
@@ -364,7 +366,7 @@ body {
     vertical-align: middle;
     margin-right: 6px;
     content: '';
-    background-image: url("../images/sprite.png");
+    background-image: url("../../images/sprite.png");
     background-position: 0px -36px;
     width: 16px;
     height: 16px;
@@ -433,7 +435,6 @@ body {
 
     .fork-on-github__link:active {
         -webkit-transform: scale(0.975);
-        -ms-transform: scale(0.975);
         -o-transform: scale(0.975);
         transform: scale(0.975);
     }
@@ -450,7 +451,6 @@ body {
         background-image: url("../images/vertical-cloth.png");
         box-shadow: 0 0 8px rgba(0,0,0,0.5);
         -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
         -o-transform: rotate(45deg);
         transform: rotate(45deg);
     }

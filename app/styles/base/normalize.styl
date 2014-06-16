@@ -7,10 +7,12 @@
 	padding 0
 	font inherit
 	box-sizing border-box
+	will-change all
 
 	&:before
 	&:after
 		box-sizing border-box
+		will-change all
 
 // HTML5 display definitions
 // ==========================================================================
@@ -192,10 +194,12 @@ select[multiple]
 textarea
 	background-image none
 
-// Remove `border-radius` in iOS.
+// 1. Remove `border-radius` in iOS.
+// 2. Remove `box-shadow` in iOS.
 input
 textarea
-	border-radius 0
+	border-radius 0 // 1
+	box-shadow none // 2
 
 // Hide placeholder on focus.
 [placeholder]:focus::placeholder
@@ -214,14 +218,11 @@ table
 
 // Clear the float on any element.
 clearfix()
-	&:before
 	&:after
-		content ' '
 		display table
-
-	&:after
 		clear both
+		content ''
 
 // Fix no working `-webkit-text-size-adjust: 100%;` in Android.
-fix-android()
+fix-text-size-adjust()
 	background-image linear-gradient(transparent, transparent)

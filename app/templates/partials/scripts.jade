@@ -1,8 +1,6 @@
-mixin script(scripts)
-	each src in scripts
-		script(src='scripts/' + src)
-
 +script([
-	'libs/jquery-2.1.1.min.js',
-	'main.js'
+	'libs/detect.min.js',
+	'libs/jquery-2.1.1.min.js'
 ])
+
+block scripts

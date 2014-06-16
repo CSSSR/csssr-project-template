@@ -15,7 +15,7 @@ module.exports = function (grunt) {
 				src: 'app/images/sprite/**/*.png',
 				destImg: 'app/images/sprite.png',
 				cssFormat: 'stylus',
-				destCSS: 'app/styles/sprite.styl',
+				destCSS: 'app/styles/helpers/sprite.styl',
 				algorithm: 'binary-tree',
 				padding: 4,
 				engine: 'pngsmith',
@@ -54,13 +54,14 @@ module.exports = function (grunt) {
 		autoprefixer: {
 			options: {
 				browsers: [
-					'ie 9',
-					'ff 27',
+					'ie 10',
+					'ff 29',
 					'opera 12',
+					'opera 21',
 					'safari 6',
-					'chrome 32',
+					'chrome 34',
 					'android 4',
-					'ios 5'
+					'ios 6'
 				]
 			},
 			all: {
@@ -87,7 +88,7 @@ module.exports = function (grunt) {
 				},
 				files: [{
 					cwd: 'app/templates',
-					src: ['**/*.jade', '!partials/**/*'],
+					src: ['**/*.jade', '!{helpers,partials}/**/*'],
 					dest: 'dist',
 					expand: true,
 					ext: '.html'
@@ -192,11 +193,11 @@ module.exports = function (grunt) {
 				tasks: ['stylus', 'autoprefixer', 'cssbeautifier']
 			},
 			jade: {
-				files: ['app/templates/**/*.jade', '!app/templates/partials/**/*'],
+				files: ['app/templates/**/*.jade', '!app/templates/{helpers,partials}/**/*'],
 				tasks: ['newer:jade', 'newer:prettify']
 			},
 			jadePartials: {
-				files: ['app/templates/partials/**/*.jade'],
+				files: ['app/templates/{helpers,partials}/**/*.jade'],
 				tasks: ['jade', 'prettify']
 			},
 			scripts: {
