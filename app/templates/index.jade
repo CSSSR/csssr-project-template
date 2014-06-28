@@ -8,16 +8,19 @@ block content
 
 	h3.h3 Инструменты:
 	+tools([
+		['bump', 'обновление версии проекта'],
 		['clean', 'очистка папки от файлов'],
 		['spritesmith', 'генератор спрайтов и CSS переменных'],
 		['imagemin', 'сжатие картинок'],
 		['stylus', 'препроцессор CSS'],
 		['autoprefixer', 'подстановка префиксов для заданных браузеров'],
-		['cssbeautifier', 'форматирование CSS'],
+		['csscomb', 'форматирование CSS'],
 		['jade', 'препроцессор HTML'],
 		['prettify', 'форматирование HTML'],
 		['jshint', 'проверка JavaScript на качество кода с подсказками'],
 		['copy', 'создание копий файлов'],
+		['uglify', 'минифицирование и обфускация скриптов'],
+		['replace', 'автозамена паттернов на заданные значения'],
 		['connect', 'сервер проекта'],
 		['watch', 'отслеживание изменений файлов и их компиляция']
 	])
@@ -28,30 +31,76 @@ block content
 		.col
 			h3.h3 Исходники
 			+tree([
-				{ folder: 'fonts' },
 				{
 					folder: 'images'
 				}, {
 					folder: 'scripts',
 					content: [
-						{ file: 'jquery.min.js' },
+						{
+							folder: 'libs',
+							content: [
+								{ file: 'jquery.min.js' },
+							]
+						},
 						{ file: 'main.js' }
 					]
 				}, {
 					folder: 'styles',
 					content: [
-						{ file: 'main.styl' },
-						{ file: 'normalize.styl' }
+						{
+							folder: 'base',
+							content: [
+								{ file: 'common.styl' },
+								{ file: 'fonts.styl' },
+								{ file: 'normalize.styl' }
+							]
+						},
+						{
+							folder: 'components',
+							content: [
+								{ file: 'fork.styl' }
+							]
+						},
+						{
+							folder: 'helpers',
+							content: [
+								{ file: 'mixins.styl' },
+								{ file: 'sprite.styl' },
+								{ file: 'variables.styl' }
+							]
+						},
+						{
+							folder: 'pages',
+							content: [
+								{ file: 'main.styl' }
+							]
+						},
+						{
+							folder: 'partials',
+							content: [
+								{ file: 'footer.styl' },
+								{ file: 'header.styl' }
+							]
+						},
+						{ file: 'main.styl' }
 					]
 				}, {
 					folder: 'templates',
 					content: [
+						{
+							folder: 'helpers',
+							content: [
+								{ file: 'mixins.jade' },
+								{ file: 'variables.jade' }
+							]
+						},
 						{
 							folder: 'partials',
 							content: [
 								{ file: 'footer.jade' },
 								{ file: 'head.jade' },
 								{ file: 'header.jade' },
+								{ file: 'layout.jade' },
 								{ file: 'scripts.jade' }
 							]
 						},
@@ -67,19 +116,33 @@ block content
 		.col
 			h3.h3 Готовые файлы
 			+tree([
-				{ folder: 'fonts' },
-				{ folder: 'images' },
 				{
-					folder: 'scripts',
+					folder: 'assets',
 					content: [
-						{ file: 'jquery.min.js' },
-						{ file: 'main.js' }
-					]
-				},
-				{
-					folder: 'styles',
-					content: [
-						{ file: 'main.css' }
+						{
+							folder: '0.7.0',
+							content: [
+								{ folder: 'images' },
+								{
+									folder: 'scripts',
+									content: [
+										{
+											folder: 'libs',
+											content: [
+												{ file: 'jquery.min.js' }
+											]
+										},
+										{ file: 'main.js' }
+									]
+								},
+								{
+									folder: 'styles',
+									content: [
+										{ file: 'main.css' }
+									]
+								}
+							]
+						}
 					]
 				},
 				{ file: 'index.html' }

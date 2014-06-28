@@ -27,6 +27,7 @@ Thumbs.db
 .svn
 .CVS
 .idea
+bower_components
 
 # Node.JS
 node_modules

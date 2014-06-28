@@ -14,11 +14,11 @@ module.exports = function (grunt) {
 			all: {
 				src: 'app/images/sprite/**/*.png',
 				destImg: 'app/images/sprite.png',
-				cssFormat: 'stylus',
+				imgPath: '../images/sprite.png',
 				destCSS: 'app/styles/helpers/sprite.styl',
+				cssFormat: 'stylus',
 				algorithm: 'binary-tree',
-				padding: 4,
-				engine: 'pngsmith',
+				padding: 8,
 				imgOpts: {
 					format: 'png'
 				}
@@ -31,7 +31,7 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: 'app/images',
 					src: ['**/*.{png,jpg,gif}', '!sprite/**/*'],
-					dest: 'dist/images'
+					dest: 'dist/assets/<%= pkg.version %>/images'
 				}]
 			}
 		},
@@ -44,7 +44,7 @@ module.exports = function (grunt) {
 				files: [{
 					cwd: 'app/styles',
 					src: 'main.styl',
-					dest: 'dist/styles',
+					dest: 'dist/assets/<%= pkg.version %>/styles',
 					expand: true,
 					ext: '.css'
 				}]
@@ -54,23 +54,32 @@ module.exports = function (grunt) {
 		autoprefixer: {
 			options: {
 				browsers: [
-					'ie 10',
-					'ff 29',
-					'opera 12',
-					'opera 21',
-					'safari 6',
-					'chrome 34',
-					'android 4',
-					'ios 6'
+					'Android >= <%= pkg.browsers.android %>',
+					'Chrome >= <%= pkg.browsers.chrome %>',
+					'Firefox >= <%= pkg.browsers.firefox %>',
+					'Explorer >= <%= pkg.browsers.ie %>',
+					'iOS >= <%= pkg.browsers.ios %>',
+					'Opera >= <%= pkg.browsers.opera %>',
+					'Safari >= <%= pkg.browsers.safari %>'
 				]
 			},
 			all: {
-				src: ['dist/styles/**/*.css']
+				src: ['dist/assets/<%= pkg.version %>/styles/**/*.css']
 			}
 		},
 
-		cssbeautifier: {
-			files: 'dist/styles/**/*.css'
+		csscomb: {
+			dist: {
+				options: {
+					config: '.csscomb.json'
+				},
+				files: [{
+					expand: true,
+					cwd: 'dist/assets/<%= pkg.version %>/styles',
+					src: '**/*.css',
+					dest: 'dist/assets/<%= pkg.version %>/styles'
+				}]
+			}
 		},
 
 		jade: {
@@ -78,11 +87,12 @@ module.exports = function (grunt) {
 				options: {
 					data: {
 						page: {
-							title: '<%= pkg.title %>',
+							assets: 'assets/<%= pkg.version %>/',
+							copyright: '<%= pkg.copyright %>',
 							description: '<%= pkg.description %>',
 							keywords: '<%= pkg.keywords.join(\', \') %>',
-							copyright: '<%= pkg.copyright %>',
-							replyTo: '<%= pkg.bugs.email %>'
+							replyTo: '<%= pkg.bugs.email %>',
+							title: '<%= pkg.title %>'
 						}
 					}
 				},
@@ -108,9 +118,19 @@ module.exports = function (grunt) {
 				expand: true,
 				cwd: 'dist',
 				ext: '.html',
-				src: ['**/*.html'],
+				src: '**/*.html',
 				dest: 'dist'
 			},
+		},
+
+		newer: {
+			options: {
+				override: function(detail, include) {
+					if (detail.task === 'jade') {
+						include(true);
+					}
+				}
+			}
 		},
 
 		jshint: {
@@ -125,9 +145,15 @@ module.exports = function (grunt) {
 				}
 			},
 			all: [
-				'Gruntfile.js',
 				'app/scripts/**/*.js',
-				'!app/scripts/libs/**/*'
+				'!app/scripts/libs/**/*',
+				'!app/scripts/browsehappy/**/*',
+				'app/scripts/browsehappy/browsehappy.js'
+			],
+			configFiles: [
+				'.csscomb.json',
+				'Gruntfile.js',
+				'package.json'
 			]
 		},
 
@@ -137,7 +163,7 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: 'app/fonts',
 					src: '*',
-					dest: 'dist/fonts',
+					dest: 'dist/assets/<%= pkg.version %>/fonts',
 					filter: 'isFile'
 				}]
 			},
@@ -145,8 +171,8 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: 'app/scripts',
-					src: '**/*.js',
-					dest: 'dist/scripts',
+					src: ['**/*.js', '!browsehappy'],
+					dest: 'dist/assets/<%= pkg.version %>/scripts',
 					filter: 'isFile'
 				}]
 			},
@@ -155,16 +181,71 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: 'app/images/svg',
 					src: '**/*.svg',
-					dest: 'dist/images',
+					dest: 'dist/assets/<%= pkg.version %>/images/svg',
 					filter: 'isFile'
 				}]
 			},
 			favicon: {
 				files: [{
 					expand: true,
-					cwd: 'src',
+					cwd: 'app',
 					src: 'favicon.ico',
 					dest: 'dist',
+					filter: 'isFile'
+				}]
+			}
+		},
+
+		uglify: {
+			options: {
+				report: 'min',
+				mangle: {
+					except: ['jQuery']
+				}
+			},
+			browsehappy: {
+				files: {
+					'dist/assets/<%= pkg.version %>/scripts/libs/browsehappy.min.js': [
+						'app/scripts/browsehappy/detect.min.js',
+						'app/scripts/browsehappy/browsehappy.js'
+					]
+				}
+			}
+		},
+
+		replace: {
+			browsehappy: {
+				options: {
+					patterns: [{
+						json: {
+							'android': '<%= pkg.browsers.android %>',
+							'chrome': '<%= pkg.browsers.chrome %>',
+							'firefox': '<%= pkg.browsers.firefox %>',
+							'ie': '<%= pkg.browsers.ie %>',
+							'ios': '<%= pkg.browsers.ios %>',
+							'opera': '<%= pkg.browsers.opera %>',
+							'safari': '<%= pkg.browsers.safari %>'
+						}
+					}]
+				},
+				files: [{
+					src: 'dist/assets/<%= pkg.version %>/scripts/libs/browsehappy.min.js',
+					dest: 'dist/assets/<%= pkg.version %>/scripts/libs/browsehappy.min.js'
+				}]
+			},
+			dist: {
+				options: {
+					patterns: [{
+						json: {
+							'assets': 'assets/<%= pkg.version %>/'
+						}
+					}]
+				},
+				files: [{
+					expand: true,
+					cwd: 'dist/assets/<%= pkg.version %>/scripts',
+					src: '**/*.js',
+					dest: 'dist/assets/<%= pkg.version %>/scripts',
 					filter: 'isFile'
 				}]
 			}
@@ -180,29 +261,75 @@ module.exports = function (grunt) {
 		},
 
 		watch: {
+			options: {
+				dateFormat: function(ms) {
+					var now = new Date(),
+						time = now.toLocaleTimeString(),
+						day = now.getDate(),
+						month = (now.getMonth() + 1),
+						year = now.getFullYear();
+
+					if (month < 10) {
+						month = '0' + month;
+					}
+
+					grunt.log.subhead(
+						'Completed in ' + ms + 'ms at ' + time + ' ' +
+						day + '.' + month + '.' + year + '.\n' +
+						'Waiting for more changes...'
+					);
+				},
+			},
+			configFiles: {
+				files: [
+					'.csscomb.json',
+					'Gruntfile.js',
+					'package.json'
+				],
+				options: {
+					reload: true
+				},
+				tasks: ['newer:jshint:configFiles']
+			},
 			sprite: {
 				files: ['app/images/sprite/**/*.png'],
 				tasks: ['sprite']
 			},
 			imagemin: {
-				files: ['app/images/**/*.{png,jpg,gif}', '!app/images/sprite/**/*'],
+				files: [
+					'app/images/**/*.{png,jpg,gif}',
+					'!app/images/sprite/**/*'
+				],
 				tasks: ['newer:imagemin']
 			},
 			stylus: {
 				files: ['app/styles/**/*.styl'],
-				tasks: ['stylus', 'autoprefixer', 'cssbeautifier']
+				tasks: ['stylus', 'autoprefixer', 'csscomb']
 			},
 			jade: {
-				files: ['app/templates/**/*.jade', '!app/templates/{helpers,partials}/**/*'],
+				files: ['app/templates/**/*.jade'],
 				tasks: ['newer:jade', 'newer:prettify']
 			},
-			jadePartials: {
-				files: ['app/templates/{helpers,partials}/**/*.jade'],
-				tasks: ['jade', 'prettify']
+			jshint: {
+				files: [
+					'app/scripts/**/*.js',
+					'!app/scripts/libs/**/*',
+					'!app/scripts/browsehappy/**/*',
+					'app/scripts/browsehappy/browsehappy.js'
+				],
+				tasks: ['newer:jshint:all']
 			},
 			scripts: {
-				files: ['app/scripts/**/*.js'],
-				tasks: ['jshint', 'copy:scripts']
+				files: [
+					'app/scripts/**/*.js',
+					'!app/scripts/browsehappy/**/*',
+					'!app/scripts/libs/**/*'
+				],
+				tasks: ['newer:copy:scripts']
+			},
+			browsehappy: {
+				files: ['app/scripts/browsehappy/**/*.js'],
+				tasks: ['newer:uglify', 'newer:replace:browsehappy']
 			},
 			copyFonts: {
 				files: ['app/fonts/**/*'],
@@ -215,9 +342,22 @@ module.exports = function (grunt) {
 			copyFavicon: {
 				files: ['app/favicon.ico'],
 				tasks: ['copy:favicon']
-			},
-			grunt: {
-				files: 'Gruntfile.js'
+			}
+		},
+
+		bump: {
+			options: {
+				files: ['package.json'],
+				updateConfigs: ['pkg'],
+				commit: false,
+				commitMessage: false,
+				commitFiles: false,
+				createTag: false,
+				tagName: false,
+				tagMessage: false,
+				push: false,
+				pushTo: false,
+				gitDescribeOptions: false
 			}
 		}
 
@@ -229,11 +369,13 @@ module.exports = function (grunt) {
 		'imagemin',
 		'stylus',
 		'autoprefixer',
-		'cssbeautifier',
+		'csscomb',
 		'jade',
 		'prettify',
 		'jshint',
-		'copy'
+		'copy',
+		'uglify:browsehappy',
+		'replace:browsehappy'
 	]);
 
 	grunt.registerTask('serve', [

@@ -5,22 +5,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<link href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
-		<link sizes="57x57" href="images/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon">
-		<link sizes="72x72" href="images/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon">
-		<link sizes="76x76" href="images/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon">
-		<link sizes="114x114" href="images/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon">
-		<link sizes="120x120" href="images/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon">
-		<link sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
-		<link sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
+		<link href="assets/0.7.0/images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
+		<link sizes="57x57" href="assets/0.7.0/images/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon">
+		<link sizes="72x72" href="assets/0.7.0/images/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon">
+		<link sizes="76x76" href="assets/0.7.0/images/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon">
+		<link sizes="114x114" href="assets/0.7.0/images/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon">
+		<link sizes="120x120" href="assets/0.7.0/images/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon">
+		<link sizes="144x144" href="assets/0.7.0/images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
+		<link sizes="152x152" href="assets/0.7.0/images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<meta name="application-name" content="CSSSR Project Template">
 		<meta name="msapplication-tooltip" content="A template for a quick start.">
 		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="images/icons/tile.png">
-		<meta name="msapplication-square70x70logo" content="images/icons/tile.png">
-		<meta name="msapplication-square150x150logo" content="images/icons/tile.png">
-		<meta name="msapplication-square310x310logo" content="images/icons/tile.png">
-		<meta name="msapplication-wide310x150logo" content="images/icons/tile-wide.png">
+		<meta name="msapplication-TileImage" content="assets/0.7.0/images/icons/tile.png">
+		<meta name="msapplication-square70x70logo" content="assets/0.7.0/images/icons/tile.png">
+		<meta name="msapplication-square150x150logo" content="assets/0.7.0/images/icons/tile.png">
+		<meta name="msapplication-square310x310logo" content="assets/0.7.0/images/icons/tile.png">
+		<meta name="msapplication-wide310x150logo" content="assets/0.7.0/images/icons/tile-wide.png">
 		<meta name="msapplication-starturl" content="https://csssr.github.io/csssr-project-template/">
 		<meta name="msapplication-tap-highlight" content="no">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +36,7 @@
 		<meta name="reply-to" content="production@csssr.com">
 		<link href="favicon.ico" rel="shortcut icon">
 		<link href="https://fonts.googleapis.com/css?family=Cuprum:400,700&amp;subset=latin,cyrillic" rel="stylesheet">
-		<link href="styles/main.css" rel="stylesheet">
+		<link href="assets/0.7.0/styles/main.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="main">
@@ -46,16 +46,19 @@
 			<h2 class="h2">ЧТО ВКЛЮЧЕНО</h2>
 			<h3 class="h3">Инструменты:</h3>
 			<ul class="list">
+				<li class="list__item"><span class="mark">bump</span> - обновление версии проекта</li>
 				<li class="list__item"><span class="mark">clean</span> - очистка папки от файлов</li>
 				<li class="list__item"><span class="mark">spritesmith</span> - генератор спрайтов и CSS переменных</li>
 				<li class="list__item"><span class="mark">imagemin</span> - сжатие картинок</li>
 				<li class="list__item"><span class="mark">stylus</span> - препроцессор CSS</li>
 				<li class="list__item"><span class="mark">autoprefixer</span> - подстановка префиксов для заданных браузеров</li>
-				<li class="list__item"><span class="mark">cssbeautifier</span> - форматирование CSS</li>
+				<li class="list__item"><span class="mark">csscomb</span> - форматирование CSS</li>
 				<li class="list__item"><span class="mark">jade</span> - препроцессор HTML</li>
 				<li class="list__item"><span class="mark">prettify</span> - форматирование HTML</li>
 				<li class="list__item"><span class="mark">jshint</span> - проверка JavaScript на качество кода с подсказками</li>
 				<li class="list__item"><span class="mark">copy</span> - создание копий файлов</li>
+				<li class="list__item"><span class="mark">uglify</span> - минифицирование и обфускация скриптов</li>
+				<li class="list__item"><span class="mark">replace</span> - автозамена паттернов на заданные значения</li>
 				<li class="list__item"><span class="mark">connect</span> - сервер проекта</li>
 				<li class="list__item"><span class="mark">watch</span> - отслеживание изменений файлов и их компиляция</li>
 			</ul>
@@ -64,27 +67,66 @@
 				<div class="col">
 					<h3 class="h3">Исходники</h3>
 					<ul class="list list_type_files">
-						<li class="list__item list__item_type_folder">fonts</li>
 						<li class="list__item list__item_type_folder">images</li>
 						<li class="list__item list__item_type_folder">scripts
 							<ul class="list list_type_files">
-								<li class="list__item list__item_type_file">jquery.min.js</li>
+								<li class="list__item list__item_type_folder">libs
+									<ul class="list list_type_files">
+										<li class="list__item list__item_type_file">jquery.min.js</li>
+									</ul>
+								</li>
 								<li class="list__item list__item_type_file">main.js</li>
 							</ul>
 						</li>
 						<li class="list__item list__item_type_folder">styles
 							<ul class="list list_type_files">
+								<li class="list__item list__item_type_folder">base
+									<ul class="list list_type_files">
+										<li class="list__item list__item_type_file">common.styl</li>
+										<li class="list__item list__item_type_file">fonts.styl</li>
+										<li class="list__item list__item_type_file">normalize.styl</li>
+									</ul>
+								</li>
+								<li class="list__item list__item_type_folder">components
+									<ul class="list list_type_files">
+										<li class="list__item list__item_type_file">fork.styl</li>
+									</ul>
+								</li>
+								<li class="list__item list__item_type_folder">helpers
+									<ul class="list list_type_files">
+										<li class="list__item list__item_type_file">mixins.styl</li>
+										<li class="list__item list__item_type_file">sprite.styl</li>
+										<li class="list__item list__item_type_file">variables.styl</li>
+									</ul>
+								</li>
+								<li class="list__item list__item_type_folder">pages
+									<ul class="list list_type_files">
+										<li class="list__item list__item_type_file">main.styl</li>
+									</ul>
+								</li>
+								<li class="list__item list__item_type_folder">partials
+									<ul class="list list_type_files">
+										<li class="list__item list__item_type_file">footer.styl</li>
+										<li class="list__item list__item_type_file">header.styl</li>
+									</ul>
+								</li>
 								<li class="list__item list__item_type_file">main.styl</li>
-								<li class="list__item list__item_type_file">normalize.styl</li>
 							</ul>
 						</li>
 						<li class="list__item list__item_type_folder">templates
 							<ul class="list list_type_files">
+								<li class="list__item list__item_type_folder">helpers
+									<ul class="list list_type_files">
+										<li class="list__item list__item_type_file">mixins.jade</li>
+										<li class="list__item list__item_type_file">variables.jade</li>
+									</ul>
+								</li>
 								<li class="list__item list__item_type_folder">partials
 									<ul class="list list_type_files">
 										<li class="list__item list__item_type_file">footer.jade</li>
 										<li class="list__item list__item_type_file">head.jade</li>
 										<li class="list__item list__item_type_file">header.jade</li>
+										<li class="list__item list__item_type_file">layout.jade</li>
 										<li class="list__item list__item_type_file">scripts.jade</li>
 									</ul>
 								</li>
@@ -100,29 +142,40 @@
 				<div class="col">
 					<h3 class="h3">Готовые файлы</h3>
 					<ul class="list list_type_files">
-						<li class="list__item list__item_type_folder">fonts</li>
-						<li class="list__item list__item_type_folder">images</li>
-						<li class="list__item list__item_type_folder">scripts
+						<li class="list__item list__item_type_folder">assets
 							<ul class="list list_type_files">
-								<li class="list__item list__item_type_file">jquery.min.js</li>
-								<li class="list__item list__item_type_file">main.js</li>
-							</ul>
-						</li>
-						<li class="list__item list__item_type_folder">styles
-							<ul class="list list_type_files">
-								<li class="list__item list__item_type_file">main.css</li>
+								<li class="list__item list__item_type_folder">0.7.0
+									<ul class="list list_type_files">
+										<li class="list__item list__item_type_folder">images</li>
+										<li class="list__item list__item_type_folder">scripts
+											<ul class="list list_type_files">
+												<li class="list__item list__item_type_folder">libs
+													<ul class="list list_type_files">
+														<li class="list__item list__item_type_file">jquery.min.js</li>
+													</ul>
+												</li>
+												<li class="list__item list__item_type_file">main.js</li>
+											</ul>
+										</li>
+										<li class="list__item list__item_type_folder">styles
+											<ul class="list list_type_files">
+												<li class="list__item list__item_type_file">main.css</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
 							</ul>
 						</li>
 						<li class="list__item list__item_type_file">index.html</li>
 					</ul>
 				</div>
 			</div>
-			<div class="fork-on-github"><a href="https://github.com/CSSSR/csssr-project-template" class="fork-on-github__link">Fork me on GitHub</a>
+			<div class="fork"><a href="https://github.com/CSSSR/csssr-project-template" class="fork__link">Fork me on GitHub</a>
 			</div>
 			<div class="copyright dark">©GC92, 2014</div>
 		</div>
-		<script src="scripts/libs/detect.min.js"></script>
-		<script src="scripts/libs/jquery-2.1.1.min.js"></script>
-		<script src="scripts/main.js"></script>
+		<script src="assets/0.7.0/scripts/libs/browsehappy.min.js"></script>
+		<script src="assets/0.7.0/scripts/libs/jquery-2.1.1.min.js"></script>
+		<script src="assets/0.7.0/scripts/main.js"></script>
 	</body>
 </html>
