@@ -48,7 +48,7 @@ html {
 body {
 	font-size: 100%;
 	line-height: 1;
-	-webkit-font-smoothing: subpixel-antialiased !important;
+	-webkit-font-smoothing: antialiased !important;
 }
 a {
 	background: transparent;

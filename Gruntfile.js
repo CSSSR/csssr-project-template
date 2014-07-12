@@ -1,7 +1,5 @@
 module.exports = function (grunt) {
 
-	require('load-grunt-tasks')(grunt);
-
 	grunt.initConfig({
 
 		pkg: grunt.file.readJSON('package.json'),
@@ -121,16 +119,6 @@ module.exports = function (grunt) {
 				src: '**/*.html',
 				dest: 'dist'
 			},
-		},
-
-		newer: {
-			options: {
-				override: function(detail, include) {
-					if (detail.task === 'jade') {
-						include(true);
-					}
-				}
-			}
 		},
 
 		jshint: {
@@ -269,12 +257,16 @@ module.exports = function (grunt) {
 						month = (now.getMonth() + 1),
 						year = now.getFullYear();
 
+					if (day < 10) {
+						day = '0' + day;
+					}
+
 					if (month < 10) {
 						month = '0' + month;
 					}
 
 					grunt.log.subhead(
-						'Completed in ' + ms + 'ms at ' + time + ' ' +
+						'Completed in ' + Math.round(ms) + 'ms at ' + time + ' ' +
 						day + '.' + month + '.' + year + '.\n' +
 						'Waiting for more changes...'
 					);
@@ -307,8 +299,12 @@ module.exports = function (grunt) {
 				tasks: ['stylus', 'autoprefixer', 'csscomb']
 			},
 			jade: {
-				files: ['app/templates/**/*.jade'],
+				files: ['app/templates/**/*.jade', '!app/templates/partials/**/*'],
 				tasks: ['newer:jade', 'newer:prettify']
+			},
+			jadePartials: {
+				files: 'app/templates/partials/**/*.jade',
+				tasks: ['jade']
 			},
 			jshint: {
 				files: [
@@ -362,6 +358,8 @@ module.exports = function (grunt) {
 		}
 
 	});
+
+	require('load-grunt-tasks')(grunt);
 
 	grunt.registerTask('build', [
 		'clean:dist',

@@ -1,4 +1,4 @@
-// Заглушка для устаревших браузеров
+// Заглушка для неподдерживаемых браузеров
 (function (window) {
 	var ua = detect.parse(window.navigator.userAgent),
 		browser = ua.browser.family,
@@ -15,7 +15,7 @@
 		browser === 'Opera'   && version   < '@@opera'   || // Opera @@opera+
 		browser === 'Safari'  && version   < '@@safari'     // Safari @@safari+
 	) {
-		// Показываем сообщение об устаревшем браузере
+		// Показываем сообщение о неподдерживаемом браузере
 		document.body.innerHTML = (
 			'<iframe ' +
 				'src="http://csssr.ru/browsehappy/" ' +
