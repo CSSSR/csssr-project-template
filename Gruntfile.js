@@ -232,7 +232,7 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: 'dist/assets/<%= pkg.version %>/scripts',
-					src: '**/*.js',
+					src: ['main.js'],
 					dest: 'dist/assets/<%= pkg.version %>/scripts',
 					filter: 'isFile'
 				}]
@@ -304,7 +304,7 @@ module.exports = function (grunt) {
 			},
 			jadePartials: {
 				files: 'app/templates/partials/**/*.jade',
-				tasks: ['jade']
+				tasks: ['jade', 'newer:prettify']
 			},
 			jshint: {
 				files: [
@@ -321,7 +321,7 @@ module.exports = function (grunt) {
 					'!app/scripts/browsehappy/**/*',
 					'!app/scripts/libs/**/*'
 				],
-				tasks: ['newer:copy:scripts']
+				tasks: ['newer:copy:scripts', 'newer:replace:dist']
 			},
 			browsehappy: {
 				files: ['app/scripts/browsehappy/**/*.js'],
@@ -373,7 +373,7 @@ module.exports = function (grunt) {
 		'jshint',
 		'copy',
 		'uglify:browsehappy',
-		'replace:browsehappy'
+		'replace'
 	]);
 
 	grunt.registerTask('serve', [
