@@ -3,11 +3,11 @@ include ../helpers/mixins
 
 doctype html
 html(lang='ru')
-	include head
+	include ../partials/head
 	body
 		.main
-			include header
+			include ../partials/header
 			block content
-			include footer
+			include ../partials/footer
 
-		include scripts
+		include ../partials/scripts

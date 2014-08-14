@@ -1,7 +1,10 @@
-extends partials/layout
+extends layouts/default
 
 block head
 	- page.title = 'CSSSR Project Template';
+
+block scripts
+	+script(['main.js'])
 
 block content
 	h2.h2 ЧТО ВКЛЮЧЕНО
@@ -14,6 +17,7 @@ block content
 		['imagemin', 'сжатие картинок'],
 		['stylus', 'препроцессор CSS'],
 		['autoprefixer', 'подстановка префиксов для заданных браузеров'],
+		['combine-media-queries', 'комбинирование медиа-запросов в CSS'],
 		['csscomb', 'форматирование CSS'],
 		['jade', 'препроцессор HTML'],
 		['prettify', 'форматирование HTML'],
@@ -95,12 +99,17 @@ block content
 							]
 						},
 						{
+							folder: 'layouts',
+							content: [
+								{ file: 'default.jade' }
+							]
+						},
+						{
 							folder: 'partials',
 							content: [
 								{ file: 'footer.jade' },
 								{ file: 'head.jade' },
 								{ file: 'header.jade' },
-								{ file: 'layout.jade' },
 								{ file: 'scripts.jade' }
 							]
 						},
@@ -118,35 +127,30 @@ block content
 			+tree([
 				{
 					folder: 'assets',
-					content: [
-						{
-							folder: '0.7.0',
-							content: [
-								{ folder: 'images' },
-								{
-									folder: 'scripts',
-									content: [
-										{
-											folder: 'libs',
-											content: [
-												{ file: 'jquery.min.js' }
-											]
-										},
-										{ file: 'main.js' }
-									]
-								},
-								{
-									folder: 'styles',
-									content: [
-										{ file: 'main.css' }
-									]
-								}
-							]
-						}
-					]
+					content: [{
+						folder: page.version,
+						content: [
+							{ folder: 'images' },
+							{
+								folder: 'scripts',
+								content: [
+									{
+										folder: 'libs',
+										content: [
+											{ file: 'jquery.min.js' }
+										]
+									},
+									{ file: 'main.js' }
+								]
+							},
+							{
+								folder: 'styles',
+								content: [
+									{ file: 'main.css' }
+								]
+							}
+						]
+					}]
 				},
 				{ file: 'index.html' }
 			])
-
-block scripts
-	+script(['main.js'])

@@ -5,22 +5,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<link href="assets/0.7.2/images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
-		<link sizes="57x57" href="assets/0.7.2/images/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon">
-		<link sizes="72x72" href="assets/0.7.2/images/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon">
-		<link sizes="76x76" href="assets/0.7.2/images/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon">
-		<link sizes="114x114" href="assets/0.7.2/images/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon">
-		<link sizes="120x120" href="assets/0.7.2/images/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon">
-		<link sizes="144x144" href="assets/0.7.2/images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
-		<link sizes="152x152" href="assets/0.7.2/images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
+		<link href="assets/0.7.3/images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
+		<link sizes="57x57" href="assets/0.7.3/images/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon">
+		<link sizes="72x72" href="assets/0.7.3/images/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon">
+		<link sizes="76x76" href="assets/0.7.3/images/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon">
+		<link sizes="114x114" href="assets/0.7.3/images/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon">
+		<link sizes="120x120" href="assets/0.7.3/images/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon">
+		<link sizes="144x144" href="assets/0.7.3/images/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon">
+		<link sizes="152x152" href="assets/0.7.3/images/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
 		<meta name="application-name" content="CSSSR Project Template">
 		<meta name="msapplication-tooltip" content="A template for a quick start.">
 		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="assets/0.7.2/images/icons/tile.png">
-		<meta name="msapplication-square70x70logo" content="assets/0.7.2/images/icons/tile.png">
-		<meta name="msapplication-square150x150logo" content="assets/0.7.2/images/icons/tile.png">
-		<meta name="msapplication-square310x310logo" content="assets/0.7.2/images/icons/tile.png">
-		<meta name="msapplication-wide310x150logo" content="assets/0.7.2/images/icons/tile-wide.png">
+		<meta name="msapplication-TileImage" content="assets/0.7.3/images/icons/tile.png">
+		<meta name="msapplication-square70x70logo" content="assets/0.7.3/images/icons/tile.png">
+		<meta name="msapplication-square150x150logo" content="assets/0.7.3/images/icons/tile.png">
+		<meta name="msapplication-square310x310logo" content="assets/0.7.3/images/icons/tile.png">
+		<meta name="msapplication-wide310x150logo" content="assets/0.7.3/images/icons/tile-wide.png">
 		<meta name="msapplication-starturl" content="https://csssr.github.io/csssr-project-template/">
 		<meta name="msapplication-tap-highlight" content="no">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +36,7 @@
 		<meta name="reply-to" content="production@csssr.com">
 		<link href="favicon.ico" rel="shortcut icon">
 		<link href="https://fonts.googleapis.com/css?family=Cuprum:400,700&amp;subset=latin,cyrillic" rel="stylesheet">
-		<link href="assets/0.7.2/styles/main.css" rel="stylesheet">
+		<link href="assets/0.7.3/styles/main.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="main">
@@ -52,6 +52,7 @@
 				<li class="list__item"><span class="mark">imagemin</span> - сжатие картинок</li>
 				<li class="list__item"><span class="mark">stylus</span> - препроцессор CSS</li>
 				<li class="list__item"><span class="mark">autoprefixer</span> - подстановка префиксов для заданных браузеров</li>
+				<li class="list__item"><span class="mark">combine-media-queries</span> - комбинирование медиа-запросов в CSS</li>
 				<li class="list__item"><span class="mark">csscomb</span> - форматирование CSS</li>
 				<li class="list__item"><span class="mark">jade</span> - препроцессор HTML</li>
 				<li class="list__item"><span class="mark">prettify</span> - форматирование HTML</li>
@@ -121,12 +122,16 @@
 										<li class="list__item list__item_type_file">variables.jade</li>
 									</ul>
 								</li>
+								<li class="list__item list__item_type_folder">layouts
+									<ul class="list list_type_files">
+										<li class="list__item list__item_type_file">default.jade</li>
+									</ul>
+								</li>
 								<li class="list__item list__item_type_folder">partials
 									<ul class="list list_type_files">
 										<li class="list__item list__item_type_file">footer.jade</li>
 										<li class="list__item list__item_type_file">head.jade</li>
 										<li class="list__item list__item_type_file">header.jade</li>
-										<li class="list__item list__item_type_file">layout.jade</li>
 										<li class="list__item list__item_type_file">scripts.jade</li>
 									</ul>
 								</li>
@@ -144,7 +149,7 @@
 					<ul class="list list_type_files">
 						<li class="list__item list__item_type_folder">assets
 							<ul class="list list_type_files">
-								<li class="list__item list__item_type_folder">0.7.0
+								<li class="list__item list__item_type_folder">0.7.3
 									<ul class="list list_type_files">
 										<li class="list__item list__item_type_folder">images</li>
 										<li class="list__item list__item_type_folder">scripts
@@ -174,8 +179,8 @@
 			</div>
 			<div class="copyright dark">©GC92, 2014</div>
 		</div>
-		<script src="assets/0.7.2/scripts/libs/browsehappy.min.js"></script>
-		<script src="assets/0.7.2/scripts/libs/jquery-2.1.1.min.js"></script>
-		<script src="assets/0.7.2/scripts/main.js"></script>
+		<script src="assets/0.7.3/scripts/libs/browsehappy.min.js"></script>
+		<script src="assets/0.7.3/scripts/libs/jquery-2.1.1.min.js"></script>
+		<script src="assets/0.7.3/scripts/main.js"></script>
 	</body>
 </html>

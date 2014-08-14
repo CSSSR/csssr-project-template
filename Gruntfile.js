@@ -9,7 +9,7 @@ module.exports = function (grunt) {
 		},
 
 		sprite: {
-			all: {
+			dist: {
 				src: 'app/images/sprite/**/*.png',
 				destImg: 'app/images/sprite.png',
 				imgPath: '../images/sprite.png',
@@ -17,6 +17,7 @@ module.exports = function (grunt) {
 				cssFormat: 'stylus',
 				algorithm: 'binary-tree',
 				padding: 8,
+				engine: 'pngsmith',
 				imgOpts: {
 					format: 'png'
 				}
@@ -61,8 +62,18 @@ module.exports = function (grunt) {
 					'Safari >= <%= pkg.browsers.safari %>'
 				]
 			},
-			all: {
+			dist: {
 				src: ['dist/assets/<%= pkg.version %>/styles/**/*.css']
+			}
+		},
+
+		cmq: {
+			dist: {
+				files: {
+					'dist/assets/<%= pkg.version %>/styles/main.css': [
+						'dist/assets/<%= pkg.version %>/styles/main.css'
+					]
+				}
 			}
 		},
 
@@ -90,13 +101,14 @@ module.exports = function (grunt) {
 							description: '<%= pkg.description %>',
 							keywords: '<%= pkg.keywords.join(\', \') %>',
 							replyTo: '<%= pkg.bugs.email %>',
-							title: '<%= pkg.title %>'
+							title: '<%= pkg.title %>',
+							version: '<%= pkg.version %>',
 						}
 					}
 				},
 				files: [{
 					cwd: 'app/templates',
-					src: ['**/*.jade', '!{helpers,partials}/**/*'],
+					src: ['**/*.jade', '!{helpers,layouts,partials}/**/*'],
 					dest: 'dist',
 					expand: true,
 					ext: '.html'
@@ -159,7 +171,7 @@ module.exports = function (grunt) {
 				files: [{
 					expand: true,
 					cwd: 'app/scripts',
-					src: ['**/*.js', '!browsehappy'],
+					src: ['**/*.js', '!browsehappy/**/*'],
 					dest: 'dist/assets/<%= pkg.version %>/scripts',
 					filter: 'isFile'
 				}]
@@ -206,13 +218,13 @@ module.exports = function (grunt) {
 				options: {
 					patterns: [{
 						json: {
-							'android': '<%= pkg.browsers.android %>',
-							'chrome': '<%= pkg.browsers.chrome %>',
-							'firefox': '<%= pkg.browsers.firefox %>',
-							'ie': '<%= pkg.browsers.ie %>',
-							'ios': '<%= pkg.browsers.ios %>',
-							'opera': '<%= pkg.browsers.opera %>',
-							'safari': '<%= pkg.browsers.safari %>'
+							android: '<%= pkg.browsers.android %>',
+							chrome: '<%= pkg.browsers.chrome %>',
+							firefox: '<%= pkg.browsers.firefox %>',
+							ie: '<%= pkg.browsers.ie %>',
+							ios: '<%= pkg.browsers.ios %>',
+							opera: '<%= pkg.browsers.opera %>',
+							safari: '<%= pkg.browsers.safari %>'
 						}
 					}]
 				},
@@ -225,7 +237,7 @@ module.exports = function (grunt) {
 				options: {
 					patterns: [{
 						json: {
-							'assets': 'assets/<%= pkg.version %>/'
+							assets: 'assets/<%= pkg.version %>/'
 						}
 					}]
 				},
@@ -242,8 +254,9 @@ module.exports = function (grunt) {
 		connect: {
 			dist: {
 				options: {
-					port: 3000,
-					base: 'dist'
+					base: 'dist',
+					//livereload: true,
+					port: 3000
 				}
 			}
 		},
@@ -254,7 +267,7 @@ module.exports = function (grunt) {
 					var now = new Date(),
 						time = now.toLocaleTimeString(),
 						day = now.getDate(),
-						month = (now.getMonth() + 1),
+						month = now.getMonth() + 1,
 						year = now.getFullYear();
 
 					if (day < 10) {
@@ -273,54 +286,44 @@ module.exports = function (grunt) {
 				},
 			},
 			configFiles: {
-				files: [
-					'.csscomb.json',
-					'Gruntfile.js',
-					'package.json'
-				],
+				files: ['.csscomb.json', 'Gruntfile.js', 'package.json'],
 				options: {
 					reload: true
 				},
 				tasks: ['newer:jshint:configFiles']
+			},
+			livereload: {
+				options: {
+					livereload: true
+				},
+				files: ['dist/**/*']
 			},
 			sprite: {
 				files: ['app/images/sprite/**/*.png'],
 				tasks: ['sprite']
 			},
 			imagemin: {
-				files: [
-					'app/images/**/*.{png,jpg,gif}',
-					'!app/images/sprite/**/*'
-				],
+				files: ['app/images/**/*.{png,jpg,gif}', '!app/images/sprite/**/*'],
 				tasks: ['newer:imagemin']
 			},
 			stylus: {
 				files: ['app/styles/**/*.styl'],
-				tasks: ['stylus', 'autoprefixer', 'csscomb']
+				tasks: ['stylus', 'autoprefixer', 'cmq', 'csscomb']
 			},
 			jade: {
-				files: ['app/templates/**/*.jade', '!app/templates/partials/**/*'],
+				files: ['app/templates/**/*.jade', '!app/templates/{helpers,layouts,partials}/**/*'],
 				tasks: ['newer:jade', 'newer:prettify']
 			},
 			jadePartials: {
-				files: 'app/templates/partials/**/*.jade',
+				files: 'app/templates/{helpers,layouts,partials}/**/*.jade',
 				tasks: ['jade', 'newer:prettify']
 			},
 			jshint: {
-				files: [
-					'app/scripts/**/*.js',
-					'!app/scripts/libs/**/*',
-					'!app/scripts/browsehappy/**/*',
-					'app/scripts/browsehappy/browsehappy.js'
-				],
+				files: ['app/scripts/**/*.js', '!app/scripts/libs/**/*', '!app/scripts/browsehappy/**/*', 'app/scripts/browsehappy/browsehappy.js'],
 				tasks: ['newer:jshint:all']
 			},
 			scripts: {
-				files: [
-					'app/scripts/**/*.js',
-					'!app/scripts/browsehappy/**/*',
-					'!app/scripts/libs/**/*'
-				],
+				files: ['app/scripts/**/*.js', '!app/scripts/browsehappy/**/*', '!app/scripts/libs/**/*'],
 				tasks: ['newer:copy:scripts', 'newer:replace:dist']
 			},
 			browsehappy: {
@@ -367,12 +370,13 @@ module.exports = function (grunt) {
 		'imagemin',
 		'stylus',
 		'autoprefixer',
+		'cmq',
 		'csscomb',
 		'jade',
 		'prettify',
 		'jshint',
 		'copy',
-		'uglify:browsehappy',
+		'uglify',
 		'replace'
 	]);
 
@@ -382,7 +386,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('default', [
 		'build',
-		'connect:dist',
+		'connect',
 		'watch'
 	]);
 
