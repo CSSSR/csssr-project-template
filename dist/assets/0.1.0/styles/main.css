@@ -47,6 +47,10 @@ template {
 
 html {
 	font-family: sans-serif;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 	    -ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -167,6 +171,14 @@ select,
 textarea {
 	border-radius: 0;
 	box-shadow: none;
+}
+
+input,
+textarea {
+	-webkit-user-select: text;
+	   -moz-user-select: text;
+	    -ms-user-select: text;
+	        user-select: text;
 }
 
 [placeholder]:focus::-webkit-input-placeholder {
@@ -479,4 +491,3 @@ body {
 		background-position: 0 0;
 	}
 }
-

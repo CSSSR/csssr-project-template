@@ -1,6 +1,6 @@
 // Заглушка для неподдерживаемых браузеров
-(function (window) {
-	var ua = detect.parse(window.navigator.userAgent),
+(function (userAgent) {
+	var ua = detect.parse(userAgent),
 		browser = ua.browser.family,
 		os = ua.os.family,
 		version = ua.browser.major,
@@ -26,4 +26,4 @@
 
 		return false;
 	}
-})(window);
+})(window.navigator.userAgent);
