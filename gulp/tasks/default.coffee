@@ -12,6 +12,7 @@ gulp.task 'all', ['del'], ->
 			'jade'
 			'copy'
 			'jscs'
+			'jshint'
 		)
 
 gulp.task 'default', ['all', 'livereload']
