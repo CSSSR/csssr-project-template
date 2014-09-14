@@ -1,7 +1,7 @@
 //- Подключение скриптов
 mixin script(scripts)
 	each src in scripts
-		- src = /^(https?:)?\/\//.test(src) ? src : page.assets + 'scripts/' + src;
+		- src = (/^(https?:)?\/\//.test(src) ? src : 'assets/scripts/' + src) + '?' + timestamp;
 		script(src=src)
 
 mixin tools(list)
