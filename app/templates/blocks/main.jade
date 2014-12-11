@@ -1,6 +1,7 @@
 h2.h2 ЧТО ВКЛЮЧЕНО
 
 h3.h3 Инструменты:
+//- TODO: Update tools from Gulp
 +tools([
 	['bump', 'обновление версии проекта'],
 	['clean', 'очистка папки от файлов'],
@@ -23,6 +24,7 @@ h2.h2 СТРУКТУРА ФАЙЛОВ
 .container
 	.col
 		h3.h3 Исходники
+		//- TODO: Update app tree
 		+tree([
 			{
 				folder: 'images'
@@ -32,10 +34,7 @@ h2.h2 СТРУКТУРА ФАЙЛОВ
 				folder: 'scripts',
 				content: [
 					{
-						folder: 'libs',
-						content: [
-							{ file: 'jquery.min.js' },
-						]
+						folder: 'libs'
 					},
 					{ file: 'common.js' },
 					{ file: 'debug.js' }
@@ -127,6 +126,7 @@ h2.h2 СТРУКТУРА ФАЙЛОВ
 
 	.col
 		h3.h3 Готовые файлы
+		//- TODO: Update dist tree
 		+tree([
 			{
 				folder: 'assets',

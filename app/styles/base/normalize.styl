@@ -65,7 +65,8 @@ html
 	-ms-text-size-adjust 100% // 2
 	-webkit-text-size-adjust 100% // 2
 	-webkit-tap-highlight-color rgba(0, 0, 0, 0) // 3
-	user-select none
+	-webkit-focus-ring-color rgba(255, 255, 255, 0)
+	user-select none // 4
 
 // Set 100% line-height
 body
@@ -205,10 +206,12 @@ textarea
 	border-radius 0 // 1
 	box-shadow none // 2
 
-// Allow user select.
+// 1. Disable resize.
+// 2. Allow user select.
 input
 textarea
-	user-select text
+	resize none      // 1
+	user-select text // 2
 
 // Hide placeholder on focus.
 [placeholder]:focus::placeholder

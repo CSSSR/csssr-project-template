@@ -1,6 +1,6 @@
 gulp = require 'gulp'
 
-gulp.task 'watch', ['webserver'], ->
+gulp.task 'watch', ->
 	gulp.watch 'app/images/sprite/**/*.png', ['spritesmith']
 
 	gulp.watch [
@@ -12,7 +12,7 @@ gulp.task 'watch', ['webserver'], ->
 	gulp.watch 'app/styles/**/*.styl', ['stylus']
 
 	gulp.watch 'app/templates/pages/*.jade', ->
-		global.jadeChanged = true
+		global.jadePageChanged = true
 		gulp.start 'jade'
 
 	gulp.watch [
@@ -20,13 +20,13 @@ gulp.task 'watch', ['webserver'], ->
 			'!app/templates/pages/**/*'
 		],
 		->
-			global.jadeChanged = false
+			global.jadePageChanged = false
 			gulp.start 'jade'
 
 	gulp.watch 'app/resources/**/*', ['copy:resources']
 
 	gulp.watch 'app/scripts/**/*.js', [
-			'copy:scripts'
+			'scripts'
 			'jscs'
 			'jshint'
 		]

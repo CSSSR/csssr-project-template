@@ -6,13 +6,17 @@ gulp.task 'imagesAndStyles', ['spritesmith'], ->
 			'stylus'
 		)
 
-gulp.task 'all', ['del'], ->
+gulp.task 'build', ->
 	return gulp.start(
 			'imagesAndStyles'
 			'jade'
+			'scripts'
 			'copy'
-			'jscs'
-			'jshint'
 		)
 
-gulp.task 'default', ['all', 'livereload']
+gulp.task 'default', [
+		'build'
+		'jscs'
+		'jshint'
+		'browserSync'
+	]

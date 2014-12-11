@@ -1,7 +1,8 @@
-gulp     = require 'gulp'
-changed  = require 'gulp-changed'
-imagemin = require 'gulp-imagemin'
-paths    = require '../paths'
+gulp         = require 'gulp'
+changed      = require 'gulp-changed'
+imagemin     = require 'gulp-imagemin'
+handleErrors = require '../util/handleErrors'
+paths        = require '../paths'
 
 gulp.task 'imagemin', ->
 	return gulp.src [
@@ -15,3 +16,4 @@ gulp.task 'imagemin', ->
 			interlaced: true
 			progressive: true
 		.pipe gulp.dest paths.images
+		.on 'error', handleErrors

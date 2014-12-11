@@ -1,10 +1,11 @@
-gulp     = require 'gulp'
-gulpif   = require 'gulp-if'
-changed  = require 'gulp-changed'
-jade     = require 'gulp-jade'
-prettify = require 'gulp-prettify'
-pkg      = require '../../package.json'
-paths    = require '../paths'
+gulp         = require 'gulp'
+gulpif       = require 'gulp-if'
+changed      = require 'gulp-changed'
+jade         = require 'gulp-jade'
+prettify     = require 'gulp-prettify'
+pkg          = require '../../package.json'
+handleErrors = require '../util/handleErrors'
+paths        = require '../paths'
 
 gulp.task 'jade', ->
 	return gulp.src 'app/templates/pages/**/*.jade'
@@ -15,7 +16,8 @@ gulp.task 'jade', ->
 					description: pkg.description
 					keywords: pkg.keywords.join ', '
 					title: pkg.title
-		.pipe gulpif global.jadeChanged, changed paths.dist
+		.on 'error', handleErrors
+		.pipe gulpif global.jadePageChanged, changed paths.dist
 		.pipe prettify
 			brace_style: 'expand'
 			indent_size: 1

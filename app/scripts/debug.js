@@ -1,20 +1,21 @@
 (function (window) {
 	'use strict';
 
-	// Установка иконки, заголовка и вывод сообщения в консоли
-	// в режиме отладки на локальном сервере
-	if (/localhost|127\.0\.0\.1/.test(window.location.hostname)) {
-		var document = window.document,
+	// Setting favicon, title and message on the console
+	// in debug mode on the local server
+	if (/localhost|127\.0\.0\.1|192\.168\.1\.\d{1,3}/.test(window.location.hostname)) {
+		var
+			document = window.document,
 			favicon = document.createElement('link'),
-			title = document.getElementById('title'),
-			titleText = 'DEBUG — ' + title.innerText;
+			titleText = 'DEBUG — ' + document.title;
 
 		favicon.rel = 'icon';
 		favicon.href = '/debug.ico';
-		document.head.appendChild(favicon);
 
-		title.innerText = titleText;
+		document.getElementsByTagName('head')[0].appendChild(favicon);
 
-		console.info(titleText);
+		document.title = titleText;
+
+		console && console.info && console.info(titleText);
 	}
 })(window);
