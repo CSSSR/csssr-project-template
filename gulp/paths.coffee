@@ -5,4 +5,5 @@ module.exports =
 	assets: 'dist/assets/'
 	images: 'dist/assets/images'
 	scripts: 'dist/assets/scripts'
+	scriptsLibs: 'dist/assets/scripts/libs'
 	styles: 'dist/assets/styles'
