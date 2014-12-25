@@ -26,7 +26,8 @@ gulp.task 'watch', ->
 	gulp.watch 'app/resources/**/*', ['copy:resources']
 
 	gulp.watch 'app/scripts/**/*.js', [
-			'scripts'
-			'jscs'
-			'jshint'
-		]
+		'scripts'
+		'scriptsLibs'
+		'jscs'
+		'jshint'
+	]
