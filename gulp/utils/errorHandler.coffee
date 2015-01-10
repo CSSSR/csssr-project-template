@@ -1,5 +1,4 @@
-gutil        = require 'gulp-util'
-prettyHrtime = require 'pretty-hrtime'
+gutil = require 'gulp-util'
 
 module.exports = (error) ->
 	gutil.log [

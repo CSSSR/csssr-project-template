@@ -1,9 +1,10 @@
 gulp         = require 'gulp'
+plumber      = require 'gulp-plumber'
 gutil        = require 'gulp-util'
 gulpif       = require 'gulp-if'
 concat       = require 'gulp-concat'
 uglify       = require 'gulp-uglify'
-handleErrors = require '../util/handleErrors'
+errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
 
 gulp.task 'scripts', ->
@@ -13,8 +14,7 @@ gulp.task 'scripts', ->
 			'common.js'
 		],
 			cwd: 'app/scripts'
+		.pipe plumber errorHandler: errorHandler
 		.pipe concat 'common.min.js'
-		.on 'error', handleErrors
 		.pipe gulpif !gutil.env.debug, uglify()
-		.on 'error', handleErrors
 		.pipe gulp.dest paths.scripts

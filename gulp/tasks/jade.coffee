@@ -1,14 +1,16 @@
 gulp         = require 'gulp'
-gulpif       = require 'gulp-if'
-changed      = require 'gulp-changed'
+plumber      = require 'gulp-plumber'
 jade         = require 'gulp-jade'
+affected     = require 'gulp-jade-find-affected'
 prettify     = require 'gulp-prettify'
 pkg          = require '../../package.json'
-handleErrors = require '../util/handleErrors'
+errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
 
 gulp.task 'jade', ->
 	return gulp.src 'app/templates/pages/**/*.jade'
+		.pipe plumber errorHandler: errorHandler
+		.pipe affected()
 		.pipe jade
 			data:
 				page:
@@ -16,8 +18,6 @@ gulp.task 'jade', ->
 					description: pkg.description
 					keywords: pkg.keywords.join ', '
 					title: pkg.title
-		.on 'error', handleErrors
-		.pipe gulpif global.jadePageChanged, changed paths.dist
 		.pipe prettify
 			brace_style: 'expand'
 			indent_size: 1

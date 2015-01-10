@@ -1,13 +1,13 @@
 .container
-	@media screen and (min-width: 541px)
+	+from-width(541px)
 		display table
 
 .col
-	@media screen and (max-width: 540px)
+	+to-width(540px)
 		display table
 		margin 0 auto 20px
 
-	@media screen and (min-width: 541px)
+	+from-width(541px)
 		display table-cell
 		vertical-align top
 		width 1%
@@ -15,10 +15,10 @@
 .arrow
 	margin 0 auto
 
-	@media screen and (max-width: 540px)
+	+to-width(540px)
 		sprite $arrow-270
 
-	@media screen and (min-width: 541px)
+	+from-width(541px)
 		sprite $arrow
 
 	&-caption
@@ -26,7 +26,7 @@
 		font-size 14px
 		text-align center
 
-		@media screen and (min-width: 541px)
+		+from-width(541px)
 			margin-top 84px
 
 .list

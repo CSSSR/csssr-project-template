@@ -1,10 +1,12 @@
 gulp         = require 'gulp'
+plumber      = require 'gulp-plumber'
 spritesmith  = require 'gulp.spritesmith'
-handleErrors = require '../util/handleErrors'
+errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
 
 gulp.task 'spritesmith', ->
 	spriteData = gulp.src 'app/images/sprite/**/*.png', read: false
+		.pipe plumber errorHandler: errorHandler
 		.pipe spritesmith
 			imgName: 'sprite.png'
 			cssName: 'sprite.styl'
@@ -15,7 +17,6 @@ gulp.task 'spritesmith', ->
 			engine: 'pngsmith'
 			imgOpts:
 				format: 'png'
-		.on 'error', handleErrors
 
 	spriteData.img.pipe gulp.dest paths.appImages
 	spriteData.css.pipe gulp.dest paths.appStylesHelpers

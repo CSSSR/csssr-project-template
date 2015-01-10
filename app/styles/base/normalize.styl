@@ -7,12 +7,6 @@
 	padding 0
 	font inherit
 	box-sizing border-box
-	will-change all
-
-	&:before
-	&:after
-		box-sizing border-box
-		will-change all
 
 // HTML5 display definitions
 // ==========================================================================
@@ -38,7 +32,7 @@ audio
 canvas
 progress
 video
-	display inline-block // 1
+	display inline-block    // 1
 	vertical-align baseline // 2
 
 // Prevent modern browsers from displaying `audio` without controls.
@@ -60,13 +54,15 @@ template
 // 2. Prevent iOS text size adjust after orientation change, without disabling user zoom.
 // 3. Remove highlite on mobile devices.
 // 4. Prevent user select.
+// 5. Set default cursor.
 html
-	font-family sans-serif // 1
-	-ms-text-size-adjust 100% // 2
-	-webkit-text-size-adjust 100% // 2
-	-webkit-tap-highlight-color rgba(0, 0, 0, 0) // 3
-	-webkit-focus-ring-color rgba(255, 255, 255, 0)
-	user-select none // 4
+	font-family sans-serif                          // 1
+	-ms-text-size-adjust 100%                       // 2
+	-webkit-text-size-adjust 100%                   // 2
+	-webkit-tap-highlight-color rgba(0, 0, 0, 0)    // 3
+	-webkit-focus-ring-color rgba(255, 255, 255, 0) // 3
+	user-select none                                // 4
+	cursor default                                  // 5
 
 // Set 100% line-height
 body
@@ -145,11 +141,11 @@ button
 // 2. Correct inability to style clickable `input` types in iOS.
 // 3. Improve usability and consistency of cursor style between image-type `input` and others.
 button
-html input[type="button"] // 1
+html input[type="button"]     // 1
 input[type="reset"]
 input[type="submit"]
 	-webkit-appearance button // 2
-	cursor pointer // 3
+	cursor pointer            // 3
 
 // Re-set default cursor for disabled elements.
 button[disabled]
@@ -188,7 +184,7 @@ input::-moz-focus-inner
 // 1. Remove default vertical scrollbar in IE 8/9.
 // 2. Improve readability and alignment in all browsers.
 textarea
-	overflow auto // 1
+	overflow auto      // 1
 	vertical-align top // 2
 
 // Reset unusual Firefox-on-Android default style.

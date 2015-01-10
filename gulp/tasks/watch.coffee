@@ -1,4 +1,5 @@
-gulp = require 'gulp'
+gulp   = require 'gulp'
+reload = require('browser-sync').reload
 
 gulp.task 'watch', ->
 	gulp.watch 'app/images/sprite/**/*.png', ['spritesmith']
@@ -9,24 +10,15 @@ gulp.task 'watch', ->
 		],
 		['imagemin']
 
-	gulp.watch 'app/styles/**/*.styl', ['stylus']
+	gulp.watch 'app/styles/**/*.styl', ['stylus', -> reload('assets/styles/common.css')]
 
-	gulp.watch 'app/templates/pages/*.jade', ->
-		global.jadePageChanged = true
-		gulp.start 'jade'
+	gulp.watch 'app/templates/**/*.jade', -> runSequence 'jade', reload
 
-	gulp.watch [
-			'app/templates/**/*.jade'
-			'!app/templates/pages/**/*'
-		],
-		->
-			global.jadePageChanged = false
-			gulp.start 'jade'
-
-	gulp.watch 'app/resources/**/*', ['copy:resources']
+	gulp.watch 'app/resources/**/*', ['copy:resources', reload]
 
 	gulp.watch 'app/scripts/**/*.js', [
 			'scripts'
 			'jscs'
 			'jshint'
+			reload
 		]

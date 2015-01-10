@@ -1,22 +1,25 @@
-gulp  = require 'gulp'
-
-gulp.task 'imagesAndStyles', ['spritesmith'], ->
-	return gulp.start(
-			'imagemin'
-			'stylus'
-		)
+runSequence = require 'run-sequence'
+gulp        = require 'gulp'
 
 gulp.task 'build', ->
-	return gulp.start(
-			'imagesAndStyles'
-			'jade'
-			'scripts'
-			'copy'
-		)
+	return runSequence(
+		'spritesmith'
+		'imagemin:sprite'
+		'stylus'
+		'jade'
+		'scripts'
+		'copy'
+	)
 
-gulp.task 'default', [
-		'build'
+gulp.task 'default', ->
+	return runSequence(
+		'spritesmith'
+		'imagemin'
+		'stylus'
+		'jade'
+		'scripts'
 		'jscs'
 		'jshint'
 		'browserSync'
-	]
+		'watch'
+	)

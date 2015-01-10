@@ -2,7 +2,7 @@
 	&::selection
 		background-color transparent
 
-	@media screen and (min-width: 541px)
+	+from-width(541px)
 		position absolute
 		top 0
 		right 0
@@ -20,7 +20,7 @@
 		text-decoration none
 		transition background .25s ease-out, color .25s ease-out
 
-		@media screen and (max-width: 540px)
+		+to-width(540px)
 			margin-top 40px
 			color #e74c3c
 			border-radius 4px
@@ -28,7 +28,7 @@
 			&:active
 				transform scale(.975)
 
-		@media screen and (min-width: 541px)
+		+from-width(541px)
 			position absolute
 			top 50px
 			right -54px

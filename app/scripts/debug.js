@@ -3,7 +3,7 @@
 
 	// Setting favicon, title and message on the console
 	// in debug mode on the local server
-	if (/localhost|127\.0\.0\.1|192\.168\.1\.\d{1,3}/.test(window.location.hostname)) {
+	if (/localhost|127\.0\.0\.1|192\.168\.\d{1,3}\.\d{1,3}/.test(window.location.hostname)) {
 		var
 			document = window.document,
 			favicon = document.createElement('link'),
