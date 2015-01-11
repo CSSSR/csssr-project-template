@@ -1,5 +1,6 @@
-gulp   = require 'gulp'
-reload = require('browser-sync').reload
+gulp        = require 'gulp'
+runSequence = require 'run-sequence'
+reload      = require('browser-sync').reload
 
 gulp.task 'watch', ->
 	gulp.watch 'app/images/sprite/**/*.png', ['spritesmith']

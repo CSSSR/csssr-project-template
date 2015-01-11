@@ -12,7 +12,7 @@ npm i -g gulp bower
 * Склонируйте себе репозиторий и перейдите в папку проекта:
 
 ```
-git clone git@github.com:CSSSR/csssr-project-template.git && cd csssr-project-template
+git clone git@github.com:CSSSR/csssr-project-template.git new-project && cd new-project
 ```
 
 * Установите зависимости, запустив `hook.sh` (находится в папке проекта) или вручную:
@@ -27,9 +27,9 @@ npm i && bower i
 gulp
 ```
 
-* Откройте в браузере http://localhost:3001/
+* Откройте в браузере [`http://localhost:3001/`](http://localhost:3001/).
 
-## Команд для запуска с Gulp.js
+## Команды для запуска с Gulp.js
 
 * Для открытия на другом порте укажите параметр `--port=9000`:
 
@@ -64,7 +64,7 @@ gulp imagemin
 │   │   └── sprite.png                 # Генерируемый спрайт, по умолчанию спрайта нет
 │   ├── resources/                     # Статические файлы для копирования в dist/
 │   ├── scripts/                       # Папка со скриптами
-│   │   ├── libs/                      # Папка с библиотеками, создаётся и устанавливается из bower
+│   │   ├── libs/                      # Папка с библиотеками, устанавливается из bower
 │   │   |── debug.js                   # Идентификация отладки на локальном сервере
 │   │   └── common.js                  # Главный скрипт
 │   ├── styles/                        # Папка со стилями Stylus
@@ -86,7 +86,9 @@ gulp imagemin
 │   └── templates/                     # Папка с шаблонами Jade
 │       ├── blocks/                    # Папка с подключаемыми блоками
 │       ├── helpers/                   # Папка с помощниками
-│       │   ├── mixins.jade            # Миксины
+│       │   ├── mixins/                # Папка с премисями
+│       │   │   └── scripts.jade       # Премиси для скриптов
+│       │   ├── mixins.jade            # Подключенные премиси
 │       │   └── variables.jade         # Переменные
 │       ├── layouts/                   # Папка с шаблонами раскладки
 │       │   └── default.jade           # Шаблон раскладки по умолчанию
@@ -96,7 +98,7 @@ gulp imagemin
 │           ├── footer.jade            # Шаблон подвала
 │           ├── head.jade              # Шаблон с ресурсами, SEO и мета-тегами
 │           ├── header.jade            # Шаблон шапки
-│           └── scripts.jade           # Шаблон со скриптами
+│           └── scripts.jade           # Шаблон для вывода скриптов
 ├── dist/                              # Сборка
 │   ├── assets/                        # Подключаемые ресурсы
 │   │   ├── images/                    # Папка изображений
