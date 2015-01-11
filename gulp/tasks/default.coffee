@@ -4,7 +4,7 @@ gulp        = require 'gulp'
 gulp.task 'build', ->
 	return runSequence(
 		'spritesmith'
-		'imagemin:sprite'
+		'imagemin'
 		'stylus'
 		'jade'
 		'scripts'
