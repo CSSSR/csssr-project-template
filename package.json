@@ -1,6 +1,6 @@
 {
   "name": "csssr-project-template",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "title": "CSSSR Project Template",
   "description": "A template for a quick start.",
   "keywords": [
@@ -54,7 +54,6 @@
     "gulp-util": "^3.0.1",
     "gulp.spritesmith": "^1.4.0",
     "jshint-stylish": "^0.4.0",
-    "pretty-hrtime": "^0.2.2",
     "require-dir": "^0.1.0",
     "run-sequence": "^1.0.2",
     "rupture": "^0.6.1"

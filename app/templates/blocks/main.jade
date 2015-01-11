@@ -1,22 +1,24 @@
 h2.h2 ЧТО ВКЛЮЧЕНО
 
 h3.h3 Инструменты:
-//- TODO: Update tools from Gulp
 +tools([
-	['bump', 'обновление версии проекта'],
-	['clean', 'очистка папки от файлов'],
-	['spritesmith', 'генератор спрайтов и CSS переменных'],
-	['imagemin', 'сжатие картинок'],
-	['stylus', 'препроцессор CSS'],
-	['autoprefixer', 'подстановка префиксов для заданных браузеров'],
-	['combine-media-queries', 'комбинирование медиа-запросов в CSS'],
-	['csscomb', 'форматирование CSS'],
-	['jade', 'препроцессор HTML'],
-	['prettify', 'форматирование HTML'],
-	['jshint', 'проверка JavaScript на качество кода с подсказками'],
-	['copy', 'создание копий файлов'],
-	['connect', 'сервер проекта'],
-	['watch', 'отслеживание изменений файлов и их компиляция']
+	['browser-sync', 'сервер и синхронное тестирование сайта в браузерах'],
+	['del', 'очищаем папку dist от старых файлов'],
+	['gulp', 'сам Gulp.js'],
+	['gulp-autoprefixer', 'подстановка вендорских префиксов в CSS'],
+	['gulp-combine-media-queries', 'комбинирование медиа-запросов'],
+	['gulp-concat', 'конкатенация файлов'],
+	['gulp-csscomb', 'причёска CSS'],
+	['gulp-imagemin', 'сжатие ихображений'],
+	['gulp-jade', 'шаблонизатор Jade и препроцессор HTML'],
+	['gulp-jscs', 'проверка стиля JavaScript'],
+	['gulp-jshint', 'проверка JavaScript на качество кода с подсказками'],
+	['gulp-minify-css', 'минификация CSS'],
+	['gulp-prettify', 'причёска HTML'],
+	['gulp-stylus', 'препроцессор CSS'],
+	['gulp-uglify', 'минификация JavaScript'],
+	['gulp.spritesmith', 'генератор спрайтов и CSS переменных'],
+	['rupture', 'премиси Rupture для Stylus']
 ])
 
 h2.h2 СТРУКТУРА ФАЙЛОВ
@@ -24,7 +26,6 @@ h2.h2 СТРУКТУРА ФАЙЛОВ
 .container
 	.col
 		h3.h3 Исходники
-		//- TODO: Update app tree
 		+tree([
 			{
 				folder: 'images'
@@ -33,9 +34,6 @@ h2.h2 СТРУКТУРА ФАЙЛОВ
 			}, {
 				folder: 'scripts',
 				content: [
-					{
-						folder: 'libs'
-					},
 					{ file: 'common.js' },
 					{ file: 'debug.js' }
 				]
@@ -45,29 +43,22 @@ h2.h2 СТРУКТУРА ФАЙЛОВ
 					{
 						folder: 'base',
 						content: [
-							{ file: 'common.styl' },
+							{ file: 'base.styl' },
 							{ file: 'fonts.styl' },
 							{ file: 'normalize.styl' }
 						]
 					},
 					{
-						folder: 'components',
-						content: [
-							{ file: 'fork.styl' }
-						]
+						folder: 'blocks'
+					},
+					{
+						folder: 'components'
 					},
 					{
 						folder: 'helpers',
 						content: [
 							{ file: 'mixins.styl' },
-							{ file: 'sprite.styl' },
 							{ file: 'variables.styl' }
-						]
-					},
-					{
-						folder: 'block',
-						content: [
-							{ file: 'main.styl' }
 						]
 					},
 					{
@@ -91,6 +82,12 @@ h2.h2 СТРУКТУРА ФАЙЛОВ
 					{
 						folder: 'helpers',
 						content: [
+							{
+								folder: 'mixins',
+								content: [
+									{ file: 'scripts.jade' }
+								]
+							},
 							{ file: 'mixins.jade' },
 							{ file: 'variables.jade' }
 						]
@@ -126,7 +123,6 @@ h2.h2 СТРУКТУРА ФАЙЛОВ
 
 	.col
 		h3.h3 Готовые файлы
-		//- TODO: Update dist tree
 		+tree([
 			{
 				folder: 'assets',
@@ -136,19 +132,15 @@ h2.h2 СТРУКТУРА ФАЙЛОВ
 						folder: 'scripts',
 						content: [
 							{
-								folder: 'libs',
-								content: [
-									{ file: 'jquery.min.js' }
-								]
+								folder: 'libs'
 							},
-							{ file: 'common.js' },
-							{ file: 'debug.js' }
+							{ file: 'common.min.js' }
 						]
 					},
 					{
 						folder: 'styles',
 						content: [
-							{ file: 'common.css' }
+							{ file: 'common.min.css' }
 						]
 					}
 				]
