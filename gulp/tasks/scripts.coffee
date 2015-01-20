@@ -9,7 +9,6 @@ paths        = require '../paths'
 
 gulp.task 'scripts', ->
 	return gulp.src [
-			'debug.js'
 			'libs/jquery/dist/jquery.min.js'
 			'common.js'
 		],

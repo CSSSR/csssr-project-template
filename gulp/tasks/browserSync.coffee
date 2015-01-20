@@ -10,9 +10,11 @@ gulp.task 'browserSync', ->
 		server:
 			baseDir: [
 				'app/resources'
+				'app/scripts'
 				'dist'
 			]
 			routes:
 				'/assets/images': 'app/images'
-				'/assets/images/svg': 'resources/assets/images/svg'
+				'/assets/images/svg': 'app/resources/assets/images/svg'
+				'/assets/scripts': 'app/scripts'
 			directory: false
