@@ -18,6 +18,7 @@ gulp.task 'default', ->
 		'stylus'
 		'jade'
 		'scripts'
+		'copy'
 		'jscs'
 		'jshint'
 		'browserSync'
