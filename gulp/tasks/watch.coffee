@@ -5,12 +5,6 @@ reload      = require('browser-sync').reload
 gulp.task 'watch', ->
 	gulp.watch 'app/images/sprite/**/*.png', ['spritesmith']
 
-	gulp.watch [
-			'app/images/**/*.{png,jpg,gif}'
-			'!app/images/sprite/**/*'
-		],
-		['imagemin']
-
 	gulp.watch 'app/styles/**/*.styl', ['stylus', -> reload('assets/styles/common.css')]
 
 	gulp.watch 'app/templates/**/*.jade', -> runSequence 'jade', reload
