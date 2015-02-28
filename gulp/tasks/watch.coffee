@@ -23,3 +23,5 @@ gulp.task 'watch', ->
 			'jshint'
 			reload
 		]
+
+	gulp.watch 'app/images/svg/**/*.svg', ['svg', reload]

@@ -10,6 +10,7 @@ paths        = require '../paths'
 gulp.task 'scripts', ->
 	return gulp.src [
 			'libs/jquery/dist/jquery.min.js'
+			'libs/svg4everybody/svg4everybody.min.js'
 			'common.js'
 		],
 			cwd: 'app/scripts'
