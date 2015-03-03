@@ -11,6 +11,13 @@ gulp.task 'build', ->
 		'copy'
 	)
 
+gulp.task 'deploy', ->
+	return runSequence(
+		'del'
+		'build'
+		'ghpages'
+	)
+
 gulp.task 'default', ->
 	return runSequence(
 		'spritesmith'
