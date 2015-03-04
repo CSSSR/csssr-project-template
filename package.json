@@ -40,6 +40,7 @@
     "gulp-combine-media-queries": "^0.1.0",
     "gulp-concat": "^2.4.3",
     "gulp-csscomb": "^3.0.3",
+    "gulp-gh-pages": "^0.4.0",
     "gulp-if": "^1.2.5",
     "gulp-imagemin": "^0.6.2",
     "gulp-jade": "^0.6.1",
