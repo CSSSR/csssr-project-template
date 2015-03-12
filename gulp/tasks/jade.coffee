@@ -1,16 +1,20 @@
 gulp         = require 'gulp'
 plumber      = require 'gulp-plumber'
 jade         = require 'gulp-jade'
-affected     = require 'gulp-jade-find-affected'
+inheritance  = require 'gulp-jade-inheritance'
+cached       = require 'gulp-cached'
+filter       = require 'gulp-filter'
 prettify     = require 'gulp-prettify'
 pkg          = require '../../package.json'
 errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
 
 gulp.task 'jade', ->
-	return gulp.src 'app/templates/pages/**/*.jade'
+	return gulp.src 'app/templates/**/*.jade'
 		.pipe plumber errorHandler: errorHandler
-		.pipe affected()
+		.pipe cached 'jade'
+		.pipe inheritance basedir: 'app/templates/pages'
+		.pipe filter (file) -> /templates[\\\/]pages/.test file.path
 		.pipe jade
 			data:
 				page:
