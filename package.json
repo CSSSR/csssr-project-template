@@ -33,7 +33,7 @@
     "browser-sync": "^1.9.1",
     "coffee-script": "^1.8.0",
     "del": "^0.1.3",
-    "gulp": "^3.8.8",
+    "gulp": "^3.8.11",
     "gulp-autoprefixer": "0.0.8",
     "gulp-bump": "^0.1.13",
     "gulp-cached": "^1.0.4",
