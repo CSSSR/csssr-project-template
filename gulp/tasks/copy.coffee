@@ -17,13 +17,25 @@ gulp.task 'copy:resources', ->
 		.pipe gulp.dest paths.dist
 
 gulp.task 'copy:scripts', ->
-	return gulp.src [
-			'debug.js'
-		],
+	return gulp.src ['**/*.js'],
 			base: 'app/scripts'
 			cwd: 'app/scripts'
 		.pipe changed paths.scripts
 		.pipe gulp.dest paths.scripts
 
+gulp.task 'copy:components', ->
+	return gulp.src [
+			'jquery/dist/jquery.min.js'
+			'svg4everybody/svg4everybody.min.js'
+		],
+			base: 'components'
+			cwd: 'components'
+		.pipe changed paths.scripts
+		.pipe gulp.dest paths.scripts + '/libs'
 
-gulp.task 'copy', ['copy:images', 'copy:resources', 'copy:scripts']
+gulp.task 'copy', [
+		'copy:components',
+		'copy:images',
+		'copy:resources',
+		'copy:scripts'
+	]

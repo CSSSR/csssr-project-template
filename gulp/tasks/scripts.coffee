@@ -9,11 +9,10 @@ paths        = require '../paths'
 
 gulp.task 'scripts', ->
 	return gulp.src [
-			'libs/jquery/dist/jquery.min.js'
-			'libs/svg4everybody/svg4everybody.min.js'
-			'common.js'
-		],
-			cwd: 'app/scripts'
+			'components/jquery/dist/jquery.min.js'
+			'components/svg4everybody/svg4everybody.min.js'
+			'app/scripts/common.js'
+		]
 		.pipe plumber errorHandler: errorHandler
 		.pipe concat 'common.min.js'
 		.pipe gulpif !gutil.env.debug, uglify()
