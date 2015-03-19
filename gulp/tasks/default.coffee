@@ -3,6 +3,7 @@ gulp        = require 'gulp'
 
 gulp.task 'build', ->
 	return runSequence(
+		'del'
 		'spritesmith'
 		'svg'
 		'imagemin'
