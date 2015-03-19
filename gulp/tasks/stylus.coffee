@@ -15,7 +15,10 @@ pkg          = require '../../package.json'
 gulp.task 'stylus', ->
 	return gulp.src ['common.styl'], cwd: 'app/styles'
 		.pipe plumber errorHandler: errorHandler
-		.pipe stylus errors: true, use: rupture()
+		.pipe stylus
+			errors: true,
+			use: rupture()
+			sourcemap: if gutil.env.debug then {comment: false, inline: true} else false
 		.pipe autoprefixer(
 			'Android >= ' + pkg.browsers.android
 			'Chrome >= ' + pkg.browsers.chrome
@@ -25,6 +28,7 @@ gulp.task 'stylus', ->
 			'Opera >= ' + pkg.browsers.opera
 			'Safari >= ' + pkg.browsers.safari
 		)
-		.pipe cmq()
-		.pipe gulpif !gutil.env.debug, minifyCss(), csscomb()
+		.pipe gulpif !gutil.env.debug, cmq()
+		.pipe gulpif !gutil.env.debug, minifyCss()
+		.pipe gulpif gutil.env.csscomb, csscomb()
 		.pipe gulp.dest paths.styles
