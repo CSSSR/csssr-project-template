@@ -1,15 +1,17 @@
 include ../helpers/variables
 include ../helpers/mixins
 
-+script([], ['debug.js', 'common.min.js'])
++script([], ['debug.js', 'common.min.js', 'jquery.custom-radio-checkbox.js', 'toProfile.js'])
 
 doctype html
 html(lang='ru')
 	include ../partials/head
 	body
-		.main
+		header
 			include ../partials/header
+		section
 			block content
+		footer
 			include ../partials/footer
 
 		include ../partials/scripts

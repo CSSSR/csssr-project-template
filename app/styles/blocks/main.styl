@@ -1,70 +1,160 @@
-.container
-	+from-width(541px)
-		display table
+.block-basic-info
+    margin-bottom 40px
 
-.col
-	+to-width(540px)
-		display table
-		margin 0 auto 20px
+    &__string
+        margin-bottom 20px
+        overflow hidden
+        white-space nowrap
 
-	+from-width(541px)
-		display table-cell
-		vertical-align top
-		width 1%
+        &:last-child
+            margin-top 45px
 
-.arrow
-	margin 0 auto
+        &-name
+            display inline-block
+            font-family "PT Sans Bold"
+            font-size 21px
+            letter-spacing 1px
+            line-height 16px
+            margin-right 25px
+            padding 0 0 5px 0
 
-	+to-width(540px)
-		sprite $arrow-270
+        &-line-underscores,
+        &-line-underscores-2
+            border none
+            display inline-block
+            font-family Courier New
+            font-size 27px
+            line-height 40px
+            padding-left 15px
+            vertical-align bottom
+            width 700px
 
-	+from-width(541px)
-		sprite $arrow
+        &-line-underscores
+            background url("../images/unclear_line_long_1.png") no-repeat scroll left bottom rgba(0, 0, 0, 0)
 
-	&-caption
-		color #579eda
-		font-size 14px
-		text-align center
+        &-line-underscores-2
+            background url("../images/unclear_line_long_2.png") no-repeat scroll left bottom rgba(0, 0, 0, 0)
 
-		+from-width(541px)
-			margin-top 84px
+        &_link
+            color #014f98
+            margin-left: 8px;
+            text-decoration underline
 
-.list
-	margin-bottom 20px
-	list-style inside
+.wrap-radio-checkbox
+    display inline-block
+    font-family "PT Sans Bold"
+    font-size 21px
+    line-height 16px
+    margin 0 20px 0 0
 
-	&_type_files
-		margin-left 10px
-		margin-bottom 0
-		list-style none
+    label
+        display inline-block
+        vertical-align middle
 
-	&__item
-		margin-left 10px
-		line-height 24px
+.block-practical-sills
+    &__title
+        font-family "PT Sans Bold"
+        font-size 21px
+        line-height 16px
 
-		&_type
-			&_folder
-				&:before
-					display inline-block
-					vertical-align middle
-					margin-right 6px
-					content ''
-					sprite $folder
+    &__introduction
+        color #3d3d3d
+        font-family PT Sans
+        font-size 14px
+        line-height 21px
+        margin 15px 0 20px
 
-			&_file
-				&:before
-					display inline-block
-					vertical-align middle
-					margin-right 6px
-					content ''
-					sprite $document-code
+        & > span
+            &:first-child
+                float left
+                font-size 32px
+                margin-top 8px
 
-.dark
-	color #fff
-	text-shadow 1px 1px 2px #000
-	background-color #222
-	background-image url(../images/vertical-cloth.png)
-	box-shadow inset 0 0 10px rgba(255, 255, 255, .25)
+            &:last-child
+                display block
+                padding-left 15px
 
-	&::selection
-		background-color rgba(0, 0, 0, .25)
+.list-of-skills
+    & > li
+        float left
+        width 33%
+
+        &:nth-child(2)
+            width 36%
+
+        &:last-child
+            width 30%
+
+    &__column
+        & > li
+            clear both
+            color black
+            font-family pt sans bold
+            font-size 21px
+            margin 0 0 10px 0
+
+            & > span
+                display block
+                padding-left 30px
+
+.wrap-slider
+    font-family pt sans bold
+    margin-top 60px
+
+    .wrapThumb
+        cursor pointer
+        height 15px
+        margin-bottom 3px
+        width 100%
+
+        .thumb
+            background url("../images/icons/icon_active_designation_toggler.png") no-repeat
+            cursor pointer
+            height 15px
+            left 48.2%
+            position relative
+            width 16px
+    .slider
+        background url("../images/line_for_toggler.png") no-repeat
+        background-size 100% 100%
+        height 4px
+        width 100%
+
+    &__title
+        font-size 21px
+        margin-bottom 20px
+
+.wrap-designation-slider
+    margin-top -1px
+    white-space nowrap
+
+    & > div
+        float left
+        vertical-align top
+        white-space normal
+
+        & > i
+            background #3f241e
+            border-left 1px solid #9e8363
+            display inline-block
+            width 3px
+
+    .block-designation-slider-1
+        width 19%
+    .block-designation-slider-2
+        width 30%
+    .block-designation-slider-3
+        width 28%
+    .block-designation-slider-4
+        text-align right
+        width 23%
+
+.block-designation-slider-1 > i
+.block-designation-slider-4 > i
+    height 23px
+    margin 0 0 4px
+
+.block-designation-slider-2 > i
+.block-designation-slider-3 > i
+    height 9px
+    margin 0 0 18px

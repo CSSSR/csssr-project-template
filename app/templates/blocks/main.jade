@@ -1,149 +1,124 @@
-h2.h2 ЧТО ВКЛЮЧЕНО
+.block-basic-info
+	p.block-basic-info__string
+		span.block-basic-info__string-name
+			| Полное ФИО
+		input.block-basic-info__string-line-underscores(value='Санин Михаил Евгеньевич')
+	p.block-basic-info__string
+		span.block-basic-info__string-name
+			| Год рождения
+		input.block-basic-info__string-line-underscores(value='1991')
+	p.block-basic-info__string
+		span.block-basic-info__string-name
+			| Место жительства
+		input.block-basic-info__string-line-underscores(value='г. Чебоксары, Россия')
+	p.block-basic-info__string
+		span.block-basic-info__string-name
+			| Скайп
+		input.block-basic-info__string-line-underscores-2(value='saninmihail27')
+	p.block-basic-info__string
+		span.block-basic-info__string-name
+			| Почта
+		input.block-basic-info__string-line-underscores-2(value='yarkaic@gmail.com')
+	p.block-basic-info__string
+		span.block-basic-info__string-name
+			| Выпускник
+			a.block-basic-info__string_link(href='https://htmlacademy.ru/') htmlacademy.ru
+		span.wrap-radio-checkbox
+			input#yesHhtmlacademy.pluginRadioCheckbox(type='radio', name='htmlAcademy')
+			label(for='yesHhtmlacademy') Да
+		span.wrap-radio-checkbox
+			input#noHhtmlacademy.pluginRadioCheckbox2(type='radio', name='htmlAcademy', checked='')
+			label(for='noHhtmlacademy') Нет
+.block-practical-sills
+	p.block-practical-sills__title
+		| Практические навыки
+	p.block-practical-sills__introduction
+		span *
+		span
+			| Отметьте только те технологии и типы задач, с которыми вы хорошо знакомы. Отсутствие опыта отнюдь не
+			| означает, что у вас меньше шансов стать нашим сотрудником. Это означает, что вы будете получать те задачи,
+			| с которыми гарантировано будете справляться.
+	.clear
+	ul.list-of-skills
+		li
+			ul.list-of-skills__column
+				li
+					input.pluginCheckbox(type='checkbox', checked='')
+					span Методология БЭМ
+				li
+					input.pluginCheckbox(type='checkbox', checked='')
+					span jQuery
+				li
+					input.pluginCheckbox(type='checkbox')
+					span Использую GRUNT
+				li
+					input.pluginCheckbox(type='checkbox')
+					span HAML
+				li
+					input.pluginCheckbox(type='checkbox')
+					span SASS
+				li
+					input.pluginCheckbox(type='checkbox', checked='')
+					span LESS
+				li
+					input.pluginCheckbox(type='checkbox')
+					span CoffeeScript
+		li
+			ul.list-of-skills__column
+				li
+					input.pluginCheckbox(type='checkbox', checked='')
+					span Jade
+				li
+					input.pluginCheckbox(type='checkbox', checked='')
+					span Stylus
+				li
+					input.pluginCheckbox(type='checkbox')
+					span Знаю (Изучаю) Angular
+				li
+					input.pluginCheckbox(type='checkbox', checked='')
+					span Вёрстка под Android
+				li
+					input.pluginCheckbox(type='checkbox', checked='')
+					span Вёрстка под IOS
+				li
+					input.pluginCheckbox(type='checkbox', checked='')
+					span Вёрстка под Windows Phone
+		li
+			ul.list-of-skills__column
+				li
+					input.pluginCheckbox(type='checkbox', checked='')
+					span Вёрстка рассылок
+				li
+					input.pluginCheckbox(type='checkbox', checked='')
+					span Адаптивная вёрстка
+				li
+					input.pluginCheckbox(type='checkbox', checked='')
+					span Использую Dropbox
+				li
+					input.pluginCheckbox(type='checkbox', checked='')
+					span Использую Gmail
+				li
+					input.pluginCheckbox(type='checkbox', checked='')
+					span Использую GitHub
+	.clear
 
-h3.h3 Инструменты:
-+tools([
-	['browser-sync', 'сервер и синхронное тестирование сайта в браузерах'],
-	['del', 'очищаем папку dist от старых файлов'],
-	['gulp', 'сам Gulp.js'],
-	['gulp-autoprefixer', 'подстановка вендорских префиксов в CSS'],
-	['gulp-combine-media-queries', 'комбинирование медиа-запросов'],
-	['gulp-concat', 'конкатенация файлов'],
-	['gulp-csscomb', 'причёска CSS'],
-	['gulp-imagemin', 'сжатие ихображений'],
-	['gulp-jade', 'шаблонизатор Jade и препроцессор HTML'],
-	['gulp-jscs', 'проверка стиля JavaScript'],
-	['gulp-jshint', 'проверка JavaScript на качество кода с подсказками'],
-	['gulp-minify-css', 'минификация CSS'],
-	['gulp-prettify', 'причёска HTML'],
-	['gulp-stylus', 'препроцессор CSS'],
-	['gulp-uglify', 'минификация JavaScript'],
-	['gulp.spritesmith', 'генератор спрайтов и CSS переменных'],
-	['rupture', 'премиси Rupture для Stylus']
-])
-
-h2.h2 СТРУКТУРА ФАЙЛОВ
-
-.container
-	.col
-		h3.h3 Исходники
-		+tree([
-			{
-				folder: 'images'
-			}, {
-				folder: 'resources'
-			}, {
-				folder: 'scripts',
-				content: [
-					{ file: 'common.js' },
-					{ file: 'debug.js' }
-				]
-			}, {
-				folder: 'styles',
-				content: [
-					{
-						folder: 'base',
-						content: [
-							{ file: 'base.styl' },
-							{ file: 'fonts.styl' },
-							{ file: 'normalize.styl' }
-						]
-					},
-					{
-						folder: 'blocks'
-					},
-					{
-						folder: 'components'
-					},
-					{
-						folder: 'helpers',
-						content: [
-							{ file: 'mixins.styl' },
-							{ file: 'variables.styl' }
-						]
-					},
-					{
-						folder: 'partials',
-						content: [
-							{ file: 'footer.styl' },
-							{ file: 'header.styl' }
-						]
-					},
-					{ file: 'common.styl' }
-				]
-			}, {
-				folder: 'templates',
-				content: [
-					{
-						folder: 'blocks',
-						content: [
-							{ file: 'main.jade' }
-						]
-					},
-					{
-						folder: 'helpers',
-						content: [
-							{
-								folder: 'mixins',
-								content: [
-									{ file: 'scripts.jade' }
-								]
-							},
-							{ file: 'mixins.jade' },
-							{ file: 'variables.jade' }
-						]
-					},
-					{
-						folder: 'layouts',
-						content: [
-							{ file: 'default.jade' }
-						]
-					},
-					{
-						folder: 'pages',
-						content: [
-							{ file: 'index.jade' }
-						]
-					},
-					{
-						folder: 'partials',
-						content: [
-							{ file: 'footer.jade' },
-							{ file: 'head.jade' },
-							{ file: 'header.jade' },
-							{ file: 'scripts.jade' }
-						]
-					}
-				]
-			}
-		])
-
-	.col
-		.arrow-caption Компиляция
-		.arrow
-
-	.col
-		h3.h3 Готовые файлы
-		+tree([
-			{
-				folder: 'assets',
-				content: [
-					{ folder: 'images' },
-					{
-						folder: 'scripts',
-						content: [
-							{
-								folder: 'libs'
-							},
-							{ file: 'common.min.js' }
-						]
-					},
-					{
-						folder: 'styles',
-						content: [
-							{ file: 'common.min.css' }
-						]
-					}
-				]
-			},
-			{ file: 'index.html' }
-		])
+.wrap-slider
+	p.wrap-slider__title
+		| Уровень владения Javascript
+	.wrapThumb
+		.thumb
+	.slider
+	.wrap-designation-slider
+		.block-designation-slider-1
+			i
+			p Не владею
+		.block-designation-slider-2
+			i
+			p Использую готовые решения
+		.block-designation-slider-3
+			i
+			p Использую готовые решения и умею их переделывать
+		.block-designation-slider-4
+			i
+			p Пишу сложные скрипты
+	.clear
