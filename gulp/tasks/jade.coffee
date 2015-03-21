@@ -4,6 +4,7 @@ jade         = require 'gulp-jade'
 inheritance  = require 'gulp-jade-inheritance'
 cached       = require 'gulp-cached'
 filter       = require 'gulp-filter'
+rename       = require 'gulp-rename'
 prettify     = require 'gulp-prettify'
 pkg          = require '../../package.json'
 errorHandler = require '../utils/errorHandler'
@@ -13,7 +14,7 @@ gulp.task 'jade', ->
 	return gulp.src 'app/templates/**/*.jade'
 		.pipe plumber errorHandler: errorHandler
 		.pipe cached 'jade'
-		.pipe inheritance basedir: 'app/templates/pages'
+		.pipe inheritance basedir: 'app/templates'
 		.pipe filter (file) -> /templates[\\\/]pages/.test file.path
 		.pipe jade
 			data:
@@ -30,4 +31,5 @@ gulp.task 'jade', ->
 			condense: true
 			indent_inner_html: true
 			preserve_newlines: true
+		.pipe rename dirname: '.'
 		.pipe gulp.dest paths.dist
