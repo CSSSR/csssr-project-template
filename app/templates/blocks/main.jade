@@ -1,0 +1,149 @@
+h2.h2 ЧТО ВКЛЮЧЕНО
+
+h3.h3 Инструменты:
++tools([
+	['browser-sync', 'сервер и синхронное тестирование сайта в браузерах'],
+	['del', 'очищаем папку dist от старых файлов'],
+	['gulp', 'сам Gulp.js'],
+	['gulp-autoprefixer', 'подстановка вендорских префиксов в CSS'],
+	['gulp-combine-media-queries', 'комбинирование медиа-запросов'],
+	['gulp-concat', 'конкатенация файлов'],
+	['gulp-csscomb', 'причёска CSS'],
+	['gulp-imagemin', 'сжатие ихображений'],
+	['gulp-jade', 'шаблонизатор Jade и препроцессор HTML'],
+	['gulp-jscs', 'проверка стиля JavaScript'],
+	['gulp-jshint', 'проверка JavaScript на качество кода с подсказками'],
+	['gulp-minify-css', 'минификация CSS'],
+	['gulp-prettify', 'причёска HTML'],
+	['gulp-stylus', 'препроцессор CSS'],
+	['gulp-uglify', 'минификация JavaScript'],
+	['gulp.spritesmith', 'генератор спрайтов и CSS переменных'],
+	['rupture', 'премиси Rupture для Stylus']
+])
+
+h2.h2 СТРУКТУРА ФАЙЛОВ
+
+.container
+	.col
+		h3.h3 Исходники
+		+tree([
+			{
+				folder: 'images'
+			}, {
+				folder: 'resources'
+			}, {
+				folder: 'scripts',
+				content: [
+					{ file: 'common.js' },
+					{ file: 'debug.js' }
+				]
+			}, {
+				folder: 'styles',
+				content: [
+					{
+						folder: 'base',
+						content: [
+							{ file: 'base.styl' },
+							{ file: 'fonts.styl' },
+							{ file: 'normalize.styl' }
+						]
+					},
+					{
+						folder: 'blocks'
+					},
+					{
+						folder: 'components'
+					},
+					{
+						folder: 'helpers',
+						content: [
+							{ file: 'mixins.styl' },
+							{ file: 'variables.styl' }
+						]
+					},
+					{
+						folder: 'partials',
+						content: [
+							{ file: 'footer.styl' },
+							{ file: 'header.styl' }
+						]
+					},
+					{ file: 'common.styl' }
+				]
+			}, {
+				folder: 'templates',
+				content: [
+					{
+						folder: 'blocks',
+						content: [
+							{ file: 'main.jade' }
+						]
+					},
+					{
+						folder: 'helpers',
+						content: [
+							{
+								folder: 'mixins',
+								content: [
+									{ file: 'scripts.jade' }
+								]
+							},
+							{ file: 'mixins.jade' },
+							{ file: 'variables.jade' }
+						]
+					},
+					{
+						folder: 'layouts',
+						content: [
+							{ file: 'default.jade' }
+						]
+					},
+					{
+						folder: 'pages',
+						content: [
+							{ file: 'index.jade' }
+						]
+					},
+					{
+						folder: 'partials',
+						content: [
+							{ file: 'footer.jade' },
+							{ file: 'head.jade' },
+							{ file: 'header.jade' },
+							{ file: 'scripts.jade' }
+						]
+					}
+				]
+			}
+		])
+
+	.col
+		.arrow-caption Компиляция
+		.arrow
+
+	.col
+		h3.h3 Готовые файлы
+		+tree([
+			{
+				folder: 'assets',
+				content: [
+					{ folder: 'images' },
+					{
+						folder: 'scripts',
+						content: [
+							{
+								folder: 'libs'
+							},
+							{ file: 'common.min.js' }
+						]
+					},
+					{
+						folder: 'styles',
+						content: [
+							{ file: 'common.min.css' }
+						]
+					}
+				]
+			},
+			{ file: 'index.html' }
+		])

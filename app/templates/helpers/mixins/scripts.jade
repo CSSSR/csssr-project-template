@@ -1,0 +1,17 @@
+- var pageScripts = pageScripts || [[], [], []];
+
+mixin renderScript(scripts)
+	each src in scripts
+		- src = (/^(https?:)?\/\//.test(src) ? src : '/assets/scripts/' + src) + '?' + timestamp;
+		script(src=src)
+
+mixin script()
+	- var args = arguments;
+	each scripts, i in args
+		each src in scripts
+			- var index = args[1] === true ? 2 : i === 0 ? 1 : 0;
+			if pageScripts[index].indexOf(src) === -1
+				- pageScripts[index].push(src);
+
+mixin scripts()
+	+renderScript([].concat.apply([], pageScripts))

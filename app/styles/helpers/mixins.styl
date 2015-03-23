@@ -1,0 +1,38 @@
+// Devide `_val` by 2.
+_d(_val)
+	(_val / 2)
+
+sprite2Width($sprite)
+	width _d($sprite[4])
+
+sprite2Height($sprite)
+	height _d($sprite[5])
+
+sprite2Image($sprite)
+	background-image url($sprite[8])
+	background-repeat no-repeat
+
+sprite2Position($sprite)
+	background-position _d($sprite[2]) _d($sprite[3]);
+
+sprite2Size($sprite)
+	background-size _d($sprite[6]) _d($sprite[7])
+
+// All sprite image properties for Retina.
+sprite2($sprite)
+	sprite2Width($sprite)
+	sprite2Height($sprite)
+	sprite2Image($sprite)
+	sprite2Position($sprite)
+	sprite2Size($sprite)
+
+// Clear the float on any element.
+clearfix()
+	&:after
+		display table
+		clear both
+		content ''
+
+// Fix no working `-webkit-text-size-adjust: 100%;` in Android.
+fix-text-size-adjust()
+	background-image linear-gradient(transparent, transparent)

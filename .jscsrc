@@ -1,0 +1,104 @@
+{
+	"requireCurlyBraces": [
+		"if",
+		"else",
+		"for",
+		"while",
+		"do",
+		"try",
+		"catch",
+		"case",
+		"default"
+	],
+	"requireSpaceAfterKeywords": [
+		"do",
+		"for",
+		"if",
+		"else",
+		"switch",
+		"case",
+		"try",
+		"catch",
+		"void",
+		"while",
+		"with",
+		"return",
+		"typeof",
+		"function"
+	],
+	"requireSpaceBeforeBlockStatements": true,
+	"requireSpacesInFunctionExpression": {
+		"beforeOpeningCurlyBrace": true
+	},
+	"disallowKeywords": [
+		"with"
+	],
+	"disallowKeywordsOnNewLine": [
+		"else",
+		"catch"
+	],
+	"disallowSpaceAfterPrefixUnaryOperators": true,
+	"disallowSpaceBeforePostfixUnaryOperators": [
+		"++",
+		"--"
+	],
+	"requireSpaceBeforeBinaryOperators": true,
+	"requireSpaceAfterBinaryOperators": true,
+	"requireMultipleVarDecl": true,
+	"requireBlocksOnNewline": true,
+	"disallowSpacesInsideParentheses": true,
+	"disallowEmptyBlocks": true,
+	"requireParenthesesAroundIIFE": true,
+	"requireSpacesInFunctionDeclaration": {
+		"beforeOpeningCurlyBrace": true
+	},
+	"disallowSpacesInFunctionDeclaration": {
+		"beforeOpeningRoundBrace": true
+	},
+	"requireSpacesInAnonymousFunctionExpression": {
+		"beforeOpeningRoundBrace": true,
+		"beforeOpeningCurlyBrace": true
+	},
+	"disallowSpacesInNamedFunctionExpression": {
+		"beforeOpeningRoundBrace": true
+	},
+	"requireSpacesInNamedFunctionExpression": {
+		"beforeOpeningCurlyBrace": true
+	},
+	"requireSpacesInConditionalExpression": {
+		"afterTest": true,
+		"beforeConsequent": true,
+		"afterConsequent": true,
+		"beforeAlternate": true
+	},
+	"disallowSpaceBeforeBinaryOperators": [
+		","
+	],
+	"requireCommaBeforeLineBreak": true,
+	"validateQuoteMarks": "'",
+	"disallowMultipleLineStrings": true,
+	"disallowImplicitTypeConversion": [
+		"numeric",
+		"boolean",
+		"binary",
+		"string"
+	],
+	"disallowYodaConditions": true,
+	"disallowSpacesInsideArrayBrackets": true,
+	"requireDotNotation": true,
+	"disallowSpaceAfterObjectKeys": true,
+	"disallowSpacesInsideObjectBrackets": true,
+	"disallowQuotedKeysInObjects": true,
+	"validateJSDoc": {
+		"checkParamNames": true,
+		"requireParamTypes": true
+	},
+	"maximumLineLength": {
+		"value": 120,
+		"allowUrlComments": true
+	},
+	"requireSpaceAfterLineComment": true,
+	"requireLineFeedAtFileEnd": true,
+	"disallowMixedSpacesAndTabs": true,
+	"disallowTrailingWhitespace": true
+}

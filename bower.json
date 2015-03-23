@@ -1,0 +1,11 @@
+{
+  "name": "csssr-project-template",
+  "version": "0.8.0",
+  "devDependencies": {
+    "jquery": "~2.1.3",
+    "svg4everybody": "~1.0.0"
+  },
+  "resolutions": {
+    "jquery": ">=2.1.3"
+  }
+}

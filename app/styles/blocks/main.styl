@@ -1,0 +1,70 @@
+.container
+	+from-width(541px)
+		display table
+
+.col
+	+to-width(540px)
+		display table
+		margin 0 auto 20px
+
+	+from-width(541px)
+		display table-cell
+		vertical-align top
+		width 1%
+
+.arrow
+	margin 0 auto
+
+	+to-width(540px)
+		sprite $arrow-270
+
+	+from-width(541px)
+		sprite $arrow
+
+	&-caption
+		color #579eda
+		font-size 14px
+		text-align center
+
+		+from-width(541px)
+			margin-top 84px
+
+.list
+	margin-bottom 20px
+	list-style inside
+
+	&_type_files
+		margin-left 10px
+		margin-bottom 0
+		list-style none
+
+	&__item
+		margin-left 10px
+		line-height 24px
+
+		&_type
+			&_folder
+				&:before
+					display inline-block
+					vertical-align middle
+					margin-right 6px
+					content ''
+					sprite $folder
+
+			&_file
+				&:before
+					display inline-block
+					vertical-align middle
+					margin-right 6px
+					content ''
+					sprite $document-code
+
+.dark
+	color #fff
+	text-shadow 1px 1px 2px #000
+	background-color #222
+	background-image url(../images/vertical-cloth.png)
+	box-shadow inset 0 0 10px rgba(255, 255, 255, .25)
+
+	&::selection
+		background-color rgba(0, 0, 0, .25)
