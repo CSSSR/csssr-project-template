@@ -1,4 +1,30 @@
+$columns = 12
+
 .grid
-	width gridWidth(12)
+	width gridWidth($columns)
 	margin-left auto
 	margin-right auto
+
+.grid-module-1
+	width gridWidth($columns)
+
+.grid-module-2
+	width gridWidth($columns/2)
+
+.grid-module-3
+	width gridWidth($columns/3)
+
+.grid-module-4
+	width gridWidth($columns/4)
+
+.grid-module-6
+	width gridWidth($columns/6)
+
+.cols
+	display table
+	margin-left -($module-gap)
+
+.col
+	display table-cell
+	box-sizing content-box
+	padding-left $module-gap
