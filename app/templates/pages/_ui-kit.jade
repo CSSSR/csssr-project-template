@@ -1,0 +1,126 @@
+extends ../layouts/default
+
+block head
+	- pageTitle = 'UI-KOT';
+
+block content
+	- var lorem = 'Вы платите за транспортировку старых шин на завод переработки. Согласитесь, что свои 4 колеса самим вести в Чехов или в город Радужный за 180 км на завод не рационально. При этом шины, относятся к опасным отходам и подлежат обязательной переработке, захоронять шины на свалке запрещено.';
+
+	.grid
+		// --- base
+
+
+
+		// ---
+
+		h1.h1 Заголовок H1
+		h2.h2 Заголовок H2
+		h3.h3 Заголовок H3
+		h4.h4 Заголовок H4
+		h5.h5 Заголовок H5
+		h6.h6 Заголовок H6
+
+		// ---
+		p=lorem
+
+		// ---
+
+
+		.grid-module-1
+			.h5 Текст в 12 колонок
+			p=lorem
+
+		.cols
+			.col.grid-module-2
+				.h5 Текст в 6 колонок
+				p=lorem
+
+			.col.grid-module-2
+				.h5 Текст в 6 колонок
+				p=lorem
+
+		.cols
+			.col.grid-module-3
+				.h5 Текст в 4 колонки
+				p=lorem
+
+			.col.grid-module-3
+				.h5 Текст в 4 колонки
+				p=lorem
+			.col.grid-module-3
+				.h5 Текст в 4 колонки
+				p=lorem
+
+		.cols
+			.col.grid-module-4
+				.h5 Текст в 3 колонки
+				p=lorem
+
+			.col.grid-module-4
+				.h5 Текст в 3 колонки
+				p=lorem
+			.col.grid-module-4
+				.h5 Текст в 3 колонки
+				p=lorem
+			.col.grid-module-4
+				.h5 Текст в 3 колонки
+				p=lorem
+
+		.cols
+			.col.grid-module-6
+				.h5 Текст в 2 колонки
+				p=lorem
+			.col.grid-module-6
+				.h5 Текст в 2 колонки
+				p=lorem
+			.col.grid-module-6
+				.h5 Текст в 2 колонки
+				p=lorem
+			.col.grid-module-6
+				.h5 Текст в 2 колонки
+				p=lorem
+			.col.grid-module-6
+				.h5 Текст в 2 колонки
+				p=lorem
+			.col.grid-module-6
+				.h5 Текст в 2 колонки
+				p=lorem
+
+	.grid
+		.h1 Кнопки
+
+		.cols
+			.col.grid-module-2
+				| Настоящая главная кнопка: 
+				button.btn.btn_style_skeuo Подобрать
+				br
+				br
+				| Главная кнопка-ссылка: 
+				a.btn.btn_style_skeuo(href = 'javascript:void(0)') Подобрать
+
+			.col.grid-module-2
+				| Настоящая второстепенная кнопка: 
+				button.btn Все бренды шин
+				br
+				br
+				| Второстепенная кнопка-ссылка: 
+				a.btn(href = 'javascript:void(0)') Все бренды шин
+
+		br
+
+		.cols
+			.col.grid-module-2
+				| Настоящая неактивная главная кнопка: 
+				button.btn.btn_style_skeuo(disabled) Подобрать
+				br
+				br
+				| Неактивная главная кнопка-ссылка: 
+				a.btn.btn_style_skeuo.is-disabled(href = 'javascript:void(0)') Подобрать
+
+			.col.grid-module-2
+				| Настоящая неактивная второстепенная кнопка: 
+				button.btn(disabled) Все бренды шин
+				br
+				br
+				| Неактивная второстепенная кнопка-ссылка: 
+				a.btn.is-disabled(href = 'javascript:void(0)') Все бренды шин
