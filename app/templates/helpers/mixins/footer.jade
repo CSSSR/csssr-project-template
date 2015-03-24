@@ -2,6 +2,11 @@ mixin footer-nav__item(title, items)
 	.footer-nav__item
 		.footer-nav-title=title
 		if items
-			.footer-nav-list
-				each item in items
-					a.footer-nav__link(href='#')=item
+			each item in items
+				a.footer-nav__link(href='#')=item
+
+mixin footer-contact__info(data)
+	.footer-contact__info
+		.footer-icon(class='.footer-icon_'+data.mod)
+		.footer-contact__info-caption
+			!=data.text
