@@ -1,0 +1,7 @@
+mixin footer-nav__item(title, items)
+	.footer-nav__item
+		.footer-nav-title=title
+		if items
+			.footer-nav-list
+				each item in items
+					a.footer-nav__link(href='#')=item
