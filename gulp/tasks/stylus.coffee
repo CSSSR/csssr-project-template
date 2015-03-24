@@ -13,7 +13,7 @@ paths        = require '../paths'
 pkg          = require '../../package.json'
 
 gulp.task 'stylus', ->
-	return gulp.src ['common.styl'], cwd: 'app/styles'
+	return gulp.src ['common.styl', 'radar.styl'], cwd: 'app/styles'
 		.pipe plumber errorHandler: errorHandler
 		.pipe stylus
 			errors: true,
