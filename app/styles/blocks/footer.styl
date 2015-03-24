@@ -1,8 +1,101 @@
-.copyright
-	margin 30px -20px -20px
-	padding 20px
-	border-radius 0 0 4px 4px
+.wrapper
+	width 1200px
+	margin 0 auto
+	padding 0 10px
 
-	+to-width(540px)
-		margin-bottom -40px
-		border-radius 0
+.footer
+	//position absolute
+	//bottom 0
+	display block
+
+	&-content
+		height 350px
+		background #ebebeb
+
+	&-nav
+		&-list
+			padding-top 36px
+			width 800px
+			font-size 0
+
+		&__item
+			display inline-block
+			width 25%
+			vertical-align top
+			font-size 14px
+
+		&-title
+			margin-top 19px
+			margin-bottom 20px
+
+		&__link
+			display block
+
+	&-contact
+		float right
+		width 300px
+
+		&__info
+			display block
+			padding-left 63px
+			height 45px
+			line-height 45px
+			// font-size 16px
+			// background #99e199
+			// &:nth-child(odd)
+			// 	background #e19999
+			&-caption
+				display block
+				vertical-align bottom
+				line-height 20px
+
+	&-number
+		padding-left 63px
+		margin-top 61px
+		margin-bottom 50px
+		height 41px
+		font-size 25px
+		font-weight bold
+
+
+	&-bottom
+		padding-top 31px
+		height 171px
+		font-size 0
+		background #fff
+		&__pay
+			display inline-block
+			width 480px
+			font-size 14px
+		&__social
+			display inline-block
+			width 200px
+			font-size 14px
+
+		&-caption
+			margin-bottom 14px
+
+
+		&-btn
+			float left
+			margin-right 2px
+			border 2px solid #f3f3f3
+			border-radius 5px
+			height 40px
+			&_pay
+				width 61px
+				&_paypal
+					margin-left 5px
+					width 88px
+			&_social
+				width 48px
+
+	&-logo
+		display inline-block
+		width 500px
+
+
+	&-copyright
+		height 50px
+		line-height 45px
+		background #000
