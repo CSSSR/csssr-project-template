@@ -1,5 +1,6 @@
 .wrapper
 	width 1200px
+	max-width 1200px
 	margin 0 auto
 	padding 0 10px
 
@@ -10,7 +11,8 @@
 
 	&-content
 		height 350px
-		background #ebebeb url(../images/footer-bg.png) no-repeat 571px
+		background #ebebeb url(../images/footer-bg.png) no-repeat 113%
+		clearfix()
 
 	&-nav
 		&-list
@@ -42,6 +44,7 @@
 		color #000
 
 		&__info
+			position relative
 			display block
 			padding-left 63px
 			margin-bottom 20px
@@ -52,11 +55,22 @@
 
 	&-icon
 		position absolute
+		top -10px
+		left 9px
+		width 41px
+		height 41px
 		&_phone
 			top -5px
 			left 7px
 			width 44px
 			height 51px
+		&_clock
+			top -1px
+		&_flag
+			top -11px
+			left 8px
+			width 43px
+			height 43px
 
 	&-number
 		position relative
@@ -118,10 +132,32 @@
 					sprite $btn-paypal
 
 			&_social
+				margin-right 2.5px
 				width 48px
+				&:last-child
+					margin-right 0
 			&-svg
-				height 36px
-				width 44px
+				position absolute
+				&_vk
+					top -10px
+					left -6px
+					height 55px
+					width 55px
+				&_classmates
+					top -12px
+					left -6px
+					height 58px
+					width 58px
+				&_fb
+					top 7px
+					left 10px
+					height 23px
+					width 23px
+				&_twitter
+					top 8px
+					left 13px
+					height 20px
+					width 20px
 
 	&-logo
 		display inline-block
