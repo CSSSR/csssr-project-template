@@ -151,3 +151,13 @@ block content
 		p
 			input(type='checkbox' id='ch4' checked disabled).checkbox
 			label(for='ch4').checkbox__label RUNFLAT :disabled :checked
+
+		.h2 Поиск
+
+		p
+			form.search(action = 'javascript:void(0)')
+				input.search__input(
+					type='text'
+					placeholder='Поиск по каталогу товаров'
+				)
+				button.search__submit: +icon('search').search__icon

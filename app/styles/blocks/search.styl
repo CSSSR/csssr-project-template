@@ -1,0 +1,48 @@
+.search
+	position relative
+
+	&__icon
+		width 100%
+		height 100%
+
+		fill currentColor
+
+	&__input
+		padding 2px
+		padding-left 14px
+		// submit width + submit right + input padding-left
+		padding-right 58px
+
+		width 100%
+
+		line-height 34px
+
+		border 2px solid #d4d4d4
+		border-radius 5px
+
+	&:hover &__input
+	&__input:focus
+		border-color #fdd42e
+
+	&__submit
+		position absolute
+		top 4px
+		right 4px
+
+		padding 9px 12px
+
+		width 40px
+		height 34px
+
+		color #a0a0a0
+
+		background-color #616161
+		border none
+		border-radius 3px
+
+		&:hover
+			background-color #fdd42e
+
+	&:hover &__submit
+	&__input:focus + &__submit
+		color #fff
