@@ -2,20 +2,39 @@ $header-height = 50px
 $header-flow-height = 70px
 
 .header
-	width 1180px
-	height $header-height
-	margin-right auto
-	margin-left auto 
 	background-color #616161
 	color white
 	
+	&__wraper
+		position relative
+		width 1180px
+		height $header-height
+		margin-right auto
+		margin-left auto 
+		
+		&:before
+		&:after
+			position absolute
+			width 1px
+			height 100%
+			content ''
+			top 0
+		
+		&:before
+			background-image linear-gradient(#343434, transparent);
+			left -1px
+		
+		&:after
+			background-image linear-gradient(#7e7e7e, transparent);
+			right -1px
+		
+		&_flow
+			height $header-flow-height
+
 	&:after
 		display table
 		clear both
 		content ''
-	
-	&_flow
-		height $header-flow-height
 
 	&__logo
 		width 226px
@@ -42,7 +61,7 @@ $header-flow-height = 70px
 	&__container
 		position absolute
 		left 0
-		bottom 0
+		z-index 1
 		display none
 		
 	&__tab
@@ -60,21 +79,27 @@ $header-flow-height = 70px
 			height 100%
 			width 1px 
 			content "" 
+			
+		&:before
+			background-image linear-gradient(#7e7e7e, transparent);
+			left 0
 		
 		&:after
 			background-image linear-gradient(#343434, transparent);
 			right 0
 			
-		&:before
-			background-image linear-gradient(#7e7e7e, transparent);
-			left 0
+		
 			
 		&:hover
-			color #fcd430
 			cursor pointer
+			box-shadow none
+			background-color #757575
 				
 			.header__icon
 				fill #fcd430
+				
+			.header__label
+				color #fcd430
 				
 			.header__container
 				display block
