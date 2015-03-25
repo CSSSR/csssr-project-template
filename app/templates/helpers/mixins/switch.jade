@@ -2,11 +2,17 @@ mixin switch(id, items)
 	.switch&attributes(attributes)
 		each item in items
 			.switch__item
-				+switch-item(id, item.id, item.label, item.isActive)
+				+switch-item('', id, item.id, item.label, item.isActive)
 
-mixin switch-item(group, name, label, isActive)
+mixin primary-switch(id, items)
+	.switch.switch_primary&attributes(attributes)
+		each item in items
+			.switch__item.switch__item_primary
+				+switch-item('_primary', id, item.id, item.label, item.isActive)
+
+mixin switch-item(mod, group, name, label, isActive)
 	- id = [group, name].join('-')
-	.switch-item
+	.switch-item(class = mod ? 'switch-item' + mod : '')
 		input.switch-item__input(
 			type = 'radio',
 			id = id,
@@ -14,5 +20,8 @@ mixin switch-item(group, name, label, isActive)
 			value = name,
 			checked = !!isActive
 		)
-		label.switch-item__label(for = id)
-			span.switch-item__label-text= label
+		label.switch-item__label(
+			class = mod ? 'switch-item__label' + mod : '',
+			for = id
+		)
+			span.switch-item__label-text(class = mod ? 'switch-label' + mod : '')= label
