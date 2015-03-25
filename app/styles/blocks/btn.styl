@@ -17,11 +17,11 @@
 	box-shadow inset 0 0 0 3px $yellow
 	cursor pointer
 
-	&:not(:disabled):not(.is-disabled):hover
+	&:not(:disabled):not(&_disabled):hover
 		background-color $yellow
 
 	&:disabled
-	&.is-disabled
+	&_disabled
 		color $gray
 		box-shadow inset 0 0 0 3px $light-gray
 		cursor default
@@ -42,9 +42,9 @@
 			&:active
 				box-shadow inset 0 2px 0 #9c7b01, 0 1px 0 #fff
 
-			&:disabled
-			&.is-disabled
-				background-color $light-gray
-				background-image none
-				box-shadow inset 0 1px 0 #fff, inset 0 -2px 0 $gray
+	&_style_skeuo:disabled
+	&_style_skeuo&_disabled
+		background-color $light-gray
+		background-image none
+		box-shadow inset 0 1px 0 #fff, inset 0 -2px 0 $gray
 
