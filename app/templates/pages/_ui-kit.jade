@@ -132,3 +132,23 @@ block content
 						label: 'R18'
 					}
 				])
+
+		h1.h1 Элементы управления
+
+		h2.h2 Чекбокс
+
+		p
+			input(type='checkbox' id='ch1').checkbox
+			label(for='ch1').checkbox__label RUNFLAT
+
+		p
+			input(type='checkbox' id='ch2' checked).checkbox
+			label(for='ch2').checkbox__label RUNFLAT :checked
+
+		p
+			input(type='checkbox' id='ch3' disabled).checkbox
+			label(for='ch3').checkbox__label RUNFLAT :disabled
+
+		p
+			input(type='checkbox' id='ch4' checked disabled).checkbox
+			label(for='ch4').checkbox__label RUNFLAT :disabled :checked
