@@ -10,12 +10,13 @@
 	display block
 
 	&-content
-		height 350px
-		background #ebebeb url(../images/footer-bg.png) no-repeat 113%
+		overflow hidden
+		background #ebebeb
 
 	&-nav
 		&-list
 			padding-top 36px
+			padding-bottom 56px
 			width 800px
 			font-size 0
 
@@ -36,7 +37,16 @@
 			margin-top 19px
 			margin-bottom 20px
 
+	&-bg
+		position absolute
+		top 0
+		right -150px
+		width 844px
+		height 350px
+		background url(../images/footer-bg.png) no-repeat
+
 	&-contact
+		position relative
 		float right
 		width 300px
 		font-family 'PT Sans'
@@ -51,6 +61,17 @@
 			line-height 20px
 			& a
 				color #000
+
+			&_phone
+				position relative
+				padding-top 10px
+				padding-left 63px
+				margin-top 51px
+				margin-bottom 63px
+				height 41px
+				font-size 25px
+				font-weight bold
+				letter-spacing -.2px
 
 	&-icon
 		position absolute
@@ -70,17 +91,6 @@
 			left 8px
 			width 43px
 			height 43px
-
-	&-number
-		position relative
-		padding-top 10px
-		padding-left 63px
-		margin-top 51px
-		margin-bottom 63px
-		height 41px
-		font-size 25px
-		font-weight bold
-		letter-spacing -.2px
 
 
 	&-bottom
@@ -161,9 +171,10 @@
 	&-logo
 		display inline-block
 		float left
-		margin 22px 198px 0 -8px
+		margin 23px 198px 0 -8px
 		width 311px
 		height 65px
+		background url(../images/svg/1_logo_dark.svg)
 
 	&-copyright
 		height 50px

@@ -16,7 +16,7 @@ mixin footer-contact__info(data)
 	- classes.push('footer-icon')
 	- classes.push('footer-icon_'+data.mod)
 
-	.footer-contact__info
+	.footer-contact__info&attributes(attributes)
 		+icon(data.icon)(class=classes)
 		!=data.text
 

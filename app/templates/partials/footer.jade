@@ -1,10 +1,9 @@
 .footer
 	.footer-content
-		.wrapper
+		.grid
 			.footer-contact
-				.footer-number
-					+icon('contact_1_tel').footer-icon.footer-icon_phone
-					|+7 (495) 345-67-89
+				.footer-bg
+				+footer-contact__info({text:'+7 (495) 345-67-89', icon:'contact_1_tel', mod:'phone'})(class='footer-contact__info_phone')
 				+footer-contact__info({text:'Пн-Пт с 09:00 до 19:00<br>Сб с 10:00 до 18:00', icon:'menu_1_clock', mod:'clock'})
 				//- +footer-contact__info({text:'a(href=\'#\') info@ru-shina.ru', icon:'contact_2_email', mod:'email'})
 				//- 'a(href='#')' печатается как простой текст
@@ -21,8 +20,8 @@
 				+footer-nav__item('Контакты')(href='#')
 				+footer-nav__item('Полезная информация')(href='#')
 	.footer-bottom
-		.wrapper
-			+icon('1_logo_dark').footer-logo
+		.grid
+			.footer-logo
 			.footer-bottom__pay
 				.footer-bottom-caption Принимаем к оплате:
 				+footer-bottom-btn({type:'pay', mod:'visa'})
@@ -38,6 +37,6 @@
 				+footer-bottom-btn({type:'social', mod:'twitter', icon:'1_ss_Twitter'})
 
 	.footer-copyright
-		.wrapper
+		.grid
 			.footer-copyright-caption
 				|<span class='footer-copyright-caption_sign'>&copy;</span> &laquo;RU-SHINA&raquo;, интернет-магазин шин и дисков, 2014
