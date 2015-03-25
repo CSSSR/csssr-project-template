@@ -26,17 +26,18 @@
 			+icon('1_logo_dark').footer-logo
 			.footer-bottom__pay
 				.footer-bottom-caption Принимаем к оплате:
-				.footer-bottom-btn.footer-bottom-btn_pay.footer-bottom-btn_pay_visa
-				.footer-bottom-btn.footer-bottom-btn_pay.footer-bottom-btn_pay_mastercard
-				.footer-bottom-btn.footer-bottom-btn_pay.footer-bottom-btn_pay_bank3
-				.footer-bottom-btn.footer-bottom-btn_pay.footer-bottom-btn_pay_bank4
-				.footer-bottom-btn.footer-bottom-btn_pay.footer-bottom-btn_pay_paypal
+				+footer-bottom-btn({type:'pay', mod:'visa'})
+				+footer-bottom-btn({type:'pay', mod:'mastercard'})
+				+footer-bottom-btn({type:'pay', mod:'bank3'})
+				+footer-bottom-btn({type:'pay', mod:'bank4'})
+				+footer-bottom-btn({type:'pay', mod:'paypal'})(class='footer-bottom-btn_pay_long')
 			.footer-bottom__social
 				.footer-bottom-caption Присоединяйтесь к нам:
-				+icon('1_ss_VK').footer-bottom-btn.footer-bottom-btn_social.footer-bottom-btn_social_vk
-				+icon('1_ss_Odnoklassniki').footer-bottom-btn.footer-bottom-btn_social.footer-bottom-btn_social_classmates
-				+icon('1_ss_Facebook').footer-bottom-btn.footer-bottom-btn_social.footer-bottom-btn_social_fb
-				+icon('1_ss_Twitter').footer-bottom-btn.footer-bottom-btn_social.footer-bottom-btn_social_twitter
+				+footer-bottom-btn({type:'social', mod:'vk', icon:'1_ss_VK'})
+				+footer-bottom-btn({type:'social', mod:'classmates', icon:'1_ss_Odnoklassniki'})
+				+footer-bottom-btn({type:'social', mod:'fb', icon:'1_ss_Facebook'})
+				+footer-bottom-btn({type:'social', mod:'twitter', icon:'1_ss_Twitter'})
+
 	.footer-copyright
 		.wrapper
 			.footer-copyright-caption

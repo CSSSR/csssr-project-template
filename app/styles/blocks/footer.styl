@@ -94,13 +94,21 @@
 
 
 		&-btn
+			position relative
 			float left
 			margin-right 2px
+			height 40px
 			border 2px solid #f3f3f3
 			border-radius 5px
-			height 36px
 			&_pay
-				width 56px
+				width 60px
+				&_long
+					margin-left 10px
+					width 88px
+			&-image
+				position absolute
+				top -1px
+				left -1px
 				&_visa
 					sprite $btn-visa
 				&_mastercard
@@ -110,11 +118,14 @@
 				&_bank4
 					sprite $btn-bank4
 				&_paypal
-					margin-left 5px
 					width 88px
 					sprite $btn-paypal
+
 			&_social
 				width 48px
+			&-svg
+				height 36px
+				width 44px
 
 	&-logo
 		display inline-block
@@ -125,7 +136,7 @@
 
 	&-copyright
 		height 50px
-		line-height 45px
+		line-height 46px
 		background #000
 		&-caption
 			font-size 14px
