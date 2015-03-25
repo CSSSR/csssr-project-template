@@ -1,5 +1,5 @@
 $header-height = 50px
-$header-flow-height = 70px
+$header-fix-height = 70px
 
 .header
 	background-color #616161
@@ -28,18 +28,52 @@ $header-flow-height = 70px
 			background-image linear-gradient(#7e7e7e, transparent);
 			right -1px
 		
-		&_flow
-			height $header-flow-height
+		&_fix
+			height $header-fix-height
+			
+			&:before
+				content none
 
 	&:after
 		display table
 		clear both
 		content ''
 
+	&__contacts
+		position relative
+		float left
+		padding-right 30px
+		height 100%
+		
+		&:after
+			position absolute
+			width 1px
+			height 100%
+			content ''
+			top 0
+			background-image linear-gradient(#343434, transparent);
+			right 0px
+	
+	&__counter
+		position absolute
+		display block
+		width 22px
+		height 22px
+		right -1px
+		top 15px
+		line-height 22px
+		font-family $heading-fonts
+		font-weight 700
+		font-size 14px
+		text-align center
+		border-radius 50%
+		background-color #fcd430
+		color #616161
 
 	&__logo
 		width 226px
 		height 100%
+		margin-right 50px
 		vertical-align middle
 
 	&__icon
@@ -52,9 +86,19 @@ $header-flow-height = 70px
 		&_type-nolabel
 			margin-right 0
 			
+	&__icon-wrap
+		position relative
+		display inline-block
+		height 100%
+			
 	&__label
 		vertical-align middle
 	
+		&_type-currency
+			font-family $heading-fonts
+			font-size 20px
+			font-weight 700
+
 	&__contact
 		display inline-block
 		vertical-align middle
@@ -68,9 +112,9 @@ $header-flow-height = 70px
 	&__tab
 		position relative
 		float left
+		padding-right 4px
+		padding-left 4px
 		height 100%
-		padding-left 5px
-		padding-right 5px
 		text-align center
 		box-shadow inset 0 -3px 3px #5c5c5c 
 		
@@ -102,6 +146,9 @@ $header-flow-height = 70px
 				
 			.header__container
 				display block
+				
+			.currency
+				fill #fcd430
 
 		&_type-car
 			width 18.4%
@@ -118,16 +165,26 @@ $header-flow-height = 70px
 		&_type-login
 			width 17.5%
 			
+		&_type-clock
+			width 4.2%
+			
+
+			
 		&_type-cart
 			//width 16.5%
 			float none
 			overflow hidden
 		
-		&_type-logo
-			
-			
 			&:before
 				content none
 			
 			&:hover
 				color inherit		
+
+	.currency
+		width 40px
+		height 20px
+		margin-left -10px
+		margin-bottom 2px
+		vertical-align middle
+		fill white
