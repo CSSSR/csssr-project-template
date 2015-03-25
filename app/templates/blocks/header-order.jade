@@ -1,0 +1,20 @@
+header.header
+	.header__wraper.header__wraper_order
+		.header__contacts
+			+icon('1_logo_light').header__logo
+			.header__contact
+
+		.header__tab
+			.header__icon-wrap
+				+icon('menu_01_feedback').header__icon.header__icon_type-nolabel
+			.header__container.header__container_rightedge
+				include feedback
+
+		.header__tab
+			.header__icon-wrap
+				+icon('menu_01_login').header__icon.header__icon_type-nolabel
+
+		.header__tab
+			+icon('menu_1_clock').header__icon.header__icon_type-nolabel
+			.header__container.header__container_rightedge
+				include opening-hours

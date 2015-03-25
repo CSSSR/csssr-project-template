@@ -4,14 +4,14 @@ $header-fix-height = 70px
 .header
 	background-color #616161
 	color white
-	
+
 	&__wraper
 		position relative
 		width 1180px
 		height $header-height
 		margin-right auto
-		margin-left auto 
-		
+		margin-left auto
+
 		&:before
 		&:after
 			position absolute
@@ -19,20 +19,22 @@ $header-fix-height = 70px
 			height 100%
 			content ''
 			top 0
-		
+
 		&:before
 			background-image linear-gradient(#343434, transparent);
 			left -1px
-		
+
 		&:after
 			background-image linear-gradient(#7e7e7e, transparent);
 			right -1px
-		
+
 		&_fix
+		&_order
 			height $header-fix-height
-			
+
 			&:before
 				content none
+
 
 	&:after
 		display table
@@ -44,7 +46,7 @@ $header-fix-height = 70px
 		float left
 		padding-right 30px
 		height 100%
-		
+
 		&:after
 			position absolute
 			width 1px
@@ -53,7 +55,7 @@ $header-fix-height = 70px
 			top 0
 			background-image linear-gradient(#343434, transparent);
 			right 0px
-	
+
 	&__counter
 		position absolute
 		display block
@@ -82,18 +84,18 @@ $header-fix-height = 70px
 		margin-right 9px
 		vertical-align middle
 		fill white
-	
+
 		&_type-nolabel
 			margin-right 0
-			
+
 	&__icon-wrap
 		position relative
 		display inline-block
 		height 100%
-			
+
 	&__label
 		vertical-align middle
-	
+
 		&_type-currency
 			font-family $heading-fonts
 			font-size 20px
@@ -108,7 +110,11 @@ $header-fix-height = 70px
 		left 0
 		z-index 1
 		display none
-		
+
+		&_rightedge
+			left inherit
+			right 0
+
 	&__tab
 		position relative
 		float left
@@ -116,70 +122,70 @@ $header-fix-height = 70px
 		padding-left 4px
 		height 100%
 		text-align center
-		box-shadow inset 0 -3px 3px #5c5c5c 
-		
+		box-shadow inset 0 -3px 3px #5c5c5c
+
 		&:after, &:before
-			position absolute	
-			top 0		
+			position absolute
+			top 0
 			height 100%
-			width 1px 
-			content "" 
-			
+			width 1px
+			content ""
+
 		&:before
 			background-image linear-gradient(#7e7e7e, transparent);
 			left 0
-		
+
 		&:after
 			background-image linear-gradient(#343434, transparent);
-			right 0		
-			
+			right 0
+
 		&:hover
 			cursor pointer
 			box-shadow none
 			background-color #757575
-				
+
 			.header__icon
 				fill #fcd430
-				
+
 			.header__label
 				color #fcd430
-				
+
 			.header__container
 				display block
-				
+
 			.currency
 				fill #fcd430
 
 		&_type-car
 			width 18.4%
-		
+
 		&_type-compare
 			width 14%
-		
+
 		&_type-seen
 			width 17.4%
-		
+
 		&_type-feedback
 			width 16.2%
-		
+
 		&_type-login
 			width 17.5%
-			
+
 		&_type-clock
 			width 4.2%
-			
 
-			
+
+
 		&_type-cart
 			//width 16.5%
 			float none
 			overflow hidden
-		
+
 			&:before
 				content none
-			
+
 			&:hover
-				color inherit		
+				color inherit
 
 	.currency
 		width 40px

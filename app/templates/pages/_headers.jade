@@ -1,8 +1,5 @@
 extends ../layouts/default
 
-block head
-	- pageTitle = 'headers';
-
 block content
 	h4 Дефолтный (../blocks/header)
 	br
@@ -12,4 +9,7 @@ block content
 	br
 	include ../blocks/header-fix
 	br
-	h4 
+	h4 Оформление заказа
+	br
+	include ../blocks/header-order
+	br
