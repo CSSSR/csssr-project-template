@@ -1,0 +1,18 @@
+mixin switch(id, items)
+	.switch&attributes(attributes)
+		each item in items
+			.switch__item
+				+switch-item(id, item.id, item.label, item.isActive)
+
+mixin switch-item(group, name, label, isActive)
+	- id = [group, name].join('-')
+	.switch-item
+		input.switch-item__input(
+			type = 'radio',
+			id = id,
+			name = group,
+			value = name,
+			checked = !!isActive
+		)
+		label.switch-item__label(for = id)
+			span.switch-item__label-text= label

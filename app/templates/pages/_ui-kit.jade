@@ -85,3 +85,48 @@ block content
 			.col.grid-module-6
 				.h5 Текст в 2 колонки
 				p=lorem
+
+	.grid
+		.h1 Переключатели
+
+		.cols
+			.col.grid-module-2
+				+switch('type', [
+					{
+						id: 'tyres',
+						label: 'Шины',
+						isActive: true
+					},
+					{
+						id: 'discs',
+						label: 'Диски'
+					}
+				])
+
+		br
+
+		.cols
+			.col.grid-module-2
+				+switch('size', [
+					{
+						id: 'all',
+						label: 'Все размеры',
+						isActive: true
+					},
+					{
+						id: '15',
+						label: 'R15'
+					},
+					{
+						id: '16',
+						label: 'R16'
+					},
+					{
+						id: '17',
+						label: 'R17'
+					},
+					{
+						id: '18',
+						label: 'R18'
+					}
+				])

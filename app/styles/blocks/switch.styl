@@ -1,0 +1,56 @@
+.switch
+	margin 3px
+
+	display table
+
+	table-layout fixed
+
+	border-radius 3px
+	overflow hidden
+
+	&__item
+		display table-cell
+
+		border 3px solid #fdd42e
+
+		font-size 14px
+
+		&:not(:first-child)
+			border-left none
+
+.switch-item
+	&__input
+		display none
+
+	&__label
+		vertical-align baseline
+
+		display block
+
+		margin -3px
+		padding .8em 1.6em
+
+		font-family $heading-fonts
+		text-align center
+		text-decoration none
+
+		background transparent
+
+		&:hover
+			background-color #fee800
+
+	&__input:checked + &__label
+		color #000
+
+		background-color #fdd42e
+
+	&__label-text
+		display inline-block
+
+		line-height 1
+
+		border-bottom 1px dotted currentColor
+
+	&__input:checked + &__label > &__label-text
+		border-bottom none
+
