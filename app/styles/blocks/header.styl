@@ -1,0 +1,86 @@
+$header-one-height = 50px
+
+.header
+	width 1180px
+	margin-right auto
+	margin-left auto
+	display block 
+	background-color #616161
+	color white
+	
+	&:after
+		display table
+		clear both
+		content ''
+
+			
+	&__icon
+		width 42px
+		height 100%
+		margin-right 9px
+		vertical-align middle
+		fill white
+		
+	&__label
+		vertical-align middle
+	
+	&__container
+		position absolute
+		left 0
+		bottom 0
+		display none
+		
+	&__tab
+		position relative
+		float left
+		height $header-one-height
+		padding-left 20px
+		padding-right 20px
+		text-align center
+		box-shadow inset 0 -3px 3px #5c5c5c 
+		
+		&:after, &:before
+			position absolute	
+			top 0		
+			height 100%
+			width 1px 
+			content "" 
+		
+		&:after
+			background-image linear-gradient(#343434, transparent);
+			right 0
+			
+		&:before
+			background-image linear-gradient(#7e7e7e, transparent);
+			left 0
+		
+		&:hover
+			color #fcd430
+			cursor pointer
+				
+			.header__icon
+				fill #fcd430
+				
+			.header__container
+				display block
+
+
+		&_type-car
+			width 18.4%
+		
+		&_type-compare
+			width 14%
+		
+		&_type-seen
+			width 17.4%
+		
+		&_type-feedback
+			width 16.2%
+		
+		&_type-login
+			width 17.5%
+			
+		&_type-cart
+			//width 16.5%
+			float none
+			overflow hidden
