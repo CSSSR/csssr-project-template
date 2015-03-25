@@ -10,8 +10,7 @@
 				//- 'a(href='#')' печатается как простой текст
 				.footer-contact__info
 					+icon('contact_2_email').footer-icon.footer-icon_mail
-					.footer-contact__info-caption
-						a(href='#') info@ru-shina.ru
+					a(href='#') info@ru-shina.ru
 				+footer-contact__info({text:'г.Москва, ул. Гиляровского, 32', icon:'contact_3_position', mod:'flag'})
 			.footer-nav-list
 				+footer-nav__item('О компании', ['Акции и скидки', 'Новости', 'Вакансии'])
@@ -41,4 +40,4 @@
 	.footer-copyright
 		.wrapper
 			.footer-copyright-caption
-				|&copy; &laquo;RU-SHINA&raquo;, интернет-магазин шин и дисков, 2014
+				|<span class='footer-copyright-caption_sign'>&copy;</span> &laquo;RU-SHINA&raquo;, интернет-магазин шин и дисков, 2014

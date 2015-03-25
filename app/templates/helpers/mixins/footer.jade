@@ -18,8 +18,7 @@ mixin footer-contact__info(data)
 
 	.footer-contact__info
 		+icon(data.icon)(class=classes)
-		.footer-contact__info-caption
-			!=data.text
+		!=data.text
 
 mixin footer-bottom-btn(data)
 	- classes = []
