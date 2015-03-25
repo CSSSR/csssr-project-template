@@ -1,12 +1,22 @@
 mixin footer-nav__item(title, items)
 	.footer-nav__item
-		.footer-nav-title=title
-		if items
-			each item in items
-				a.footer-nav__link(href='#')=item
+		if attributes
+			a.footer-nav-title(class='h5')&attributes(attributes)=title
+			if items
+				each item in items
+					a.footer-nav__link(href='#')=item
+		else
+			.footer-nav-title(class='h5')=title
+			if items
+				each item in items
+					a.footer-nav__link(href='#')=item
 
 mixin footer-contact__info(data)
+	- classes = []
+	- classes.push('footer-icon')
+	- classes.push('footer-icon_'+data.mod)
+
 	.footer-contact__info
-		.footer-icon(class='.footer-icon_'+data.mod)
+		+icon(data.icon)(class=classes)
 		.footer-contact__info-caption
 			!=data.text

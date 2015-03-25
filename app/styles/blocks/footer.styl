@@ -10,7 +10,7 @@
 
 	&-content
 		height 350px
-		background #ebebeb
+		background #ebebeb url(../images/footer-bg.png) no-repeat 571px
 
 	&-nav
 		&-list
@@ -22,37 +22,53 @@
 			display inline-block
 			width 25%
 			vertical-align top
-			font-size 14px
-
-		&-title
-			margin-top 19px
-			margin-bottom 20px
 
 		&__link
 			display block
+			font-size 14px
+			font-family 'Segoe UI'
+			letter-spacing -.4px
+			color #1f1f1f
+
+		&-title
+			display block
+			margin-top 19px
+			margin-bottom 20px
 
 	&-contact
 		float right
 		width 300px
+		font-family 'PT Sans'
+		color #000
 
 		&__info
 			display block
 			padding-left 63px
 			height 45px
 			line-height 45px
-			// font-size 16px
 			// background #99e199
 			// &:nth-child(odd)
 			// 	background #e19999
 			&-caption
 				display block
 				vertical-align bottom
+				font-size 16px
 				line-height 20px
 
+	&-icon
+		position absolute
+		&_phone
+			top -5px
+			left 7px
+			width 44px
+			height 51px
+
 	&-number
+		position relative
+		padding-top 10px
 		padding-left 63px
-		margin-top 61px
-		margin-bottom 50px
+		margin-top 51px
+		margin-bottom 60px
 		height 41px
 		font-size 25px
 		font-weight bold
@@ -65,15 +81,16 @@
 		background #fff
 		&__pay
 			display inline-block
-			width 480px
-			font-size 14px
+			width 479px
 		&__social
 			display inline-block
 			width 200px
-			font-size 14px
 
 		&-caption
 			margin-bottom 14px
+			font-size 14px
+			font-family 'PT Sans'
+			color #000
 
 
 		&-btn
@@ -81,21 +98,36 @@
 			margin-right 2px
 			border 2px solid #f3f3f3
 			border-radius 5px
-			height 40px
+			height 36px
 			&_pay
-				width 61px
+				width 56px
+				&_visa
+					sprite $btn-visa
+				&_mastercard
+					sprite $btn-mastercard
+				&_bank3
+					sprite $btn-bank3
+				&_bank4
+					sprite $btn-bank4
 				&_paypal
 					margin-left 5px
 					width 88px
+					sprite $btn-paypal
 			&_social
 				width 48px
 
 	&-logo
 		display inline-block
-		width 500px
-
+		float left
+		margin 22px 198px 0 -8px
+		width 311px
+		height 65px
 
 	&-copyright
 		height 50px
 		line-height 45px
 		background #000
+		&-caption
+			font-size 14px
+			font-weight normal
+			color #fff

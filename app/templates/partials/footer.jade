@@ -3,40 +3,40 @@
 		.wrapper
 			.footer-contact
 				.footer-number
-					.footer-icon.footer-icon_phone
+					+icon('contact_1_tel').footer-icon.footer-icon_phone
 					|+7 (495) 345-67-89
-				+footer-contact__info({text:'Пн-Пт с 09:00 до 19:00<br>Сб с 10:00 до 18:00', mod:'clock'})
-				//- +footer-contact__info({text:'a(href=\'#\') info@ru-shina.ru', mod:'mail'}) //- 'a(href='#')' печатается как простой текст
+				+footer-contact__info({text:'Пн-Пт с 09:00 до 19:00<br>Сб с 10:00 до 18:00', icon:'menu_1_clock', mod:'clock'})
+				//- +footer-contact__info({text:'a(href=\'#\') info@ru-shina.ru', icon:'contact_2_email', mod:'mail'})
+				//- 'a(href='#')' печатается как простой текст
 				.footer-contact__info
-					.footer-icon.footer-icon_mail
+					+icon('contact_2_email').footer-icon.footer-icon_mail
 					.footer-contact__info-caption
 						a(href='#') info@ru-shina.ru
-
-				+footer-contact__info({text:'г.Москва, ул. Гиляровского, 32', mod:'flag'})
+				+footer-contact__info({text:'г.Москва, ул. Гиляровского, 32', icon:'contact_3_position', mod:'flag'})
 			.footer-nav-list
 				+footer-nav__item('О компании', ['Акции и скидки', 'Новости', 'Вакансии'])
 				+footer-nav__item('Шины', ['По типоразмеру', 'По автомобилю', 'По бренду'])
 				+footer-nav__item('Диски', ['По типоразмеру', 'По автомобилю', 'По бренду', 'Диски Replica'])
 				+footer-nav__item('Доставка и оплата', ['По Москве и МО', 'По России', 'Кредитование'])
 				+footer-nav__item('Услуги', ['Шиномонтаж', 'Сезонное хранение шин', 'Утилизация шин и дисков'])
-				+footer-nav__item('Контакты')
-				+footer-nav__item('Полезная информация')
+				+footer-nav__item('Контакты')(href='#')
+				+footer-nav__item('Полезная информация')(href='#')
 	.footer-bottom
 		.wrapper
-			.footer-logo
+			+icon('1_logo_dark').footer-logo
 			.footer-bottom__pay
 				.footer-bottom-caption Принимаем к оплате:
 				.footer-bottom-btn.footer-bottom-btn_pay.footer-bottom-btn_pay_visa
 				.footer-bottom-btn.footer-bottom-btn_pay.footer-bottom-btn_pay_mastercard
-				.footer-bottom-btn.footer-bottom-btn_pay.footer-bottom-btn_pay_somebank
-				.footer-bottom-btn.footer-bottom-btn_pay.footer-bottom-btn_pay_otherbank
+				.footer-bottom-btn.footer-bottom-btn_pay.footer-bottom-btn_pay_bank3
+				.footer-bottom-btn.footer-bottom-btn_pay.footer-bottom-btn_pay_bank4
 				.footer-bottom-btn.footer-bottom-btn_pay.footer-bottom-btn_pay_paypal
 			.footer-bottom__social
 				.footer-bottom-caption Присоединяйтесь к нам:
-				.footer-bottom-btn.footer-bottom-btn_social.footer-bottom-btn_social_vk
-				.footer-bottom-btn.footer-bottom-btn_social.footer-bottom-btn_social_classmates
-				.footer-bottom-btn.footer-bottom-btn_social.footer-bottom-btn_social_fb
-				.footer-bottom-btn.footer-bottom-btn_social.footer-bottom-btn_social_twitter
+				+icon('1_ss_VK').footer-bottom-btn.footer-bottom-btn_social.footer-bottom-btn_social_vk
+				+icon('1_ss_Odnoklassniki').footer-bottom-btn.footer-bottom-btn_social.footer-bottom-btn_social_classmates
+				+icon('1_ss_Facebook').footer-bottom-btn.footer-bottom-btn_social.footer-bottom-btn_social_fb
+				+icon('1_ss_Twitter').footer-bottom-btn.footer-bottom-btn_social.footer-bottom-btn_social_twitter
 	.footer-copyright
 		.wrapper
 			.footer-copyright-caption
