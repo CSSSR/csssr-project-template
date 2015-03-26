@@ -1,0 +1,25 @@
+.top-menu
+	.top-menu__wraper.top-menu__wraper_order.grid
+		.top-menu__contacts
+			+icon('1_logo_light').top-menu__logo
+
+			.top-menu__backbutton
+				include back-button
+
+			.top-menu__contact
+				include consult-number
+
+		.top-menu__tab
+			.top-menu__icon-wrap
+				+icon('menu_01_feedback').top-menu__icon.top-menu__icon_type_nolabel
+			.top-menu__container.top-menu__container_rightedge
+				include feedback
+
+		.top-menu__tab
+			.top-menu__icon-wrap
+				+icon('menu_01_login').top-menu__icon.top-menu__icon_type_nolabel
+
+		.top-menu__tab
+			+icon('menu_1_clock').top-menu__icon.top-menu__icon_type_nolabel
+			.top-menu__container.top-menu__container_rightedge
+				include opening-hours

@@ -1,0 +1,47 @@
+.top-menu
+	.top-menu__wraper.top-menu__wraper_fix.grid
+		.top-menu__contacts
+			+icon('1_logo_light').top-menu__logo
+			.top-menu__contact
+				include consult-number
+
+
+		.top-menu__tab
+			+icon('menu_1_clock').top-menu__icon.top-menu__icon_type_nolabel
+			.top-menu__container
+				include opening-hours
+
+		.top-menu__tab
+			.top-menu__icon-wrap
+				+icon('icon_menu').top-menu__icon.top-menu__icon_type_nolabel
+
+		.top-menu__tab
+			.top-menu__icon-wrap
+				+icon('menu_01_car').top-menu__icon
+			span.top-menu__label Ford Focus III Hatchback
+
+		.top-menu__tab
+			.top-menu__icon-wrap
+				+icon('menu_01_compare').top-menu__icon.top-menu__icon_type_nolabel
+				span.top-menu__counter 7
+
+		.top-menu__tab
+			.top-menu__icon-wrap
+				+icon('menu_01_seen').top-menu__icon.top-menu__icon_type_nolabel
+				span.top-menu__counter 20
+
+		.top-menu__tab
+			.top-menu__icon-wrap
+				+icon('menu_01_feedback').top-menu__icon.top-menu__icon_type_nolabel
+			.top-menu__container
+				include feedback
+
+		.top-menu__tab
+			+icon('menu_01_login').top-menu__icon.top-menu__icon_type_nolabel
+
+		.top-menu__tab.top-menu__tab_type_cart
+			.top-menu__icon-wrap
+				+icon('menu_01_cart').top-menu__icon
+				span.top-menu__counter 2
+			span.top-menu__label.top-menu__label_type_currency 20 000
+				+icon('1_RUB').currency
