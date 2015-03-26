@@ -1,0 +1,23 @@
+mixin add-car-empty()
+	.add-car.add-car_empty
+		+icon('1_car').add-car__bg
+
+mixin add-car-plus()
+	.add-car
+		+icon('1_car').add-car__bg
+		.add-car__content
+			span.add-car__label + добавить авто
+
+mixin add-car-filled($array)
+	.add-car.add-car_filled
+		+icon('1_car').add-car__bg.add-car__bg_filled
+		.add-car__content.add-car__content_filled
+			.add-car__model=$array[0]
+
+			.add-car__year
+				.add-car__year-label Год выпуска:
+				.add-car__year-value=$array[1]
+
+			.add-car__modification
+				.add-car__mod-label Модификация:
+				.add-car__mod-value=$array[2]
