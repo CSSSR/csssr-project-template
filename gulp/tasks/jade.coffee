@@ -11,7 +11,7 @@ errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
 
 gulp.task 'jade', ->
-	return gulp.src 'app/templates/**/*.jade'
+	gulp.src 'app/templates/**/*.jade'
 		.pipe plumber errorHandler: errorHandler
 		.pipe cached 'jade'
 		.pipe inheritance basedir: 'app/templates'

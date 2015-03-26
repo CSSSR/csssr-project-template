@@ -4,7 +4,7 @@ jscs         = require 'gulp-jscs'
 errorHandler = require '../utils/errorHandler'
 
 gulp.task 'jscs', ->
-	return gulp.src [
+	gulp.src [
 			'**/*.js'
 			'!libs/**/*'
 		],

@@ -6,7 +6,7 @@ errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
 
 gulp.task 'imagemin', ->
-	return gulp.src [
+	gulp.src [
 			'**/*.{png,jpg,gif}'
 			'!sprite/**/*'
 		],

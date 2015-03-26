@@ -5,7 +5,7 @@ jshint       = require 'gulp-jshint'
 errorHandler = require '../utils/errorHandler'
 
 gulp.task 'jshint', ->
-	return gulp.src [
+	gulp.src [
 			'**/*.js'
 			'!libs/**/*'
 		],

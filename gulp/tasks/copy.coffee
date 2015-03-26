@@ -4,7 +4,7 @@ paths   = require '../paths'
 
 
 gulp.task 'copy:images', ->
-	return gulp.src [
+	gulp.src [
 			'**/*.{png,jpg,gif}'
 			'!sprite/**/*'
 		],
@@ -12,19 +12,19 @@ gulp.task 'copy:images', ->
 		.pipe gulp.dest paths.images
 
 gulp.task 'copy:resources', ->
-	return gulp.src 'app/resources/**/*'
+	gulp.src 'app/resources/**/*'
 		.pipe changed paths.dist
 		.pipe gulp.dest paths.dist
 
 gulp.task 'copy:scripts', ->
-	return gulp.src ['**/*.js'],
+	gulp.src ['**/*.js'],
 			base: 'app/scripts'
 			cwd: 'app/scripts'
 		.pipe changed paths.scripts
 		.pipe gulp.dest paths.scripts
 
 gulp.task 'copy:components', ->
-	return gulp.src [
+	gulp.src [
 			'jquery/dist/jquery.min.js'
 			'svg4everybody/svg4everybody.min.js'
 		],

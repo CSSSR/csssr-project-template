@@ -21,4 +21,4 @@ gulp.task 'spritesmith', ->
 	spriteData.img.pipe gulp.dest paths.appImages
 	spriteData.css.pipe gulp.dest paths.appStylesHelpers
 
-	return spriteData
+	spriteData
