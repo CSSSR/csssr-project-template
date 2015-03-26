@@ -1,0 +1,5 @@
+mixin btn($label, $isLink)
+	if $isLink
+		a.btn(href = 'javascript:void(0)')= $label
+	else
+		button.btn= $label

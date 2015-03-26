@@ -1,2 +1,18 @@
 .your-cars
+	.your-cars__wrap.grid
+		.your-cars__caption Выберите автомобиль:
+
+		.your-cars__list
+			.your-cars__item
+				+add-car-filled(['Ford Focus II Hatchback','2012','Trend Sport 1.6 (125 л.с.)'])
+			.your-cars__item
+				+add-car-plus()
+			.your-cars__item
+				+add-car-plus()
+			.your-cars__item
+				+add-car-empty()
+
+		.your-cars__button
+			+btn('Шины и диски к этому авто', true)
+
 
