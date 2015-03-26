@@ -87,6 +87,23 @@ block content
 				p=lorem
 
 	.grid
+		.h1 Элементы управления
+		.h2 Переключатели
+
+		.cols
+			.col.grid-module-1
+				span Интресный переключатель: 
+				+primary-switch('type', [
+					{
+						id: 'tyres',
+						label: 'Шины',
+						isActive: true
+					},
+					{
+						id: 'discs',
+						label: 'Диски'
+					}
+				])
 		.h1 Кнопки
 
 		.cols
@@ -106,9 +123,6 @@ block content
 				| Стандартная кнопка-ссылка: 
 				a.btn(href = 'javascript:void(0)') Все бренды шин
 
-		br
-
-		.cols
 			.col.grid-module-2
 				| Настоящая неактивная привлекательная кнопка: 
 				button.btn.btn_primary(disabled) Подобрать
@@ -124,3 +138,79 @@ block content
 				br
 				| Неактивная стандартная кнопка-ссылка: 
 				a.btn.btn_disabled(href = 'javascript:void(0)') Все бренды шин
+
+		br
+
+		.cols
+			.col.grid-module-1
+				span Обычный переключатель: 
+				+switch('size', [
+					{
+						id: 'all',
+						label: 'Все размеры',
+						isActive: true
+					},
+					{
+						id: '15',
+						label: 'R15'
+					},
+					{
+						id: '16',
+						label: 'R16'
+					},
+					{
+						id: '17',
+						label: 'R17'
+					},
+					{
+						id: '18',
+						label: 'R18'
+					}
+				])
+
+		.h2 Чекбокс
+
+		p
+			input(type='checkbox' id='ch1').checkbox
+			label(for='ch1').checkbox__label RUNFLAT
+
+		p
+			input(type='checkbox' id='ch2' checked).checkbox
+			label(for='ch2').checkbox__label RUNFLAT :checked
+
+		p
+			input(type='checkbox' id='ch3' disabled).checkbox
+			label(for='ch3').checkbox__label RUNFLAT :disabled
+
+		p
+			input(type='checkbox' id='ch4' checked disabled).checkbox
+			label(for='ch4').checkbox__label RUNFLAT :disabled :checked
+
+		.h2 Поиск
+
+		p
+			form.search(action = 'javascript:void(0)')
+				input.search__input(
+					type='text'
+					placeholder='Поиск по каталогу товаров'
+				)
+				button.search__submit: +icon('search').search__icon
+
+		.h2 Селект
+
+		p Обычный
+			.select2
+				select
+					option(value='215') 215
+					option(value='222') 222
+					option(value='217') 217
+					option(value='218') 218
+
+		.h2 Всплывающая подсказка
+
+		p
+			.info
+				.info__btn
+					a.btn.btn_info: +icon('info').btn__icon
+				.info__tooltip
+					.tooltip= lorem

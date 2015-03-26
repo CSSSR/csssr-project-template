@@ -1,0 +1,99 @@
+// TODO: заменить значения цветов на переменные
+.switch
+	margin 3px
+
+	display inline-table
+
+	table-layout fixed
+
+	border-radius 3px
+	overflow hidden
+
+	user-select none
+
+	&_primary
+		padding 4px
+
+		color #fff
+		text-transform uppercase
+
+		background-image linear-gradient(to bottom, #2d3335, #4b5153 50%)
+		border-radius 100em
+		box-shadow inset 0 2px 9px #000
+
+	&__item
+		display table-cell
+
+		border 3px solid #fdd42e
+
+		font-size 14px
+
+		&:not(:first-child)
+			border-left none
+
+		&_primary
+			border none
+
+.switch-item
+	&__input
+		display none
+
+	&__label
+		vertical-align baseline
+
+		display block
+
+		margin -3px
+		padding .7em 1.6em
+
+		font-family $heading-fonts
+		text-align center
+		text-decoration none
+
+		background transparent
+
+		user-select none
+
+		&:hover
+			color #000
+
+			background-color #fee800
+			cursor pointer
+
+		&_primary
+			margin 0
+			padding .45em 1.6em
+
+			&:hover
+				background-color transparent
+				color #fee800
+
+	&__input:checked + &__label
+		color #000
+
+		background-color #fdd42e
+		cursor default
+
+	&__input:checked + &__label_primary
+		color #000
+		text-shadow 0 1px 0 rgba(255,255,255,.75)
+
+		background-color #fdd42e
+		background-image linear-gradient(to bottom, #fee800, #fbba00)
+		border-radius 100em
+		box-shadow inset 0 1px 0 #fff, inset 0 -1px 0 #9c7b01
+		cursor default
+
+	&__label-text
+		display inline-block
+
+		line-height 1
+
+		border-bottom 1px dotted currentColor
+
+		user-select none
+
+	&__label:hover > &__label-text
+	&__input:checked + &__label > &__label-text
+		border-bottom none
+

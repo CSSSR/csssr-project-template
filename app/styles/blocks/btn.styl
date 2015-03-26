@@ -17,6 +17,8 @@
 	box-shadow inset 0 0 0 3px $rushina-yellow
 	cursor pointer
 
+	user-select none
+
 	&:not(:disabled):not(&_disabled):hover
 		background-color $rushina-yellow
 
@@ -25,6 +27,36 @@
 		color $rushina-gray
 		box-shadow inset 0 0 0 3px $rushina-light-gray
 		cursor default
+
+	&_info
+		padding 4px 12px
+
+		width 29px
+		height 29px
+
+		color #fff
+
+		background-color $rushina-blue
+		background-image $info-gradient
+		border none
+		border-radius 100em
+		box-shadow inset 0 1px 0 #fff, inset 0 -2px 0 #003e77
+
+		&:not(:disabled):not(&_disabled):hover
+			background-color $rushina-blue
+
+		&:hover
+		&:active
+			background-image none
+
+		&:active
+			box-shadow inset 0 2px 0 #003e77, 0 1px 0 #fff
+
+	&_info:disabled
+	&_info&_disabled
+		background-color $rushina-light-gray
+		background-image none
+		box-shadow inset 0 1px 0 #fff, inset 0 -2px 0 $rushina-gray
 
 	&_primary
 		text-shadow 0 1px 0 rgba(255,255,255,.75)
@@ -47,3 +79,9 @@
 		background-image none
 		box-shadow inset 0 1px 0 #fff, inset 0 -2px 0 $rushina-gray
 
+	&__icon
+		width 100%
+		height 100%
+
+		fill currentColor
+		filter drop-shadow(0 -1px 0 rgba(0,0,0,.5));

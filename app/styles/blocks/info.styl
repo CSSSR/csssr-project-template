@@ -1,0 +1,53 @@
+.info
+	position relative
+
+	display inline-block
+
+	&__tooltip
+		position absolute
+		bottom 150%
+		left -25%
+
+		display none
+
+	&:hover &__tooltip
+		display block
+
+.tooltip
+	position relative
+	z-index 50
+
+	padding 16px 21px
+
+	width 475px
+
+	color #757575
+
+	background #fff
+	border 1px solid #999
+	border-radius 5px
+
+	&:before
+	&:after
+		content ''
+
+		position absolute
+		top 100%
+		left 20px
+
+		width 0
+		height 0
+
+	&:before
+		margin-left -10px
+
+		border-top 10px solid #999
+		border-right 10px solid transparent
+		border-left 10px solid transparent
+
+	&:after
+		margin-left -8px
+
+		border-top 8px solid #fff
+		border-right 8px solid transparent
+		border-left 8px solid transparent
