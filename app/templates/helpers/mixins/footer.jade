@@ -24,11 +24,12 @@ mixin footer-bottom-btn(data)
 	- classes = []
 
 	if data.type=='pay'
-		a.footer-bottom-btn.footer-bottom-btn_pay(href='#' class=classes)&attributes(attributes)
+		.footer-bottom-btn.footer-bottom-btn_pay(href='#' class=classes)&attributes(attributes)
 			.footer-bottom-btn-image(class='footer-bottom-btn-image_'+data.mod)
 
 	if data.type=='social'
 		- classes.push('footer-bottom-btn-svg')
 		- classes.push('footer-bottom-btn-svg_'+data.mod)
-		a.footer-bottom-btn.footer-bottom-btn_social(href='#')
-			+icon(data.icon)(class=classes)
+		.footer-bottom-btn.footer-bottom-btn_social
+			a(class='footer-bottom-btn-link_'+data.mod href='#')
+				+icon(data.icon)(class=classes)
