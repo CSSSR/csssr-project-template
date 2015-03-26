@@ -27,6 +27,8 @@ gulp.task 'copy:components', ->
 	return gulp.src [
 			'jquery/dist/jquery.min.js'
 			'svg4everybody/svg4everybody.min.js'
+			'select2/select2.min.js'
+			'select2/select2.css'
 		],
 			base: 'components'
 			cwd: 'components'
