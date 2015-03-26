@@ -1,5 +1,8 @@
-$header-height = 50px
-$header-fix-height = 70px
+
+$top-menu-default-height = 50px
+$top-menu-fix-height = 70px
+$top-menu-lk-height = 90px
+$top-menu-order-height = 70px
 
 .top-menu
 	background-color #616161
@@ -7,7 +10,7 @@ $header-fix-height = 70px
 
 	&__wraper
 		position relative
-		height $header-height
+		height $top-menu-default-height
 
 		&:before
 		&:after
@@ -25,10 +28,18 @@ $header-fix-height = 70px
 			background-image linear-gradient(#7e7e7e, transparent);
 			right -1px
 
+		&_lk
+			height $top-menu-lk-height
+
+		&_fix
+			height $top-menu-order-height
+
+		&_order
+			height $top-menu-order-height
+
+		&_lk
 		&_fix
 		&_order
-			height $header-fix-height
-
 			&:before
 				content none
 
@@ -38,15 +49,18 @@ $header-fix-height = 70px
 		clear both
 		content ''
 
-	&__backbutton
+	&__back-button
 		display inline-block
+		margin-right 62px
+		margin-left 11px
 		vertical-align middle
 
 	&__contacts
 		position relative
-		float left
-		padding-right 30px
+		display block
+		overflow hidden
 		height 100%
+		padding-right 30px
 
 		&:after
 			position absolute
@@ -79,6 +93,9 @@ $header-fix-height = 70px
 		margin-right 50px
 		vertical-align middle
 
+		&_lk
+			width 248px
+
 	&__icon
 		width 42px
 		height 100%
@@ -105,6 +122,9 @@ $header-fix-height = 70px
 	&__contact
 		display inline-block
 		vertical-align middle
+
+		&_order
+			margin-left 100px
 
 	&__container
 		position absolute
@@ -157,6 +177,15 @@ $header-fix-height = 70px
 			.currency
 				fill #fcd430
 
+		&_right
+			float right
+
+		&_lk
+		&_order
+			float right
+			padding-right 15px
+			padding-left 15px
+
 		&_type_car
 			width 18.4%
 
@@ -174,8 +203,6 @@ $header-fix-height = 70px
 
 		&_type_clock
 			width 4.2%
-
-
 
 		&_type_cart
 			//width 16.5%
