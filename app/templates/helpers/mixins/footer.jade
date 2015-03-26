@@ -1,0 +1,34 @@
+mixin footer-nav__item(title, items)
+	.footer-nav__item
+		if attributes
+			a.footer-nav-title(class='h5')&attributes(attributes)=title
+			if items
+				each item in items
+					a.footer-nav__link(href='#')=item
+		else
+			.footer-nav-title(class='h5')=title
+			if items
+				each item in items
+					a.footer-nav__link(href='#')=item
+
+mixin footer-contact__info(data)
+	- classes = []
+	- classes.push('footer-icon')
+	- classes.push('footer-icon_'+data.mod)
+
+	.footer-contact__info&attributes(attributes)
+		+icon(data.icon)(class=classes)
+		!=data.text
+
+mixin footer-bottom-btn(data)
+	- classes = []
+
+	if data.type=='pay'
+		a.footer-bottom-btn.footer-bottom-btn_pay(href='#' class=classes)&attributes(attributes)
+			.footer-bottom-btn-image(class='footer-bottom-btn-image_'+data.mod)
+
+	if data.type=='social'
+		- classes.push('footer-bottom-btn-svg')
+		- classes.push('footer-bottom-btn-svg_'+data.mod)
+		a.footer-bottom-btn.footer-bottom-btn_social(href='#')
+			+icon(data.icon)(class=classes)

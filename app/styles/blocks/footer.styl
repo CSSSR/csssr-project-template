@@ -1,8 +1,189 @@
-.copyright
-	margin 30px -20px -20px
-	padding 20px
-	border-radius 0 0 4px 4px
+.wrapper
+	width 1200px
+	max-width 1200px
+	margin 0 auto
+	padding 0 10px
 
-	+to-width(540px)
-		margin-bottom -40px
-		border-radius 0
+.footer
+	//position absolute
+	//bottom 0
+	display block
+
+	&-content
+		overflow hidden
+		background #ebebeb
+
+	&-nav
+		&-list
+			padding-top 36px
+			padding-bottom 56px
+			width 800px
+			font-size 0
+
+		&__item
+			display inline-block
+			width 25%
+			vertical-align top
+
+		&__link
+			display block
+			font-size 14px
+			font-family 'Segoe UI'
+			letter-spacing -.4px
+			color #1f1f1f
+
+		&-title
+			display block
+			margin-top 19px
+			margin-bottom 20px
+
+	&-bg
+		position absolute
+		top 0
+		right -150px
+		width 844px
+		height 350px
+		background url(../images/footer-bg.png) no-repeat
+
+	&-contact
+		position relative
+		float right
+		width 300px
+		font-family 'PT Sans'
+		color #000
+
+		&__info
+			position relative
+			display block
+			padding-left 63px
+			margin-bottom 20px
+			font-size 16px
+			line-height 20px
+			& a
+				color #000
+
+			&_phone
+				position relative
+				padding-top 10px
+				padding-left 63px
+				margin-top 51px
+				margin-bottom 63px
+				height 41px
+				font-size 25px
+				font-weight bold
+				letter-spacing -.2px
+
+	&-icon
+		position absolute
+		top -10px
+		left 9px
+		width 41px
+		height 41px
+		&_phone
+			top -5px
+			left 7px
+			width 44px
+			height 51px
+		&_clock
+			top -1px
+		&_flag
+			top -11px
+			left 8px
+			width 43px
+			height 43px
+
+
+	&-bottom
+		padding-top 31px
+		height 171px
+		font-size 0
+		background #fff
+		&__pay
+			display inline-block
+			width 479px
+		&__social
+			display inline-block
+			width 200px
+
+		&-caption
+			margin-bottom 14px
+			font-size 14px
+			font-family 'PT Sans'
+			color #000
+
+
+		&-btn
+			position relative
+			float left
+			margin-right 2px
+			height 40px
+			border 2px solid #f3f3f3
+			border-radius 5px
+			&_pay
+				width 60px
+				&_long
+					margin-left 10px
+					width 88px
+			&-image
+				position absolute
+				top -1px
+				left -1px
+				&_visa
+					sprite $btn-visa
+				&_mastercard
+					sprite $btn-mastercard
+				&_wallet
+					sprite $btn-wallet
+				&_yandex
+					sprite $btn-yandex
+				&_paypal
+					width 88px
+					sprite $btn-paypal
+
+			&_social
+				margin-right 2.5px
+				width 48px
+				&:last-child
+					margin-right 0
+			&-svg
+				position absolute
+				&_vk
+					top -10px
+					left -6px
+					height 55px
+					width 55px
+				&_classmates
+					top -12px
+					left -6px
+					height 58px
+					width 58px
+				&_fb
+					top 7px
+					left 10px
+					height 23px
+					width 23px
+				&_twitter
+					top 8px
+					left 13px
+					height 20px
+					width 20px
+
+	&-logo
+		display inline-block
+		float left
+		margin 23px 198px 0 -8px
+		width 311px
+		height 65px
+		background url(../images/svg/1_logo_dark.svg)
+
+	&-copyright
+		height 50px
+		line-height 45px
+		background #000
+		&-caption
+			font-size 14px
+			font-weight normal
+			letter-spacing .3px
+			color #fff
+			&_sign
+				font-size 16px
