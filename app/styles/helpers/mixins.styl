@@ -36,6 +36,13 @@ clearfix()
 		clear both
 		content ''
 
+// Prevent user select
+select-none()
+	-webkit-user-select none
+       -moz-user-select none
+        -ms-user-select none
+            user-select none
+
 // Fix no working `-webkit-text-size-adjust: 100%;` in Android.
 fix-text-size-adjust()
 	background-image linear-gradient(transparent, transparent)
