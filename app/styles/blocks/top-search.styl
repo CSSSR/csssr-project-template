@@ -3,28 +3,31 @@
 	height 170px
 	font-family 'PT Sans'
 	font-weight bold
+	background #ebebeb
+	clearfix()
 
 	&__item
 		display block
 		float left
+		height 170px
 
 	&-logo
-		width 330px
-		height 170px
+		width 28%
 		background url(../images/svg/1_logo_dark.svg) no-repeat left center
-		background-size 311px 73px
+		background-size 310px 75px
+
+	&-bg
+		width 23.7%
+		background url(../images/map.png) no-repeat left 3px
 
 	&-input
-		padding 65px 29px 10px 280px
-		width 549px
-		height 170px
+		padding-top 63px
+		width 20.4%
 		font-weight normal
-		background url(../images/map.png) no-repeat left 4px
-		& .search__input
-			height 42px
 
 	&-phone
-		width 217px
+		padding-left 28px
+		width 20.8%
 		line-height 168px
 		font-size 22px
 		letter-spacing -.1px
@@ -32,7 +35,7 @@
 
 	&-workhours
 		position relative
-		margin-top 58px
+		margin-top 57px
 		width 75px
 		height 54px
 		background url(../images/workhours.png) no-repeat
