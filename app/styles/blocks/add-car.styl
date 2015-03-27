@@ -8,13 +8,12 @@
 	border 3px solid white
 	text-align center
 	color white
-
-	&:hover
-		cursor pointer
+	cursor pointer
 
 	&_filled
 		border-color #696969
 		border-radius 0
+		cursor default
 
 	&__bg
 		width 110px
@@ -28,6 +27,10 @@
 		width 100%
 		height 100%
 
+		&:hover
+			.add-car__label
+				display block
+
 		&_filled
 			padding-top 14px
 			padding-right 26px
@@ -35,16 +38,13 @@
 			text-align left
 
 	&__label
-		vertical-align middle
+		display none
+		margin-top 62px
+		margin-left 5px
 		font-family $heading-fonts
 		font-weight 700
 		text-transform uppercase
-
-		&:before
-			display inline-block
-			height 100%
-			vertical-align middle
-			content ''
+		user-select none
 
 	&__model
 		overflow hidden

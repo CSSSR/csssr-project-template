@@ -1,4 +1,3 @@
-
 $top-menu-default-height = 50px
 $top-menu-fix-height = 70px
 $top-menu-lk-height = 90px
@@ -11,6 +10,8 @@ $top-menu-order-height = 70px
 	&__wraper
 		position relative
 		height $top-menu-default-height
+		padding-left 1px
+		padding-right 1px
 
 		&:before
 		&:after
@@ -22,11 +23,11 @@ $top-menu-order-height = 70px
 
 		&:before
 			background-image linear-gradient(#343434, transparent);
-			left -1px
+			left 0
 
 		&:after
 			background-image linear-gradient(#7e7e7e, transparent);
-			right -1px
+			right 0
 
 		&_lk
 			height $top-menu-lk-height
@@ -51,7 +52,6 @@ $top-menu-order-height = 70px
 
 	&__back-button
 		display inline-block
-		margin-right 62px
 		margin-left 11px
 		vertical-align middle
 
@@ -60,7 +60,6 @@ $top-menu-order-height = 70px
 		display block
 		overflow hidden
 		height 100%
-		padding-right 30px
 
 		&:after
 			position absolute
@@ -76,8 +75,8 @@ $top-menu-order-height = 70px
 		display block
 		width 22px
 		height 22px
-		right -1px
-		top 15px
+		right 1px
+		top 14px
 		line-height 22px
 		font-family $heading-fonts
 		font-weight 700
@@ -88,13 +87,18 @@ $top-menu-order-height = 70px
 		color #616161
 
 	&__logo
-		width 226px
+		width 235px
 		height 100%
-		margin-right 50px
+		margin-right 40px
+		margin-left -3px
 		vertical-align middle
 
 		&_lk
 			width 248px
+
+		&_order
+			margin-left -7px
+			margin-right 88px
 
 	&__icon
 		width 42px
@@ -106,6 +110,9 @@ $top-menu-order-height = 70px
 		&_type_nolabel
 			margin-right 0
 
+		&_cart
+			height 65px
+
 	&__icon-wrap
 		position relative
 		display inline-block
@@ -113,6 +120,8 @@ $top-menu-order-height = 70px
 
 	&__label
 		vertical-align middle
+		height 20px
+		overflow hidden
 
 		&_type_currency
 			font-family $heading-fonts
@@ -121,10 +130,11 @@ $top-menu-order-height = 70px
 
 	&__contact
 		display inline-block
+		height 47px
 		vertical-align middle
 
 		&_order
-			margin-left 100px
+			margin-left 116px
 
 	&__container
 		position absolute
@@ -184,11 +194,10 @@ $top-menu-order-height = 70px
 		&_lk
 		&_order
 			float right
-			padding-right 15px
-			padding-left 15px
+			width 90px
 
 		&_type_car
-			width 18.4%
+			width 18.6%
 
 		&_type_compare
 			width 14%
@@ -216,10 +225,17 @@ $top-menu-order-height = 70px
 			&:hover
 				color inherit
 
+		&_fix-car
+			width 235px
+			padding-right 15px
+
+		&_fix-cart
+			width 157px
+			padding-left 0
+			padding-right 18px
+
 	.currency
-		width 40px
-		height 20px
-		margin-left -10px
-		margin-bottom 2px
-		vertical-align middle
+		width 15px
+		height 15px
+		margin-left 5px
 		fill white

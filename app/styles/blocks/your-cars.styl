@@ -3,10 +3,14 @@
 	color white
 
 	&__wrap
-		padding-top 20px
+		padding-top 25px
 		padding-bottom 20px
 		padding-left 40px
 		padding-right 20px
+
+		&_add
+			padding-top 25px
+			padding-bottom 29px
 
 	&__caption
 		text-transform uppercase
@@ -15,19 +19,74 @@
 		font-size 14px
 
 	&__button
+		display inline-block
 		font-weight 700
+		color white
+		vertical-align middle
+
+
+		&:hover
+			color $rushina-gray
+
+	&__inputs
+		clearfix()
+
+	&__select
+		float left
+		width 264px
+		margin-top 20px
+		margin-left 19px
+
+		&:first-child
+			margin-left 0
+
+		&_model
+			width 264px
+
+		&_year
+			margin-left 22px
+
+		&_mod
+			margin-left 20px
+			width 264px
+
+	&__label
+		margin-left -1px
+		margin-bottom 5px
+		font-family $heading-fonts
+		font-size 14px
+		font-weight 700
+		text-transform uppercase
 
 	&__list
-		padding-top 20px
-		padding-bottom 20px
+		margin-top 14px
+		margin-bottom 20px
 		text-align left
 		clearfix()
 
 	&__item
 		float left
-		margin-right 20px
+		margin-right 21px
 
 		&:last-child
 			margin-right 0
 
+	&__submit
+		display inline-block
+		width 547px
+		margin-top 30px
+		font-family $heading-fonts
+		font-weight 700
+		color black
 
+	&__cancel
+		display inline-block
+		width 265px
+		margin-top 30px
+		margin-left 17px
+		font-family $heading-fonts
+		font-weight 700
+		color white
+
+		&:hover
+			color $rushina-gray
