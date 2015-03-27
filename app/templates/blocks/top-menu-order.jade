@@ -1,25 +1,26 @@
 .top-menu
 	.top-menu__wraper.top-menu__wraper_order.grid
-		.top-menu__contacts
-			+icon('1_logo_light').top-menu__logo
 
-			.top-menu__backbutton
-				include back-button
+		.top-menu__tab.top-menu__tab_order
+			+icon('menu_1_clock').top-menu__icon.top-menu__icon_type_nolabel
+			.top-menu__container.top-menu__container_rightedge
+				include opening-hours
 
-			.top-menu__contact
-				include consult-number
+		.top-menu__tab.top-menu__tab_order
+			.top-menu__icon-wrap
+				+icon('menu_01_login').top-menu__icon.top-menu__icon_type_nolabel
 
-		.top-menu__tab
+		.top-menu__tab.top-menu__tab_order
 			.top-menu__icon-wrap
 				+icon('menu_01_feedback').top-menu__icon.top-menu__icon_type_nolabel
 			.top-menu__container.top-menu__container_rightedge
 				include feedback
 
-		.top-menu__tab
-			.top-menu__icon-wrap
-				+icon('menu_01_login').top-menu__icon.top-menu__icon_type_nolabel
+		.top-menu__contacts
+			+icon('1_logo_light').top-menu__logo
 
-		.top-menu__tab
-			+icon('menu_1_clock').top-menu__icon.top-menu__icon_type_nolabel
-			.top-menu__container.top-menu__container_rightedge
-				include opening-hours
+			.top-menu__back-button
+				+back-button('Продолжить покупки')
+
+			.top-menu__contact.top-menu__contact_order
+				include consult-number

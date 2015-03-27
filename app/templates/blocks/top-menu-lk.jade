@@ -1,0 +1,27 @@
+.top-menu
+	.top-menu__wraper.top-menu__wraper_lk.grid
+
+		.top-menu__tab.top-menu__tab_lk
+			.top-menu__icon-wrap
+				+icon('menu_01_feedback').top-menu__icon.top-menu__icon_type_nolabel
+			.top-menu__container.top-menu__container_rightedge
+				include feedback
+
+		.top-menu__tab.top-menu__tab_lk
+			.top-menu__icon-wrap
+				+icon('2_email').top-menu__icon.top-menu__icon_type_nolabel
+
+		.top-menu__tab.top-menu__tab_lk
+			+icon('menu_1_clock').top-menu__icon.top-menu__icon_type_nolabel
+			.top-menu__container.top-menu__container_rightedge
+				include opening-hours
+
+		.top-menu__contacts.top-menu__contacts_lk
+			+icon('1_logo_light').top-menu__logo.top-menu__logo_lk
+
+			.top-menu__back-button
+				+back-button('Вернуться на сайт')
+
+			.top-menu__contact
+				include consult-manager
+
