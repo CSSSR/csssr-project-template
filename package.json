@@ -66,11 +66,11 @@
   },
   "browsers": {
     "android": 4,
-    "chrome": 38,
-    "firefox": 33,
+    "chrome": 40,
+    "firefox": 35,
     "ie": 10,
     "ios": 7,
-    "opera": 25,
-    "safari": 6
+    "opera": 27,
+    "safari": 7
   }
 }
