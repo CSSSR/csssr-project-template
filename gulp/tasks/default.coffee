@@ -1,5 +1,6 @@
 runSequence = require 'run-sequence'
 gulp        = require 'gulp'
+gutil       = require 'gulp-util'
 
 gulp.task 'stylusDependences', ->
 	runSequence(
@@ -19,10 +20,13 @@ gulp.task 'default', ->
 		]
 		'browserSync'
 		'watch'
+		->
+			if gutil.env.ngrok
+				gulp.start 'ngrok'
 	)
 
 gulp.task 'build', ['del'], ->
-	gulp.run(
+	gulp.start(
 		'stylusDependences'
 		'jade'
 		'scripts'
