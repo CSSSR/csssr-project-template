@@ -8,15 +8,18 @@ gulp.task 'stylusDependences', ->
 		'stylus'
 	)
 
-gulp.task 'default', [
-	'stylusDependences'
-	'jade'
-	'scripts'
-	'jscs'
-	'jshint'
-	'browserSync'
-	'watch'
-]
+gulp.task 'default', ->
+	runSequence(
+		[
+			'stylusDependences'
+			'jade'
+			'scripts'
+			'jscs'
+			'jshint'
+		]
+		'browserSync'
+		'watch'
+	)
 
 gulp.task 'build', ['del'], ->
 	gulp.run(
