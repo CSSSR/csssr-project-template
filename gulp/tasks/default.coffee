@@ -1,36 +1,34 @@
 runSequence = require 'run-sequence'
 gulp        = require 'gulp'
 
-gulp.task 'build', ->
-	return runSequence(
-		'del'
+gulp.task 'stylusDependences', ->
+	runSequence(
 		'spritesmith'
 		'svg'
-		'imagemin'
 		'stylus'
+	)
+
+gulp.task 'default', [
+	'stylusDependences'
+	'jade'
+	'scripts'
+	'jscs'
+	'jshint'
+	'browserSync'
+	'watch'
+]
+
+gulp.task 'build', ['del'], ->
+	gulp.run(
+		'stylusDependences'
 		'jade'
 		'scripts'
 		'copy'
 	)
 
 gulp.task 'deploy', ->
-	return runSequence(
+	runSequence(
 		'del'
 		'build'
 		'ghpages'
-	)
-
-gulp.task 'default', ->
-	return runSequence(
-		'spritesmith'
-		'imagemin'
-		'svg'
-		'stylus'
-		'jade'
-		'scripts'
-		'copy'
-		'jscs'
-		'jshint'
-		'browserSync'
-		'watch'
 	)

@@ -6,7 +6,7 @@ paths       = require '../paths'
 path        = require 'path'
 
 gulp.task 'svg', ->
-	return gulp.src 'app/images/svg/**/*.svg'
+	gulp.src 'app/images/svg/**/*.svg'
 		.pipe svgSymbols
 			title: false
 			id: 'icon_%f'

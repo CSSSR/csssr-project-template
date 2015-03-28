@@ -1,6 +1,7 @@
 gulp         = require 'gulp'
 plumber      = require 'gulp-plumber'
 spritesmith  = require 'gulp.spritesmith'
+imagemin     = require 'gulp-imagemin'
 errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
 
@@ -18,7 +19,11 @@ gulp.task 'spritesmith', ->
 			imgOpts:
 				format: 'png'
 
-	spriteData.img.pipe gulp.dest paths.appImages
+	spriteData.img
+		.pipe imagemin
+			optimizationLevel: 3
+		.pipe gulp.dest paths.appImages
+
 	spriteData.css.pipe gulp.dest paths.appStylesHelpers
 
-	return spriteData
+	spriteData
