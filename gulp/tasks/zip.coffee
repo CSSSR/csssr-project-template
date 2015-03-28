@@ -1,6 +1,6 @@
-gulp   = require 'gulp'
-zip    = require 'gulp-zip'
-paths  = require '../paths'
+gulp  = require 'gulp'
+zip   = require 'gulp-zip'
+paths = require '../paths'
 
 gulp.task 'zip', ->
 	return gulp.src 'dist/**/*'
