@@ -1,8 +1,13 @@
 .main-menu
 	height 50px
-	background-color $rushina-gray
-	color white
 	clearfix()
+	color $rushina-dark-gray
+	text-shadow 0 1px rgba(255,255,255,0.75)
+
+	&_header
+		background-color $rushina-gray
+		color white
+		text-shadow none
 
 	&__wrap
 		position relative
@@ -11,24 +16,62 @@
 		margin-right auto
 		margin-left auto
 
-		padding-left 1px
-		padding-right 1px
+		background-image linear-gradient(#ececec, #d4d4d4)
 
-		&:before
-		&:after
-			position absolute
-			width 1px
-			height 100%
-			content ''
-			top 0
+		border-top 1px solid #a09f9f
+		border-bottom 1px solid #a09f9f
+		border-radius 1px
 
-		&:before
-			background-image linear-gradient(#343434, transparent);
-			left 0
+		&_shadow
 
-		&:after
-			background-image linear-gradient(#7e7e7e, transparent);
-			right 0
+			&:before
+				position absolute
+				width 98%
+				left 1%
+				top 4px
+				border 1px solid #a09f9f
+				border-radius 50%
+				box-shadow 0 0 9px 4px #a09f9f
+				content ''
+
+				z-index -1
+
+			&:after
+				position absolute
+				width 98%
+				left 1%
+				bottom 0px
+				border 1px solid #a09f9f
+				border-radius 50%
+				box-shadow 0 0 8px 3px #a09f9f
+				content ''
+
+				z-index -1
+
+		&_header
+			padding-left 1px
+			padding-right 1px
+
+			border none
+			border-radius none
+
+			background-image none
+
+			&:before
+			&:after
+				position absolute
+				width 1px
+				height 100%
+				content ''
+				top 0
+
+			&:before
+				background-image linear-gradient(#343434, transparent)
+				left 0
+
+			&:after
+				background-image linear-gradient(#7e7e7e, transparent)
+				right 0
 
 	&__tab
 		position relative
@@ -36,48 +79,29 @@
 
 		height 100%
 
-		padding-right 15px
-		padding-left 15px
+		padding-right 10px
+		padding-left 10px
 
 		font-family $text-fonts
-		font-size 14px
+		font-size 15px
 		font-weight 700
 		text-align center
-		letter-spacing .5px
+		letter-spacing 0
 
 		line-height 50px
 
-		box-shadow inset 0 -5px 3px -3px #5c5c5c
+		border-right 1px solid #a09f9f
+		border-left 1px solid white
 
 		cursor pointer
 		user-select none
 
-		&:after, &:before
-			position absolute
-			top 0
-			height 100%
-			width 1px
-			content ""
-
-		&:before
-			background-image linear-gradient(#7e7e7e, transparent);
-			left 0
-
-		&:after
-			background-image linear-gradient(#343434, transparent);
-			right 0
-
 		&:first-child
-		&:last-child
-			box-shadow inset 0 -4px 3px -3px #5c5c5c
+			border-left-color $rushina-gray
 
 		&:hover
-			color $rushina-yellow
-
-			.main-menu__arrow
-			.main-menu__home-icon
-				fill $rushina-yellow
-
+			background-color #f5f5f5
+			color black
 
 		&_right
 			float right
@@ -86,28 +110,82 @@
 			float none
 			overflow hidden
 
+		&_header
+			box-shadow inset 0 -5px 3px -3px #5c5c5c
+			border none
+
+			font-size 14px
+
+			letter-spacing .5px
+
+			&:after
+			&:before
+				position absolute
+				top 0
+				height 100%
+				width 1px
+				content ""
+
+			&:before
+				background-image linear-gradient(#7e7e7e, transparent);
+				left 0
+
+			&:after
+				background-image linear-gradient(#343434, transparent);
+				right 0
+
+			&:hover
+				color $rushina-yellow
+				background-color $rushina-gray
+
+				.main-menu__arrow
+				.main-menu__home-icon
+					fill $rushina-yellow
+
+		&_active
+			background-image linear-gradient(to top, $rushina-light-yellow, #fbba00)
+
+			.main-menu__home-icon
+				fill black
+
 		//*pp
 		&_home
 			width 81px
-			padding-left 17px
+			padding-left 13px
+
+		&_home-header
+			width 81px
+			padding-left 12px
 
 		&_company
 			width 130px
 
 		&_tires
 			width 102px
-			padding-left 22px
+			padding-left 19px
+
+		&_tires-header
+			width 102px
+			padding-left 16px
 
 		&_discs
 			width 103px
-			padding-left 23px
+			padding-left 19px
+
+		&_discs-header
+			width 103px
+			padding-left 18px
 
 		&_service
 			width 93px
 
 		&_delivery
 			width 178px
-			padding-left 18px
+			padding-left 13px
+
+		&_delivery-header
+			width 178px
+			padding-left 14px
 
 		&_credit
 			width 172px
@@ -115,16 +193,25 @@
 		&_info
 			width 212px
 
+
+
 	&__home-icon
 		height 50px
 		width 20px
+		fill $rushina-gray
 
-		fill white
+		&_header
+			fill white
 
 	&__arrow
 		width 20px
 		height 22px
-		padding-bottom 2px
+		margin-left 2px
+		padding-bottom 1px
 		vertical-align middle
+		fill $rushina-dark-gray
 
-		fill white
+		&_header
+			fill white
+			margin-left 0
+			padding-bottom 2px
