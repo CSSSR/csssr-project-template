@@ -1,0 +1,86 @@
+.compare-slider
+	position relative
+
+	padding-left 81px
+	padding-right 25px
+
+	clearfix()
+
+	&__left-switch
+		position absolute
+		left -20px
+		top 50%
+
+		margin-top -5px
+		sprite($slider-switch-l)
+
+		cursor pointer
+
+
+	&__right-switch
+		position absolute
+		right -20px
+		top 50%
+
+		margin-top -5px
+		sprite($slider-switch-r)
+
+		cursor pointer
+
+	&__container
+		width 1000px
+
+	&__item
+		position relative
+
+		float left
+
+		width 180px
+		height 330px
+
+		margin-top 40px
+		margin-right 20px
+
+
+		background-color white
+
+		&:last-child
+			margin-right 0
+
+		&_add
+			border 3px solid #696969
+			background-color $rushina-gray
+			cursor pointer
+			user-select none
+
+	&__close-btn
+		position absolute
+		right 0
+		top -40px
+		display block
+		sprite($close-icon-compare)
+		cursor pointer
+
+
+
+	&__add-label
+		position relative
+		display block
+		width 100px
+		margin-top 136px
+		margin-left 48px
+		font-family $heading-fonts
+		font-weight 700
+		font-size 14px
+		line-height 17px
+		text-transform uppercase
+		color #696969
+
+		&:before
+			position absolute
+			left -20px
+			top 15px
+			font-family $heading-fonts
+			font-weight 700
+			font-size 20px
+			content '+'

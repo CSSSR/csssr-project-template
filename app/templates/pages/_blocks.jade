@@ -1,6 +1,7 @@
 extends ../layouts/page
 
 block page_content
+
 	.grid
 		a(href='/') Радар
 
@@ -58,6 +59,18 @@ block page_content
 				.h3 Добавление авто blocks/your-cars_add
 			.demo-block
 				include ../blocks/your-cars_add
+
+		#blocks-viewed(data-collapse='persist')
+			.grid
+				.h3 Недавно просмотренные blocks/last-viewed-products
+			.demo-block
+				include ../blocks/last-viewed-products
+
+		#blocks-viewed(data-collapse='persist')
+			.grid
+				.h3 Сравнение товаров blocks/product-compare
+			.demo-block
+				include ../blocks/product-compare
 
 		#blocks-feedback(data-collapse='persist')
 			.grid
