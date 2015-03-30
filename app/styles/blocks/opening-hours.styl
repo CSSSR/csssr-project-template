@@ -1,22 +1,78 @@
 .opening-hours
-	position relative
 	width 160px
 	height 138px
-	background-color #757575
-	padding-top 15px
-	padding-left 20px
-	padding-right 20px
-	background-image url('../images/opening-hours.png')
-	background-repeat no-repeat
-	background-position 25px 70px
+
+	padding-top 16px
+	padding-left 25px
+
+	background-color $rushina-gray
+
 	text-align left
+	color white
+
+	clearfix()
+
+	&__days-list
+		float left
+
+	&__timeframe
+		margin-top 8px
+		margin-left 2px
+
+		overflow hidden
+
+	&__days
+		width 15px
+		height 6px
+
+		margin-top 2px
+
+		background-color white
+
+		&:first-child
+			margin-top 0
+
+		&_sunday
+			background-color #d40101
+
+	&__scope
+		float left
+
+
+	&__weekdays-scope
+		width 4px
+		height 34px
+
+		margin-top 2px
+		margin-left 5px
+
+		border 1px solid white
+		border-left 0
+
+	&__saturday-scope
+		width 4px
+
+		margin-left 5px
+		margin-top 6px
+
+		border-top 1px solid white
 
 	&__weekdays
-		position absolute
-		left 55px
-		top 75px
+		margin-top 7px
+
+		padding-left 5px
+
+		font-size 12px
+		color white
+
+		overflow hidden
 
 	&__weekend
-		position absolute
-		left 55px
-		top 101px
+		margin-top 5px
+
+		padding-left 6px
+
+		font-size 12px
+
+		overflow hidden
+

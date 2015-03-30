@@ -1,0 +1,11 @@
+mixin btn($label, $isLink)
+	if $isLink
+		a.btn(href = 'javascript:void(0)')= $label
+	else
+		button.btn= $label
+
+mixin select(arrays)
+	.select2
+		select
+			each array in arrays
+				option(value=array[1])=array[0]
