@@ -85,6 +85,9 @@
 			width 43px
 			height 43px
 
+	&-wrapper
+		font-size 0
+		clearfix()
 
 	&-bottom
 		padding-top 31px
@@ -92,18 +95,19 @@
 		font-size 0
 		background #fff
 		&__pay
-			display inline-block
-			width 479px
+			float left
+			margin-left -1px
+			width 40.7%
 		&__social
-			display inline-block
-			width 200px
+			position relative
+			float left
+			width 16.8%
 
 		&-caption
 			margin-bottom 14px
 			font-size 14px
 			font-family 'PT Sans'
 			color #000
-
 
 		&-btn
 			position relative
@@ -114,14 +118,14 @@
 			border 2px solid #f3f3f3
 			border-radius 5px
 			&_pay
-				width 60px
+				width 61px
 				&_long
-					margin-left 10px
+					margin-left 7px
 					width 88px
 			&-image
 				position absolute
-				top -1px
-				left -1px
+				top -2px
+				left -2px
 				&_visa
 					sprite $btn-visa
 				&_mastercard
@@ -135,10 +139,12 @@
 					sprite $btn-paypal
 
 			&_social
-				margin-right 2.5px
+				margin-right 3px
 				width 48px
 				&:last-child
-					margin-right 0
+					position absolute
+					top 34px
+					left 153px
 			&-svg
 				position absolute
 				&_vk
@@ -148,7 +154,7 @@
 					width 55px
 				&_classmates
 					top -12px
-					left -6px
+					left -7px
 					height 58px
 					width 58px
 				&_fb
@@ -158,17 +164,16 @@
 					width 23px
 				&_twitter
 					top 8px
-					left 13px
+					left 12px
 					height 20px
 					width 20px
 
 	&-logo
-		display inline-block
 		float left
-		margin 23px 198px 0 -8px
-		width 311px
-		height 65px
-		background url(../images/svg/1_logo_dark.svg)
+		width 42.5%
+		height 171px
+		background url(../images/svg/1_logo_dark.svg) no-repeat -8px 22px
+		background-size 311px 65px
 
 	&-copyright
 		height 50px
