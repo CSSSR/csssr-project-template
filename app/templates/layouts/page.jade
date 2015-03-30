@@ -1,0 +1,15 @@
+include ../helpers/variables
+include ../helpers/mixins
+
++script([], ['libs/jquery/dist/jquery.min.js'])
++script([], ['libs/select2/select2.min.js'])
++script([], ['debug.js', 'common.min.js'])
+
+doctype html
+html(lang='ru')
+	include ../partials/head
+	body
+		.main
+			block page_content
+
+		include ../partials/scripts
