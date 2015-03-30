@@ -1,6 +1,6 @@
-.bus-card
+.tire-card
 	&-close
-		display none
+		display block
 		margin-left 140px
 		width 38px
 		height 38px
@@ -18,35 +18,56 @@
 		padding 13px
 		border 3px solid #ebebeb
 		background #fff
+		&_short
+			height 260px
+
+	&-option
+		position absolute
+		top 9px
+		left -1px
+		&__item
+			display inline-block
+			margin-right -17px
+			width 36px
+			height 36px
 
 	&-label
 		position absolute
 		top 16px
 		right -9px
 		display none
-		width 102px
 		height 42px
-		background url(../images/bus-card_label.png)
+		&_active
+			display block
+		&_discount
+			width 102px
+			background url(../images/bus-card_label_discount.png)
+		&_new
+			width 110px
+			background url(../images/bus-card_label_new.png)
 
 	&-img
 		width 148px
 		height 134px
-		background url(../images/bus-card.png) no-repeat bottom
+		border none
 
 	&-play
 		position absolute
 		top 111px
 		left 0px
+		display none
 		width 36px
 		height 36px
 		background #ebebeb
+		&_active
+			display block
 		&-icon
 			margin 2px
 			width 31px
 			height 33px
 
 	&-title
-		margin-top 25px
+		margin-top 20px
 		text-align center
 		line-height 19px
 
@@ -59,6 +80,9 @@
 	&-price
 		padding-left 32px
 		margin-top 2px
+		&_left
+			display inline-block
+			padding-left 4px
 		&-num
 			position relative
 			display inline-block
@@ -68,6 +92,33 @@
 			right -42px
 			width 60px
 			height 120px
+
+	&-oldprice
+		display inline-block
+		padding-left 29px
+		font-family $text-fonts
+		font-size 16px
+		vertical-align top
+		&-num
+			position relative
+			display inline-block
+			margin-top 13px
+			&:after //зачёркивание
+				position absolute
+				top 10px
+				left -4px
+				width 55px
+				height 2px
+				background #e10000
+				content ''
+		&-rub
+			position absolute
+			top -27px
+			right -28px
+			width 38px
+			height 76px
+			& use
+				fill #838383
 
 	&-avaliable
 		position relative
