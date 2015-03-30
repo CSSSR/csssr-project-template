@@ -1,38 +1,68 @@
 extends ../layouts/page
 
 block page_content
-	h4 Дефолтный (../blocks/top-menu)
-	br
-	include ../blocks/top-menu
-	br
-	include ../blocks/top-menu_login
-	br
-	h4 Фиксированый (../blocks/header-fix)
-	br
-	include ../blocks/top-menu-fix
-	br
-	h4
-	br
-	include ../blocks/main-menu_header
-	br
-	br
-	include ../blocks/main-menu
-	br
-	h4 Оформление заказа
-	br
-	include ../blocks/top-menu-order
-	br
-	h4 Личный кабинет
-	br
-	include ../blocks/top-menu-lk
-	h4 Ваши авто
-	br
-	include ../blocks/your-cars
-	br
-	include ../blocks/your-cars_add
-	br
-	h4 Обратная связь
-	br
-	include ../blocks/feedback
-	br
-	include ../blocks/opening-hours
+	.grid
+		a(href='/') Радар
+		.h1 Блоки
+		.h2 Верхнее меню
+		.h3 Дефолтный blocks/top-menu
+	.demo-block
+		include ../blocks/top-menu
+
+	.grid
+		.h3 Логин blocks/top-menu_login
+	.demo-block
+		include ../blocks/top-menu_login
+
+	.grid
+		.h3 Фиксированый blocks/header-fix
+	.demo-block
+		include ../blocks/top-menu-fix
+
+	.grid
+		.h3 Главное меню blocks/main-menu_header
+	.demo-block
+		include ../blocks/main-menu_header
+
+	.grid
+		.h3 Главное меню blocks/main-menu
+	.demo-block
+		include ../blocks/main-menu
+
+	.grid
+		.h3 Оформление заказа blocks/top-menu-order
+	.demo-block
+		include ../blocks/top-menu-order
+
+	.grid
+		.h3 Личный кабинет blocks/top-menu-lk
+	.demo-block
+		include ../blocks/top-menu-lk
+
+	.grid
+		.h3 Ваши авто blocks/your-cars
+	.demo-block
+		include ../blocks/your-cars
+
+	.grid
+		.h3 Добавление авто blocks/your-cars_add
+	.demo-block
+		include ../blocks/your-cars_add
+
+	.grid
+		.h3 Обратная связь blocks/feedback
+	.demo-block
+		.grid
+			include ../blocks/feedback
+
+	.grid
+		.h3 Часы работы blocks/opening-hours
+	.demo-block
+		.grid
+			include ../blocks/opening-hours
+
+	.grid
+		.h2 Промо-крутилка
+	.demo-block
+		.grid
+			include ../blocks/advantages
