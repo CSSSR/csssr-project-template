@@ -1,0 +1,18 @@
+.top-search
+	.grid
+		.top-search__item.top-search-logo
+		.top-search__item.top-search-bg
+		.top-search__item.top-search-input
+			form.search(action = 'javascript:void(0)')
+				input.search__input(
+					type='text'
+					placeholder='Поиск по каталогу товаров'
+				)
+				button.search__submit: +icon('search').search__icon
+		.top-search__item.top-search-phone
+			|+7 (495) 345-67-89
+		.top-search__item.top-search-workhours
+			.top-search-workhours-caption.top-search-workhours-caption_weekday
+				|- 9:00-19:00
+			.top-search-workhours-caption.top-search-workhours-caption_weekend
+				|10:00-18:00
