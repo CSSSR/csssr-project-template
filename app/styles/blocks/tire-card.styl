@@ -1,0 +1,223 @@
+.tire-card
+	&__close
+		display block
+		margin-left 140px
+		width 38px
+		height 38px
+		background #616161
+		&-icon
+			margin 3px
+			width 32px
+			height 32px
+			& use
+				fill #fff
+
+	&__content
+		position relative
+		height 330px
+		padding 13px
+		border 3px solid #ebebeb
+		background #fff
+		&_short
+			height 260px
+
+	&__option
+		position absolute
+		top 9px
+		left -1px
+		&__item
+			position relative
+			display inline-block
+			margin-right -17px
+			&_summer
+				width 36px
+				height 36px
+			&_allseason
+				margin-left 9px
+				margin-right -10px
+				top -6px
+				width 28px
+				height 22px
+			&_winter
+				margin-left 9px
+				margin-right -10px
+				top -6px
+				width 22px
+				height 22px
+			&_spike
+				width 36px
+				height 36px
+
+
+	&__label
+		position absolute
+		top 16px
+		right -9px
+		display none
+		height 42px
+		&_active
+			display block
+
+		&_discount
+			width 102px
+			height 27px
+			background #ff0000
+			&-caption //надпись
+				padding-top 8px
+				padding-left 19px
+				font-size 14px
+				font-family $heading-fonts
+				font-weight bold
+				text-transform uppercase
+				color #fff
+				&:after //нижний прямоугольник
+					position absolute
+					top 27px
+					left 9px
+					width 93px
+					height 9px
+					background #ff0000
+					content ''
+			&:before //левый треугольник
+				position absolute
+				top 27px
+				left 0
+				border: 5px solid transparent
+				border-top: 5px solid #bebebe
+				border-right: 5px solid #bebebe
+				content ''
+			&:after//правый треугольник
+				position absolute
+				top 36px
+				right 0
+				border: 3px solid transparent
+				border-left: 3px solid #720000
+				border-top: 3px solid #720000
+				content ''
+
+		&_new
+			width 110px
+			height 27px
+			background #ffe800
+			&-caption //надпись
+				padding-top 8px
+				padding-left 19px
+				font-size 14px
+				font-family $heading-fonts
+				font-weight bold
+				text-transform uppercase
+				color #000
+				&:after //нижний прямоугольник
+					position absolute
+					top 27px
+					left 9px
+					width 101px
+					height 9px
+					background #ffe800
+					content ''
+			&:before //левый треугольник
+				position absolute
+				top 27px
+				left 0
+				border: 5px solid transparent
+				border-top: 5px solid #bebebe
+				border-right: 5px solid #bebebe
+				content ''
+			&:after//правый треугольник
+				position absolute
+				top 36px
+				right 0
+				border: 3px solid transparent
+				border-left: 3px solid #b58700
+				border-top: 3px solid #b58700
+				content ''
+
+	&__img
+		width 148px
+		height 134px
+		border none
+
+	&-play
+		position absolute
+		top 111px
+		left 0px
+		display none
+		width 36px
+		height 36px
+		background #ebebeb
+		&_active
+			display block
+		&-icon
+			margin 2px
+			width 31px
+			height 33px
+
+	&-title
+		margin-top 20px
+		text-align center
+		line-height 19px
+
+	&-caption
+		margin-top 3px
+		font-size 13px
+		font-family $text-fonts
+		text-align center
+
+	&-price
+		padding-left 32px
+		margin-top 2px
+		&_left
+			display inline-block
+			padding-left 4px
+		&__num
+			position relative
+			display inline-block
+		&__rub
+			position absolute
+			top -39px
+			right -42px
+			width 60px
+			height 120px
+
+	&-oldprice
+		display inline-block
+		padding-left 29px
+		font-family $text-fonts
+		font-size 16px
+		vertical-align top
+		&-num
+			position relative
+			display inline-block
+			margin-top 13px
+			&:after //зачёркивание
+				position absolute
+				top 10px
+				left -4px
+				width 55px
+				height 2px
+				background #e10000
+				content ''
+		&-rub
+			position absolute
+			top -27px
+			right -28px
+			width 38px
+			height 76px
+			& use
+				fill #838383
+
+	&-avaliable
+		position relative
+		display inline-block
+		margin-top 4px
+		margin-left 33px
+		padding-left 21px
+		font-family $text-fonts
+		font-weight bold
+		font-size 13px
+		&:after
+			position absolute
+			top 5px
+			left 0
+			sprite $checkmark
+			content ''
