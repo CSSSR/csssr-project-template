@@ -35,8 +35,6 @@ $(function () {
 
 		$('[data-toggle]', $wf).on('click', function (e) {
 			var group = $(e.target).closest('[data-toggle]').attr('data-toggle');
-			console.log(group);
-			console.log($(group, $wf));
 			$(group, $wf).toggle();
 		});
 	})();
