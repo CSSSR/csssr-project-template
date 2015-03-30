@@ -1,0 +1,53 @@
+.top-search
+	display block
+	height 170px
+	font-family 'PT Sans'
+	font-weight bold
+	background #ebebeb
+	clearfix()
+
+	&__item
+		display block
+		float left
+		height 170px
+
+	&-logo
+		width 28%
+		background url(../images/svg/1_logo_dark.svg) no-repeat left center
+		background-size 310px 75px
+
+	&-bg
+		width 23.7%
+		background url(../images/map.png) no-repeat left 3px
+
+	&-input
+		padding-top 63px
+		width 20.4%
+		font-weight normal
+
+	&-phone
+		padding-left 28px
+		width 20.8%
+		line-height 168px
+		font-size 22px
+		letter-spacing -.1px
+		color #000
+
+	&-workhours
+		position relative
+		margin-top 57px
+		width 75px
+		height 54px
+		background url(../images/workhours.png) no-repeat
+		&-caption
+			position absolute
+			left 30px
+			display block
+			width 66px
+			font-size 12px
+			color #3a3a3a
+			letter-spacing -.3px
+			&_weekday
+				top 7px
+			&_weekend
+				top 32px
