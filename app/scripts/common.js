@@ -10,21 +10,19 @@ $(function () {
 
 	// wheel filter
 	(function () {
-		var
-		$wf = $('.js-wf'),
-		$tabs = $('.js-wf-tab', $wf),
-		$bodies = $('.js-wf-body', $wf),
-		$discs = $('.js-rear-discs', $wf),
-		$tires = $('.js-rear-tires', $wf);
+		var $wf = $('.js-wf'),
+			$tabs = $('.js-wf-tab', $wf),
+			$bodies = $('.js-wf-body', $wf),
+			$discs = $('.js-rear-discs', $wf),
+			$tires = $('.js-rear-tires', $wf);
 
 		$discs.add($tires)
 			.not('[data-hide-on-init="false"]')
 			.hide();
 
 		$tabs.on('click', function (e) {
-			var
-			$target = $(e.target).closest('.js-wf-tab'),
-			id = $target.attr('data-id');
+			var $target = $(e.target).closest('.js-wf-tab'),
+				id = $target.attr('data-id');
 
 			$tabs.removeClass('wf__tab_active');
 			$target.addClass('wf__tab_active');
@@ -73,5 +71,26 @@ $(function () {
 	$('.js-show-your-cars').on('click', function () {
 		$yourCars.toggle();
 	});
-	
+
+	// item slider
+	(function () {
+		var root = '.js-slick';
+
+		$(root).each(function (i, el) {
+			var opt = {},
+				$el = $(el);
+
+			opt.prevArrow = $(root + '__prev');
+			opt.nextArrow = $(root + '__next');
+
+			opt.autoplay = Boolean($el.attr('data-autoplay'));
+			opt.autoplaySpeed = Number($el.attr('data-autoplay')) || 5000;
+			opt.infinite = $el.attr('data-infinite') || false;
+
+			opt.slidesToShow = Number($el.attr('data-show')) || 4;
+			opt.slidesToScroll = Number($el.attr('data-scroll')) || opt.slidesToShow;
+
+			$(root + '__container').slick(opt);
+		});
+	})();
 });
