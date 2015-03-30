@@ -70,6 +70,7 @@ $(function () {
 	// open your cars
 	$('.js-show-your-cars').on('click', function () {
 		$yourCars.toggle();
+	});
 
 <<<<<<< HEAD
 	// item slider
