@@ -1,0 +1,130 @@
+.main-menu
+	height 50px
+	background-color $rushina-gray
+	color white
+	clearfix()
+
+	&__wrap
+		position relative
+		height 100%
+
+		margin-right auto
+		margin-left auto
+
+		padding-left 1px
+		padding-right 1px
+
+		&:before
+		&:after
+			position absolute
+			width 1px
+			height 100%
+			content ''
+			top 0
+
+		&:before
+			background-image linear-gradient(#343434, transparent);
+			left 0
+
+		&:after
+			background-image linear-gradient(#7e7e7e, transparent);
+			right 0
+
+	&__tab
+		position relative
+		float left
+
+		height 100%
+
+		padding-right 15px
+		padding-left 15px
+
+		font-family $text-fonts
+		font-size 14px
+		font-weight 700
+		text-align center
+		letter-spacing .5px
+
+		line-height 50px
+
+		box-shadow inset 0 -5px 3px -3px #5c5c5c
+
+		cursor pointer
+		user-select none
+
+		&:after, &:before
+			position absolute
+			top 0
+			height 100%
+			width 1px
+			content ""
+
+		&:before
+			background-image linear-gradient(#7e7e7e, transparent);
+			left 0
+
+		&:after
+			background-image linear-gradient(#343434, transparent);
+			right 0
+
+		&:first-child
+		&:last-child
+			box-shadow inset 0 -4px 3px -3px #5c5c5c
+
+		&:hover
+			color $rushina-yellow
+
+			.main-menu__arrow
+			.main-menu__home-icon
+				fill $rushina-yellow
+
+
+		&_right
+			float right
+
+		&_stretch
+			float none
+			overflow hidden
+
+		//*pp
+		&_home
+			width 81px
+			padding-left 17px
+
+		&_company
+			width 130px
+
+		&_tires
+			width 102px
+			padding-left 22px
+
+		&_discs
+			width 103px
+			padding-left 23px
+
+		&_service
+			width 93px
+
+		&_delivery
+			width 178px
+			padding-left 18px
+
+		&_credit
+			width 172px
+
+		&_info
+			width 212px
+
+	&__home-icon
+		height 50px
+		width 20px
+
+		fill white
+
+	&__arrow
+		width 20px
+		height 22px
+		padding-bottom 2px
+		vertical-align middle
+
+		fill white
