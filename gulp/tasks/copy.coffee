@@ -29,6 +29,8 @@ gulp.task 'copy:components', ->
 			'svg4everybody/svg4everybody.min.js'
 			'select2/select2.min.js'
 			'select2/select2.css'
+			'jQuery-Collapse/src/jquery.collapse.js'
+			'jQuery-Collapse/src/jquery.collapse_storage.js'
 		],
 			base: 'components'
 			cwd: 'components'
