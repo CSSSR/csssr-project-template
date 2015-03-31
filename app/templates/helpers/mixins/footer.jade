@@ -1,12 +1,11 @@
-mixin footer-nav__item(title, items)
-	.footer-nav__item.grid-module-6
-		if attributes
-			a.footer-nav-title(class='h5')&attributes(attributes)=title
+mixin footer-nav__item(data, items)
+	.footer-nav__item.grid-module-6&attributes(attributes)
+		if data.title
+			.footer-nav-title(class='h5')=data.title
 			if items
 				each item in items
 					a.footer-nav__link(href='#')=item
 		else
-			.footer-nav-title(class='h5')=title
 			if items
 				each item in items
 					a.footer-nav__link(href='#')=item
