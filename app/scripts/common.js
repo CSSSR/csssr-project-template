@@ -44,4 +44,34 @@ $(function () {
 		countdown: true,
 		language: 'ru'
 	});
+
+	// header roll
+
+	var $headerWrapper = $('.js-header-wrapper'),
+		$menuHeader = $('.js-menu-header'),
+		$yourCars = $('.js-your-cars'),
+		headerFix = 'header-wrapper_fix';
+
+	$(document).on('scroll', function () {
+		var windowTop = $(document).scrollTop(),
+			menuTop = $('.js-main-menu').offset().top;
+		if (windowTop > menuTop) {
+			$headerWrapper.addClass(headerFix);
+		} else {
+			$headerWrapper.removeClass(headerFix);
+			$menuHeader.hide();
+			$yourCars.hide();
+		}
+	});
+
+	// open main menu
+	$('.js-show-header-menu').on('click', function () {
+		$menuHeader.toggle();
+	});
+
+	// open your cars
+	$('.js-show-your-cars').on('click', function () {
+		$yourCars.toggle();
+	});
+	
 });
