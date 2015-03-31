@@ -80,6 +80,13 @@ block page_content
 				.grid
 					include ../blocks/advantages
 
+		#block-wf(data-collapse='persist')
+			.grid
+				.h3 Виджет подбора товара
+			.demo-block.demo-block_dark
+				.grid
+					+wheel-filter()
+
 block scriptsAfter
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse.js')
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse_storage.js')
