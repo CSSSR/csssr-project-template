@@ -1,101 +1,168 @@
-$header-height = 50px
-$header-fix-height = 70px
+$top-menu-default-height = 50px
+$top-menu-fix-height = 70px
+$top-menu-lk-height = 90px
+$top-menu-order-height = 70px
 
 .top-menu
 	background-color #616161
+
 	color white
 
 	&__wraper
 		position relative
-		height $header-height
+
+		height $top-menu-default-height
+
+		padding-left 1px
+		padding-right 1px
+
+		clearfix()
 
 		&:before
 		&:after
 			position absolute
-			width 1px
-			height 100%
-			content ''
 			top 0
 
+			width 1px
+			height 100%
+
+			content ''
+
 		&:before
+			left 0
 			background-image linear-gradient(#343434, transparent);
-			left -1px
 
 		&:after
+			right 0
 			background-image linear-gradient(#7e7e7e, transparent);
-			right -1px
+
+		&_lk
+			height $top-menu-lk-height
 
 		&_fix
-		&_order
-			height $header-fix-height
+			height $top-menu-order-height
 
+		&_order
+			height $top-menu-order-height
+
+		&_lk
+		&_fix
+		&_order
 			&:before
 				content none
 
-
-	&:after
-		display table
-		clear both
-		content ''
-
-	&__backbutton
+	&__back-button
 		display inline-block
+
+		margin-left 11px
+
 		vertical-align middle
+
+		&_lk
+			margin-left 20px
 
 	&__contacts
 		position relative
-		float left
-		padding-right 30px
+
+		display block
+
 		height 100%
+
+		overflow hidden
 
 		&:after
 			position absolute
+			top 0
+			right 0px
+
 			width 1px
 			height 100%
-			content ''
-			top 0
+
 			background-image linear-gradient(#343434, transparent);
-			right 0px
+
+			content ''
+
 
 	&__counter
 		position absolute
+		right 1px
+		top 14px
+
 		display block
+
 		width 22px
 		height 22px
-		right -1px
-		top 15px
-		line-height 22px
+
+
 		font-family $heading-fonts
 		font-weight 700
 		font-size 14px
+		line-height 22px
 		text-align center
+		color $rushina-gray
+
 		border-radius 50%
 		background-color #fcd430
-		color #616161
+
+		&_narrow
+			top 5px
+			right 10px
 
 	&__logo
-		width 226px
+		width 235px
 		height 100%
-		margin-right 50px
+
+		margin-right 40px
+		margin-left -3px
+
 		vertical-align middle
+
+		&_lk
+			width 248px
+
+			margin-left -7px
+
+		&_order
+			margin-left -7px
+			margin-right 88px
 
 	&__icon
 		width 42px
 		height 100%
+
 		margin-right 9px
+
 		vertical-align middle
+
 		fill white
 
 		&_type_nolabel
 			margin-right 0
 
+		&_type_lk
+			margin-left -12px
+
+		&_cart
+			height 65px
+
 	&__icon-wrap
 		position relative
+
 		display inline-block
+
 		height 100%
 
 	&__label
+		display inline-block
+
+		height 20px
+		max-width 138px
+
 		vertical-align middle
+
+		overflow hidden
+		white-space nowrap
+		text-overflow ellipsis
 
 		&_type_currency
 			font-family $heading-fonts
@@ -104,12 +171,22 @@ $header-fix-height = 70px
 
 	&__contact
 		display inline-block
+
 		vertical-align middle
+
+		&_order
+			height 47px
+
+			margin-left 116px
+
+		&_lk
+			margin-left 65px
 
 	&__container
 		position absolute
 		left 0
 		z-index 1
+
 		display none
 
 		&_rightedge
@@ -118,32 +195,41 @@ $header-fix-height = 70px
 
 	&__tab
 		position relative
+
 		float left
+
+		height 100%
+
 		padding-right 4px
 		padding-left 4px
-		height 100%
+
 		text-align center
+
 		box-shadow inset 0 -3px 3px #5c5c5c
+
+		user-select none
 
 		&:after, &:before
 			position absolute
 			top 0
-			height 100%
+
 			width 1px
+			height 100%
+
 			content ""
 
 		&:before
-			background-image linear-gradient(#7e7e7e, transparent);
 			left 0
+			background-image linear-gradient(#7e7e7e, transparent);
 
 		&:after
-			background-image linear-gradient(#343434, transparent);
 			right 0
+			background-image linear-gradient(#343434, transparent);
 
 		&:hover
+			background-color #757575
 			cursor pointer
 			box-shadow none
-			background-color #757575
 
 			.top-menu__icon
 				fill #fcd430
@@ -157,8 +243,21 @@ $header-fix-height = 70px
 			.currency
 				fill #fcd430
 
+		&_right
+			float right
+
+		&_lk
+			float right
+			width 80px
+
+		&_order
+			float right
+			width 90px
+
 		&_type_car
-			width 18.4%
+			width 18.6%
+			padding-left 15px
+			padding-right 15px
 
 		&_type_compare
 			width 14%
@@ -175,10 +274,7 @@ $header-fix-height = 70px
 		&_type_clock
 			width 4.2%
 
-
-
 		&_type_cart
-			//width 16.5%
 			float none
 			overflow hidden
 
@@ -188,10 +284,17 @@ $header-fix-height = 70px
 			&:hover
 				color inherit
 
+		&_fix-car
+			width 235px
+			padding-right 15px
+
+		&_fix-cart
+			width 157px
+			padding-left 0
+			padding-right 18px
+
 	.currency
-		width 40px
-		height 20px
-		margin-left -10px
-		margin-bottom 2px
-		vertical-align middle
+		width 15px
+		height 15px
+		margin-left 5px
 		fill white

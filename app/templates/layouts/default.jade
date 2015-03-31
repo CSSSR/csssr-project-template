@@ -1,17 +1,6 @@
-include ../helpers/variables
-include ../helpers/mixins
+extends page
 
-+script([], ['libs/jquery/dist/jquery.min.js'])
-+script([], ['libs/select2/select2.min.js'])
-+script([], ['debug.js', 'common.min.js'])
-
-doctype html
-html(lang='ru')
-	include ../partials/head
-	body
-		.main
-			include ../partials/header
-			block content
-			include ../partials/footer
-
-		include ../partials/scripts
+block page_content
+	include ../partials/header
+	block content
+	include ../partials/footer

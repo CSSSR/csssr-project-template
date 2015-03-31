@@ -3,12 +3,14 @@
   "version": "0.8.0",
   "devDependencies": {
     "jquery": "~2.1.3",
-    "svg4everybody": "~1.0.0"
+    "svg4everybody": "~1.0.0",
+    "jQuery-Collapse": "danielstocks/jQuery-Collapse#1.x"
   },
   "resolutions": {
     "jquery": ">=2.1.3"
   },
   "dependencies": {
-    "select2": "3.5.x"
+    "select2": "3.5.x",
+    "slick": "kenwheeler/slick#1.x"
   }
 }
