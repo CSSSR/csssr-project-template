@@ -1,5 +1,7 @@
 .wf
-	width 780px
+	// TODO: possibly this one could be removed
+	&_primary
+		width 780px
 
 	&__tab
 		margin-left 1px
@@ -8,14 +10,11 @@
 
 		position relative
 
-		flex-grow 1
-		flex-basis 100%
-
 		vertical-align middle
 
 		border 3px solid transparent
 
-		&:hover
+		&:not(&_active):hover
 			border-top-color $rushina-yellow
 
 			&:before
@@ -45,8 +44,14 @@
 
 		&_active
 			background-color $rushina-light-gray
-			border-color $rushina-yellow
 			border-bottom none
+
+		&_primary
+			flex-grow 1
+			flex-basis 100%
+
+		&_primary&_active
+			border-color $rushina-yellow
 
 	&__tabs
 		margin-left -1px
@@ -104,6 +109,9 @@
 		for img in 'disc-side' 'disc-top' 'tire-side' 'tire-top'
 			&_{img}
 				sprite lookup('$blueprint-' + img)
+
+	&_primary
+		border 3px solid $rushina-yellow
 
 	&__info
 		margin-top -1em
