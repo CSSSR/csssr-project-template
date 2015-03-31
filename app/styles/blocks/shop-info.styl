@@ -1,4 +1,77 @@
+.clear
+	content ""
+	clear both
+
 .shop-info
 	width 100%
 	background url(../images/shop-info-bg.jpg) no-repeat center center
-	padding 100px 0
+	background-size cover
+
+	&__main,
+	&__entry
+		float left
+		margin-bottom 60px
+
+	&__main
+		width 390px
+		padding-top  55px
+
+	&__title
+		text-transform uppercase
+		margin-bottom 30px
+
+	&__p
+		margin-bottom 25px
+		margin-right 30px
+
+	&__btn
+		width 124px
+		height 40px
+		padding 0
+		font-weight bold
+		color #000
+
+	&__entry
+		width 790px
+		padding-top 90px;
+
+	&__entry-item
+		position relative
+		width 430px
+		height 200px
+		float left
+		&:first-of-type,
+		&:nth-of-type(3)
+			width 360px
+		&:nth-of-type(2) &__entry-text
+			padding-left 210px
+
+	&__img
+		position absolute
+		&_tire
+			sprite $shop-tire
+			top -10px
+
+		&_season
+			sprite $shop-season
+			top -15px
+
+		&_bonus
+			sprite $shop-bonus
+			top 30px
+
+		&_util
+			sprite $shop-util
+			left 30px
+			top 20px
+
+	&__entry-title
+		padding-left 160px
+		padding-top 20px
+		text-transform uppercase
+
+	&__entry-text
+		padding-left 160px
+		padding-right 40px
+
+
