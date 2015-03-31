@@ -1,0 +1,21 @@
+.slider-arrow
+	sprite($sales_arrow)
+	background-position -189px -80px
+	border 3px solid $rushina-yellow
+	border-radius 5px
+	cursor pointer
+	user-select none
+
+	&:hover
+		background-color $rushina-yellow
+
+	&_left
+		transform rotate(180deg)
+
+	&_inactive
+			border none
+			background-position -188px -77px
+			opacity .5
+
+			&:hover
+				background-color transparent
