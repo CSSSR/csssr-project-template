@@ -13,10 +13,12 @@
 		min-width 1200px
 		max-height 514px
 		overflow hidden
-		background #ebebeb url(../images/footer-bg.png) no-repeat 50% top scroll
+		background #ebebeb
 
 	&-nav
 		&-list
+			position relative
+			z-index 0
 			padding-top 36px
 			padding-bottom 56px
 			width 800px
@@ -30,8 +32,7 @@
 		&__link
 			display block
 			font-size 14px
-			font-family 'Segoe UI'
-			letter-spacing -.4px
+			font-family $text-fonts
 			color #1f1f1f
 
 		&-title
@@ -39,11 +40,21 @@
 			margin-top 19px
 			margin-bottom 20px
 
+	&-bg
+		position absolute
+		top 0
+		left 486px
+		z-index -1
+		width 844pc
+		height 514px
+		background url(../images/footer-bg.png) no-repeat
+
 	&-contact
 		position relative
+		z-index 1
 		float right
 		width 300px
-		font-family 'PT Sans'
+		font-family $heading-fonts
 		color #000
 
 		&__info
@@ -65,7 +76,6 @@
 				height 41px
 				font-size 25px
 				font-weight bold
-				letter-spacing -.2px
 
 	&-icon
 		position absolute
@@ -107,7 +117,7 @@
 		&-caption
 			margin-bottom 14px
 			font-size 14px
-			font-family 'PT Sans'
+			font-family $heading-fonts
 			color #000
 
 		&-btn
@@ -183,7 +193,6 @@
 		&-caption
 			font-size 14px
 			font-weight normal
-			letter-spacing .3px
 			color #fff
 			&_sign
 				font-size 16px
