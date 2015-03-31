@@ -1,0 +1,218 @@
+/* Main */
+
+.flip-clock-wrapper
+	position relative
+
+	padding-top 10px
+	padding-bottom 20px
+
+	display flex
+
+	font-family $heading-fonts
+	text-align center
+
+	user-select none
+
+	/* Skeleton */
+
+	.flip
+		position relative
+
+		margin-right 3px
+
+		width 37px
+		height 55px
+
+		font-size 33px
+		font-weight bold
+		line-height 48px
+
+		background-color #000
+		border-radius 6px
+
+		li
+			z-index 1
+			position absolute
+			left 0
+			top 0
+
+			width 100%
+			height 100%
+
+			line-height 48px
+
+		li:first-child
+			z-index 2
+
+		li a
+			margin 0 !important
+
+			display block
+			height 100%
+
+			overflow visible !important
+
+			perspective 200px
+
+		li a div
+			z-index 1
+			position absolute
+			left 0
+
+			width 100%
+			height 50%
+
+			overflow hidden
+
+		li a div .shadow
+			position absolute
+
+			width 100%
+			height 100%
+
+			z-index 2
+
+		li a div.up
+			top 0
+
+			transform-origin 50% 100%
+
+			&:after
+				content ''
+
+				position absolute
+				top 23px
+				left 0
+				z-index 5
+
+				width 100%
+				height 1px
+
+				background-color #000
+				background-color rgba(0,0,0,.4)
+				box-shadow 0 1px rgba(255,255,255,.7)
+
+		li a div.down
+			bottom 0
+
+			transform-origin 50% 0
+
+		li a div div.inn
+			position absolute
+			left 0
+			z-index 1
+
+			width 100%
+			height 200%
+
+			color #fff
+			font-size 34px
+			text-shadow 0 -1px rgba(0,0,0,.15)
+			text-align center
+
+			background-color #333
+			background-image linear-gradient(to bottom, #2e3436, #4b5153)
+			border-radius 4px
+			box-shadow inset 0 1px rgba(255,255,255,.7)
+
+		li a div.up div.inn
+			top 0
+
+		li a div.down div.inn
+			bottom 0
+
+		/* PLAY */
+
+		li.flip-clock-before
+			z-index 3
+
+			padding 3px
+
+		li.flip-clock-active
+			animation asd .5s .5s linear both
+			z-index 2
+
+			padding 3px
+
+.flip-clock-divider
+	position relative
+
+	width 10px
+
+	&:first-child
+		width 0
+
+.flip-clock-dot
+	display none
+
+.flip-clock-divider .flip-clock-label
+	position absolute
+	bottom -1.5em
+	right -77px
+
+	width 77px
+
+	color black
+	text-shadow none
+
+@keyframes asd
+	0%
+		z-index 2
+	20%
+		z-index 4
+	100%
+		z-index 4
+
+.flip-clock-wrapper .flip.play li.flip-clock-active .down
+	z-index 2
+	animation turn .25s .5s linear both
+
+@keyframes turn
+	0%
+		transform rotateX(90deg)
+	100%
+		transform rotateX(0deg)
+
+.flip-clock-wrapper .flip.play li.flip-clock-before .up
+	z-index 2
+	animation turn2 .5s cubic-bezier(0.55, 0.055, 0.675, 0.19) both
+
+@keyframes turn2
+	0%
+		transform rotateX(0deg)
+	100%
+		transform rotateX(-90deg)
+
+.flip-clock-wrapper .flip li.flip-clock-active
+	z-index 3
+
+/* SHADOW */
+
+.flip-clock-wrapper .flip.play li.flip-clock-before .up .shadow
+		background linear-gradient(to bottom, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1 100%))
+		animation show .5s cubic-bezier(0.55, 0.055, 0.675, 0.19) both
+
+.flip-clock-wrapper .flip.play li.flip-clock-active .up .shadow
+		background linear-gradient(to bottom, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1 100%))
+		animation hide .25s .3s linear both
+
+.flip-clock-wrapper .flip.play li.flip-clock-before .down .shadow
+		background linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1 100%));
+		animation show .5s cubic-bezier(0.55, 0.055, 0.675, 0.19) both
+
+.flip-clock-wrapper .flip.play li.flip-clock-active .down .shadow
+		background linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1 100%));
+		animation hide .25s .3s linear both
+
+@keyframes show
+	0%
+		opacity 0
+	100%
+		opacity 1
+
+@keyframes hide
+	0%
+		opacity 1
+	100%
+		opacity 0
+
