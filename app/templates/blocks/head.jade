@@ -45,10 +45,10 @@ head
 	//- http://realfavicongenerator.net/faq#why_ico_not_declared
 
 	block head
-	title= pageTitle || page.title
-	meta(name='description' content=pageDescription || page.description)
-	meta(name='keywords' content=pageKeywords || page.keywords)
-	meta(name='copyright' content=pageCopyright || page.copyright)
+	title= pageTitle
+	meta(name='description' content=pageDescription)
+	meta(name='keywords' content=pageKeywords)
+	meta(name='copyright' content=pageCopyright)
 
 	link(href='https://fonts.googleapis.com/css?family=Cuprum:400,700&subset=latin,cyrillic' rel='stylesheet')
 	link(href='/assets/styles/common.css?' + timestamp rel='stylesheet')
