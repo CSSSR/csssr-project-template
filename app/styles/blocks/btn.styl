@@ -3,9 +3,7 @@
 
 	display inline-block
 
-	width 100%
-
-	padding .8em 1.6em
+	padding 10px 22px
 
 	color inherit
 	font-family $heading-fonts
@@ -82,10 +80,20 @@
 		background-image none
 		box-shadow inset 0 1px 0 #fff, inset 0 -2px 0 $rushina-gray
 
-	&__icon
+	&_wide
 		width 100%
-		height 100%
 
-		fill currentColor
-		filter drop-shadow(0 -1px 0 rgba(0,0,0,.5));
+	&__icon
+		margin-right .3em
 
+		width 1em
+		height 1em
+
+		vertical-align -.1em
+
+		&_info
+			width 100%
+			height 100%
+
+			fill currentColor
+			filter drop-shadow(0 -1px 0 rgba(0,0,0,.5));
