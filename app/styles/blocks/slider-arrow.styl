@@ -1,8 +1,8 @@
 .slider-arrow
-	sprite($sales_arrow)
-	background-position -189px -80px
+	sprite($sales_arrow-right)
 	border 3px solid $rushina-yellow
 	border-radius 5px
+	background-origin border-box
 	cursor pointer
 	user-select none
 
@@ -10,12 +10,12 @@
 		background-color $rushina-yellow
 
 	&_left
-		transform rotate(180deg)
+		sprite($sales_arrow-left)
 
 	&_inactive
 			border none
-			background-position -188px -77px
 			opacity .5
+			cursor default
 
 			&:hover
 				background-color transparent
