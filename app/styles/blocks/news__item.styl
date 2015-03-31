@@ -1,0 +1,65 @@
+.news__item
+	display block
+	font-family 'PT Sans'
+
+	&-photo
+		display block
+		background-size cover
+
+	&-title
+		display block
+		font-size 16px
+		font-weight bold
+		color #000
+
+	&-content
+		display block
+		letter-spacing -.11px
+
+// для отдельных новостных блоков
+
+.news__item
+	padding 3px 6px 30px 5px
+	width 291px
+	height 439px
+
+	&-photo
+		width 280px
+		height 181px
+		background url(../images/news_photo-1.png) no-repeat
+
+	&-data
+		display block
+		margin-top 15px
+		letter-spacing -.2px
+
+	&-title
+		margin-top 8px
+		margin-left -1px
+		color #000
+
+	&-content
+		margin-top 11px
+
+
+.news__item_long
+	position relative
+	padding 18px 9px 22px 308px
+	width 1222px
+	height 219px
+
+	&-photo
+		position absolute
+		top 15px
+		left 9px
+		width 280px
+		height 182px
+		background url(../images/news_long_photo-1.png) no-repeat
+
+	&-content
+		display block
+
+	&-title
+		margin-bottom 11px
+		margin-left -1px
+		color #000

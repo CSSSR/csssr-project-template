@@ -1,0 +1,113 @@
+extends ../layouts/page
+
+block page_content
+	.grid
+		a(href='/') Радар
+
+	.demo-blocks
+		#blocks-top-menu(data-collapse='persist')
+			.grid
+				.h3 Дефолтный blocks/top-menu
+			.demo-block
+				include ../blocks/top-menu
+
+		#blocks-top-menu_login(data-collapse='persist')
+			.grid
+				.h3 Логин blocks/top-menu_login
+			.demo-block
+				include ../blocks/top-menu_login
+
+		#blocks-header-fix(data-collapse='persist')
+			.grid
+				.h3 Фиксированый blocks/header-fix
+			.demo-block
+				include ../blocks/top-menu-fix
+
+		#blocks-main-menu_header(data-collapse='persist')
+			.grid
+				.h3 Главное меню blocks/main-menu_header
+			.demo-block
+				include ../blocks/main-menu_header
+
+		#blocks-main-menu(data-collapse='persist')
+			.grid
+				.h3 Главное меню blocks/main-menu
+			.demo-block
+				include ../blocks/main-menu
+
+		#blocks-top-menu-order(data-collapse='persist')
+			.grid
+				.h3 Оформление заказа blocks/top-menu-order
+			.demo-block
+				include ../blocks/top-menu-order
+
+		#blocks-top-menu-lk(data-collapse='persist')
+			.grid
+				.h3 Личный кабинет blocks/top-menu-lk
+			.demo-block
+				include ../blocks/top-menu-lk
+
+		#blocks-your-cars(data-collapse='persist')
+			.grid
+				.h3 Ваши авто blocks/your-cars
+			.demo-block
+				include ../blocks/your-cars
+
+		#blocks-your-cars_add(data-collapse='persist')
+			.grid
+				.h3 Добавление авто blocks/your-cars_add
+			.demo-block
+				include ../blocks/your-cars_add
+
+		#blocks-feedback(data-collapse='persist')
+			.grid
+				.h3 Обратная связь blocks/feedback
+			.demo-block
+				.grid
+					include ../blocks/feedback
+
+		#blocks-opening-hours(data-collapse='persist')
+			.grid
+				.h3 Часы работы blocks/opening-hours
+			.demo-block
+				.grid
+					include ../blocks/opening-hours
+
+		#blocks-advantages(data-collapse='persist')
+			.grid
+				.h3 Промо-крутилка
+			.demo-block
+				.grid
+					include ../blocks/advantages
+
+		#block-wf(data-collapse='persist')
+			.grid
+				.h3 Виджет подбора товара
+			.demo-block.demo-block_dark
+				.grid
+					+wheel-filter()
+
+		#blocks-sales-slider(data-collapse='persist')
+			.grid
+				.h3 Слайдер распродажи
+			.demo-block
+				.grid
+					include ../blocks/sales-slider
+
+		#blocks-advantages(data-collapse='persist')
+			.grid
+				.h3 Промо-счётчик
+			.demo-block
+				.grid
+					include ../blocks/countdown
+
+		#blocks-tire-card(data-collapse='persist')
+			.grid
+				.h3 Карточки шин
+			.demo-block
+				.grid
+					include ../blocks/tire-card
+
+block scriptsAfter
+	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse.js')
+	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse_storage.js')

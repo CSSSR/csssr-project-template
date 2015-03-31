@@ -1,0 +1,21 @@
+.slider-arrow
+	sprite($sales_arrow-right)
+	border 3px solid $rushina-yellow
+	border-radius 5px
+	background-origin border-box
+	cursor pointer
+	user-select none
+
+	&:hover
+		background-color $rushina-yellow
+
+	&_left
+		sprite($sales_arrow-left)
+
+	&_inactive
+			border none
+			opacity .5
+			cursor default
+
+			&:hover
+				background-color transparent
