@@ -2,11 +2,14 @@
 	width 780px
 
 	&__tab
+		margin-left 1px
+		margin-right 1px
 		padding 14px 16px
 
 		position relative
 
-		display table-cell
+		flex-grow 1
+		flex-basis 100%
 
 		vertical-align middle
 
@@ -46,21 +49,18 @@
 			border-bottom none
 
 	&__tabs
-		margin-left -2px
-		margin-right -2px
+		margin-left -1px
+		margin-right -1px
 
 		position relative
 		z-index 1
 
-		display table
-		width calc(100% + 4px)
+		display flex
 
 		table-layout fixed
 
-		border-spacing 2px
-
 .wf-body
-	margin-top -5px
+	margin-top -3px
 	padding 28px
 
 	display none
