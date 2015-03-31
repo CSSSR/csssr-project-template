@@ -26,10 +26,28 @@
 		top 9px
 		left -1px
 		&__item
+			position relative
 			display inline-block
 			margin-right -17px
-			width 36px
-			height 36px
+			&_summer
+				width 36px
+				height 36px
+			&_allseason
+				margin-left 9px
+				margin-right -10px
+				top -6px
+				width 28px
+				height 22px
+			&_winter
+				margin-left 9px
+				margin-right -10px
+				top -6px
+				width 22px
+				height 22px
+			&_spike
+				width 36px
+				height 36px
+
 
 	&-label
 		position absolute
@@ -39,12 +57,80 @@
 		height 42px
 		&_active
 			display block
+
 		&_discount
 			width 102px
-			background url(../images/bus-card_label_discount.png)
+			height 27px
+			background #ff0000
+			&-caption //надпись
+				padding-top 8px
+				padding-left 19px
+				font-size 14px
+				font-family $heading-fonts
+				font-weight bold
+				text-transform uppercase
+				color #fff
+				&:after //нижний прямоугольник
+					position absolute
+					top 27px
+					left 9px
+					width 93px
+					height 9px
+					background #ff0000
+					content ''
+			&:before //левый треугольник
+				position absolute
+				top 27px
+				left 0
+				border: 5px solid transparent
+				border-top: 5px solid #bebebe
+				border-right: 5px solid #bebebe
+				content ''
+			&:after//правый треугольник
+				position absolute
+				top 36px
+				right 0
+				border: 3px solid transparent
+				border-left: 3px solid #720000
+				border-top: 3px solid #720000
+				content ''
+
 		&_new
 			width 110px
-			background url(../images/bus-card_label_new.png)
+			height 27px
+			background #ffe800
+			&-caption //надпись
+				padding-top 8px
+				padding-left 19px
+				font-size 14px
+				font-family $heading-fonts
+				font-weight bold
+				text-transform uppercase
+				color #000
+				&:after //нижний прямоугольник
+					position absolute
+					top 27px
+					left 9px
+					width 101px
+					height 9px
+					background #ffe800
+					content ''
+			&:before //левый треугольник
+				position absolute
+				top 27px
+				left 0
+				border: 5px solid transparent
+				border-top: 5px solid #bebebe
+				border-right: 5px solid #bebebe
+				content ''
+			&:after//правый треугольник
+				position absolute
+				top 36px
+				right 0
+				border: 3px solid transparent
+				border-left: 3px solid #b58700
+				border-top: 3px solid #b58700
+				content ''
 
 	&-img
 		width 148px

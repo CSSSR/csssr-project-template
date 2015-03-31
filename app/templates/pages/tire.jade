@@ -4,6 +4,7 @@ block head
 	- pageTitle = 'Карточка шины';
 
 block content
+
 	p Блок "просмотренные" в плавающем меню
 		.tire-card
 			.tire-card__content.grid-module-6
@@ -19,6 +20,8 @@ block content
 						+icon('1_RUB').tire-card-price-rub
 				.tire-card-avaliable в наличии
 				.tire-card-label.tire-card-label_discount.tire-card-label_active
+					.tire-card-label_discount-caption Скидка!
+
 	p Блок "сравнение" в плавающем меню
 		.tire-card
 			.tire-card-close
@@ -36,6 +39,8 @@ block content
 						+icon('1_RUB').tire-card-price-rub
 				.tire-card-avaliable в наличии
 				.tire-card-label.tire-card-label_discount.tire-card-label_active
+					.tire-card-label_discount-caption Скидка!
+
 	p Блок "распродажа" на главной странице
 		.tire-card
 			.tire-card__content.grid-module-6
@@ -55,8 +60,12 @@ block content
 				.tire-card-avaliable в наличии
 				.tire-card-option
 					+icon('tireicon_summer').tire-card-option__item.tire-card-option__item_summer
-					+icon('tireicon_summer').tire-card-option__item.tire-card-option__item_summer
+					//- +icon('tireicon_allseason').tire-card-option__item.tire-card-option__item_allseason
+					//- +icon('tireicon_winter').tire-card-option__item.tire-card-option__item_winter
+					+icon('tireicon_spike').tire-card-option__item.tire-card-option__item_spike
 				.tire-card-label.tire-card-label_discount.tire-card-label_active
+					.tire-card-label_discount-caption Скидка!
+
 	p Блок "новинки" на главной странице
 		.tire-card
 			.tire-card__content.tire-card__content_short.grid-module-6
@@ -69,3 +78,4 @@ block content
 					.tire-card-price-num 3000
 						+icon('1_RUB').tire-card-price-rub
 				.tire-card-label.tire-card-label_new.tire-card-label_active
+					.tire-card-label_new-caption Новинка
