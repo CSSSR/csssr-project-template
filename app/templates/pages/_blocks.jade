@@ -159,6 +159,13 @@ block page_content
 								label:'new'
 							})
 
+		#blocks-model-list(data-collapse='persist')
+			.grid
+				.h3 Выбор модели
+			.demo-block
+				.grid
+					include ../blocks/model-list
+
 block scriptsAfter
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse.js')
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse_storage.js')
