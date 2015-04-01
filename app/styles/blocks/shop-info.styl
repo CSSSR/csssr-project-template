@@ -3,20 +3,31 @@
 	width 100%
 	background $rushina-light-gray
 
+	&__backgrounds
+		width 100%
+		height 100%
+		overflow hidden
+		position absolute
+		z-index 0
+
 	&__bg
 		position absolute
 		top 0
 		width 400px
 		max-height 540px
-		z-index 0
-		&-left
-			height 587px
-			left 0
-			background url(../images/shop-info_left-bg.jpg) no-repeat left center
-		&-right
-			height 657px
-			right 0
-			background url(../images/shop-info_right-bg.jpg) no-repeat right center
+
+		&_left
+			height 100%
+			right 50%
+			width 50%
+			min-width 960px
+			background url(../images/shop-info_left-bg.jpg) no-repeat left top
+		&_right
+			height 100%
+			left 50%
+			width 50%
+			min-width 960px
+			background url(../images/shop-info_right-bg.jpg) no-repeat right top
 
 	&__wrapper
 		position relative
