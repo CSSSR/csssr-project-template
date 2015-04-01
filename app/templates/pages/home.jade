@@ -4,4 +4,45 @@ block head
 	- pageTitle = 'Главная';
 
 block content
-	| ...
+	//- TODO: get rid of it after demo
+	div(style='height:30px')
+	.grid
+		.home-top.cols
+			.home-top__advantages.col.grid-module-4
+				include ../blocks/advantages
+
+			.home-top__wheel-filter.col.grid-module-8
+				+wheel-filter()
+				.home-top__wf-banner
+					img(src = '/assets/images/content/wf-banner.png')
+
+		.cols.sale
+			.col.grid-module-4
+				.sale__title
+					.h1.h_upcase Распродажа!
+
+				.sale__countdown
+					include ../blocks/countdown
+
+			.col.grid-module-8
+				.sale__slider
+					include ../blocks/sales-slider
+
+		.novelty
+			.novelty__header
+				.novelty__title
+					.h1.h_upcase Новинки
+				.novelty__switch
+					+primary-switch('type', [
+						{
+							id: 'tyres',
+							label: 'Шины',
+							isActive: true
+						},
+						{
+							id: 'discs',
+							label: 'Диски'
+						}
+					])
+
+			.novelty__slider
