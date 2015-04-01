@@ -1,4 +1,7 @@
-.slider-new-products
+.slider-new-products.js-slick(
+				data-show = 6
+				data-scroll = 1
+			)
 	.slider-new-products__top-bar
 		.slider-new-products__caption Новинки
 		.slider-new-products__switcher
@@ -13,11 +16,11 @@
 						label: 'Диски'
 					}
 				])
-		.slider-new-products__arrow-right
+		.slider-new-products__arrow-right.js-slick__next
 			.slider-arrow
-		.slider-new-products__arrow-left
+		.slider-new-products__arrow-left.js-slick__prev
 			.slider-arrow.slider-arrow_left.slider-arrow_inactive
-	.slider-new-products__container
+	.slider-new-products__container.js-slick__container
 		.slider-new-products__item
 		.slider-new-products__item
 		.slider-new-products__item
