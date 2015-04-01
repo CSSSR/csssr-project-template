@@ -2,8 +2,7 @@
 
 mixin tire-card(data)
 	if data.type=='new'
-		- classes = []
-		- classes.push('tire-card_short')
+		var classes = 'tire-card_short'
 
 	.tire-card.grid-module-6(class=classes)
 		img.tire-card__img(src=data.img)
