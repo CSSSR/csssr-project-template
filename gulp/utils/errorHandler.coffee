@@ -1,4 +1,5 @@
 gutil = require 'gulp-util'
+colors = require 'colors'
 
 module.exports = (error) ->
 	gutil.log [
