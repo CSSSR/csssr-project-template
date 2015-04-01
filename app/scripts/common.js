@@ -80,17 +80,17 @@ $(function () {
 			var opt = {},
 				$el = $(el);
 
-			opt.prevArrow = $(root + '__prev');
-			opt.nextArrow = $(root + '__next');
+			opt.prevArrow = $(root + '__prev', $el);
+			opt.nextArrow = $(root + '__next', $el);
 
 			opt.autoplay = Boolean($el.attr('data-autoplay'));
 			opt.autoplaySpeed = Number($el.attr('data-autoplay')) || 5000;
-			opt.infinite = $el.attr('data-infinite') || false;
+			opt.infinite = Boolean($el.attr('data-infinite')) || false;
 
 			opt.slidesToShow = Number($el.attr('data-show')) || 4;
 			opt.slidesToScroll = Number($el.attr('data-scroll')) || opt.slidesToShow;
 
-			$(root + '__container').slick(opt);
+			$(root + '__container', $el).slick(opt);
 		});
 	})();
 });
