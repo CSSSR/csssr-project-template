@@ -1,9 +1,3 @@
-.wrapper
-	width 1200px
-	max-width 1200px
-	margin 0 auto
-	padding 0 10px
-
 .footer
 	//position absolute
 	//bottom 0
@@ -20,14 +14,20 @@
 			position relative
 			z-index 0
 			padding-top 36px
-			padding-bottom 56px
+			padding-bottom 21px
 			width 800px
 			font-size 0
 
-		&__item
+		&__group
 			display inline-block
 			margin-right $module-gap
 			vertical-align top
+
+		&__item
+			margin-bottom 18px
+			&_high
+				margin-bottom 34px
+
 
 		&__link
 			display block
