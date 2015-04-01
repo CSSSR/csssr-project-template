@@ -1,20 +1,39 @@
-.clear
-	content ""
-	clear both
-
 .shop-info
+	position relative
 	width 100%
-	background url(../images/shop-info-bg.jpg) no-repeat center center
-	background-size cover
+	background $rushina-light-gray
+
+	&__bg
+		position absolute
+		top 0
+		width 400px
+		max-height 540px
+		z-index 0
+		&-left
+			height 587px
+			left 0
+			background url(../images/shop-info_left-bg.jpg) no-repeat left center
+		&-right
+			height 657px
+			right 0
+			background url(../images/shop-info_right-bg.jpg) no-repeat right center
+
+	&__wrapper
+		position relative
+		z-index 2
+		clearfix()
 
 	&__main,
 	&__entry
 		float left
-		margin-bottom 60px
+		margin-bottom 50px
+
+	&__entry
+		clearfix()
 
 	&__main
 		width 390px
-		padding-top  55px
+		padding-top  45px
 
 	&__title
 		text-transform uppercase
