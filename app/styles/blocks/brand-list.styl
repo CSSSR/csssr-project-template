@@ -1,0 +1,55 @@
+.brand-list
+
+	&__caption
+		font-family $heading-fonts
+		font-weight 700
+		font-size 26px
+		text-transform uppercase
+		color black
+
+
+	&__table
+		margin-top 38px
+		clearfix()
+
+	&__column
+		float left
+		width gridWidth(3)
+		margin-right $module-gap
+
+		&:last-child
+			margin-right 0
+
+	&__item
+		height 50px
+		cursor pointer
+
+		&:hover
+			background-color $rushina-yellow
+
+	&__brand-image
+		display inline-block
+		width 130px
+		height 50px
+		vertical-align middle
+		text-align center
+
+		&:before
+			display inline-block
+			height 100%
+			vertical-align middle
+			content ''
+
+		img
+			vertical-align middle
+
+	&__brand-name
+		display inline-block
+		margin-left 1px
+		vertical-align middle
+		border-bottom 1px dotted black
+		font-family $heading-fonts
+		font-weight bold
+		color black
+
+

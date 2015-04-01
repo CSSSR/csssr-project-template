@@ -1,0 +1,6 @@
+mixin brandItems(list)
+	each item in list
+		.brand-list__item
+						.brand-list__brand-image
+							img(src='/assets/images/content/brand-logos/brand-list-#{item[0]}.png' alt='Логотип #{item[1]}')
+						span.brand-list__brand-name= item[1]
