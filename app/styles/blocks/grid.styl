@@ -22,6 +22,9 @@ $columns = 12
 .grid-module-6
 	width gridWidth($columns/6)
 
+.grid-module-8
+	width gridWidth($columns/3*2)
+
 .cols
 	display table
 	margin-left -($module-gap)
@@ -30,6 +33,7 @@ $columns = 12
 	display table-cell
 	box-sizing content-box
 	padding-left $module-gap
+	vertical-align top
 
 .demo-block
 	margin 1em 0 2em
