@@ -125,6 +125,9 @@ $(function () {
 			opt.slidesToShow = Number($el.attr('data-show')) || 4;
 			opt.slidesToScroll = Number($el.attr('data-scroll')) || opt.slidesToShow;
 
+			opt.speed = 200;
+			opt.useCSS = false;
+
 			$(root + '__container', $el).slick(opt);
 		});
 	})();
