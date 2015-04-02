@@ -200,6 +200,18 @@ block page_content
 				.grid
 					include ../blocks/slider-last-news
 
+		#blocks-form-size(data-collapse='persist')
+			.grid
+				.h3 Шаги в фильтре товаров
+			.demo-block.demo-block_white
+				.grid
+					include ../blocks/filter-steps
+					br
+					include ../blocks/filter-steps_ford
+					br
+					include ../blocks/filter-steps_last
+
+
 block scriptsAfter
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse.js')
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse_storage.js')
