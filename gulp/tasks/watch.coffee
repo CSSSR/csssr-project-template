@@ -3,6 +3,7 @@ runSequence = require 'run-sequence'
 reload      = require('browser-sync').reload
 
 gulp.task 'watch', ->
+	global.watch = true
 	gulp.watch 'app/images/sprite/**/*.png', ['spritesmith']
 
 	gulp.watch 'app/styles/**/*.styl', ['stylus', -> reload('assets/styles/common.css')]
