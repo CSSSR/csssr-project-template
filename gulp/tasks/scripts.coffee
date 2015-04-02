@@ -9,8 +9,6 @@ paths        = require '../paths'
 
 gulp.task 'scripts', ->
 	return gulp.src [
-			'components/svg4everybody/svg4everybody.min.js'
-			'components/FlipClock/compiled/flipclock.min.js'
 			'app/scripts/common.js'
 		]
 		.pipe plumber errorHandler: errorHandler
