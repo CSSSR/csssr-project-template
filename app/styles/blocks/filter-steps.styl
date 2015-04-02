@@ -8,7 +8,21 @@
 		padding-left 10px
 		padding-right 10px
 		border 3px solid $rushina-yellow
+		border-radius 3px
 		text-align center
+		cursor pointer
+
+		&_passed
+			background-color $rushina-yellow
+
+		&_active
+			background-color $rushina-yellow
+
+			.filter-steps__step-content
+				border none
+
+		&:hover
+			background-color $rushina-yellow
 
 		&_two
 			min-width 260px
@@ -25,6 +39,10 @@
 		font-weight bold
 		color black
 
+	&__step-img
+		margin-right 10px
+		margin-left -15px
+		vertical-align middle
 
 	&__delimiter
 		float left
