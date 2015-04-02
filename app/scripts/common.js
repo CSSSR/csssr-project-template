@@ -2,9 +2,10 @@ $(function () {
 
 	'use strict';
 
-	var SELECT2_OPTIONS = {
-		minimumResultsForSearch: -1
-	};
+	var $document = $(document),
+		SELECT2_OPTIONS = {
+			minimumResultsForSearch: -1
+		};
 
 	$('select').select2(SELECT2_OPTIONS);
 
@@ -48,11 +49,19 @@ $(function () {
 	var $headerWrapper = $('.js-header-wrapper'),
 		$menuHeader = $('.js-menu-header'),
 		$yourCars = $('.js-your-cars'),
-		headerFix = 'header-wrapper_fix';
+		headerFix = 'header-wrapper_fix',
+		$mainMenu = $('.js-main-menu'),
+		visibleMenusCount = 0,
+		syncFlipTimeout = 0;
 
-	$(document).on('scroll', function () {
-		var windowTop = $(document).scrollTop(),
-			menuTop = $('.js-main-menu').offset().top;
+	function syncFlipMenu() {
+		if (visibleMenusCount !== 0) {
+			return false;
+		}
+
+		var windowTop = $document.scrollTop(),
+			menuTop = $mainMenu.offset().top;
+
 		if (windowTop > menuTop) {
 			$headerWrapper.addClass(headerFix);
 		} else {
@@ -60,17 +69,43 @@ $(function () {
 			$menuHeader.hide();
 			$yourCars.hide();
 		}
-	});
+	}
+
+	function toggleMenuListener(menu) {
+		return function (event) {
+			var ts = event.timeStamp;
+
+			if (menu.is(':hidden')) {
+				menu.show();
+				++visibleMenusCount;
+				clearTimeout(syncFlipTimeout);
+
+				$document.on('click', function listener(event) {
+					if (event.timeStamp === ts) { // same event
+						return;
+					}
+
+					var $target = $(event.target);
+
+					if ($target.closest(menu).length === 0) {
+						$document.off('click', listener);
+						menu.hide();
+						--visibleMenusCount;
+						syncFlipTimeout = setTimeout(syncFlipMenu, 10);
+					}
+				});
+			}
+		};
+	}
+
+	$document.on('scroll', syncFlipMenu);
+	syncFlipMenu();
 
 	// open main menu
-	$('.js-show-header-menu').on('click', function () {
-		$menuHeader.toggle();
-	});
+	$('.js-show-header-menu').on('click', toggleMenuListener($menuHeader));
 
 	// open your cars
-	$('.js-show-your-cars').on('click', function () {
-		$yourCars.toggle();
-	});
+	$('.js-show-your-cars').on('click', toggleMenuListener($yourCars));
 
 	// item slider
 	(function () {
