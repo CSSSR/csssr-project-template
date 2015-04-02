@@ -1,0 +1,103 @@
+.menu-fast-selection
+		.menu-fast-selection__wrap.grid
+
+			.menu-fast-selection__caption Быстрый подбор
+
+			.menu-fast-selection__table
+
+				.menu-fast-selection__left-col
+
+					.menu-fast-selection__col-item.menu-fast-selection__col-item_links
+						.type-links
+							.type-links__item
+								+icon('menu_01_tire').type-links__icon
+								+btn('По типоразмеру', true).type-links__label
+							.type-links__item
+								+icon('menu_01_car').type-links__icon
+								+btn('По марке авто', true).type-links__label
+
+					.menu-fast-selection__col-item
+						.menu-fast-links
+							ul.menu-fast-links__first-level
+								li Каталог шин
+									ul.menu-fast-links__second-level
+										li Шины RunFlat
+										li Усиленные шины
+										li Зимние шины
+										li Летние шины
+										li Новинки
+										li Спецпредложения
+								li Распродажа
+								li Шинный калькулятор
+
+				.menu-fast-selection__right-col
+
+					.menu-fast-selection__col-item
+						+switch('size', [
+					{
+						id: 'manufacturers',
+						label: 'Производители',
+						isActive: true
+					},
+					{
+						id: 'models',
+						label: 'Марки автомобилей'
+					}
+				])
+
+					.menu-fast-selection__col-item
+
+						.manufacturers-list
+							ul.manufacturers-list__col
+								li Altenzo
+								li BfgGoodRich
+								li Bridgestone
+								li Continental
+								li Cooper Tires
+								li Dunlop
+								li Falken
+								li Federal
+								li Firestone
+								li Gislaved
+								li GoodYear
+							ul.manufacturers-list__col
+								li GT RadialL
+								li Hakook
+								li Hercules Tyres
+								li Kumho
+								li Maxxis
+								li Michlin
+								li Mickey Thompson
+								li Nexen
+								li Nitto
+								li Nokian
+								li Pirelli
+							ul.manufacturers-list__col
+								li Altenzo
+								li BfgGoodRich
+								li Bridgestone
+								li Continental
+								li Cooper Tires
+								li Dunlop
+								li Falken
+								li Federal
+								li Firestone
+								li Gislaved
+								li GoodYear
+							ul.manufacturers-list__col
+								li GT RadialL
+								li Hakook
+								li Hercules Tyres
+								li Kumho
+								li Maxxis
+								li Michlin
+								li Mickey Thompson
+								li Nexen
+								li Nitto
+								li Nokian
+								li Pirelli
+							ul.manufacturers-list__col
+								li Cooper Tires
+								li Dunlop
+								li Falken
+								li.manufacturers-list__all Все произовдители
