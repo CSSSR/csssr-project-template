@@ -1,0 +1,30 @@
+.slider-new-products.js-slick(
+				data-show = 6
+				data-scroll = 1
+			)
+	.slider-new-products__top-bar
+		.slider-new-products__caption Новинки
+		.slider-new-products__switcher
+			+primary-switch('type', [
+					{
+						id: 'tyres',
+						label: 'Шины',
+						isActive: true
+					},
+					{
+						id: 'discs',
+						label: 'Диски'
+					}
+				])
+		.slider-new-products__arrow-right.js-slick__next
+			.slider-arrow
+		.slider-new-products__arrow-left.js-slick__prev
+			.slider-arrow.slider-arrow_left
+	.slider-new-products__container.js-slick__container
+		.slider-new-products__item
+		.slider-new-products__item
+		.slider-new-products__item
+		.slider-new-products__item
+		.slider-new-products__item
+		.slider-new-products__item
+		.slider-new-products__item
