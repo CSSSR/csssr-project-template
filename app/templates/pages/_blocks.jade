@@ -179,6 +179,13 @@ block page_content
 			.demo-block
 				include ../blocks/shop-info
 
+		#blocks-form-size(data-collapse='persist')
+			.grid
+				.h3 Выбор типоразмера
+			.demo-block
+				.grid
+					include ../blocks/form-size
+
 block scriptsAfter
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse.js')
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse_storage.js')
