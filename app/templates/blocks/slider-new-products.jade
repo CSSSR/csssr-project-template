@@ -21,10 +21,15 @@
 		.slider-new-products__arrow-left.js-slick__prev
 			.slider-arrow.slider-arrow_left
 	.slider-new-products__container.js-slick__container
-		.slider-new-products__item
-		.slider-new-products__item
-		.slider-new-products__item
-		.slider-new-products__item
-		.slider-new-products__item
-		.slider-new-products__item
-		.slider-new-products__item
+		- var i = 15
+		while i > 0
+			- i--
+			.slider-new-products__item
+				+tire-card({type:'new',
+					goods:'tire',
+					img:'assets/images/content/tire-card_img.png',
+					title:'Replica<br> BMW FR1156',
+					price:'3000',
+					play:'true',
+					label:'new'
+				})

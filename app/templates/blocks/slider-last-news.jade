@@ -14,9 +14,8 @@
 			+btn('Все товары расподажи', true)
 
 	.slider-last-news__container.js-slick__container
-		.slider-last-news__item
-		.slider-last-news__item
-		.slider-last-news__item
-		.slider-last-news__item
-		.slider-last-news__item
-		.slider-last-news__item
+		- var i = 10
+		while i > 0
+			- i--
+			.slider-last-news__item
+				include ../blocks/news__item
