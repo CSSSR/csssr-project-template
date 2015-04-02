@@ -14,7 +14,7 @@ gulp.task 'jade', ->
 	gulp.src 'app/templates/**/*.jade'
 		.pipe plumber errorHandler: errorHandler
 		.pipe cached 'jade'
-		.pipe inheritance basedir: 'app/templates'
+		.pipe gulpif global.watch, inheritance basedir: 'app/templates'
 		.pipe filter (file) -> /templates[\\\/]pages/.test file.path
 		.pipe jade
 			data:
