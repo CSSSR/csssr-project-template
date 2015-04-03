@@ -7,24 +7,9 @@ $columns = 12
 	padding 0 10px
 	box-sizing content-box
 
-// TODO: switch to the new grid and clean up
-.grid-module-1
-	width gridWidth($columns)
-
-.grid-module-2
-	width gridWidth($columns/2)
-
-.grid-module-3
-	width gridWidth($columns/3)
-
-.grid-module-2-3
-	width gridWidth($columns*2/3)
-
-.grid-module-4
-	width gridWidth($columns/4)
-
-.grid-module-6
-	width gridWidth($columns/6)
+for $i in 1..12
+	.grid-module-{$i}
+		width gridWidth($i)
 
 .cols
 	display table
@@ -36,20 +21,6 @@ $columns = 12
 	box-sizing content-box
 	padding-left $module-gap
 	vertical-align top
-
-.row
-	display table
-	width "calc(100% + %s)" % $module-gap
-	margin-left -($module-gap / 2)
-	margin-right -($module-gap / 2)
-
-for $i in 1..12
-	.col-{$i}
-		display table-cell
-		width (100% / ($columns / $i))
-		padding-left ($module-gap / 2)
-		padding-right ($module-gap / 2)
-		vertical-align top
 
 .demo-blocks
 	padding-bottom 50px
