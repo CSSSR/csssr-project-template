@@ -72,7 +72,6 @@ $(function () {
 		$yourCars.toggle();
 	});
 
-<<<<<<< HEAD
 	// item slider
 	(function () {
 		var root = '.js-slick';
