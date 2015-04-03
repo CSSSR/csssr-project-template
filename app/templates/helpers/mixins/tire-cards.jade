@@ -1,15 +1,20 @@
-//- содержательные
+mixin tire-card(data, items)
+	- var typemod=data.type
+	if data.goods=='disk'
+		- var typemod=typemod+'_'+data.goods
 
-mixin tire-card(data)
-	if data.type=='new'
-		- var classes = ['tire-card_short'];
-
-	.tire-card.grid-module-6(class=classes)
-		img.tire-card__img(src=data.img)
+	.tire-card.grid-module-6(class='tire-card_'+typemod)
+		.tire-card__imgbox
+			img.tire-card-img(src=data.img)
 		.h4.tire-card-title
 				!=data.title
+		if data.goods=='disk'
+			.tire-card__palette
+				if items
+					each item in items
+						.tire-card__palette-color(class='tire-card__palette-color_'+item)
 		if data.caption
-			.tire-card-caption
+			.tire-card-caption(class='tire-card-caption_'+data.goods)
 				!=data.caption
 		if data.oldprice
 			.h2.tire-card-price.tire-card-price_left
@@ -39,3 +44,13 @@ mixin tire-card(data)
 				+icon('tireicon_'+data.option_left).tire-card__option__item(class='tire-card__option__item_'+data.option_left)
 				if data.option_right
 					+icon('tireicon_'+data.option_right).tire-card__option__item(class='tire-card__option__item_'+data.option_right)
+		if data.type=='choose'
+			.tire-card-compare
+				+icon('menu_01_compare').tire-card-compare-icon
+			.tire-card__extra
+				a.tire-card-btn.btn.btn_primary(href ='javascript:void(0)') Купить
+				a.tire-card-link(href='#') Купить в кредит
+				.tire-card__rating
+					.tire-card__rating-stars
+						.tire-card__rating-stars_checked(class='tire-card__rating-stars_checked_'+data.rating)
+					a.tire-card-voted(href='#')='('+data.voted+')'

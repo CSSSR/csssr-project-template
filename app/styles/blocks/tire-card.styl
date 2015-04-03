@@ -1,39 +1,141 @@
 .tire-card
 	position relative
-	height 330px
+	min-height 330px
 	padding 13px
 	border 3px solid #ebebeb
 	background #fff
-	&_short
-		height 260px
+	&_new
+		min-height 260px
+	&_choose
+		&:hover
+			border 3px solid #fcd42d
+		&:hover .tire-card__extra
+			display block
+		&:hover .tire-card-compare
+			display block
+		&:hover .tire-card-play
+			background #fcd42d
 
-	&__option
-		position absolute
-		top 9px
-		left -1px
-		&__item
+
+	&__imgbox
+		width 148px
+		height 134px
+		overflow hidden
+
+	&-img
+		width 148px
+		height 134px
+
+	&-title
+		margin-top 20px
+		text-align center
+		line-height 19px
+
+	&__palette
+		display table
+		margin 5px auto
+		min-width 1px
+		height 13px
+		&-color
+			float left
+			margin-right 3px
+			width 13px
+			height 13px
+			&:last-child
+				margin-right 0
+			&_black
+				background #000
+			&_green
+				background #32a232
+			&_purple
+				background #993d95
+			&_red
+				background #e50707
+			&_yellow
+				background #fcd42d
+			&_white
+				background #e2e2e2
+
+	&-caption
+		margin-top 3px
+		font-size 13px
+		font-family $text-fonts
+		text-align center
+		&_disk
+			font-weight bold
+
+	&-price
+		padding-left 32px
+		margin-top 2px
+		&_left
+			display inline-block
+			padding-left 4px
+		&__num
 			position relative
 			display inline-block
-			margin-right -15px
-			&_summer
-				width 36px
-				height 36px
-			&_allseason
-				margin-left 9px
-				margin-right -10px
-				top -6px
-				width 28px
-				height 22px
-			&_winter
-				margin-left 9px
-				margin-right -10px
-				top -6px
-				width 22px
-				height 22px
-			&_spike
-				width 36px
-				height 36px
+		&__rub
+			position absolute
+			top -39px
+			right -42px
+			width 60px
+			height 120px
 
+	&-oldprice
+		display inline-block
+		padding-left 29px
+		font-family $text-fonts
+		font-size 16px
+		vertical-align top
+		&__num
+			position relative
+			display inline-block
+			margin-top 13px
+			&:after //зачёркивание
+				position absolute
+				top 10px
+				left -4px
+				width 55px
+				height 2px
+				background #e10000
+				content ''
+		&__rub
+			position absolute
+			top -27px
+			right -28px
+			width 38px
+			height 76px
+			& use
+				fill #838383
+
+	&-avaliable
+		position relative
+		display inline-block
+		margin-top 4px
+		margin-left 33px
+		padding-left 21px
+		font-family $text-fonts
+		font-weight bold
+		font-size 13px
+		&:after
+			position absolute
+			top 5px
+			left 0
+			sprite $checkmark
+			content ''
+
+
+	&-play
+		position absolute
+		top 111px
+		left 0px
+		display block
+		width 36px
+		height 36px
+		background #ebebeb
+		&-icon
+			margin 2px
+			width 31px
+			height 33px
 
 	&__label
 		position absolute
@@ -116,90 +218,97 @@
 				border-top: 3px solid #b58700
 				content ''
 
-	&__img
-		width 148px
-		height 134px
-		border none
+	&__option
+		position absolute
+		top 9px
+		left -1px
+		&__item
+			position relative
+			display inline-block
+			margin-right -15px
+			&_summer
+				width 36px
+				height 36px
+			&_allseason
+				margin-left 9px
+				margin-right -10px
+				top -6px
+				width 28px
+				height 22px
+			&_winter
+				margin-left 9px
+				margin-right -10px
+				top -6px
+				width 22px
+				height 22px
+			&_spike
+				width 36px
+				height 36px
 
-	&-play
+
+	&-compare
 		position absolute
 		top 111px
-		left 0px
-		display block
-		width 36px
+		right 0
+		display none
+		width 41px
 		height 36px
-		background #ebebeb
+		background #fcd42d
 		&-icon
-			margin 2px
-			width 31px
-			height 33px
+			position absolute
+			top -2px
+			left 1px
+			height 41px
+			width 41px
 
-	&-title
-		margin-top 20px
-		text-align center
-		line-height 19px
 
-	&-caption
-		margin-top 3px
-		font-size 13px
-		font-family $text-fonts
+	&__extra
+		display none
+		height 97px
 		text-align center
 
-	&-price
-		padding-left 32px
-		margin-top 2px
-		&_left
-			display inline-block
-			padding-left 4px
-		&__num
-			position relative
-			display inline-block
-		&__rub
-			position absolute
-			top -39px
-			right -42px
-			width 60px
-			height 120px
-
-	&-oldprice
-		display inline-block
-		padding-left 29px
-		font-family $text-fonts
-		font-size 16px
-		vertical-align top
-		&__num
-			position relative
-			display inline-block
-			margin-top 13px
-			&:after //зачёркивание
-				position absolute
-				top 10px
-				left -4px
-				width 55px
-				height 2px
-				background #e10000
-				content ''
-		&__rub
-			position absolute
-			top -27px
-			right -28px
-			width 38px
-			height 76px
-			& use
-				fill #838383
-
-	&-avaliable
-		position relative
-		display inline-block
-		margin-top 4px
-		margin-left 33px
-		padding-left 21px
-		font-family $text-fonts
+	&-btn
+		display block
+		margin-top 23px
+		margin-left 5px
+		width 139px
+		font-family $heading-fonts
 		font-weight bold
-		font-size 13px
-		&:after
-			position absolute
-			top 5px
-			left 0
-			sprite $checkmark
-			content ''
+
+	&-link
+		display block
+		margin-top 5px
+		font-size 14px
+		font-family $text-fonts
+		color #0084ff
+
+	&__rating
+		margin 2px auto
+		width 106px
+		font-size 0
+		&-stars
+			display inline-block
+			margin-top 5px
+			width 72px
+			height 11px
+			background url(../images/tire-card_star.png)
+			&_checked
+				height 11px
+				background url(../images/tire-card_star-checked.png)
+				&_1
+					width 15px
+				&_2
+					width 30px
+				&_3
+					width 45px
+				&_4
+					width 60px
+				&_5
+					width 72px
+
+	&-voted
+		display inline-block
+		margin-left 10px
+		font-size 14px
+		font-family $text-fonts
+		color #636363
