@@ -6,7 +6,7 @@
 		padding-top 20px
 		padding-left 20px
 		padding-right 20px
-		padding-bottom 20px
+		padding-bottom 26px
 
 	&__caption
 		margin-bottom 20px
@@ -27,8 +27,11 @@
 
 	&__right-col
 		display table-cell
-		padding-left 36px
+		padding-left 35px
 		vertical-align top
+		background-image url('/assets/images/fast-selection-bg.png')
+		background-repeat no-repeat
+		background-position 504px 22px
 
 	&__col-item
 		margin-bottom 20px
@@ -39,32 +42,28 @@
 		&_links
 			margin-bottom 30px
 
-	.switch
-			margin 0
+		&_switch
+			margin-bottom 17px
+
+	&__switch
+			width 420px
+			margin-top -3px
+			margin-left -3px
 			font-family $heading-fonts
 			font-weight 700
 			text-transform uppercase
 
 .menu-fast-links
 
-	&__first-level
+	&__level-item
+		margin-top 10px
+		font-weight 700
+		text-transform uppercase
 
-		li
-			margin-top 10px
-			font-family $text-fonts
-			font-size 14px
-			font-weight 700
-			text-transform uppercase
+		&:first-child
+			margin-top 0
 
-			&:first-child
-				margin-top 0
-
-	&__second-level
-
-		li
-			margin-top 10px
-			font-family $text-fonts
-			font-size 14px
+		&_sub
 			font-weight 400
 			text-transform none
 
@@ -90,12 +89,15 @@
 	&__label
 		vertical-align middle
 		width 159px
-
-	.btn.type-links__label
 		padding-left 5px
 		padding-right 0px
 		font-family $text-fonts
-		font-weight bold
+		font-weight 700
+
+	&__btn
+		display inline-block
+		margin-left -4px
+
 
 .manufacturers-list
 	display table
@@ -107,11 +109,17 @@
 		width 190px
 		font-weight 700
 
-		li
-			margin-bottom 10px
+		&_second
+			margin-left 5px
 
-			&:last-child
-				margin-bottom 0
+		&_last
+			width 140px
+
+	&__item
+		margin-bottom 10px
+
+		&:last-child
+			margin-bottom 0
 
 	&__all
 		margin-top 40px
