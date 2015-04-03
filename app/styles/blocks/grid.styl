@@ -4,6 +4,8 @@ $columns = 12
 	width gridWidth($columns)
 	margin-left auto
 	margin-right auto
+	padding 0 10px
+	box-sizing content-box
 
 // TODO: switch to the new grid and clean up
 .grid-module-1
@@ -15,6 +17,9 @@ $columns = 12
 .grid-module-3
 	width gridWidth($columns/3)
 
+.grid-module-2-3
+	width gridWidth($columns*2/3)
+
 .grid-module-4
 	width gridWidth($columns/4)
 
@@ -24,6 +29,7 @@ $columns = 12
 .cols
 	display table
 	margin-left -($module-gap)
+	width 100%
 
 .col
 	display table-cell

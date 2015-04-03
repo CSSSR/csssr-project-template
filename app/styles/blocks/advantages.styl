@@ -1,106 +1,49 @@
 .advantages
-	position relative
-	display block
-	padding 3px
-	width 380px
-	height 490px
+	padding 20px 30px
 	font-family $heading-fonts
 	font-weight bold
+	line-height 20px
 	text-transform uppercase
-	&:before
-		position absolute
-		top 0
-		left 0
-		z-index 1
-		display block
-		width 374px
-		height 210px
-		border 3px solid #d4d4d4
-		border-bottom none
-		content ''
-	&:after
-		position absolute
-		left 0
-		bottom 0
-		z-index 1
-		display block
-		width 374px
-		height 230px
-		border 3px solid #d4d4d4
-		border-top none
-		content ''
 
+	&__slider
+		background url(../images/advantages_bg.jpg) no-repeat top center
+		background-clip border-box
 
-	&-arrow
-		position absolute
-		top 210px
-		z-index 5
-		width 42px
-		height 50px
-		border 3px solid #d4d4d4
-		cursor pointer
-		&_left
-			left 0
-			border-left none
-			border-radius 0 8px 8px 0
-		&_right
-			right 0
-			border-right none
-			border-radius 8px 0 0  8px
-
-		&-mark
-			position absolute
-			top 12px
-			&_left
-				left 11px
-				sprite $arrow-left
-			&_right
-				right 12px
-				sprite $arrow-right
-
-
-	&-content
-		display block
-		height inherit
-		line-height 20px
-		background url(../images/advantages_bg.png) no-repeat -3px -3px
-
-	&-title
-		padding-top 29px
-		padding-left 71px
-		margin-bottom 63px
+	&__title
+		text-align center
+		margin 10px 0 63px
 		font-size 20px
 		color #d7a235
 
-	&-block
+	&__block
 		position relative
 		display block
-		padding-left 178px
+		padding-left 150px
 		margin-bottom 51px
 		&_cards
 			margin-bottom 39px
 		&_wheels
 			margin-bottom 50px
 
-	&-img
+	&__img
 		position absolute
 		&_deliver
 			sprite $advantages_deliver
 			top -3px
-			left 14px
+			left -15px
 		&_cards
 			sprite $advantages_cards
 			top -10px
-			left 52px
+			left 23px
 		&_wheels
 			sprite $advantages_wheels
 			top -5px
-			left 46px
+			left 17px
 		&_guarantee
 			sprite $advantages_guarantee
 			top -19px
-			left 46px
+			left 17px
 
-	&-caption
+	&__caption
 		font-size 14px
 		color #272727
