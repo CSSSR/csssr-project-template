@@ -1,0 +1,43 @@
+.sort-labels
+	font-family $heading-fonts
+	font-weight 700
+	color black
+
+	&__description
+		margin-right 5px
+		vertical-align middle
+
+	&__item
+		display inline-block
+		margin-left 12px
+		vertical-align middle
+		cursor pointer
+
+	&__type
+		display inline-block
+		font-family $text-fonts
+		font-size 13px
+		letter-spacing .5px
+		line-height 12px
+		color $rushina-gray
+		vertical-align middle
+		border-bottom 1px dotted $rushina-gray
+
+		&_active
+			color black
+			border-bottom-color black
+
+	&__arrow
+		width 20px
+		height 21px
+		margin-left -5px
+		transform rotate(90deg)
+		vertical-align middle
+		fill $rushina-gray
+
+		&_down
+			transform rotate(-90deg)
+
+		&_active
+			fill black
+
