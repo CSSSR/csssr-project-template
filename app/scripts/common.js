@@ -93,5 +93,4 @@ $(function () {
 			$(root + '__container', $el).slick(opt);
 		});
 	})();
-
 });
