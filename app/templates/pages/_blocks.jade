@@ -235,11 +235,29 @@ block page_content
 							.h-slider__slide
 								| slide
 
-		#blocks-h-slider-width-controls(data-collapse='persist')
+		#blocks-h-slider-noclip(data-collapse='persist')
 			.grid
 				.h3 Горизонтальный слайдер c вылетом кнопок
 			.demo-block
 				.grid
+					+h-slider({
+						noclip_buttons: true,
+						show: 6,
+						scroll: 6
+					}, [
+						'Все бренды дисков',
+						'Все бренды шин'
+					])
+						each i in Array(20)
+							.h-slider__slide
+								| slide
+
+		#blocks-h-slider-h2(data-collapse='persist')
+			.grid
+				.h3 Горизонтальный слайдер c вылетом кнопок и заголовком H2
+			.demo-block
+				.grid
+					.h2.h_upcase Заголовок
 					+h-slider({
 						noclip_buttons: true,
 						show: 6,
