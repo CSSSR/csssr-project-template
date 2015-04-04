@@ -1,45 +1,13 @@
-// для всех новостных блоков
-
-.news__item
-	display block
-	font-family $text-fonts
-
-	&-photo
-		display block
-		background-size cover
-
-	&-title
-		display block
-		font-size 16px
-		font-weight bold
+.news-card
+	&__title
+		margin 8px 0
 		color #000
 
-	&-content
-		display block
+	&__date
+		margin 15px 0 7px
 
-// для отдельных новостных блоков
-
-.news__item
-	padding 3px 6px 30px 5px
-	width 291px
-	height 439px
-
-	&-photo
-		width 280px
-		height 181px
-
-	&-data
-		display block
-		margin-top 15px
-
-	&-title
-		margin-top 8px
-		margin-left -1px
-		color #000
-
-	&-content
+	&__text
 		margin-top 11px
-
 
 .news__item_long
 	position relative
