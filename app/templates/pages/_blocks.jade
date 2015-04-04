@@ -219,6 +219,39 @@ block page_content
 				.grid
 					include ../blocks/best-brands
 
+		#blocks-h-slider(data-collapse='persist')
+			.grid
+				.h3 Горизонтальный слайдер
+			.demo-block
+				.grid
+					+h-slider({
+						show: 6,
+						scroll: 6
+					}, [
+						'Все бренды дисков',
+						'Все бренды шин'
+					])
+						each i in Array(20)
+							.h-slider__slide
+								| slide
+
+		#blocks-h-slider-width-controls(data-collapse='persist')
+			.grid
+				.h3 Горизонтальный слайдер c вылетом кнопок
+			.demo-block
+				.grid
+					+h-slider({
+						noclip_buttons: true,
+						show: 6,
+						scroll: 6
+					}, [
+						'Все бренды дисков',
+						'Все бренды шин'
+					])
+						each i in Array(20)
+							.h-slider__slide
+								| slide
+
 
 block scriptsAfter
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse.js')

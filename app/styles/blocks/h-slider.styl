@@ -1,0 +1,54 @@
+.h-slider
+	position relative
+
+	&__buttons
+		clearfix()
+		margin-bottom 30px
+
+		.btn
+			margin-right 10px
+			color #000
+			font-weight bold
+			float right
+
+			&.slick-disabled
+				box-shadow none
+				opacity .27
+				cursor default
+
+				&:hover
+					background-color transparent
+
+		.btn:first-child
+			margin-right 0
+
+	&__buttons_noclip
+		position absolute
+		top -70px
+		right 0
+		margin-bottom 0
+
+	&__next
+		height 40px
+		width 40px
+		padding 0
+		background-image url('../images/svg/h-slider__next.svg')
+		background-size contain
+
+	&__prev
+		height 40px
+		width 40px
+		padding 0
+		background-image url('../images/svg/h-slider__prev.svg')
+		background-size contain
+
+		&.btn
+			margin-right 3px
+			margin-left 4px
+
+
+	&__slides
+		margin 0 -10px
+
+	&__slide
+		margin 0 10px
