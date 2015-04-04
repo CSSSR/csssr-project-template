@@ -6,7 +6,7 @@ gulp.task 'build', ->
 		'del'
 		'spritesmith'
 		'svg'
-		'imagemin'
+		# 'imagemin'
 		'stylus'
 		'jade'
 		'scripts'
@@ -23,7 +23,7 @@ gulp.task 'deploy', ->
 gulp.task 'default', ->
 	return runSequence(
 		'spritesmith'
-		'imagemin'
+		# 'imagemin'
 		'svg'
 		'stylus'
 		'jade'

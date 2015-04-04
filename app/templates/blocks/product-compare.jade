@@ -1,0 +1,35 @@
+.product-compare
+
+	.product-compare__slider
+		.compare-slider.js-slick(
+				data-show = 5
+				data-scroll = 5
+			)
+			.compare-slider__left-switch.js-slick__prev
+			.compare-slider__right-switch.js-slick__next
+			.compare-slider__container.js-slick__container
+				- var i = 0
+				while i < 20
+					- i++
+					.compare-slider__item
+						.compare-slider__close-btn
+				.compare-slider__item.compare-slider__item_add
+					span.compare-slider__add-label Добавьте товар<br> в сравнение
+
+		.product-compare__controls
+			.product-compare__submit
+				button.btn.btn_primary Сравнить
+			.product-compare__switch
+				+switch('compare-type', [
+					{
+						id: 'tires',
+						label: 'Шины (10)',
+						isActive: true
+					},
+					{
+						id: 'discs',
+						label: 'Диски (5)'
+					}
+				])
+			.product-compare__summary В сравнении: 14 товаров
+

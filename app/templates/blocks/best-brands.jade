@@ -1,0 +1,29 @@
+.best-brands
+	.cols
+		.col
+			.grid-module-4
+				.h2.h_upcase Лучшие торговые марки
+				.best-brands__text
+					p У нас самый большой выбор именитыхи шин и дисков на складе и мы готовы доставить их в течение 1-3 дней.
+		.col
+			.grid-module-8
+				+h-slider({
+					show: 4,
+					scroll: 4
+				}, [
+					'Все бренды дисков',
+					'Все бренды шин'
+				])
+					each i in Array(3)
+						.h-slider__slide
+							a(href='#')
+								img(src='/assets/images/content/best-brands/yokohama.png' alt='Yokohama')
+						.h-slider__slide
+							a(href='#')
+								img(src='/assets/images/content/best-brands/nokian-tyres.png' alt='Nokian Tyres')
+						.h-slider__slide
+							a(href='#')
+								img(src='/assets/images/content/best-brands/bridgestone.png' alt='Bridgestone')
+						.h-slider__slide
+							a(href='#')
+								img(src='/assets/images/content/best-brands/goodyear.png' alt='Goodyear')

@@ -1,0 +1,111 @@
+.shop-info
+	position relative
+	width 100%
+	background $rushina-light-gray
+
+	&__backgrounds
+		width 100%
+		height 100%
+		overflow hidden
+		position absolute
+		z-index 0
+
+	&__bg
+		position absolute
+		top 0
+		width 400px
+		max-height 540px
+
+		&_left
+			height 100%
+			right 50%
+			width 50%
+			min-width 960px
+			background url(../images/shop-info_left-bg.jpg) no-repeat left top
+		&_right
+			height 100%
+			left 50%
+			width 50%
+			min-width 960px
+			background url(../images/shop-info_right-bg.jpg) no-repeat right top
+
+	&__wrapper
+		position relative
+		z-index 2
+		clearfix()
+
+	&__main,
+	&__entry
+		float left
+		margin-bottom 50px
+
+	&__entry
+		clearfix()
+
+	&__main
+		width 390px
+		padding-top  45px
+
+	&__title
+		text-transform uppercase
+		margin-bottom 30px
+
+	&__p
+		margin-bottom 25px
+		margin-right 30px
+
+	&__btn
+		width 124px
+		height 40px
+		padding 0
+		font-weight bold
+		color #000
+
+	&__entry
+		width 790px
+		padding-top 90px;
+
+	&__entry-item
+		position relative
+		width 430px
+		height 200px
+		float left
+		&:first-of-type,
+		&:nth-of-type(3)
+			width 360px
+
+		&:nth-of-type(2) .shop-info__entry-title,
+		&:nth-of-type(2) .shop-info__entry-text,
+		&:nth-of-type(4) .shop-info__entry-title
+		&:nth-of-type(4) .shop-info__entry-text
+			padding-left 210px
+
+	&__img
+		position absolute
+		&_tire
+			sprite $shop-tire
+			top -10px
+
+		&_season
+			sprite $shop-season
+			top -15px
+
+		&_bonus
+			sprite $shop-bonus
+			top 30px
+
+		&_util
+			sprite $shop-util
+			left 30px
+			top 20px
+
+	&__entry-title
+		padding-left 160px
+		padding-top 20px
+		text-transform uppercase
+
+	&__entry-text
+		padding-left 160px
+		padding-right 40px
+
+

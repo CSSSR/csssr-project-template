@@ -1,0 +1,30 @@
+.sw-section
+	.sw-section__heading
+		span.h1.h_upcase Новинки
+		+primary-switch('type', [
+			{
+				id: 'tyres',
+				label: 'Шины',
+				isActive: true
+			},
+			{
+				id: 'discs',
+				label: 'Диски'
+			}
+		])
+	.sw-section__subsection
+		+h-slider({
+			noclip_buttons: true,
+			show: 6,
+			scroll: 6
+		})
+			each i in Array(18)
+				.h-slider__slide
+					+tire-card({type:'new',
+						goods:'tire',
+						img:'assets/images/content/tire-card_img.png',
+						title:'Replica<br> BMW FR1156',
+						price:'3000',
+						play:'true',
+						label:'new'
+					})

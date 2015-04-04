@@ -9,6 +9,7 @@ prettify     = require 'gulp-prettify'
 pkg          = require '../../package.json'
 errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
+shortid      = require 'shortid'
 
 gulp.task 'jade', ->
 	return gulp.src 'app/templates/**/*.jade'
@@ -18,6 +19,7 @@ gulp.task 'jade', ->
 		.pipe filter (file) -> /templates[\\\/]pages/.test file.path
 		.pipe jade
 			data:
+				shortid: shortid
 				page:
 					copyright: pkg.copyright
 					description: pkg.description

@@ -1,0 +1,11 @@
+.h2.h_upcase Новости рынка
++h-slider({
+	noclip_buttons: true,
+	show: 4,
+	scroll: 4
+}, [
+	'Все новости рынка'
+])
+	each i in Array(8)
+		.h-slider__slide
+			include ../blocks/news__item

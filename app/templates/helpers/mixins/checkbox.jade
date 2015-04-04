@@ -1,0 +1,6 @@
+mixin checkbox()
+	- if (typeof attributes.id === 'undefined') attributes.id = shortid.generate();
+
+	input.checkbox(type='checkbox')&attributes(attributes)
+	label.checkbox__label(for=attributes.id)
+		block

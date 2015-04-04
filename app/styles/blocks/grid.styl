@@ -4,27 +4,35 @@ $columns = 12
 	width gridWidth($columns)
 	margin-left auto
 	margin-right auto
+	padding 0 10px
+	box-sizing content-box
 
-.grid-module-1
-	width gridWidth($columns)
-
-.grid-module-2
-	width gridWidth($columns/2)
-
-.grid-module-3
-	width gridWidth($columns/3)
-
-.grid-module-4
-	width gridWidth($columns/4)
-
-.grid-module-6
-	width gridWidth($columns/6)
+for $i in 1..12
+	.grid-module-{$i}
+		width gridWidth($i)
 
 .cols
 	display table
 	margin-left -($module-gap)
+	width 100%
 
 .col
 	display table-cell
 	box-sizing content-box
 	padding-left $module-gap
+	vertical-align top
+
+.demo-blocks
+	padding-bottom 50px
+
+.demo-block
+	margin 1em 0 2em
+	padding 1.5em 0
+	background-image url('data:image/gif;base64,R0lGODlhEAAQAJEAAMvLy8zMzP///wAAACH5BAAAAAAALAAAAAAQABAAAAIglG+hq4jM3IFLJhqswNly/XkUEEqlcz4YuIoU+7qQVgAAOw==')
+
+.demo-block_dark
+	background-image url('data:image/gif;base64,R0lGODlhEAAQAIAAAJmZmWZmZiH5BAAAAAAALAAAAAAQABAAAAIfhG+hq4jM3IFLJhoswNly/XkcBpIiVaInlLJr9FZWAQA7');
+
+.demo-block_white
+	background-image none
+	background-color #fff

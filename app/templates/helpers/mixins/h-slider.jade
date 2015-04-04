@@ -1,0 +1,15 @@
+mixin h-slider(options, buttons)
+	.h-slider.js-slick(
+		data-show=options.show,
+		data-scroll=options.scroll
+	)&attributes(attributes)
+		- var buttons_mod = options.noclip_buttons ? 'h-slider__buttons_noclip' : ''
+		.h-slider__buttons(class=buttons_mod)
+			.btn.h-slider__control.h-slider__next.js-slick__next
+			.btn.h-slider__control.h-slider__prev.js-slick__prev
+
+			if buttons
+				each button in buttons
+					a.btn(href='javascript:void(0)')= button
+		.h-slider__slides.js-slick__container
+			block

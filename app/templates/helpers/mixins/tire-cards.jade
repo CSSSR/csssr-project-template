@@ -1,0 +1,41 @@
+//- содержательные
+
+mixin tire-card(data)
+	if data.type=='new'
+		- var classes = ['tire-card_short'];
+
+	.tire-card.grid-module-2(class=classes)
+		img.tire-card__img(src=data.img)
+		.h4.tire-card-title
+				!=data.title
+		if data.caption
+			.tire-card-caption
+				!=data.caption
+		if data.oldprice
+			.h2.tire-card-price.tire-card-price_left
+					.tire-card-price__num=data.price
+						+icon('1_RUB').tire-card-price__rub
+			.tire-card-oldprice
+				.tire-card-oldprice__num=data.oldprice
+					+icon('1_RUB').tire-card-oldprice__rub
+		else
+			.h2.tire-card-price
+				.tire-card-price__num=data.price
+					+icon('1_RUB').tire-card-price__rub
+		if data.avaliable
+			.tire-card-avaliable в наличии
+		if data.play
+			.tire-card-play
+				+icon('icon_play').tire-card-play-icon
+		if data.label
+			if data.label=='discount'
+				.tire-card__label.tire-card__label_discount
+					.tire-card__label_discount-caption Скидка!
+			if data.label=='new'
+				.tire-card__label.tire-card__label_new
+					.tire-card__label_new-caption Новинка
+		if data.option_left
+			.tire-card__option
+				+icon('tireicon_'+data.option_left).tire-card__option__item(class='tire-card__option__item_'+data.option_left)
+				if data.option_right
+					+icon('tireicon_'+data.option_right).tire-card__option__item(class='tire-card__option__item_'+data.option_right)

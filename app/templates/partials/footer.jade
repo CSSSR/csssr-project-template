@@ -11,30 +11,42 @@
 					a(href='#') info@ru-shina.ru
 				+footer-contact__info({text:'г.Москва, ул. Гиляровского, 32', icon:'contact_3_position', mod:'flag'})
 			.footer-nav-list
-				+footer-nav__item('О компании', ['Акции и скидки', 'Новости', 'Вакансии'])
-				+footer-nav__item('Шины', ['По типоразмеру', 'По автомобилю', 'По бренду'])
-				+footer-nav__item('Диски', ['По типоразмеру', 'По автомобилю', 'По бренду', 'Диски Replica'])
-				+footer-nav__item('Доставка и оплата', ['По Москве и МО', 'По России', 'Кредитование'])
-				+footer-nav__item('Услуги', ['Шиномонтаж', 'Сезонное хранение шин', 'Утилизация шин и дисков'])
-				+footer-nav__item('Контакты')(href='#')
-				+footer-nav__item('Полезная информация')(href='#')
+				.footer-bg
+				.footer-nav__group
+					+footer-nav__item({title:'Услуги'}, ['Шиномонтаж', 'Сезонное хранение шин', 'Утилизация шин и дисков'])(class='footer-nav__item_high')
+					+footer-nav__item({}, ['Полезная информация'])
+					+footer-nav__item({}, ['О Компании'])
+				.footer-nav__group
+					+footer-nav__item({title:'Шины'}, ['По типоразмеру', 'По автомобилю', 'По бренду'])
+					+footer-nav__item({}, ['шины RunFlat', 'Усиленные шины', 'Грязевая резина', 'Зимние шины', 'Летние шины'])
+					+footer-nav__item({}, ['Шинный калькулятор'])
+				.footer-nav__group
+					+footer-nav__item({title:'Диски'}, ['По типоразмеру', 'По автомобилю', 'По бренду'])
+					+footer-nav__item({}, ['Оригинальный дизайн'])
+				.footer-nav__group
+					+footer-nav__item({title:'Доставка и оплата'}, ['По Москве и МО', 'По России', 'По Белорусии', 'По Казахстану'])
+					+footer-nav__item({}, ['Контакты'])
+
 	.footer-bottom
 		.grid
-			.footer-wrapper
-				.footer-logo
-				.footer-bottom__pay
-					.footer-bottom-caption Принимаем к оплате:
-					+footer-bottom-btn({type:'pay', mod:'visa'})
-					+footer-bottom-btn({type:'pay', mod:'mastercard'})
-					+footer-bottom-btn({type:'pay', mod:'wallet'})
-					+footer-bottom-btn({type:'pay', mod:'yandex'})
-					+footer-bottom-btn({type:'pay', mod:'paypal'})(class='footer-bottom-btn_pay_long')
-				.footer-bottom__social
-					.footer-bottom-caption Присоединяйтесь к нам:
-					+footer-bottom-btn({type:'social', mod:'vk', icon:'1_ss_VK'})
-					+footer-bottom-btn({type:'social', mod:'classmates', icon:'1_ss_Odnoklassniki'})
-					+footer-bottom-btn({type:'social', mod:'fb', icon:'1_ss_Facebook'})
-					+footer-bottom-btn({type:'social', mod:'twitter', icon:'1_ss_Twitter'})
+			.cols
+				.col.grid-module-5
+					.footer-logo
+				.col.grid-module-4
+					.footer-bottom__pay
+						.footer-bottom-caption Принимаем к оплате:
+						+footer-bottom-btn({type:'pay', mod:'visa'})
+						+footer-bottom-btn({type:'pay', mod:'mastercard'})
+						+footer-bottom-btn({type:'pay', mod:'wallet'})
+						+footer-bottom-btn({type:'pay', mod:'yandex'})
+						+footer-bottom-btn({type:'pay', mod:'paypal'})(class='footer-bottom-btn_pay_long')
+				.col.grid-module-3.footer-bottom__social-wrapper
+					.footer-bottom__social
+						.footer-bottom-caption Присоединяйтесь к нам:
+						+footer-bottom-btn({type:'social', mod:'vk', icon:'1_ss_VK'})
+						+footer-bottom-btn({type:'social', mod:'classmates', icon:'1_ss_Odnoklassniki'})
+						+footer-bottom-btn({type:'social', mod:'fb', icon:'1_ss_Facebook'})
+						+footer-bottom-btn({type:'social', mod:'twitter', icon:'1_ss_Twitter'})
 
 	.footer-copyright
 		.grid

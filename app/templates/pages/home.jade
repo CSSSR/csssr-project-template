@@ -2,6 +2,42 @@ extends ../layouts/default
 
 block head
 	- pageTitle = 'Главная';
+	- mainModifier = 'home';
 
 block content
-	| ...
+	.main__top.grid
+		.cols
+			.col
+				.grid-module-4
+					include ../blocks/advantages
+			.col
+				.grid-module-8
+					+wheel-filter()
+					.home-top__wf-banner
+						img(src = '/assets/images/content/wf-banner.png')
+
+	.main_home__sale.grid
+		.cols
+			.col
+				.grid-module-4
+					.sale__title
+						.h1.h_upcase Распродажа!
+
+					.sale__countdown
+						include ../blocks/countdown
+
+			.col
+				.grid-module-8
+					include ../blocks/sales-slider
+
+	.main__new-products.grid
+		include ../blocks/slider-new-products
+
+	.main__best-brands.grid
+		include ../blocks/best-brands
+
+	.main__shop-info
+		include ../blocks/shop-info
+
+	.main__news.grid
+		include ../blocks/slider-last-news

@@ -1,0 +1,277 @@
+extends ../layouts/page
+
+block page_content
+
+	.grid
+		a(href='/') Радар
+
+	.demo-blocks
+		#blocks-top-menu(data-collapse='persist')
+			.grid
+				.h3 Дефолтный blocks/top-menu
+			.demo-block
+				include ../blocks/top-menu
+
+		#blocks-top-menu_login(data-collapse='persist')
+			.grid
+				.h3 Логин blocks/top-menu_login
+			.demo-block
+				include ../blocks/top-menu_login
+
+		#blocks-header-fix(data-collapse='persist')
+			.grid
+				.h3 Фиксированый blocks/header-fix
+			.demo-block
+				include ../blocks/top-menu-fix
+
+		#blocks-main-menu_header(data-collapse='persist')
+			.grid
+				.h3 Главное меню blocks/main-menu_header
+			.demo-block
+				include ../blocks/main-menu_header
+
+		#blocks-main-menu(data-collapse='persist')
+			.grid
+				.h3 Главное меню blocks/main-menu
+			.demo-block
+				include ../blocks/main-menu
+
+		#blocks-top-menu-order(data-collapse='persist')
+			.grid
+				.h3 Оформление заказа blocks/top-menu-order
+			.demo-block
+				include ../blocks/top-menu-order
+
+		#blocks-top-menu-lk(data-collapse='persist')
+			.grid
+				.h3 Личный кабинет blocks/top-menu-lk
+			.demo-block
+				include ../blocks/top-menu-lk
+
+		#blocks-your-cars(data-collapse='persist')
+			.grid
+				.h3 Ваши авто blocks/your-cars
+			.demo-block
+				include ../blocks/your-cars
+
+		#blocks-your-cars_add(data-collapse='persist')
+			.grid
+				.h3 Добавление авто blocks/your-cars_add
+			.demo-block
+				include ../blocks/your-cars_add
+
+		#blocks-viewed(data-collapse='persist')
+			.grid
+				.h3 Недавно просмотренные blocks/last-viewed-products
+			.demo-block
+				include ../blocks/last-viewed-products
+
+		#blocks-viewed(data-collapse='persist')
+			.grid
+				.h3 Сравнение товаров blocks/product-compare
+			.demo-block
+				include ../blocks/product-compare
+
+		#blocks-feedback(data-collapse='persist')
+			.grid
+				.h3 Обратная связь blocks/feedback
+			.demo-block
+				.grid
+					include ../blocks/feedback
+
+		#blocks-opening-hours(data-collapse='persist')
+			.grid
+				.h3 Часы работы blocks/opening-hours
+			.demo-block
+				.grid
+					include ../blocks/opening-hours
+
+		#blocks-advantages(data-collapse='persist')
+			.grid
+				.h3 Промо-крутилка
+			.demo-block.demo-block_dark
+				.grid
+					.grid-module-4(style='background-color: red')
+						include ../blocks/advantages
+
+		#block-wf(data-collapse='persist')
+			.grid
+				.h3 Виджет подбора товара
+			.demo-block.demo-block_dark
+				.grid
+					+wheel-filter()
+
+		#blocks-slider-new-products(data-collapse='persist')
+			.grid
+				.h3 Слайдер новинок
+			.demo-block
+				.grid
+					include ../blocks/slider-new-products
+
+		#blocks-sales-slider(data-collapse='persist')
+			.grid
+				.h3 Слайдер распродажи
+			.demo-block
+				.grid
+					.grid-module-8
+						include ../blocks/sales-slider
+
+		#blocks-advantages(data-collapse='persist')
+			.grid
+				.h3 Промо-счётчик
+			.demo-block
+				.grid
+					include ../blocks/countdown
+
+		#blocks-tire-card(data-collapse='persist')
+			.grid
+				.h3 Карточки шин
+			.demo-block
+				.grid
+					.cols
+						.col.grid-module-2
+							+tire-card({
+								type:'menu',
+								goods:'tire',
+								img:'assets/images/content/tire-card_img.png',
+								title:'Replica<br> BMW FR1156',
+								caption:'7x16 5/114.3 ET38',
+								price:'3000',
+								avaliable:'true',
+								play:'true',
+								label:'discount'
+							})
+
+						.col.grid-module-2
+							+tire-card({
+								type:'sale',
+								goods:'tire',
+								img:'assets/images/content/tire-card_img.png',
+								title:'Replica<br> BMW FR1156',
+								caption:'7x16 5/114.3 ET38',
+								price:'1700',
+								oldprice:'3400',
+								avaliable:'true',
+								play:'true',
+								option_left:'summer',
+								option_right:'spike',
+								label:'discount'
+							})
+
+						.col.grid-module-2
+							+tire-card({type:'new',
+								goods:'tire',
+								img:'assets/images/content/tire-card_img.png',
+								title:'Replica<br> BMW FR1156',
+								price:'3000',
+								play:'true',
+								label:'new'
+							})
+
+		#blocks-model-list(data-collapse='persist')
+			.grid
+				.h3 Выбор модели
+			.demo-block
+				.grid
+					include ../blocks/model-list
+
+		#blocks-brand-list(data-collapse='persist')
+			.grid
+				.h3 Список брендов
+			.demo-block
+				.grid
+					include ../blocks/brand-list
+
+		#blocks-shop-info(data-collapse='persist')
+			.grid
+				.h3 Информация о магазине
+			.demo-block
+				include ../blocks/shop-info
+
+		#blocks-form-size(data-collapse='persist')
+			.grid
+				.h3 Выбор типоразмера
+			.demo-block.demo-block_white
+				.grid
+					include ../blocks/form-size
+
+		#blocks-slider-last-news(data-collapse='persist')
+			.grid
+				.h3 Слайдер новостей
+			.demo-block
+				.grid
+					include ../blocks/slider-last-news
+
+		#blocks-form-size(data-collapse='persist')
+			.grid
+				.h3 Шаги в фильтре товаров
+			.demo-block.demo-block_white
+				.grid
+					include ../blocks/filter-steps
+					br
+					include ../blocks/filter-steps_ford
+					br
+					include ../blocks/filter-steps_last
+
+		#blocks-best-brands(data-collapse='persist')
+			.grid
+				.h3 Слайдер «Лучшие торговые марки»
+			.demo-block
+				.grid
+					include ../blocks/best-brands
+
+		#blocks-h-slider(data-collapse='persist')
+			.grid
+				.h3 Горизонтальный слайдер
+			.demo-block
+				.grid
+					+h-slider({
+						show: 6,
+						scroll: 6
+					}, [
+						'Все бренды дисков',
+						'Все бренды шин'
+					])
+						each i in Array(20)
+							.h-slider__slide
+								| slide
+
+		#blocks-h-slider-noclip(data-collapse='persist')
+			.grid
+				.h3 Горизонтальный слайдер c вылетом кнопок
+			.demo-block
+				.grid
+					+h-slider({
+						noclip_buttons: true,
+						show: 6,
+						scroll: 6
+					}, [
+						'Все бренды дисков',
+						'Все бренды шин'
+					])
+						each i in Array(20)
+							.h-slider__slide
+								| slide
+
+		#blocks-h-slider-h2(data-collapse='persist')
+			.grid
+				.h3 Горизонтальный слайдер c вылетом кнопок и заголовком H2
+			.demo-block
+				.grid
+					.h2.h_upcase Заголовок
+					+h-slider({
+						noclip_buttons: true,
+						show: 6,
+						scroll: 6
+					}, [
+						'Все бренды дисков',
+						'Все бренды шин'
+					])
+						each i in Array(20)
+							.h-slider__slide
+								| slide
+
+
+block scriptsAfter
+	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse.js')
+	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse_storage.js')
