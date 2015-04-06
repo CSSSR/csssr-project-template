@@ -1,7 +1,7 @@
 include ../helpers/mixins/promo-slider
 
 +promo-slider().advantages__slider
-	each i in Array(3)
+	.h-slider__slide
 		.advantages
 			.advantages__title
 				| Наши преимущества
@@ -14,6 +14,34 @@ include ../helpers/mixins/promo-slider
 			.advantages__block.advantages__block_wheels
 				.advantages__img.advantages__img_wheels
 				.advantages__caption Более 50<br>топовых брендов
+			.advantages__block
+				.advantages__img.advantages__img_guarantee
+				.advantages__caption Гарантия<br>возврата 100%
+	.h-slider__slide
+		.advantages
+			.advantages__title
+				| Наши преимущества
+			.advantages__block
+				.advantages__img.advantages__img_deliver
+				.advantages__caption Доставка<br>по всей России
+	.h-slider__slide
+		.advantages
+			.advantages__title
+				| Наши преимущества
+			.advantages__block.advantages__block_cards
+				.advantages__img.advantages__img_cards
+				.advantages__caption Удобные<br>способы оплаты
+	.h-slider__slide
+		.advantages
+			.advantages__title
+				| Наши преимущества
+			.advantages__block.advantages__block_wheels
+				.advantages__img.advantages__img_wheels
+				.advantages__caption Более 50<br>топовых брендов
+	.h-slider__slide
+		.advantages
+			.advantages__title
+				| Наши преимущества
 			.advantages__block
 				.advantages__img.advantages__img_guarantee
 				.advantages__caption Гарантия<br>возврата 100%
