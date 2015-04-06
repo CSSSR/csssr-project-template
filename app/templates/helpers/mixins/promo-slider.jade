@@ -1,5 +1,11 @@
 mixin promo-slider()
-	.promo-slider.js-slick(data-show=1 data-scroll=1 data-infinite=1)&attributes(attributes)
+	.promo-slider.js-slick(
+		data-show=1
+		data-scroll=1
+		data-infinite=1
+		data-autoplay=5000
+		data-speed=1500
+	)&attributes(attributes)
 		.promo-slider__control.promo-slider__control_prev.js-slick__prev
 		.promo-slider__control.promo-slider__control_next.js-slick__next
 		.promo-slider__slides.js-slick__container
