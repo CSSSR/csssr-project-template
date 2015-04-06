@@ -23,24 +23,14 @@ mixin wheel-filter()
 									.h5.h_upcase Марка:
 
 								.wf-body__input
-									select.select_wide
-										option(selected) Выберите
-										option BMW
-										option Mercedes
-										option Nissan
-										option Opel
+									select.select_wide.js-wf-select.js-wf-select_brand(disabled)
 
 							.wf-col
 								.wf-body__heading
 									.h5.h_upcase Модель:
 
 								.wf-body__input
-									select.select_wide
-										option(selected) Выберите
-										option X3
-										option M5
-										option 330
-										option 550
+									select.select_wide.js-wf-select.js-wf-select_model(disabled)
 
 						.wf-row
 							.wf-col
@@ -48,23 +38,14 @@ mixin wheel-filter()
 									.h5.h_upcase Год выпуска:
 
 								.wf-body__input
-									select.select_wide
-										option(selected) Все
-										option 1990
-										option 1991
-										option 1992
-										option 1993
+									select.select_wide.js-wf-select.js-wf-select_year(disabled)
 
 							.wf-col
 								.wf-body__heading
 									.h5.h_upcase Модификация:
 
 								.wf-body__input
-									select.select_wide
-										option(selected) Все
-										option Q
-										option M
-										option Z
+									select.select_wide.js-wf-select.js-wf-select_mod(disabled)
 
 						.wf-row
 							.wf-col
