@@ -3,6 +3,8 @@
 	width 180px
 	border 3px solid #ebebeb
 	padding-bottom 14px
+	margin-left 200px
+	background white
 
 	&__info
 		display inline-block
@@ -17,6 +19,13 @@
 			border-top none
 		& > p.hide
 			display none
+
+		&_width
+			font-size 0
+			& > p
+				width 50%
+				font-size 14px
+				display inline-block
 
 	&__title
 		font-family $heading-fonts
@@ -35,6 +44,7 @@
 		display inline-block
 		margin-bottom 13px
 		margin-top 6px
+		font-size 14px
 		&:after
 			position absolute
 			content ''
@@ -75,3 +85,62 @@
 
 			& + label:before
 				background-position 0 -72px
+
+	&__color
+		width 25%
+		float left
+		&-input
+			cursor pointer
+			position absolute
+			visibility hidden
+			&:checked + label:before
+				display block
+		&-label
+			width 26px
+			height 26px
+			margin-bottom 13px
+			display block
+			position relative
+			cursor pointer
+			&:before
+				position absolute
+				content ''
+				top -4px
+				bottom -4px
+				left -4px
+				right -4px
+				border 2px solid #000
+				display none
+			&.black
+				background-color #000000
+			&.green
+				background-color #32a232
+			&.purpure
+				background-color #9a3d96
+			&.fiolet
+				background-color #673266
+			&.red
+				background-color #e50607
+			&.yellow
+				background-color #fdd42e
+			&.grey
+				background-color #e2e2e2
+			&.white
+				background-color #ffffff
+		&-wrap
+			clearfix()
+			margin-top 10px
+
+	&__dash
+		width 20px
+		height 40px
+		line-height 40px
+		text-align center
+		display inline-block
+		vertical-align top
+
+	&__select
+		width 60px
+		overflow hidden
+		& .select2-container
+			min-width auto

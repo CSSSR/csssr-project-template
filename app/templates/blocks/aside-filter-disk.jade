@@ -1,0 +1,143 @@
+.aside-filter
+	.aside-filter__block
+		.aside-filter__title Вылет (ET)
+		.select2.aside-filter__select
+			select
+				option(value='10') 10
+				option(value='20') 20
+				option(value='30') 30
+				option(value='40') 40
+		.aside-filter__dash -
+		.select2.aside-filter__select
+			select
+				option(value='10') 10
+				option(value='20') 20
+				option(value='30') 30
+				option(value='40') 40
+
+	.aside-filter__block.aside-filter__block_width
+		.aside-filter__title ШИРИНА ДИСКА
+		p
+			+checkbox()(class="aside-filter__checkbox") 0(1)
+		p
+			+checkbox()(class="aside-filter__checkbox") 4(7)
+		p
+			+checkbox()(class="aside-filter__checkbox") 4(7)
+		p
+			+checkbox()(class="aside-filter__checkbox") 4(7)
+		p
+			+checkbox()(class="aside-filter__checkbox") 0(1)
+		p
+			+checkbox()(class="aside-filter__checkbox") 4(7)
+		p
+			+checkbox()(class="aside-filter__checkbox") 4(7)
+		p
+			+checkbox()(class="aside-filter__checkbox") 4(7)
+		p
+			+checkbox()(class="aside-filter__checkbox") 4(7)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") 4(7)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") 4(7)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") 4(7)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") 4(7)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") 4(7)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") 4(7)
+
+		a.aside-filter__show.js-filter-checkbox-open(href=jv0 data-status="hide" data-show="Показать всех" data-hide="Скрыть") Показать всех
+
+	.aside-filter__block
+		.aside-filter__title ПРОИЗВОДИТЕЛИ
+		p
+			+checkbox()(class="aside-filter__checkbox") Continental (1)
+		p
+			+checkbox()(class="aside-filter__checkbox") Matador (10)
+		p
+			+checkbox()(class="aside-filter__checkbox") Michelin (10)
+		p
+			+checkbox()(disabled class="aside-filter__checkbox") Hankook
+		p
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+
+		a.aside-filter__show.js-filter-checkbox-open(href=jv0 data-status="hide" data-show="Показать всех" data-hide="Скрыть") Показать всех
+
+	.aside-filter__block
+		.aside-filter__title RUPLICA
+		p
+			+checkbox()(class="aside-filter__checkbox") Continental (1)
+		p
+			+checkbox()(class="aside-filter__checkbox") Matador (10)
+		p
+			+checkbox()(class="aside-filter__checkbox") Michelin (10)
+		p
+			+checkbox()(disabled class="aside-filter__checkbox") Hankook
+		p
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+
+		a.aside-filter__show.js-filter-checkbox-open(href=jv0 data-status="hide" data-show="Показать всех" data-hide="Скрыть") Показать всех
+
+	.aside-filter__block
+		.aside-filter__title Тип диска
+		p
+			+checkbox()(class="aside-filter__checkbox") Continental (1)
+		p
+			+checkbox()(class="aside-filter__checkbox") Matador (10)
+		p
+			+checkbox()(class="aside-filter__checkbox") Michelin (10)
+
+	.aside-filter__block
+		.aside-filter__title Цвета
+		.aside-filter__color-wrap
+			p.aside-filter__color
+				input.aside-filter__color-input#asideFilterBlack(type='checkbox')
+				label.aside-filter__color-label.black(for="asideFilterBlack")
+			p.aside-filter__color
+				input.aside-filter__color-input#asideFilterGreen(type='checkbox')
+				label.aside-filter__color-label.green(for="asideFilterGreen")
+			p.aside-filter__color
+				input.aside-filter__color-input#asideFilterPurpure(type='checkbox')
+				label.aside-filter__color-label.purpure(for="asideFilterPurpure")
+			p.aside-filter__color
+				input.aside-filter__color-input#asideFilterFiolet(type='checkbox')
+				label.aside-filter__color-label.fiolet(for="asideFilterFiolet")
+			p.aside-filter__color
+				input.aside-filter__color-input#asideFilterRed(type='checkbox')
+				label.aside-filter__color-label.red(for="asideFilterRed")
+			p.aside-filter__color
+				input.aside-filter__color-input#asideFilterYellow(type='checkbox')
+				label.aside-filter__color-label.yellow(for="asideFilterYellow")
+			p.aside-filter__color
+				input.aside-filter__color-input#asideFilterGrey(type='checkbox')
+				label.aside-filter__color-label.grey(for="asideFilterGrey")
+			p.aside-filter__color
+				input.aside-filter__color-input#asideFilterWhite(type='checkbox')
+				label.aside-filter__color-label.white(for="asideFilterWhite")
+
