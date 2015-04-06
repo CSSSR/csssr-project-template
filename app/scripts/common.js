@@ -15,9 +15,10 @@ $(function () {
 			$tabs = $('.js-wf-tab', $wf),
 			$bodies = $('.js-wf-body', $wf),
 			$discs = $('.js-rear-discs', $wf),
+			$discsSpecs = $('.js-discs-specs', $wf),
 			$tires = $('.js-rear-tires', $wf);
 
-		$discs.add($tires)
+		$discs.add($tires).add($discsSpecs)
 			.not('[data-hide-on-init="false"]')
 			.hide();
 

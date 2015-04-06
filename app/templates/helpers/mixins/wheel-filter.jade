@@ -231,10 +231,18 @@ mixin wheel-filter()
 
 						.wf-row
 							.wf-col.wf-col_small
-								.wf-body__heading
+								.wf-body__input.js-discs-specs(
+									data-hide-on-init='false'
+									data-toggle='.js-discs-specs'
+								)
+									a.btn.btn_wide
+										+icon('plus').btn__icon.btn__icon_inline
+										span.pseudolink Ширина
+
+								.wf-body__heading.js-discs-specs
 									.h5.h_upcase Ширина:
 
-								.wf-body__input
+								.wf-body__input.js-discs-specs
 									select.select_wide
 										option(selected) Выберите
 										option 15
@@ -251,10 +259,18 @@ mixin wheel-filter()
 										option 18
 
 							.wf-col.wf-col_small
-								.wf-body__heading
+								.wf-body__input.js-discs-specs(
+									data-hide-on-init='false'
+									data-toggle='.js-discs-specs'
+								)
+									a.btn.btn_wide
+										+icon('plus').btn__icon.btn__icon_inline
+										span.pseudolink Вылет
+
+								.wf-body__heading.js-discs-specs
 									.h5.h_upcase Вылет (ET):
 
-								.wf-body__input
+								.wf-body__input.js-discs-specs
 									select.select_wide
 										option(selected) Выберите
 										option 10
@@ -279,7 +295,7 @@ mixin wheel-filter()
 										+icon('cross').btn__icon.btn__icon_inline
 										span.pseudolink Закрыть
 
-						.wf-row
+						.wf-row.js-discs-specs
 							.wf-col.wf-col_small-double
 								.wf-body__input.js-rear-discs(
 									data-hide-on-init='false'
