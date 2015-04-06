@@ -1,0 +1,46 @@
+.aside-filter
+	.aside-filter__block
+		.aside-filter__title Сезонность
+		p
+			+checkbox()(class="aside-filter__checkbox") Летние (25)
+		p
+			+checkbox()(class="aside-filter__checkbox") Зимние (19)
+		p
+			+checkbox()(class="aside-filter__checkbox") Всезонные (34)
+
+	.aside-filter__block
+		.aside-filter__title ПРОИЗВОДИТЕЛИ
+		p
+			+checkbox()(class="aside-filter__checkbox") Continental (1)
+		p
+			+checkbox()(class="aside-filter__checkbox") Matador (10)
+		p
+			+checkbox()(class="aside-filter__checkbox") Michelin (10)
+		p
+			+checkbox()(disabled class="aside-filter__checkbox") Hankook
+		p
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		p.js-filter-checkbox-hide.hide
+			+checkbox()(class="aside-filter__checkbox") Kumho (2)
+
+		a.aside-filter__show.js-filter-checkbox-open(href=jv0 data-status="hide" data-show="Показать всех" data-hide="Скрыть") Показать всех
+
+	.aside-filter__block
+		.aside-filter__title Технологии
+		p.aside-filter__info
+			+checkbox()(class="aside-filter__checkbox")
+				| Runflat (21)
+			.info
+				.info__btn.btn.btn_info(tabindex=0): +icon('info').btn__icon
+				.info__tooltip
+					.tooltip sdfsdf

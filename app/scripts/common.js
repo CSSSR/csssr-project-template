@@ -1,7 +1,6 @@
 $(function () {
 
 	'use strict';
-
 	var SELECT2_OPTIONS = {
 		minimumResultsForSearch: -1
 	};
@@ -37,11 +36,13 @@ $(function () {
 		});
 	})();
 
+
 	$('.js-countdown-clock').FlipClock(3600 * 24 * 3, {
 		clockFace: 'DailyCounter',
 		countdown: true,
 		language: 'ru'
 	});
+
 
 	// header roll
 
@@ -93,4 +94,22 @@ $(function () {
 			$(root + '__container', $el).slick(opt);
 		});
 	})();
+
+	// aside bar
+	$('.js-filter-checkbox-open').on('click', function() {
+		var $checkbox = $(this).parent().find('.js-filter-checkbox-hide');
+		console.log($(this).parent().find('.js-filter-checkbox-hide'));
+		if($(this).attr('data-status') === 'show')
+		{
+			$(this).attr('data-status', 'hide');
+			$(this).text($(this).data('show'));
+			$(this).removeClass('hide');
+			$checkbox.addClass('hide');
+		} else {
+			$(this).attr('data-status', 'show');
+			$(this).text($(this).data('hide'));
+			$(this).addClass('hide');
+			$checkbox.removeClass('hide');
+		}
+	});
 });
