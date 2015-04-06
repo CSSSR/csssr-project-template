@@ -1,5 +1,8 @@
 gulp    = require 'gulp'
 changed = require 'gulp-changed'
+filter  = require 'gulp-filter'
+gutil   = require 'gulp-util'
+gulpif  = require 'gulp-if'
 paths   = require '../paths'
 
 
@@ -14,6 +17,8 @@ gulp.task 'copy:images', ->
 gulp.task 'copy:resources', ->
 	gulp.src 'app/resources/**/*'
 		.pipe changed paths.dist
+		.pipe gulpif !gutil.env.robots, filter (file) ->
+			!/app[\\\/]resources[\\\/]robots\.txt/.test file.path
 		.pipe gulp.dest paths.dist
 
 gulp.task 'copy:scripts', ->
