@@ -96,11 +96,10 @@ $(function () {
 	})();
 
 	// aside bar
-	$('.js-filter-checkbox-open').on('click', function() {
+	$('.js-filter-checkbox-open').on('click', function () {
 		var $checkbox = $(this).parent().find('.js-filter-checkbox-hide');
 		console.log($(this).parent().find('.js-filter-checkbox-hide'));
-		if($(this).attr('data-status') === 'show')
-		{
+		if ($(this).attr('data-status') === 'show') {
 			$(this).attr('data-status', 'hide');
 			$(this).text($(this).data('show'));
 			$(this).removeClass('hide');
