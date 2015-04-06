@@ -121,13 +121,13 @@ $(function () {
 
 			opt.autoplay = Boolean($el.attr('data-autoplay'));
 			opt.autoplaySpeed = Number($el.attr('data-autoplay')) || 5000;
+			opt.speed = Number($el.attr('data-speed')) || 200;
 			opt.infinite = Boolean($el.attr('data-infinite')) || false;
 
 			opt.slidesToShow = Number($el.attr('data-show')) || 4;
 			opt.slidesToScroll = Number($el.attr('data-scroll')) || opt.slidesToShow;
 
-			opt.speed = 200;
-			opt.useCSS = false;
+			opt.useCSS = true;
 
 			$(root + '__container', $el).slick(opt);
 		});
