@@ -8,8 +8,12 @@
 		.col
 			.grid-module-8
 				+h-slider({
+					hide_prevnext: true,
 					show: 4,
-					scroll: 4
+					scroll: 4,
+					autoplay: 1,
+					infinite: true,
+					speed: 5000
 				}, [
 					'Все бренды дисков',
 					'Все бренды шин'
