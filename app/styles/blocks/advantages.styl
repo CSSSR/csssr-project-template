@@ -5,21 +5,34 @@
 	line-height 20px
 	text-transform uppercase
 
+	&__content
+		display block
+		height inherit
+		color #000
+		font-family $heading-fonts
+		font-weight bold
+		text-transform uppercase
+		line-height 20px
+
 	&__slider
 		background $rushina-light-gray url(../images/advantages_bg.jpg) no-repeat top center
 		background-clip border-box
 
 	&__title
 		text-align center
-		margin 10px 0 63px
+		margin-top 10px
+		margin-bottom 63px
+		padding-top 29px
 		font-size 20px
 		color #d7a235
 
 	&__block
 		position relative
 		display block
-		padding-left 150px
 		margin-bottom 51px
+		margin-left auto
+		margin-right auto
+		padding-left 178px
 		&_cards
 			margin-bottom 39px
 		&_wheels
@@ -30,19 +43,19 @@
 		&_deliver
 			sprite $advantages_deliver
 			top -3px
-			left -15px
+			left 14px
 		&_cards
 			sprite $advantages_cards
 			top -10px
-			left 23px
+			left 52px
 		&_wheels
 			sprite $advantages_wheels
 			top -5px
-			left 17px
+			left 46px
 		&_guarantee
 			sprite $advantages_guarantee
 			top -19px
-			left 17px
+			left 46px
 
 	&__caption
 		font-size 14px

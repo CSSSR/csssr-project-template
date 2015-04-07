@@ -1,7 +1,22 @@
 include ../helpers/mixins/promo-slider
 
 +promo-slider().advantages__slider
-	img(src='/assets/images/content/advantages-4.jpg')
+	.advantages__content
+		.advantages__title.
+			Наши преимущества
+		.advantages__block
+			.advantages__img.advantages__img_deliver
+			.advantages__caption Доставка<br> по всей России
+		.advantages__block.advantages__block_cards
+			.advantages__img.advantages__img_cards
+			.advantages__caption Удобные<br> способы оплаты
+		.advantages__block.advantages__block_wheels
+			.advantages__img.advantages__img_wheels
+			.advantages__caption Более 50<br> топовых брендов
+		.advantages__block
+			.advantages__img.advantages__img_guarantee
+			.advantages__caption Гарантия<br> возврата 100%
 	img(src='/assets/images/content/advantages-3.jpg')
+	img(src='/assets/images/content/advantages-4.jpg')
 	img(src='/assets/images/content/advantages-2.jpg')
 	img(src='/assets/images/content/advantages-1.jpg')
