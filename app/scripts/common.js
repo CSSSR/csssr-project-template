@@ -36,6 +36,13 @@ $(function () {
 			var group = $(e.target).closest('[data-toggle]').attr('data-toggle');
 			$(group, $wf).toggle();
 		});
+
+		$('[data-toggle=".js-rear-discs"]').one('click', function () {
+			$('[data-toggle=".js-discs-specs"]')
+				.first()
+					.click().end()
+				.remove();
+		});
 	})();
 
 	// wheel filter by car model

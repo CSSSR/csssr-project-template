@@ -114,7 +114,7 @@ mixin wheel-filter()
 								.wf-body__input.js-rear-tires(data-toggle='.js-rear-tires')
 									a.btn.btn_wide
 										+icon('cross').btn__icon.btn__icon_inline
-										span.pseudolink Закрыть
+										span.btn__label Закрыть
 
 						.wf-row
 							.wf-col.wf-col_small-double
@@ -124,7 +124,7 @@ mixin wheel-filter()
 								)
 									a.btn.btn_wide
 										+icon('plus').btn__icon.btn__icon_inline
-										span.pseudolink Разноразмерные шины
+										span.btn__label Разноразмерные шины
 
 							.wf-col
 
@@ -218,7 +218,7 @@ mixin wheel-filter()
 								)
 									a.btn.btn_wide
 										+icon('plus').btn__icon.btn__icon_inline
-										span.pseudolink Ширина
+										span.btn__label Ширина
 
 								.wf-body__heading.js-discs-specs
 									.h5.h_upcase Ширина:
@@ -246,7 +246,7 @@ mixin wheel-filter()
 								)
 									a.btn.btn_wide
 										+icon('plus').btn__icon.btn__icon_inline
-										span.pseudolink Вылет
+										span.btn__label Вылет
 
 								.wf-body__heading.js-discs-specs
 									.h5.h_upcase Вылет (ET):
@@ -271,22 +271,19 @@ mixin wheel-filter()
 								.wf-wheelset
 
 							.wf-col.wf-col_bottom
-								.wf-body__input.js-rear-discs(data-toggle='.js-rear-discs')
-									a.btn.btn_wide
-										+icon('cross').btn__icon.btn__icon_inline
-										span.pseudolink Закрыть
-
-						.wf-row.js-discs-specs
-							.wf-col.wf-col_small-double
 								.wf-body__input.js-rear-discs(
 									data-hide-on-init='false'
 									data-toggle='.js-rear-discs'
+									data-show='.js-discs-specs'
 								)
 									a.btn.btn_wide
 										+icon('plus').btn__icon.btn__icon_inline
-										span.pseudolink Разноразмерные диски
+										span.btn__label Разноразмерные диски
 
-							.wf-col
+								.wf-body__input.js-rear-discs(data-toggle='.js-rear-discs')
+									a.btn.btn_wide
+										+icon('cross').btn__icon.btn__icon_inline
+										span.btn__label Закрыть
 
 						.wf-row
 							.wf-col
