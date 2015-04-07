@@ -14,7 +14,9 @@ gulp.task 'scripts', ->
 			'components/FlipClock/compiled/flipclock.js'
 			'components/select2/select2.js'
 			'components/slick/slick/slick.js'
+			'components/simplyScroll/jquery.simplyscroll.min.js'
 			'app/scripts/common.js'
+			'app/scripts/view/simplyscroll.js'
 		]
 		.pipe plumber errorHandler: errorHandler
 		.pipe concat 'common.min.js'
