@@ -224,6 +224,13 @@ block page_content
 			.demo-block
 					include ../blocks/menu-fast-selection
 
+		#blocks-pagination(data-collapse='persist')
+			.grid
+				.h3 Пагинация
+			.demo-block.demo-block_white
+				.grid
+					include ../blocks/pagination
+
 block scriptsAfter
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse.js')
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse_storage.js')
