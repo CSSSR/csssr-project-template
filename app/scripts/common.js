@@ -37,8 +37,15 @@ $(function () {
 			$(group, $wf).toggle();
 		});
 
-		$('[data-toggle=".js-rear-discs"]').one('click', function () {
-			$('[data-toggle=".js-discs-specs"]')
+		$('[data-toggle=".js-discs-specs"], [data-toggle=".js-rear-discs"]').one('click', function () {
+			var $discsSpecs = $('[data-toggle=".js-discs-specs"]');
+
+			if ($discsSpecs.is($(this))) {
+				$discsSpecs.remove();
+				return;
+			}
+
+			$discsSpecs
 				.first()
 					.click().end()
 				.remove();
@@ -75,7 +82,7 @@ $(function () {
 				$brandSelect
 					.html($fragment)
 					.attr('disabled', false)
-					.select2();
+					.select2({placeholder: 'Выберите'});
 			});
 		})();
 
@@ -108,7 +115,7 @@ $(function () {
 				$modelSelect
 					.html($fragment)
 					.attr('disabled', false)
-					.select2();
+					.select2({placeholder: 'Выберите'});
 			});
 		});
 
@@ -141,7 +148,7 @@ $(function () {
 				$yearSelect
 					.html($fragment)
 					.attr('disabled', false)
-					.select2();
+					.select2({placeholder: 'Выберите'});
 			});
 		});
 
@@ -167,7 +174,7 @@ $(function () {
 				$modSelect
 					.html($fragment)
 					.attr('disabled', false)
-					.select2();
+					.select2({placeholder: 'Выберите'});
 			});
 		});
 	})();
