@@ -37,8 +37,15 @@ $(function () {
 			$(group, $wf).toggle();
 		});
 
-		$('[data-toggle=".js-rear-discs"]').one('click', function () {
-			$('[data-toggle=".js-discs-specs"]')
+		$('[data-toggle=".js-discs-specs"], [data-toggle=".js-rear-discs"]').one('click', function () {
+			var $discsSpecs = $('[data-toggle=".js-discs-specs"]');
+
+			if ($discsSpecs.is($(this))) {
+				$discsSpecs.remove();
+				return;
+			}
+
+			$discsSpecs
 				.first()
 					.click().end()
 				.remove();
