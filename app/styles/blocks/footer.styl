@@ -54,7 +54,6 @@
 		z-index 1
 		float right
 		width 300px
-		font-family $heading-fonts
 		color #000
 
 		&__info
@@ -119,12 +118,11 @@
 		&-caption
 			margin-bottom 14px
 			font-size 14px
-			font-family $heading-fonts
 			color #000
 
 		&-btn
 			position relative
-			float left
+			display inline-block
 			overflow hidden
 			margin-right 2px
 			height 40px
@@ -154,10 +152,7 @@
 			&_social
 				margin-right 3px
 				width 48px
-				&:last-child
-					position absolute
-					top 34px
-					left 153px
+
 			&-svg
 				position absolute
 				&_vk
