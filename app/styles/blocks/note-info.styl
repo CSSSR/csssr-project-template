@@ -1,45 +1,40 @@
 .note-info
-	width 181px
+	position relative
+	padding 25px 14px 4px 17px
+	border 3px solid $rushina-light-gray
+	background #fff
 
-	&-bl
-		position relative
-		padding-top 25px
-		padding-left 18px
-		height 316px
-		border 3px solid $rushina-light-gray
-		background #fff
+	&__icon-wrapper
+		width 30px
+		height 30px
+		position absolute
+		left -11px
+		top 21px
 
-		&__icon-wrapper
-			width 30px
-			height 30px
-			position absolute
-			left -10px
-			top -32px
+	&__icon
+		width 79px
+		height 40px
 
-		&__icon
-			width 79px
+	&__title
+		padding-left 33px
+		margin-bottom 16px
+		line-height 1.2em
 
-		&__title
-			padding-left 32px
-			margin-bottom 12px
-			line-height 1.3em
+	&__list
+		font-family $heading-fonts
+		&-item
+			margin-bottom 16px
+			line-height: 1.28em
 
-		&__list
-			li
-				margin-bottom 17px
-				line-height: 1.27em
-				font-family $heading-fonts
-
-	&__tire-info
-		margin-top 21px
-		color $rushina-gray
+.note-article
+	margin-top 21px
+	color $rushina-gray
 
 
-		.note-info__tire-title
-			color inherit
-			text-transform uppercase
-			line-height 1.3em
-			margin-bottom 6px
+	&__title
+		color inherit
+		line-height 1.3em
+		margin-bottom 6px
 
-		.note-info__tire-text
-			line-height 1.22em
+	&__text
+		line-height 1.22em
