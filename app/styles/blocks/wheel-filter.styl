@@ -80,6 +80,9 @@
 	z-index -5
 
 	background-color $rushina-light-gray
+	background-image url('../images/wf-bg.png')
+	background-position right top
+	background-repeat no-repeat
 	opacity 0
 	overflow hidden
 
@@ -94,11 +97,12 @@
 		transform scale(1, 1)
 		transition all .25s .25s, z-index 0
 
-	for bg in 'discs' 'tires'
-		&_{bg}
-			background-image url('/assets/images/wf-' + bg + '-bg.png')
-			background-position right bottom
-			background-repeat no-repeat
+	&__image
+		margin-bottom 15px
+
+		for img in 'disc-side' 'disc-top' 'tire-side' 'tire-top'
+			&_{img}
+				sprite lookup('$blueprint-' + img)
 
 	&__info
 		margin-top -1em
@@ -111,6 +115,9 @@
 
 	&__heading
 		padding-bottom 5px
+
+	&__help-heading
+		padding-bottom 20px
 
 .wf-row
 	margin-left -10px

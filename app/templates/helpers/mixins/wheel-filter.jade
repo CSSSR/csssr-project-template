@@ -52,7 +52,7 @@ mixin wheel-filter()
 								button.btn.btn_primary.btn_wide Подобрать
 
 			// подбор шин по типоразмеру
-			.wf-body.wf-body_tires.js-wf-body.js-wf-body_tires
+			.wf-body.js-wf-body.js-wf-body_tires
 				.wf-row
 					.wf-col
 						.wf-row
@@ -165,12 +165,14 @@ mixin wheel-filter()
 								button.btn.btn_primary.btn_wide Подобрать
 
 					.wf-col.wf-col_help
-						.h4.h_upcase
+						.wf-body__help-heading.h4.h_upcase
 							span Как узнать размер<br>шины
 							.wf-body__info.btn.btn_info: +icon('info').btn__icon.btn__icon_info
+						.wf-body__image.wf-body__image_tire-side
+						.wf-body__image.wf-body__image_tire-top
 
 			// подбор дисков по типоразмеру
-			.wf-body.wf-body_discs.js-wf-body.js-wf-body_discs
+			.wf-body.js-wf-body.js-wf-body_discs
 				.wf-row
 					.wf-col
 						.wf-row
@@ -290,6 +292,8 @@ mixin wheel-filter()
 								button.btn.btn_primary.btn_wide Подобрать
 
 					.wf-col.wf-col_help
-						.h4.h_upcase
+						.wf-body__help-heading.h4.h_upcase
 							span Как узнать размер<br>диска
 							.wf-body__info.btn.btn_info: +icon('info').btn__icon.btn__icon_info
+						.wf-body__image.wf-body__image_disc-side
+						.wf-body__image.wf-body__image_disc-top.js-rear-discs
