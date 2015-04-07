@@ -50,6 +50,49 @@
 		left -7px
 		top 10px
 		z-index 1
+		width 52px
+		height 31px
+		color white
+		font-weight 700
+
+		&:after
+			position absolute
+			right 0
+			bottom -10px
+			display block
+			border 5px solid transparent
+			border-top 5px solid #bebebe
+			border-left 4px solid #bebebe
+			content ''
+
+		&:before
+			position absolute
+			left 0
+			bottom -15px
+			display block
+			border 3px solid transparent
+			border-top 3px solid #720000
+			border-right 3px solid #720000
+			content ''
+
+	&__sales-label
+		position relative
+		display block
+		width 100%
+		height 100%
+		padding-top 10px
+		padding-left 3px
+		text-align center
+		background-color red
+
+		&:after
+			position absolute
+			top 31px
+			left 0px
+			width 43px
+			height 9px
+			background red
+			content ''
 
 	&__delete-btn
 		sprite($close-icon-compare)
