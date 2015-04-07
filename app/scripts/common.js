@@ -265,4 +265,31 @@ $(function () {
 			$(root + '__container', $el).slick(opt);
 		});
 	})();
+
+	// marquee
+	(function () {
+		var root = '.js-marquee';
+
+		$(root).each(function (i, el) {
+			var opt = {},
+				$el = $(el);
+
+			opt.accessibility = false;
+			opt.arrows = false;
+			opt.draggable = false;
+			opt.swipe = false;
+
+			opt.autoplay = true;
+			opt.autoplaySpeed = 0;
+			opt.infinite = true;
+			opt.speed = 2000;
+
+			opt.slidesToScroll = 1;
+			opt.slidesToShow = 4;
+
+			opt.cssEase = 'linear';
+
+			$(root + '__container', $el).slick(opt);
+		});
+	})();
 });
