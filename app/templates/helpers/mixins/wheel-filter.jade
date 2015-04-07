@@ -23,24 +23,14 @@ mixin wheel-filter()
 									.h5.h_upcase Марка:
 
 								.wf-body__input
-									select.select_wide
-										option(selected) Выберите
-										option BMW
-										option Mercedes
-										option Nissan
-										option Opel
+									select.select_wide.js-wf-select.js-wf-select_brand(disabled)
 
 							.wf-col
 								.wf-body__heading
 									.h5.h_upcase Модель:
 
 								.wf-body__input
-									select.select_wide
-										option(selected) Выберите
-										option X3
-										option M5
-										option 330
-										option 550
+									select.select_wide.js-wf-select.js-wf-select_model(disabled)
 
 						.wf-row
 							.wf-col
@@ -48,30 +38,21 @@ mixin wheel-filter()
 									.h5.h_upcase Год выпуска:
 
 								.wf-body__input
-									select.select_wide
-										option(selected) Все
-										option 1990
-										option 1991
-										option 1992
-										option 1993
+									select.select_wide.js-wf-select.js-wf-select_year(disabled)
 
 							.wf-col
 								.wf-body__heading
 									.h5.h_upcase Модификация:
 
 								.wf-body__input
-									select.select_wide
-										option(selected) Все
-										option Q
-										option M
-										option Z
+									select.select_wide.js-wf-select.js-wf-select_mod(disabled)
 
 						.wf-row
 							.wf-col
 								button.btn.btn_primary.btn_wide Подобрать
 
 			// подбор шин по типоразмеру
-			.wf-body.wf-body_tires.js-wf-body.js-wf-body_tires
+			.wf-body.js-wf-body.js-wf-body_tires
 				.wf-row
 					.wf-col
 						.wf-row
@@ -133,7 +114,7 @@ mixin wheel-filter()
 								.wf-body__input.js-rear-tires(data-toggle='.js-rear-tires')
 									a.btn.btn_wide
 										+icon('cross').btn__icon.btn__icon_inline
-										span.pseudolink Закрыть
+										span.btn__label Закрыть
 
 						.wf-row
 							.wf-col.wf-col_small-double
@@ -143,7 +124,7 @@ mixin wheel-filter()
 								)
 									a.btn.btn_wide
 										+icon('plus').btn__icon.btn__icon_inline
-										span.pseudolink Разноразмерные шины
+										span.btn__label Разноразмерные шины
 
 							.wf-col
 
@@ -184,12 +165,14 @@ mixin wheel-filter()
 								button.btn.btn_primary.btn_wide Подобрать
 
 					.wf-col.wf-col_help
-						.h4.h_upcase
+						.wf-body__help-heading.h4.h_upcase
 							span Как узнать размер<br>шины
 							.wf-body__info.btn.btn_info: +icon('info').btn__icon.btn__icon_info
+						.wf-body__image.wf-body__image_tire-side
+						.wf-body__image.wf-body__image_tire-top
 
 			// подбор дисков по типоразмеру
-			.wf-body.wf-body_discs.js-wf-body.js-wf-body_discs
+			.wf-body.js-wf-body.js-wf-body_discs
 				.wf-row
 					.wf-col
 						.wf-row
@@ -237,7 +220,7 @@ mixin wheel-filter()
 								)
 									a.btn.btn_wide
 										+icon('plus').btn__icon.btn__icon_inline
-										span.pseudolink Ширина
+										span.btn__label Ширина
 
 								.wf-body__heading.js-discs-specs
 									.h5.h_upcase Ширина:
@@ -265,7 +248,7 @@ mixin wheel-filter()
 								)
 									a.btn.btn_wide
 										+icon('plus').btn__icon.btn__icon_inline
-										span.pseudolink Вылет
+										span.btn__label Вылет
 
 								.wf-body__heading.js-discs-specs
 									.h5.h_upcase Вылет (ET):
@@ -290,28 +273,27 @@ mixin wheel-filter()
 								.wf-wheelset
 
 							.wf-col.wf-col_bottom
-								.wf-body__input.js-rear-discs(data-toggle='.js-rear-discs')
-									a.btn.btn_wide
-										+icon('cross').btn__icon.btn__icon_inline
-										span.pseudolink Закрыть
-
-						.wf-row.js-discs-specs
-							.wf-col.wf-col_small-double
 								.wf-body__input.js-rear-discs(
 									data-hide-on-init='false'
 									data-toggle='.js-rear-discs'
+									data-show='.js-discs-specs'
 								)
 									a.btn.btn_wide
 										+icon('plus').btn__icon.btn__icon_inline
-										span.pseudolink Разноразмерные диски
+										span.btn__label Разноразмерные диски
 
-							.wf-col
+								.wf-body__input.js-rear-discs(data-toggle='.js-rear-discs')
+									a.btn.btn_wide
+										+icon('cross').btn__icon.btn__icon_inline
+										span.btn__label Закрыть
 
 						.wf-row
 							.wf-col
 								button.btn.btn_primary.btn_wide Подобрать
 
 					.wf-col.wf-col_help
-						.h4.h_upcase
+						.wf-body__help-heading.h4.h_upcase
 							span Как узнать размер<br>диска
 							.wf-body__info.btn.btn_info: +icon('info').btn__icon.btn__icon_info
+						.wf-body__image.wf-body__image_disc-side
+						.wf-body__image.wf-body__image_disc-top.js-rear-discs

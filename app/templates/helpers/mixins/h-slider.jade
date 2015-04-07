@@ -17,3 +17,12 @@ mixin h-slider(options, buttons)
 					a.btn(href='javascript:void(0)')= button
 		.h-slider__slides.js-slick__container
 			block
+
+mixin marquee(buttons)
+	.h-slider.js-marquee&attributes(attributes)
+		.h-slider__buttons(class=buttons_mod)
+			if buttons
+				each button in buttons
+					a.btn(href='javascript:void(0)')= button
+		.h-slider__slides.js-marquee__container
+			block
