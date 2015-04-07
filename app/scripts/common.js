@@ -75,7 +75,7 @@ $(function () {
 				$brandSelect
 					.html($fragment)
 					.attr('disabled', false)
-					.select2();
+					.select2({placeholder: 'Выберите'});
 			});
 		})();
 
@@ -108,7 +108,7 @@ $(function () {
 				$modelSelect
 					.html($fragment)
 					.attr('disabled', false)
-					.select2();
+					.select2({placeholder: 'Выберите'});
 			});
 		});
 
@@ -141,7 +141,7 @@ $(function () {
 				$yearSelect
 					.html($fragment)
 					.attr('disabled', false)
-					.select2();
+					.select2({placeholder: 'Выберите'});
 			});
 		});
 
@@ -167,7 +167,7 @@ $(function () {
 				$modSelect
 					.html($fragment)
 					.attr('disabled', false)
-					.select2();
+					.select2({placeholder: 'Выберите'});
 			});
 		});
 	})();
