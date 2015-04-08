@@ -2,10 +2,10 @@
 	.menu-cart__contents
 		.menu-cart__scroll
 			.menu-cart__scroller
+
 		.menu-cart__product-list
 			.menu-cart__product
 				.cart-product
-
 					.cart-product__col.cart-product__col_img
 						.cart-product__img-container
 							a(href= jv0)
@@ -26,6 +26,7 @@
 						.cart-product__costs
 							.cart-product__total-cost 14 280
 								+icon('rub').currency
+
 							.cart-product__per-cost 4 200
 								+icon('rub').currency
 								|/шт.
@@ -35,7 +36,6 @@
 
 			.menu-cart__product
 				.cart-product
-
 					.cart-product__col.cart-product__col_img
 						.cart-product__img-container
 							a(href= jv0)
@@ -47,7 +47,9 @@
 						.cart-product__description.cart-product__description_option
 							a(href= jv0)
 								span.cart-product__title Bridgestone Ecopia EP200
+
 							span.cart-product__params 215/55 R16 93W
+
 							.cart-product__option
 								input(type='checkbox' id='ch2' checked).checkbox
 								label(for='ch2').checkbox__label Добавить комплект крепежа (+ 1 500 р.)
@@ -72,6 +74,7 @@
 						.cart-product__delete-btn
 
 			.menu-cart__product
+
 	.menu-cart__delivery
 		.menu-cart__another-city
 			+btn('Рассчитать в другой город',true)
@@ -82,13 +85,16 @@
 		.menu-cart__delivery-conditions
 			.menu-cart__delivery-cost Стоимость доставки по Москве:
 				span.menu-cart__delivery-cost-value 450 р.
+
 			.menu-cart__delivery-date Приблизительный срок:
 				span.menu-cart__delivery-date-value 1 - 2 дня
 
 	.menu-cart__summary
 		.menu-cart__order
 			button.btn.btn_primary Оформить заказ
+
 		.menu-cart__cost-remark Без учета доставки!
+
 		.menu-cart__total-cost-label Итого:
 			span.menu-cart__total-cost-value 24 230
 			+icon('rub').currency
