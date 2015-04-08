@@ -1,7 +1,7 @@
 .top-menu.top-menu_fix
 	.top-menu__wraper.top-menu__wraper_fix.grid
 
-		.top-menu__tab.top-menu__tab_right.top-menu__tab_fix-cart
+		.top-menu__tab.top-menu__tab_right.top-menu__tab_fix-cart(data-toggle = 'cart')
 			.top-menu__icon-wrap
 				+icon('menu_01_cart').top-menu__icon.top-menu__icon_cart
 				span.top-menu__counter 2
@@ -17,22 +17,22 @@
 			.top-menu__container
 				include feedback
 
-		.top-menu__tab.top-menu__tab_right
+		.top-menu__tab.top-menu__tab_right(data-toggle = 'history')
 			.top-menu__icon-wrap
 				+icon('menu_01_seen').top-menu__icon.top-menu__icon_type_nolabel
 				span.top-menu__counter 20
 
-		.top-menu__tab.top-menu__tab_right
+		.top-menu__tab.top-menu__tab_right(data-toggle = 'comparison')
 			.top-menu__icon-wrap
 				+icon('menu_01_compare').top-menu__icon.top-menu__icon_type_nolabel
 				span.top-menu__counter 7
 
-		.top-menu__tab.top-menu__tab_right.top-menu__tab_fix-car.js-show-your-cars
+		.top-menu__tab.top-menu__tab_right.top-menu__tab_fix-car(data-toggle = 'garage')
 			.top-menu__icon-wrap
 				+icon('menu_01_car').top-menu__icon
 			span.top-menu__label Ford Focus III Hatchback
 
-		.top-menu__tab.top-menu__tab_right.js-show-header-menu
+		.top-menu__tab.top-menu__tab_right(data-toggle = 'nav')
 			.top-menu__icon-wrap
 				+icon('icon_menu').top-menu__icon.top-menu__icon_type_nolabel
 

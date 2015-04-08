@@ -185,68 +185,71 @@ $(function () {
 		language: 'ru'
 	});
 
-	// header roll
+	// navbar
+	(function () {
+		// scroll’n’roll
+		var $root = $('.js-sticky-nav'),
+			$triggers = $('[data-toggle]', $root),
+			$mainMenu = $('.js-main-menu'),
+			$menus = $('.js-menu', $root),
+			headerFixClass = 'sticky-nav_fixed',
+			activeTabClass = 'top-menu__tab_active',
+			visibleMenusCount = 0,
+			syncFlipTimeout = 0;
 
-	var $headerWrapper = $('.js-header-wrapper'),
-		$menuHeader = $('.js-menu-header'),
-		$yourCars = $('.js-your-cars'),
-		headerFix = 'header-wrapper_fix',
-		$mainMenu = $('.js-main-menu'),
-		visibleMenusCount = 0,
-		syncFlipTimeout = 0;
+		function syncFlipMenu() {
+			if (visibleMenusCount !== 0) {
+				return false;
+			}
 
-	function syncFlipMenu() {
-		if (visibleMenusCount !== 0) {
-			return false;
+			var windowTop = $document.scrollTop(),
+				menuTop = $mainMenu.offset().top;
+
+			if (windowTop > menuTop) {
+				$root.addClass(headerFixClass);
+			} else {
+				$root.removeClass(headerFixClass);
+				$menus.hide();
+			}
 		}
 
-		var windowTop = $document.scrollTop(),
-			menuTop = $mainMenu.offset().top;
+		$document.on('scroll', syncFlipMenu);
+		syncFlipMenu();
 
-		if (windowTop > menuTop) {
-			$headerWrapper.addClass(headerFix);
-		} else {
-			$headerWrapper.removeClass(headerFix);
-			$menuHeader.hide();
-			$yourCars.hide();
-		}
-	}
+		$triggers.on('click', function (e) {
+			var ts = e.timeStamp,
+				$this = $(this),
+				$menu = $('.js-menu_' + $this.data('toggle'));
 
-	function toggleMenuListener(menu) {
-		return function (event) {
-			var ts = event.timeStamp;
+			$triggers.removeClass(activeTabClass);
 
-			if (menu.is(':hidden')) {
-				menu.show();
+			if ($menu.is(':hidden')) {
+				$this.addClass(activeTabClass);
+
+				$menu.show();
 				++visibleMenusCount;
 				clearTimeout(syncFlipTimeout);
 
-				$document.on('click', function listener(event) {
-					if (event.timeStamp === ts) { // same event
+				// recalculate anything might be broken
+				$(window).resize();
+
+				$document.on('click', function listener(e) {
+					if (e.timeStamp === ts) { // same event
 						return;
 					}
 
-					var $target = $(event.target);
+					var $target = $(e.target);
 
-					if ($target.closest(menu).length === 0) {
+					if ($target.closest($menu).length === 0) {
 						$document.off('click', listener);
-						menu.hide();
+						$menu.hide();
 						--visibleMenusCount;
 						syncFlipTimeout = setTimeout(syncFlipMenu, 10);
 					}
 				});
 			}
-		};
-	}
-
-	$document.on('scroll', syncFlipMenu);
-	syncFlipMenu();
-
-	// open main menu
-	$('.js-show-header-menu').on('click', toggleMenuListener($menuHeader));
-
-	// open your cars
-	$('.js-show-your-cars').on('click', toggleMenuListener($yourCars));
+		});
+	})();
 
 	// item slider
 	(function () {
