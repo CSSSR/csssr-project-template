@@ -2,7 +2,7 @@ $(function () {
 	function RatingView(container) {
 		this.container = container;
 		this.input = container.querySelector('input');
-		this.valueEl = container.querySelector('*[data-value]');
+		this.valueEl = container.querySelector('[data-value]');
 
 		if (!this.input) {
 			throw new Error('Can not create interactive rating without input element.');
