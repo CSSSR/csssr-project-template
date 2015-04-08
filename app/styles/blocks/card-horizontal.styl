@@ -1,25 +1,13 @@
-.tire-card-horizont
+.card-horizontal
 	position relative
-	min-height 153px
+	display inline-block
+	padding-top 9px
 	font-size 0
 	border 3px solid #ebebeb
 	background #fff
-	&_tire
-		padding-top 9px
-	&_disk:hover
-		&-logo
-			top 26px
-		&-img
-			margin-top 38px
-		&:before
-			display block
-			height 10px
-			content ''
 	&:hover
 	&:hover &__imgbox_tire
-		min-height 243px
 		border-color #fcd42d
-	&:hover &__content__item_extra
 	&:hover &__compare
 		display block
 	&:hover &-title
@@ -32,41 +20,34 @@
 	&:hover &-price__rub use
 		fill #000
 
-
-
 	&__imgbox
+		position relative
 		display inline-block
 		margin-left -3px
+		height 140px
 		vertical-align top
 		overflow hidden
-		&_disk
-			padding-top 4px
-			padding-left 27px
-		&_tire
-			position relative
-			min-height 153px
+		&_pair
+			height 231px
 
 	&-img
 		&_tire
-			position absolute
-			top 22px
-			left 21px
-			width 139px
-			height 191px
+			padding-top 14px
+			padding-left 7px
 		&_disk
-			position relative
-			top 10px
-			width 148px
-			height 134px
+			margin-top -11px
+			padding-left 12px
+		&_pair
+			margin-top 37px
 
 	&__content
 		display inline-block
+		margin-left $module-gap
 		&__item
 			display table
 			margin-bottom 9px
 			&_extra
 				position relative
-				display none
 				&:before
 					position absolute
 					top -52px
@@ -265,6 +246,7 @@
 
 	&__buy
 		display inline-block
+		margin-left $module-gap
 		margin-right -3px
 		vertical-align top
 		font-size 14px
@@ -299,8 +281,8 @@
 		bottom 0
 		left 0px
 		display block
-		width 37px
-		height 36px
+		width 40px
+		height 38px
 		background #ebebeb
 		&:hover
 			width 178px
