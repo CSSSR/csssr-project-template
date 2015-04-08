@@ -72,14 +72,6 @@ block page_content
 			.demo-block
 				include ../blocks/product-compare
 
-		#blocks-menu-cart(data-collapse='persist')
-			.grid
-				.h3 Корзина в меню blocks/menu-cart
-			.demo-block
-				.grid
-					a(href='https://monosnap.com/image/keWIZw9ZGdravFayY3i9AK0uwvoAau#embed') Макет
-					include ../blocks/menu-cart
-
 		#blocks-feedback(data-collapse='persist')
 			.grid
 				.h3 Обратная связь blocks/feedback
@@ -225,6 +217,20 @@ block page_content
 			.demo-block
 				.grid
 					include ../blocks/best-brands
+
+		#blocks-menu-fast-selection(data-collapse='persist')
+			.grid
+				.h3 Быстрый подбор из меню
+			.demo-block
+					include ../blocks/menu-fast-selection
+
+		#blocks-note-info(data-collapse='persist')
+			.grid
+				.h3 Справочная информация
+			.demo-block
+				.grid
+					.grid-module-6
+						include ../blocks/note-info
 
 block scriptsAfter
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse.js')
