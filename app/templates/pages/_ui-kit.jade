@@ -209,3 +209,13 @@ block content
 				.info__btn.btn.btn_info(tabindex=0): +icon('info').btn__icon
 				.info__tooltip
 					.tooltip= lorem
+
+		.h2 Рейтинг #[+rating(4)]
+		.grid-module-4
+			p Рейтинг внутри текста зависит от размера шрифта, #[+rating(4)] не нарушает высоты строки #[+rating(3)] и смотрится органично в различных ситуациях #[+rating(1)]. Рейтинг стал новым символом #[+rating(5)].
+
+			form(action = jv0)
+				.h1 +&lt;form&gt; JS #[+rating(5, {interactive: true})]
+
+			form(action = jv0)
+				p Рейтинг внутри текста тоже может быть активным - #[+rating(4, {interactive: true})]
