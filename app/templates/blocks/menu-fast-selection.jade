@@ -1,0 +1,105 @@
+.menu-fast-selection
+		.menu-fast-selection__wrap.grid
+
+			.menu-fast-selection__caption Быстрый подбор
+
+			.menu-fast-selection__table
+
+				.menu-fast-selection__left-col
+
+					.menu-fast-selection__col-item.menu-fast-selection__col-item_links
+						.type-links
+							.type-links__item
+								+icon('menu_01_tire').type-links__icon
+								.type-links__btn
+									+btn('По типоразмеру', true).type-links__label
+							.type-links__item
+								+icon('menu_01_car').type-links__icon
+								.type-links__btn
+									+btn('По марке авто', true).type-links__label
+
+					.menu-fast-selection__col-item
+						.menu-fast-links
+							ul.menu-fast-links__level
+								li.menu-fast-links__level-item Каталог шин
+									ul.menu-fast-links__level
+										li.menu-fast-links__level-item.menu-fast-links__level-item_sub Шины RunFlat
+										li.menu-fast-links__level-item.menu-fast-links__level-item_sub Усиленные шины
+										li.menu-fast-links__level-item.menu-fast-links__level-item_sub Зимние шины
+										li.menu-fast-links__level-item.menu-fast-links__level-item_sub Летние шины
+										li.menu-fast-links__level-item.menu-fast-links__level-item_sub Новинки
+										li.menu-fast-links__level-item.menu-fast-links__level-item_sub Спецпредложения
+								li.menu-fast-links__level-item Распродажа
+								li.menu-fast-links__level-item Шинный калькулятор
+
+				.menu-fast-selection__right-col
+
+					.menu-fast-selection__col-item.menu-fast-selection__col-item_switch
+						.menu-fast-selection__switch
+							+switch('size', [
+								{
+									id: 'manufacturers',
+									label: 'Производители',
+									isActive: true
+								},
+								{
+									id: 'models',
+									label: 'Марки автомобилей'
+								}
+							])
+
+					.menu-fast-selection__col-item
+						.manufacturers-list
+							ul.manufacturers-list__col
+								li.manufacturers-list__item Altenzo
+								li.manufacturers-list__item BfgGoodRich
+								li.manufacturers-list__item Bridgestone
+								li.manufacturers-list__item Continental
+								li.manufacturers-list__item Cooper Tires
+								li.manufacturers-list__item Dunlop
+								li.manufacturers-list__item Falken
+								li.manufacturers-list__item Federal
+								li.manufacturers-list__item Firestone
+								li.manufacturers-list__item Gislaved
+								li.manufacturers-list__item GoodYear
+							ul.manufacturers-list__col.manufacturers-list__col_second
+								li.manufacturers-list__item GT RadialL
+								li.manufacturers-list__item Hakook
+								li.manufacturers-list__item Hercules Tyres
+								li.manufacturers-list__item Kumho
+								li.manufacturers-list__item Maxxis
+								li.manufacturers-list__item Michlin
+								li.manufacturers-list__item Mickey Thompson
+								li.manufacturers-list__item Nexen
+								li.manufacturers-list__item Nitto
+								li.manufacturers-list__item Nokian
+								li.manufacturers-list__item Pirelli
+							ul.manufacturers-list__col
+								li.manufacturers-list__item Altenzo
+								li.manufacturers-list__item BfgGoodRich
+								li.manufacturers-list__item Bridgestone
+								li.manufacturers-list__item Continental
+								li.manufacturers-list__item Cooper Tires
+								li.manufacturers-list__item Dunlop
+								li.manufacturers-list__item Falken
+								li.manufacturers-list__item Federal
+								li.manufacturers-list__item Firestone
+								li.manufacturers-list__item Gislaved
+								li.manufacturers-list__item GoodYear
+							ul.manufacturers-list__col
+								li.manufacturers-list__item GT RadialL
+								li.manufacturers-list__item Hakook
+								li.manufacturers-list__item Hercules Tyres
+								li.manufacturers-list__item Kumho
+								li.manufacturers-list__item Maxxis
+								li.manufacturers-list__item Michlin
+								li.manufacturers-list__item Mickey Thompson
+								li.manufacturers-list__item Nexen
+								li.manufacturers-list__item Nitto
+								li.manufacturers-list__item Nokian
+								li.manufacturers-list__item Pirelli
+							ul.manufacturers-list__col.manufacturers-list__col_last
+								li.manufacturers-list__item Cooper Tires
+								li.manufacturers-list__item Dunlop
+								li.manufacturers-list__item Falken
+								li.manufacturers-list__item.manufacturers-list__all Все произовдители
