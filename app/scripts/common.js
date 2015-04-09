@@ -219,7 +219,7 @@ $(function () {
 		$triggers.on('click', function (e) {
 			var ts = e.timeStamp,
 				$this = $(this),
-				$menu = $('.js-menu_' + $this.data('toggle'));
+				$menu = $('.js-menu-' + $this.data('toggle'));
 
 			$triggers.removeClass(activeTabClass);
 
