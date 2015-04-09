@@ -1,0 +1,388 @@
+.card-horizontal
+	position relative
+	display inline-block
+	padding-top 9px
+	font-size 0
+	border 3px solid #ebebeb
+	background #fff
+	&:hover
+	&:hover &__imgbox_tire
+		border-color #fcd42d
+	&:hover &__compare
+		display block
+	&:hover &-title
+		text-decoration underline
+	&:hover &__play
+		background #fcd42d
+	&:hover &-price__num
+	&:hover &-price:after
+		color #000
+
+	&__imgbox
+		position relative
+		display inline-block
+		margin-left -3px
+		height 140px
+		vertical-align top
+		overflow hidden
+		&_pair
+			height 231px
+
+	&-img
+		&_tire
+			padding-top 14px
+			padding-left 7px
+		&_disk
+			margin-top -11px
+			padding-left 12px
+		&_pair
+			margin-top 37px
+
+	&__content
+		display inline-block
+		margin-left $module-gap
+		&__item
+			display table
+			margin-bottom 9px
+			&_extra
+				position relative
+				&:before
+					position absolute
+					top -52px
+					left -79px
+					sprite $wheelset_right
+					content ''
+
+	&-wrapper
+		padding-left gridWidth(1)
+
+	&-title
+		margin-top 21px
+		margin-bottom 3px
+		font-size 20px
+
+	&-titlecaption
+		margin-bottom 4px
+		height 20px
+		font-size 14px
+		font-family $heading-fonts
+		font-weight bold
+		color #535353
+
+	&__group
+		display table
+		width 250px
+
+	&-caption
+		display inline-block
+		margin-right 13px
+		font-size 14px
+		font-family $heading-fonts
+		font-weight bold
+
+	&-contentlink
+		display inline-block
+		font-size 14px
+		font-family $text-fonts
+		color #000
+		text-decoration none
+		&:after
+			position relative
+			bottom 3px
+			display block
+			border-bottom 1px dotted #000
+			content ''
+
+	&__rating
+		display inline-block
+		margin-right 22px
+		width 107px
+		font-size 18px
+
+	&-voted
+		display inline-block
+		margin-left 11px
+		font-size 14px
+		font-family $text-fonts
+		color #636363
+
+	&-avaliable
+		position relative
+		bottom 1px
+		display inline-block
+		padding-left 21px
+		font-family $heading-fonts
+		font-weight bold
+		font-size 13px
+		&:after
+			position absolute
+			top 6px
+			left 0
+			sprite $checkmark
+			content ''
+
+	&__pricebox
+		display table-cell
+		width $module-width * 2 + $module-gap - 27px
+
+	&-price
+		display inline-block
+		position relative
+		top 1px
+		margin-left 2px
+		&__num
+			position relative
+			font-size 20px
+			font-family $heading-fonts
+			font-weight bold
+			color #616161
+
+	&-oldprice
+		position absolute
+		top 23px
+		left 3px
+		display table-cell
+		font-family $heading-fonts
+		font-size 16px
+		&__num
+			position absolute
+			padding-right 4px
+			&:after //зачёркивание
+				position absolute
+				top 10px
+				left -4px
+				width 100%
+				height 2px
+				background #e10000
+				content ''
+
+	&__countbox
+		display table-cell
+		width 100px
+
+	&-count
+		position relative
+		margin-left 27px
+		padding 6px 13px
+		width 42px
+		height 40px
+		border 3px solid #616161
+		font-size 20px
+		font-family $heading-fonts
+		font-weight bold
+		color #616161
+		&:before
+			position absolute
+			top -3px
+			left -35px
+			padding-top 10px
+			padding-left 10px
+			width 25px
+			height 30px
+			color #fff
+			font-size 26px
+			font-family $text-fonts
+			border-radius 3px 0 0 3px
+			background #616161
+			content '−'
+		&:after
+			position absolute
+			top -3px
+			right -35px
+			padding-top 10px
+			padding-left 12px
+			width 23px
+			height 30px
+			color #fff
+			font-size 26px
+			font-family $text-fonts
+			border-radius 0 3px 3px 0
+			background #616161
+			content '+'
+
+	&__buy
+		display inline-block
+		margin-left $module-gap
+		margin-right -3px
+		vertical-align top
+		font-size 14px
+
+	&-btn
+		margin-left 1px
+		display block
+		margin-top 67px
+		width 159px
+		height 41px
+		font-family $heading-fonts
+		font-weight bold
+		text-transform none
+
+	&-link
+		display block
+		margin-top 5px
+		margin-left 31px
+		font-size 14px
+		font-family $text-fonts
+		color #0084ff
+
+	&-logo
+		position absolute
+		width 100px
+		height 40px
+		top 17px
+		right 197px
+
+	&__play
+		position absolute
+		bottom 0
+		left 0px
+		display block
+		width 40px
+		height 38px
+		background #ebebeb
+		&:hover
+			width 178px
+		&:hover &-link
+			display block
+		&-icon
+			margin-top 4px
+			margin-left 2px
+			width 31px
+			height 33px
+		&-link
+			position absolute
+			top 8px
+			left 53px
+			display none
+
+	&__label
+		position absolute
+		top 19px
+		left -9px
+		display block
+		height 42px
+
+		&_discount
+			width 105px
+			height 31px
+			background #ff0000
+			&-caption //надпись
+				padding-top 10px
+				padding-left 23px
+				font-size 14px
+				font-family $heading-fonts
+				font-weight bold
+				text-transform uppercase
+				color #fff
+				&:after //нижний прямоугольник
+					position absolute
+					top 31px
+					right 9px
+					width 96px
+					height 9px
+					background #ff0000
+					content ''
+			&:before //правый треугольник
+				position absolute
+				top 31px
+				right 1px
+				border: 4px solid transparent
+				border-top: 4px solid #bebebe
+				border-left: 4px solid #bebebe
+				content ''
+			&:after//левый треугольник
+				position absolute
+				top 40px
+				left 0
+				border: 3px solid transparent
+				border-right: 3px solid #720000
+				border-top: 3px solid #720000
+				content ''
+
+		&_new
+			width 110px
+			height 31px
+			background #ffe800
+			&-caption //надпись
+				padding-top 10px
+				padding-left 23px
+				font-size 14px
+				font-family $heading-fonts
+				font-weight bold
+				text-transform uppercase
+				color #000
+				&:after //нижний прямоугольник
+					position absolute
+					top 31px
+					right 9px
+					width 101px
+					height 9px
+					background #ffe800
+					content ''
+			&:before //правый треугольник
+				position absolute
+				top 31px
+				right 1px
+				border: 4px solid transparent
+				border-top: 4px solid #bebebe
+				border-left: 4px solid #bebebe
+				content ''
+			&:after//левый треугольник
+				position absolute
+				top 40px
+				left 0
+				border: 3px solid transparent
+				border-right: 3px solid #b58700
+				border-top: 3px solid #b58700
+				content ''
+
+	&__compare
+		position absolute
+		top 0
+		right -4px
+		display none
+		width 41px
+		height 39px
+		background #fcd42d
+		&:hover
+			width 181px
+		&:hover &-link
+			display block
+		&-icon
+			position absolute
+			top -1px
+			right 1px
+			height 39px
+			width 39px
+		&-link
+			position absolute
+			top 8px
+			left 39px
+			display none
+
+	&__option
+		position absolute
+		top 22px
+		left 189px
+		&__item
+			position relative
+			display inline-block
+			margin-right -15px
+			&_summer
+				width 36px
+				height 36px
+			&_allseason
+				margin-left 9px
+				margin-right -10px
+				top -6px
+				width 28px
+				height 22px
+			&_winter
+				margin-left 9px
+				margin-right -4px
+				top -6px
+				width 22px
+				height 22px
+			&_spike
+				width 36px
+				height 36px

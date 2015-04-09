@@ -1,0 +1,72 @@
+mixin card-horizontal(data)
+	if data.pair
+		if data.goods == 'disk'
+			- var imgclass='card-horizontal-img_pair'
+
+	.card-horizontal(class='card-horizontal_'+data.goods)
+		.card-horizontal__imgbox.grid-module-6(class='card-horizontal__imgbox_'+data.pair)
+			img.card-horizontal-img(src=data.img class='card-horizontal-img_'+data.goods class=imgclass)
+			.card-horizontal__play
+				+icon('icon_play').card-horizontal__play-icon
+				a.card-horizontal__play-link.card-horizontal-contentlink(href=jv0) Смотреть видео
+		.card-horizontal__content.grid-module-2
+			.card-horizontal-wrapper
+				.h4.card-horizontal-title!=data.title
+				.card-horizontal-titlecaption!=data.titlecaption
+
+				.card-horizontal__content__item
+					.card-horizontal__group
+						.card-horizontal-caption!=data.caption
+						.card-horizontal__rating
+							+rating(data.rating)
+							a.card-horizontal-voted(href=jv0)='('+data.voted+')'
+						if data.avaliable
+							.card-horizontal-avaliable в наличии
+					.card-horizontal__pricebox
+						.card-horizontal-price
+							.card-horizontal-price__num!=data.price + '&nbsp;&#8381;&nbsp;шт.'
+							if data.oldprice
+								.card-horizontal-oldprice
+									.card-horizontal-oldprice__num!=data.oldprice + '&nbsp;&#8381;&nbsp;'
+					.card-horizontal__countbox
+						.card-horizontal-count 2
+
+				if data.pair
+					.card-horizontal__content__item.card-horizontal__content__item_extra
+						.card-horizontal__group
+							.card-horizontal-caption!=data.caption
+							.card-horizontal__rating
+								+rating(data.rating)
+								a.card-horizontal-voted(href=jv0)='('+data.voted+')'
+							if data.avaliable
+								.card-horizontal-avaliable в наличии
+						.card-horizontal__pricebox
+							.card-horizontal-price
+								.card-horizontal-price__num!=data.price + '&nbsp;&#8381;&nbsp;шт.'
+								if data.oldprice
+									.card-horizontal-oldprice
+										.card-horizontal-oldprice__num!=data.oldprice + '&nbsp;&#8381;&nbsp;'
+						.card-horizontal__countbox
+							.card-horizontal-count 2
+
+		.card-horizontal__buy.grid-module-6
+			a.card-horizontal-btn.btn.btn_primary(href ='javascript:void(0)')='КУПИТЬ (4 шт.)'
+			a.card-horizontal-link(href=jv0) Купить в кредит
+
+		img.card-horizontal-logo(src=data.logo class='card-horizontal-logo_'+data.goods)
+
+		if data.label
+			if data.label=='discount'
+				.card-horizontal__label.card-horizontal__label_discount
+					.card-horizontal__label_discount-caption Скидка
+			if data.label=='new'
+				.card-horizontal__label.card-horizontal__label_new
+					.card-horizontal__label_new-caption Новинка
+		.card-horizontal__compare
+			+icon('menu_01_compare').card-horizontal__compare-icon
+			a.card-horizontal__compare-link.card-horizontal-contentlink(href=jv0) К сравнению
+		if data.option_left
+			.card-horizontal__option
+				+icon('tireicon_'+data.option_left).card-horizontal__option__item(class='card-horizontal__option__item_'+data.option_left)
+				if data.option_right
+					+icon('tireicon_'+data.option_right).card-horizontal__option__item(class='card-horizontal__option__item_'+data.option_right)
