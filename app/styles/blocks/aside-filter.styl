@@ -26,7 +26,7 @@
 			font-size 14px
 			display inline-block
 
-		&.hide
+		&_hide
 			display none
 
 	&__title
@@ -55,7 +55,7 @@
 			right -16px
 			sprite $arrow-down
 
-		&.hide:after
+		&_hide:after
 			transform rotate(180deg)
 			top 8px
 
@@ -66,7 +66,7 @@
 		& + label:before
 			height 18px
 			width 18px
-			background-size 36px 90px
+			background-size 36px 72px
 			top 5px
 			margin-right 0.62em
 
@@ -85,11 +85,12 @@
 
 		&:disabled
 			& + label:before
-				background-position 0 -72px
+				background-position 0 36px
 
 	&__color
+		display inline-block
 		width 25%
-		float left
+
 		&-input
 			cursor pointer
 			position absolute
@@ -112,6 +113,7 @@
 				right -4px
 				border 2px solid #000
 				display none
+
 			&.black
 				background-color #000000
 			&.green
@@ -128,9 +130,10 @@
 				background-color #e2e2e2
 			&.white
 				background-color #ffffff
+
 		&-wrap
-			clearfix()
 			margin-top 10px
+			font-size 0
 
 	&__dash
 		width 20px

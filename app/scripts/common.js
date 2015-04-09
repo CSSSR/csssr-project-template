@@ -96,8 +96,44 @@ $(function () {
 	})();
 
 	// aside bar
-	(function ($) {
-		var root = '.js-filter-checkbox';
+	(function () {
+		var root = '.js-filter-checkbox',
+			initialFilterCheckbox = function (filter) {
+				var $toggler = filter.toggler,
+					hideItems = function (i, elem) {
+						var $elem = $(elem),
+							hideMod = $elem.attr('class').split(' ')[0] + '_hide';
+
+						if (i >= filter.itemToShow) {
+							$elem.toggleClass(hideMod);
+						}
+					}
+
+				$toggler.attr('href', 'javascript:void(0);');
+
+				if (filter.currentStatus === 'hide') {
+					$toggler.toggleClass(filter.hideMod);
+					$toggler.text(filter.closedlabel);
+				} else {
+					$toggler.text(filter.openlabel);
+					filter.items.each(hideItems);
+				}
+
+				filter.toggler.on('click', function () {
+					var $toggler = $(this);
+
+					$toggler.toggleClass(filter.hideMod);
+					filter.items.each(hideItems);
+
+					if (filter.currentStatus === 'show') {
+						filter.currentStatus = 'hide';
+						$toggler.text(filter.closedlabel);
+					} else {
+						filter.currentStatus = 'show';
+						$toggler.text(filter.openlabel);
+					}
+				});
+			}
 
 		$(root).each(function (i, elem) {
 			var container = {},
@@ -105,53 +141,16 @@ $(function () {
 				$container = $(root + '-container', $elem),
 				$toggler = $(root + '-open', $elem);
 
-			container.itemToShow = Number($toggler.data('to-show')) || 10;
+			console.log();
+			container.itemToShow = $toggler.data('toShow') || 10;
 			container.toggler = $toggler;
 			container.items = $container.children();
 			container.currentStatus = $toggler.data('status') || 'hide';
 			container.openlabel = $toggler.data('show') || 'Показать';
 			container.closedlabel = $toggler.data('hide') || 'Скрыть';
+			container.hideMod = $toggler.attr('class').split(' ')[0] + '_hide' || '_hide';
 
 			initialFilterCheckbox(container);
 		});
-
-		function initialFilterCheckbox(filter) {
-
-			var $toggler = filter.toggler;
-
-			$toggler.attr('href', 'javascript:void(0);');
-
-			if (filter.currentStatus === 'hide') {
-				$toggler.toggleClass('hide');
-				$toggler.text(filter.closedlabel);
-			} else {
-				$toggler.text(filter.openlabel);
-				filter.items.each(hideItems);
-			}
-
-			filter.toggler.on('click', function () {
-
-				var $toggler = $(this);
-
-				$toggler.toggleClass('hide');
-
-				filter.items.each(hideItems);
-
-				if (filter.currentStatus === 'show') {
-					filter.currentStatus = 'hide';
-					$toggler.text(filter.closedlabel);
-				} else {
-					filter.currentStatus = 'show';
-					$toggler.text(filter.openlabel);
-				}
-
-			});
-
-			function hideItems(i, elem) {
-				if (i >= filter.itemToShow) {
-						$(elem).toggleClass('hide');
-					}
-			}
-		}
-	})(jQuery);
+	})();
 });
