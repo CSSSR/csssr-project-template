@@ -4,15 +4,16 @@
 			include ../blocks/top-menu
 		.sticky-nav__short-menu
 			include ../blocks/top-menu-fix
-	.sticky-nav__submenu.js-menu.js-menu-nav
+	.sticky-nav__submenu.js-menu(data-menu='nav')
 		include ../blocks/main-menu_header
-	.sticky-nav__submenu.js-menu.js-menu-garage
+		include ../blocks/menu-fast-selection
+	.sticky-nav__submenu.js-menu(data-menu='garage')
 		include ../blocks/your-cars
-	.sticky-nav__submenu.js-menu.js-menu-comparison
+	.sticky-nav__submenu.js-menu(data-menu='comparsion')
 		include ../blocks/product-compare
-	.sticky-nav__submenu.js-menu.js-menu-history
+	.sticky-nav__submenu.js-menu(data-menu='history')
 		include ../blocks/last-viewed-products
-	.sticky-nav__submenu.js-menu.js-menu-cart
+	.sticky-nav__submenu.js-menu(data-menu='cart')
 		include ../blocks/menu-cart
 
 .header
