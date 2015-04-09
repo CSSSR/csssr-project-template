@@ -29,16 +29,12 @@ mixin tire-card(data, items)
 				.card-vertical-caption(class='card-vertical-caption_'+data.goods)
 					!=data.caption
 			if data.oldprice
-				.h2.card-vertical-price
-						.card-vertical-price__num=data.price
-							+icon('1_RUB').card-vertical-price__rub
-				.card-vertical-oldprice
-					.card-vertical-oldprice__num=data.oldprice
-						+icon('1_RUB').card-vertical-oldprice__rub
+				.card-vertical__price
+					span.h2.card-vertical__price-num!=data.price + '&nbsp;&#8381;'
+					.card-vertical__price-num.card-vertical__price-num_old!=data.oldprice + '&nbsp;&#8381;'
 			else
-				.h2.card-vertical-price
-					.card-vertical-price__num=data.price
-						+icon('1_RUB').card-vertical-price__rub
+				.card-vertical__price
+					span.h2.card-vertical__price-num!=data.price + '&nbsp;&#8381;'
 
 			if data.avaliable
 				.card-vertical-avaliable
@@ -55,8 +51,7 @@ mixin tire-card(data, items)
 		if data.type=='choose'
 			.card-vertical__extra.grid-module-6
 				a.card-vertical-btn.btn.btn_primary(href ='javascript:void(0)') Купить
-				a.card-vertical-link(href='#') Купить в кредит
+				a.card-vertical-link(href=jv0) Купить в кредит
 				.card-vertical__rating
-					.card-vertical__rating-stars
-						.card-vertical__rating-stars_checked(class='card-vertical__rating-stars_checked_'+data.rating)
-					a.card-vertical-voted(href='#')='('+data.voted+')'
+					+rating(data.rating)
+					a.card-vertical-voted(href=jv0)='('+data.voted+')'

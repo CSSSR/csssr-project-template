@@ -17,8 +17,6 @@
 	&:hover &-price__num
 	&:hover &-price:after
 		color #000
-	&:hover &-price__rub use
-		fill #000
 
 	&__imgbox
 		position relative
@@ -72,11 +70,12 @@
 		color #535353
 
 	&__group
-		display table-cell
-		width 220px
+		display table
+		width 250px
 
 	&-caption
-		margin-bottom 2px
+		display inline-block
+		margin-right 13px
 		font-size 14px
 		font-family $heading-fonts
 		font-weight bold
@@ -96,29 +95,9 @@
 
 	&__rating
 		display inline-block
+		margin-right 22px
 		width 107px
-		font-size 0
-		&-stars
-			display inline-block
-			margin-top 5px
-			width 72px
-			height 11px
-			background url(../images/tire-card_star.png)
-			&_checked
-				height 11px
-				background url(../images/tire-card_star-checked.png)
-				&_0
-					width 0
-				&_1
-					width 15px
-				&_2
-					width 30px
-				&_3
-					width 45px
-				&_4
-					width 60px
-				&_5
-					width 72px
+		font-size 18px
 
 	&-voted
 		display inline-block
@@ -132,7 +111,6 @@
 		bottom 1px
 		display inline-block
 		padding-left 21px
-		margin-left 22px
 		font-family $heading-fonts
 		font-weight bold
 		font-size 13px
@@ -145,60 +123,38 @@
 
 	&__pricebox
 		display table-cell
+		width $module-width * 2 + $module-gap - 27px
 
 	&-price
 		display inline-block
 		position relative
 		top 1px
-		margin-left 32px
+		margin-left 2px
 		&__num
 			position relative
 			font-size 20px
 			font-family $heading-fonts
 			font-weight bold
 			color #616161
-		&__rub
-			position absolute
-			top -39px
-			right -37px
-			width 50px
-			height 100px
-			& use
-				fill #616161
-		&:after
-			position absolute
-			top 1px
-			right -56px
-			font-size 18px
-			font-family $heading-fonts
-			font-weight bold
-			color #616161
-			content 'шт.'
 
 	&-oldprice
 		position absolute
 		top 23px
 		left 3px
+		display table-cell
 		font-family $heading-fonts
 		font-size 16px
 		&__num
 			position absolute
+			padding-right 4px
 			&:after //зачёркивание
 				position absolute
 				top 10px
 				left -4px
-				width 55px
+				width 100%
 				height 2px
 				background #e10000
 				content ''
-		&__rub
-			position absolute
-			top -27px
-			right -28px
-			width 38px
-			height 76px
-			& use
-				fill #838383
 
 	&__countbox
 		display table-cell
