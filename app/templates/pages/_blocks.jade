@@ -6,6 +6,13 @@ block page_content
 		a(href='/') Радар
 
 	.demo-blocks
+		#blocks-view-switch(data-collapse='persist')
+			.grid
+				.h3 Переключатель вида
+			.demo-block.demo-block_white
+				.grid
+					include ../blocks/view-switch
+
 		#blocks-breadcrumbs(data-collapse='persist')
 			.grid
 				.h3 Хлебные крошки
@@ -13,7 +20,6 @@ block page_content
 				.grid
 					+breadcrumbs(['Главная', 'Шины', 'Шины 215/55 R16'])
 
-	.demo-blocks
 		#blocks-top-menu(data-collapse='persist')
 			.grid
 				.h3 Фильтр выдачи / диски
