@@ -1,0 +1,17 @@
+.catalog
+	each i in Array(5)
+		.catalog__row.cols
+			each i in Array(5)
+				.col.grid-module-2
+					+tire-card({
+						type:'choose',
+						goods:'tire',
+						img:'assets/images/content/tire-180x200.jpg',
+						title:'Replica<br> H K11H',
+						caption:'7x16 5/114.3 ET38',
+						price:'1700',
+						avaliable:'true',
+						play:'true',
+						rating: '4',
+						voted:'12'
+					})
