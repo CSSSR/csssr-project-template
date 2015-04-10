@@ -1,0 +1,8 @@
+mixin rating(stars, options)
+	- var isInteractive = options && options.interactive;
+	- var jsExtra = isInteractive ? 'js-rating' : '';
+
+	span.rating(class = jsExtra)
+		if isInteractive
+			input(type = 'hidden')
+		span.rating__stars(data-value = stars)

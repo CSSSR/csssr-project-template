@@ -1,39 +1,39 @@
-.top-menu
+nav.top-menu
 
-	.top-menu__wraper.grid
-		.top-menu__tab.top-menu__tab_type_car
-			.top-menu__icon-wrap
-				+icon('menu_01_car').top-menu__icon
-			span.top-menu__label Ford Focus III Hatchback
+	ul.top-menu__wraper.grid
+		li.top-menu__tab.top-menu__tab_type_car
+			a(href=jv0).top-menu__link
+				span.top-menu__icon-wrap
+					+icon('menu_01_car').top-menu__icon
+				span.top-menu__label Ford Focus III Hatchback
 
-		.top-menu__tab.top-menu__tab_type_compare
-			//wrap added for counter positioning
-			.top-menu__icon-wrap
+		li.top-menu__tab.top-menu__tab_type_compare
+			span.top-menu__icon-wrap
 				+icon('menu_01_compare').top-menu__icon
 				span.top-menu__counter.top-menu__counter_narrow 20
 			span.top-menu__label Сравнение
 
-		.top-menu__tab.top-menu__tab_type_seen
-			.top-menu__icon-wrap
+		li.top-menu__tab.top-menu__tab_type_seen
+			span.top-menu__icon-wrap
 				+icon('menu_01_seen').top-menu__icon
 				span.top-menu__counter.top-menu__counter_narrow 5
 			span.top-menu__label Просмотренные
 
-		.top-menu__tab.top-menu__tab_type_feedback
-			.top-menu__icon-wrap
+		li.top-menu__tab.top-menu__tab_type_feedback
+			span.top-menu__icon-wrap
 				+icon('menu_01_feedback').top-menu__icon
 			span.top-menu__label Обратная связь
 
 			.top-menu__container
 				include feedback
 
-		.top-menu__tab.top-menu__tab_type_login
-			.top-menu__icon-wrap
+		li.top-menu__tab.top-menu__tab_type_login
+			span.top-menu__icon-wrap
 				+icon('menu_01_login').top-menu__icon
 			span.top-menu__label Константин Широкий
 
-		.top-menu__tab.top-menu__tab_type_cart
-			.top-menu__icon-wrap
+		li.top-menu__tab.top-menu__tab_type_cart
+			span.top-menu__icon-wrap
 				+icon('menu_01_cart').top-menu__icon
 
 			span.top-menu__label Нет товаров :(

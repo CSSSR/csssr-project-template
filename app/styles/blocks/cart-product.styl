@@ -55,25 +55,25 @@
 		color white
 		font-weight 700
 
+		&:before
 		&:after
 			position absolute
+			display block
+			content ''
+
+		&:after
 			right 0
 			bottom -10px
-			display block
 			border 5px solid transparent
 			border-top 5px solid #bebebe
 			border-left 4px solid #bebebe
-			content ''
 
 		&:before
-			position absolute
 			left 0
 			bottom -15px
-			display block
 			border 3px solid transparent
 			border-top 3px solid #720000
 			border-right 3px solid #720000
-			content ''
 
 	&__sales-label
 		position relative
@@ -95,17 +95,16 @@
 			content ''
 
 	&__delete-btn
-		sprite($close-icon-compare)
+		sprite $close-icon-compare
 		cursor pointer
 
 	&__costs
-		font-family  $heading-fonts
+		font-family $heading-fonts
 		font-size 20px
 		font-weight 700
 		color white
 
 	&__per-cost
-
 		.currency
 			width 12px
 			height 14px
@@ -166,6 +165,7 @@
 		top 50%
 		margin-top -7px
 
+		// TODO: this might be unneded
 		.btn__icon
 			width 5px
 			height 20px

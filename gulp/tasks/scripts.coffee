@@ -17,6 +17,13 @@ gulp.task 'scripts', ->
 			'components/simplyScroll/jquery.simplyscroll.min.js'
 			'app/scripts/common.js'
 			'app/scripts/view/simplyscroll.js'
+			'app/scripts/views/collapsable.js'
+			'app/scripts/views/countdown-clock.js'
+			'app/scripts/views/rating.js'
+			'app/scripts/views/select2.js'
+			'app/scripts/views/slick.js'
+			'app/scripts/views/sticky-nav.js'
+			'app/scripts/views/wheel-filter.js'
 		]
 		.pipe plumber errorHandler: errorHandler
 		.pipe concat 'common.min.js'

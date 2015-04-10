@@ -1,0 +1,57 @@
+mixin tire-card(data, items)
+	- var typemod=data.type
+	if data.goods=='disk'
+		- var typemod=typemod+'_'+data.goods
+
+	.card-vertical.grid-module-2(class='card-vertical_'+typemod)
+		.card-vertical__imgbox(class='card-vertical__imgbox_' + data.goods)
+			img.card-vertical-img(src=data.img)
+			if data.play
+				.card-vertical-play
+					+icon('icon_play').card-vertical-play-icon
+			if data.option_left
+			.card-vertical__option
+				+icon('tireicon_'+data.option_left).card-vertical__option__item(class='card-vertical__option__item_'+data.option_left)
+				if data.option_right
+					+icon('tireicon_'+data.option_right).card-vertical__option__item(class='card-vertical__option__item_'+data.option_right)
+			if data.type=='choose'
+				.card-vertical-compare
+					+icon('menu_01_compare').card-vertical-compare-icon
+		.card-vertical__content
+			.h4.card-vertical-title
+					!=data.title
+			if data.goods=='disk'
+				.card-vertical__palette
+					if items
+						each item in items
+							.card-vertical__palette-color(class='card-vertical__palette-color_'+item)
+			if data.caption
+				.card-vertical-caption(class='card-vertical-caption_'+data.goods)
+					!=data.caption
+			if data.oldprice
+				.card-vertical__price
+					span.h2.card-vertical__price-num!=data.price + '&nbsp;&#8381;'
+					.card-vertical__price-num.card-vertical__price-num_old!=data.oldprice + '&nbsp;&#8381;'
+			else
+				.card-vertical__price
+					span.h2.card-vertical__price-num!=data.price + '&nbsp;&#8381;'
+
+			if data.avaliable
+				.card-vertical-avaliable
+					.card-vertical-avaliable-caption в наличии
+
+		if data.label
+			if data.label=='discount'
+				.card-vertical__label.card-vertical__label_discount
+					.card-vertical__label_discount-caption Скидка!
+			if data.label=='new'
+				.card-vertical__label.card-vertical__label_new
+					.card-vertical__label_new-caption Новинка
+
+		if data.type=='choose'
+			.card-vertical__extra.grid-module-2
+				a.card-vertical-btn.btn.btn_primary(href ='javascript:void(0)') Купить
+				a.card-vertical-link(href=jv0) Купить в кредит
+				.card-vertical__rating
+					+rating(data.rating)
+					a.card-vertical-voted(href=jv0)='('+data.voted+')'
