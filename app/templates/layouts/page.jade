@@ -1,16 +1,19 @@
 include ../helpers/variables
 include ../helpers/mixins
 
-+script([], ['libs/jquery/dist/jquery.min.js'])
-+script([], ['libs/select2/select2.min.js'])
-+script([], ['libs/slick/slick/slick.min.js'])
-+script([], ['debug.js', 'common.min.js'])
++script([], [
+	'libs/jquery/dist/jquery.min.js',
+	'libs/select2/select2.min.js',
+	'libs/slick/slick/slick.min.js',
+	'debug.js',
+	'common.min.js'
+])
 
 doctype html
 html(lang='ru')
 	include ../partials/head
 	body
-		.main(class=mainModifier?'main_'+mainModifier:'')
+		.main(class=mainModifier ? 'main_' + mainModifier : '')
 			block page_content
 
 		include ../partials/scripts

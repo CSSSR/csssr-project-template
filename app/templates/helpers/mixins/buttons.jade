@@ -1,8 +1,8 @@
 mixin btn($label, $isLink)
 	if $isLink
-		a.btn(href = 'javascript:void(0)')= $label
+		a.btn(href = 'javascript:void(0)')&attributes(attributes)= $label
 	else
-		button.btn= $label
+		button&attributes(attributes).btn= $label
 
 mixin select(arrays)
 	.select2

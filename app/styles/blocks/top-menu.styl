@@ -9,6 +9,10 @@ $top-menu-order-height = 70px
 	color white
 	box-shadow inset 0 0 0 1px #777
 
+	&__link
+		text-decoration inherit
+		color inherit
+
 	&__wraper
 		position relative
 
@@ -70,7 +74,7 @@ $top-menu-order-height = 70px
 		height 100%
 
 		overflow hidden
-		
+
 		box-shadow inset 0 -3px 3px #5c5c5c
 
 		&:after
@@ -301,13 +305,13 @@ $top-menu-order-height = 70px
 		height 15px
 		margin-left 5px
 		fill white
-		
+
 	&_default
 		transform translateZ(25px)
-		
+
 	&_fix
 		transform rotateX(-90deg) translateZ(-35px)
-		
+
 .main-menu_header
 .your-cars
 	display none
@@ -315,7 +319,7 @@ $top-menu-order-height = 70px
 	top 70px
 	left 0
 	right 0
-	
+
 .header
 	position fixed
 	background #616161
@@ -347,4 +351,4 @@ $top-menu-order-height = 70px
 			& + .top-menu
 				z-index 2
 				opacity 1
-				transition-delay .5s			
+				transition-delay .5s

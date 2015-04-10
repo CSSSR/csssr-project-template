@@ -12,6 +12,12 @@ gulp.task 'scripts', ->
 			'components/svg4everybody/svg4everybody.min.js'
 			'components/FlipClock/compiled/flipclock.min.js'
 			'app/scripts/common.js'
+			'app/scripts/views/header.js'
+			'app/scripts/views/select2.js'
+			'app/scripts/views/wheel-filter.js'
+			'app/scripts/views/slick.js'
+			'app/scripts/views/rating.js'
+			'app/scripts/views/collapsable.js'
 		]
 		.pipe plumber errorHandler: errorHandler
 		.pipe concat 'common.min.js'

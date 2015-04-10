@@ -145,20 +145,19 @@ block page_content
 							+tire-card({
 								type:'menu',
 								goods:'tire',
-								img:'assets/images/content/tire-card_img.png',
+								img:'assets/images/content/tire-180x200.jpg',
 								title:'Replica<br> BMW FR1156',
-								caption:'7x16 5/114.3 ET38',
+								caption:'215/65 R16C 109/107T XL',
 								price:'3000',
 								avaliable:'true',
 								play:'true',
 								label:'discount'
 							})
-
 						.col.grid-module-6
 							+tire-card({
 								type:'sale',
 								goods:'tire',
-								img:'assets/images/content/tire-card_img.png',
+								img:'assets/images/content/tire-180x200.jpg',
 								title:'Replica<br> BMW FR1156',
 								caption:'7x16 5/114.3 ET38',
 								price:'1700',
@@ -169,14 +168,150 @@ block page_content
 								option_right:'spike',
 								label:'discount'
 							})
-
 						.col.grid-module-6
-							+tire-card({type:'new',
+							+tire-card({
+								type:'new',
 								goods:'tire',
-								img:'assets/images/content/tire-card_img.png',
+								img:'assets/images/content/tire-180x200.jpg',
 								title:'Replica<br> BMW FR1156',
 								price:'3000',
 								play:'true',
+								label:'new'
+							})
+						.col.grid-module-6
+							+tire-card({
+								type:'choose',
+								goods:'tire',
+								img:'assets/images/content/tire-180x200.jpg',
+								title:'Replica<br> H K11H',
+								caption:'7x16 5/114.3 ET38',
+								price:'1700',
+								avaliable:'true',
+								play:'true',
+								rating: '4',
+								voted:'12'
+							})
+					.cols
+						.col
+							+card-horizontal({
+								goods:'tire',
+								img:'assets/images/content/tire-180x200.jpg',
+								title:'Bridgestone Ecopia EP200',
+								caption:'215/55 R16 <a class=\'card-horizontal-contentlink\' href=\'#\'>93W</a>',
+								rating: '4',
+								voted:'12',
+								avaliable:'true',
+								price:'4&#160;200',
+								oldprice:'3400',
+								logo:'assets/images/content/brand-logos/horizont-card-dunlop.png',
+								count:'2',
+								label:'new',
+								option_left:'winter',
+								option_right:'spike',
+							})
+							+card-horizontal({
+								goods:'tire',
+								pair: 'pair',
+								img:'assets/images/content/tire-180x200.jpg',
+								title:'Bridgestone Ecopia EP200',
+								caption:'215/55 R16 <a class=\'card-horizontal-contentlink\' href=\'#\'>93W</a>',
+								rating: '4',
+								voted:'12',
+								avaliable:'true',
+								price:'4&#160;200',
+								oldprice:'3400',
+								logo:'assets/images/content/brand-logos/horizont-card-dunlop.png',
+								count:'2',
+								label:'new',
+								option_left:'winter',
+								option_right:'spike',
+							})
+
+		#blocks-disk-card(data-collapse='persist')
+			.grid
+				.h3 Карточки дисков
+			.demo-block
+				.grid
+					.cols
+						.col.grid-module-6
+							+tire-card({
+								type:'choose',
+								goods:'disk',
+								img:'assets/images/content/disk-180x160.jpg',
+								title:'Replica<br> BMW FR1156',
+								caption:'7x16 5/114.3 ET42',
+								price:'3000',
+								avaliable:'true',
+								play:'true',
+								label:'new'},
+								['black','yellow','white']
+							)
+						.col.grid-module-6
+							+tire-card({
+								type:'choose',
+								goods:'disk',
+								img:'assets/images/content/disk-180x160.jpg',
+								title:'Replica<br> BMW FR1156',
+								caption:'7x16 5/114.3 ET38',
+								price:'3000',
+								avaliable:'true',
+								play:'true'},
+								['purple','red','yellow']
+							)
+						.col.grid-module-6
+							+tire-card({
+								type:'choose',
+								goods:'disk',
+								img:'assets/images/content/disk-180x160.jpg',
+								title:'Replica<br> BMW FR1156',
+								caption:'7x16 5/114.3 ET38',
+								price:'3000',
+								oldprice:'2600',
+								avaliable:'true',
+								play:'true',
+								label:'discount'},
+								['black','green','purple','red','yellow','white']
+							)
+						.col.grid-module-6
+							+tire-card({
+								type:'choose',
+								goods:'disk',
+								img:'assets/images/content/disk-180x160.jpg',
+								title:'Replica<br> BMW FR1156',
+								caption:'7x16 5/114.3 ET38',
+								price:'3000',
+								avaliable:'true',
+								play:'true'
+							})
+					.cols
+						.col.grid-module-1
+							+card-horizontal({
+								goods:'disk',
+								img:'assets/images/content/disk-180x160.jpg',
+								title:'American Racing AR881',
+								titlecaption:'Литой',
+								caption:'7x16 5/112 ET42 DIA 57.1',
+								rating: '4',
+								voted:'12',
+								avaliable:'true',
+								price:'4&#160;200',
+								oldprice:'3400',
+								logo:'assets/images/content/brand-logos/horizont-card-american-racing.png',
+								label:'new'
+							})
+							+card-horizontal({
+								goods:'disk',
+								pair: 'pair',
+								img:'assets/images/content/disk-180x160.jpg',
+								title:'American Racing AR881',
+								titlecaption:'Литой',
+								caption:'7x16 5/112 ET42 DIA 57.1',
+								rating: '4',
+								voted:'12',
+								avaliable:'true',
+								price:'4&#160;200',
+								oldprice:'3400',
+								logo:'assets/images/content/brand-logos/horizont-card-american-racing.png',
 								label:'new'
 							})
 
@@ -232,6 +367,33 @@ block page_content
 				.grid
 					include ../blocks/best-brands
 
+		#blocks-sort-labels(data-collapse='persist')
+			.grid
+				.h3 Метка для выбора сортировки
+			.demo-block.demo-block_white
+				.grid
+					include ../blocks/sort-labels
+
+		#blocks-menu-fast-selection(data-collapse='persist')
+			.grid
+				.h3 Быстрый подбор из меню
+			.demo-block
+					include ../blocks/menu-fast-selection
+
+		#blocks-note-info(data-collapse='persist')
+			.grid
+				.h3 Справочная информация
+			.demo-block
+				.grid
+					.grid-module-6
+						include ../blocks/note-info
+
+		#blocks-big-description(data-collapse='persist')
+			.grid
+				.h3 Карточка шины - Технологии
+			.demo-block
+				.grid
+					include ../blocks/big-description
 
 block scriptsAfter
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse.js')

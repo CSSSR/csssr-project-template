@@ -1,25 +1,25 @@
-.top-menu
-	.top-menu__wraper.top-menu__wraper_order.grid
+nav.top-menu
+	ul.top-menu__wraper.top-menu__wraper_order.grid
 
-		.top-menu__tab.top-menu__tab_order
+		li.top-menu__tab.top-menu__tab_order
 			+icon('menu_1_clock').top-menu__icon.top-menu__icon_type_nolabel
 			.top-menu__container.top-menu__container_rightedge
 				include opening-hours
 
-		.top-menu__tab.top-menu__tab_order
-			.top-menu__icon-wrap
+		li.top-menu__tab.top-menu__tab_order
+			span.top-menu__icon-wrap
 				+icon('menu_01_login').top-menu__icon.top-menu__icon_type_nolabel
 
-		.top-menu__tab.top-menu__tab_order
-			.top-menu__icon-wrap
+		li.top-menu__tab.top-menu__tab_order
+			span.top-menu__icon-wrap
 				+icon('menu_01_feedback').top-menu__icon.top-menu__icon_type_nolabel
 			.top-menu__container.top-menu__container_rightedge
 				include feedback
 
-		.top-menu__contacts
+		li.top-menu__contacts
 			img(src='/assets/images/svg/1_logo_light.svg').top-menu__logo.top-menu__logo_order
 
-			.top-menu__back-button
+			span.top-menu__back-button
 				+back-button('Продолжить покупки')
 
 			.top-menu__contact.top-menu__contact_order

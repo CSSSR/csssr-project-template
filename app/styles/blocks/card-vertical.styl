@@ -1,0 +1,291 @@
+.card-vertical
+	position relative
+	border 3px solid #ebebeb
+	text-align center
+	background #fff
+	&_choose
+		&:hover
+			border 3px solid #fcd42d
+			border-bottom none
+		&:hover .card-vertical__extra
+			display block
+		&:hover .card-vertical-compare
+			display block
+		&:hover .card-vertical-play
+			background #fcd42d
+
+	&__imgbox
+		position relative
+		padding-top 26px
+		padding-left 4px
+		height 147px
+		overflow hidden
+		&_disk
+			padding-left 1px
+			& img
+				margin-top -29px
+
+	&-img
+		width 180px
+
+	&-play
+		position absolute
+		left 0
+		bottom 0
+		display block
+		width 36px
+		height 36px
+		background #ebebeb
+		&-icon
+			margin 2px
+			width 31px
+			height 33px
+
+	&__option
+		position absolute
+		top 9px
+		left -14px
+		width 70px
+		&__item
+			position relative
+			display inline-block
+			margin-right -15px
+			margin-bottom -13px
+			&_summer
+				width 36px
+				height 36px
+			&_allseason
+				margin-left 9px
+				margin-right -10px
+				top -6px
+				width 28px
+				height 22px
+			&_winter
+				margin-left 9px
+				margin-right -10px
+				top -6px
+				width 22px
+				height 22px
+			&_spike
+				width 36px
+				height 36px
+
+	&-compare
+		position absolute
+		right 0
+		bottom 0
+		display none
+		width 41px
+		height 36px
+		background #fcd42d
+		&-icon
+			position absolute
+			top -2px
+			left 1px
+			height 41px
+			width 41px
+
+	&__content
+		padding 0 7px 2px
+
+	&-title
+		margin-top 25px
+		margin-left 1px
+		text-align center
+		line-height 19px
+
+	&__palette
+		display table
+		margin 5px auto
+		min-width 1px
+		height 13px
+		&-color
+			float left
+			margin-right 3px
+			width 13px
+			height 13px
+			&:last-child
+				margin-right 0
+			&_black
+				background #000
+			&_green
+				background #32a232
+			&_purple
+				background #993d95
+			&_red
+				background #e50707
+			&_yellow
+				background #fcd42d
+			&_white
+				background #e2e2e2
+
+	&-caption
+		margin-top 3px
+		font-size 13px
+		font-family $text-fonts
+		text-align center
+		&_disk
+			font-weight bold
+
+	&__price
+		margin-top 3px
+		&-num
+			font-size 26px
+			&_old
+				position relative
+				display inline-block
+				vertical-align top
+				margin-top 11px
+				margin-left 5px
+				font-family $text-fonts
+				font-size 16px
+				color $rushina-dark-gray
+				&:after //зачёркивание
+					position absolute
+					top 10px
+					left -4px
+					width 116%
+					height 2px
+					background #e10000
+					content ''
+
+	&-avaliable
+		padding-bottom 23px
+		margin-top 4px
+		font-family $text-fonts
+		font-weight bold
+		font-size 13px
+		text-align center
+
+		&-caption
+			position relative
+			display inline-block
+			vertical-align top
+			margin-left 19px
+			&:after
+				position absolute
+				top 5px
+				left -22px
+				sprite $checkmark
+				content ''
+
+
+	&__label
+		position absolute
+		top 16px
+		right -9px
+		display block
+		height 42px
+
+		&_discount
+			width 102px
+			height 27px
+			background #ff0000
+			&-caption //надпись
+				padding-top 8px
+				text-align center
+				font-size 14px
+				font-family $heading-fonts
+				font-weight bold
+				text-transform uppercase
+				color #fff
+				&:after //нижний прямоугольник
+					position absolute
+					top 27px
+					left 9px
+					width 93px
+					height 9px
+					background #ff0000
+					content ''
+			&:before //левый треугольник
+				position absolute
+				top 27px
+				left 0
+				border: 5px solid transparent
+				border-top: 5px solid #bebebe
+				border-right: 5px solid #bebebe
+				content ''
+			&:after//правый треугольник
+				position absolute
+				top 36px
+				right 0
+				border: 3px solid transparent
+				border-left: 3px solid #720000
+				border-top: 3px solid #720000
+				content ''
+
+		&_new
+			width 110px
+			height 27px
+			background #ffe800
+			&-caption //надпись
+				padding-top 8px
+				text-align center
+				font-size 14px
+				font-family $heading-fonts
+				font-weight bold
+				text-transform uppercase
+				color #000
+				&:after //нижний прямоугольник
+					position absolute
+					top 27px
+					left 9px
+					width 101px
+					height 9px
+					background #ffe800
+					content ''
+			&:before //левый треугольник
+				position absolute
+				top 27px
+				left 0
+				border: 5px solid transparent
+				border-top: 5px solid #bebebe
+				border-right: 5px solid #bebebe
+				content ''
+			&:after//правый треугольник
+				position absolute
+				top 36px
+				right 0
+				border: 3px solid transparent
+				border-left: 3px solid #b58700
+				border-top: 3px solid #b58700
+				content ''
+
+
+	&__extra
+		position absolute
+		left -3px
+		top 92%
+		z-index 300
+		display none
+		padding-bottom 20px
+		text-align center
+		border 3px solid #fcd42d
+		border-top none
+		background #fff
+
+	&-btn
+		display inline-block
+		margin-top 23px
+		width 139px
+		font-family $heading-fonts
+		font-weight bold
+
+	&-link
+		display block
+		margin-top 5px
+		font-size 14px
+		font-family $text-fonts
+		color #0084ff
+
+	&__rating
+		margin 2px auto
+		width 106px
+		font-size 18px
+
+	&-voted
+		display inline-block
+		margin-left 10px
+		font-size 14px
+		font-family $text-fonts
+		color #636363
