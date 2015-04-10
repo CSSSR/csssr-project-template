@@ -222,6 +222,19 @@ mixin wheel-filter()
 										+icon('plus').btn__icon.btn__icon_inline
 										span.btn__label Ширина
 
+							.wf-col.wf-col_small
+								.wf-body__input.js-discs-specs(
+									data-hide-on-init='false'
+									data-toggle='.js-discs-specs'
+								)
+									a.btn.btn_wide
+										+icon('plus').btn__icon.btn__icon_inline
+										span.btn__label Вылет
+
+							.wf-col
+
+						.wf-row
+							.wf-col.wf-col_small
 								.wf-body__heading.js-discs-specs
 									.h5.h_upcase Ширина:
 
@@ -242,14 +255,6 @@ mixin wheel-filter()
 										option 18
 
 							.wf-col.wf-col_small
-								.wf-body__input.js-discs-specs(
-									data-hide-on-init='false'
-									data-toggle='.js-discs-specs'
-								)
-									a.btn.btn_wide
-										+icon('plus').btn__icon.btn__icon_inline
-										span.btn__label Вылет
-
 								.wf-body__heading.js-discs-specs
 									.h5.h_upcase Вылет (ET):
 
@@ -273,6 +278,13 @@ mixin wheel-filter()
 								.wf-wheelset
 
 							.wf-col.wf-col_bottom
+								.wf-body__input.js-rear-discs(data-toggle='.js-rear-discs')
+									a.btn.btn_wide
+										+icon('cross').btn__icon.btn__icon_inline
+										span.btn__label Закрыть
+
+						.wf-row
+							.wf-col.wf-col_small-double
 								.wf-body__input.js-rear-discs(
 									data-hide-on-init='false'
 									data-toggle='.js-rear-discs'
@@ -282,10 +294,7 @@ mixin wheel-filter()
 										+icon('plus').btn__icon.btn__icon_inline
 										span.btn__label Разноразмерные диски
 
-								.wf-body__input.js-rear-discs(data-toggle='.js-rear-discs')
-									a.btn.btn_wide
-										+icon('cross').btn__icon.btn__icon_inline
-										span.btn__label Закрыть
+							.wf-col
 
 						.wf-row
 							.wf-col
@@ -296,4 +305,4 @@ mixin wheel-filter()
 							span Как узнать размер<br>диска
 							.wf-body__info.btn.btn_info: +icon('info').btn__icon.btn__icon_info
 						.wf-body__image.wf-body__image_disc-side
-						.wf-body__image.wf-body__image_disc-top.js-rear-discs
+						.wf-body__image.wf-body__image_disc-top.js-discs-specs

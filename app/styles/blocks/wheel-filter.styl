@@ -98,7 +98,8 @@
 		transition all .25s .25s, z-index 0
 
 	&__image
-		margin-bottom 15px
+		&:not(:last-child)
+			margin-bottom 15px
 
 		for img in 'disc-side' 'disc-top' 'tire-side' 'tire-top'
 			&_{img}
