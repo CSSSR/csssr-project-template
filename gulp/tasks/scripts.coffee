@@ -9,13 +9,21 @@ paths        = require '../paths'
 
 gulp.task 'scripts', ->
 	return gulp.src [
-			'components/svg4everybody/svg4everybody.min.js'
-			'components/FlipClock/compiled/flipclock.min.js'
+			'components/jquery/dist/jquery.js'
+			'components/svg4everybody/svg4everybody.js'
+			'components/FlipClock/compiled/flipclock.js'
+			'components/select2/select2.js'
+			'components/slick/slick/slick.js'
+			'components/simplyScroll/jquery.simplyscroll.min.js'
 			'app/scripts/common.js'
-			'app/scripts/views/header.js'
+			'app/scripts/view/simplyscroll.js'
+			'app/scripts/views/collapsable.js'
+			'app/scripts/views/countdown-clock.js'
+			'app/scripts/views/rating.js'
 			'app/scripts/views/select2.js'
-			'app/scripts/views/wheel-filter.js'
 			'app/scripts/views/slick.js'
+			'app/scripts/views/sticky-nav.js'
+			'app/scripts/views/wheel-filter.js'
 		]
 		.pipe plumber errorHandler: errorHandler
 		.pipe concat 'common.min.js'

@@ -26,7 +26,7 @@ block content
 		// ---
 
 
-		.grid-module-1
+		.grid-module-12
 			.h5 Текст в 12 колонок
 			p=lorem
 
@@ -40,49 +40,49 @@ block content
 				p=lorem
 
 		.cols
-			.col.grid-module-3
+			.col.grid-module-4
 				.h5 Текст в 4 колонки
 				p=lorem
 
-			.col.grid-module-3
+			.col.grid-module-4
 				.h5 Текст в 4 колонки
 				p=lorem
-			.col.grid-module-3
+			.col.grid-module-4
 				.h5 Текст в 4 колонки
 				p=lorem
 
 		.cols
-			.col.grid-module-4
+			.col.grid-module-3
 				.h5 Текст в 3 колонки
 				p=lorem
 
-			.col.grid-module-4
+			.col.grid-module-3
 				.h5 Текст в 3 колонки
 				p=lorem
-			.col.grid-module-4
+			.col.grid-module-3
 				.h5 Текст в 3 колонки
 				p=lorem
-			.col.grid-module-4
+			.col.grid-module-3
 				.h5 Текст в 3 колонки
 				p=lorem
 
 		.cols
-			.col.grid-module-6
+			.col.grid-module-2
 				.h5 Текст в 2 колонки
 				p=lorem
-			.col.grid-module-6
+			.col.grid-module-2
 				.h5 Текст в 2 колонки
 				p=lorem
-			.col.grid-module-6
+			.col.grid-module-2
 				.h5 Текст в 2 колонки
 				p=lorem
-			.col.grid-module-6
+			.col.grid-module-2
 				.h5 Текст в 2 колонки
 				p=lorem
-			.col.grid-module-6
+			.col.grid-module-2
 				.h5 Текст в 2 колонки
 				p=lorem
-			.col.grid-module-6
+			.col.grid-module-2
 				.h5 Текст в 2 колонки
 				p=lorem
 
@@ -91,7 +91,7 @@ block content
 		.h2 Переключатели
 
 		.cols
-			.col.grid-module-1
+			.col.grid-module-12
 				span Интресный переключатель: 
 				+primary-switch('type', [
 					{
@@ -142,7 +142,7 @@ block content
 		br
 
 		.cols
-			.col.grid-module-1
+			.col.grid-module-12
 				span Обычный переключатель: 
 				+switch('size', [
 					{
@@ -209,3 +209,13 @@ block content
 				.info__btn.btn.btn_info(tabindex=0): +icon('info').btn__icon
 				.info__tooltip
 					.tooltip= lorem
+
+		.h2 Рейтинг #[+rating(4)]
+		.grid-module-4
+			p Рейтинг внутри текста зависит от размера шрифта, #[+rating(4)] не нарушает высоты строки #[+rating(3)] и смотрится органично в различных ситуациях #[+rating(1)]. Рейтинг стал новым символом #[+rating(5)].
+
+			form(action = jv0)
+				.h1 +&lt;form&gt; JS #[+rating(5, {interactive: true})]
+
+			form(action = jv0)
+				p Рейтинг внутри текста тоже может быть активным - #[+rating(4, {interactive: true})]

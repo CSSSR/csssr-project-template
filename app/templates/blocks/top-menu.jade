@@ -1,36 +1,41 @@
-.top-menu.top-menu_default.js-top-menu-default
-	.top-menu__wraper.grid
-		.top-menu__tab.top-menu__tab_type_car
-			.top-menu__icon-wrap
-				+icon('menu_01_car').top-menu__icon
-			span.top-menu__label Ваш автомобиль
 
-		.top-menu__tab.top-menu__tab_type_compare
-			//wrap added for counter positioning
-			.top-menu__icon-wrap
-				+icon('menu_01_compare').top-menu__icon
-			span.top-menu__label Сравнение
+nav.top-menu.top-menu_default.js-top-menu-default
+	ul.top-menu__wraper.grid
+		li.top-menu__tab.top-menu__tab_type_car(data-toggle = 'garage')
+			a(href=jv0).top-menu__link
+				span.top-menu__icon-wrap
+					+icon('menu_01_car').top-menu__icon
+				span.top-menu__label Ваш автомобиль
 
-		.top-menu__tab.top-menu__tab_type_seen
-			.top-menu__icon-wrap
-				+icon('menu_01_seen').top-menu__icon
-			span.top-menu__label Просмотренные
+		li.top-menu__tab.top-menu__tab_type_compare(data-toggle = 'comparsion')
+			a(href=jv0).top-menu__link
+				span.top-menu__icon-wrap
+					+icon('menu_01_compare').top-menu__icon
+				span.top-menu__label Сравнение
 
-		.top-menu__tab.top-menu__tab_type_feedback
-			.top-menu__icon-wrap
-				+icon('menu_01_feedback').top-menu__icon
-			span.top-menu__label Обратная связь
+		li.top-menu__tab.top-menu__tab_type_seen(data-toggle = 'history')
+			a(href=jv0).top-menu__link
+				span.top-menu__icon-wrap
+					+icon('menu_01_seen').top-menu__icon
+				span.top-menu__label Просмотренные
+
+		li.top-menu__tab.top-menu__tab_type_feedback
+			a(href=jv0).top-menu__link
+				span.top-menu__icon-wrap
+					+icon('menu_01_feedback').top-menu__icon
+				span.top-menu__label Обратная связь
 
 			.top-menu__container
 				include feedback
 
-		.top-menu__tab.top-menu__tab_type_login
-			.top-menu__icon-wrap
-				+icon('menu_01_login').top-menu__icon
-			span.top-menu__label Личный кабинет
+		li.top-menu__tab.top-menu__tab_type_login
+			a(href=jv0).top-menu__link
+				span.top-menu__icon-wrap
+					+icon('menu_01_login').top-menu__icon
+				span.top-menu__label Личный кабинет
 
-		.top-menu__tab.top-menu__tab_type_cart
-			.top-menu__icon-wrap
-				+icon('menu_01_cart').top-menu__icon
-
-			span.top-menu__label Нет товаров :(
+		li.top-menu__tab.top-menu__tab_type_cart(data-toggle = 'cart')
+			a(href=jv0).top-menu__link
+				span.top-menu__icon-wrap
+					+icon('menu_01_cart').top-menu__icon
+				span.top-menu__label Нет товаров :(

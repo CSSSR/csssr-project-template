@@ -5,28 +5,29 @@ block head
 	- mainModifier = 'home';
 
 block content
-	//- TODO: get rid of it after demo
-	div(style='height:30px')
-	.grid
-		.home-top.row
-			.home-top__advantages.col-4
-				include ../blocks/advantages
+	.main__top.grid
+		.cols
+			.col
+				.grid-module-4
+					include ../blocks/advantages
+			.col
+				.grid-module-8
+					+wheel-filter()
+					.home-top__wf-banner
+						img(src = '/assets/images/content/wf-banner.png')
 
-			.home-top__wheel-filter.col-8
-				+wheel-filter()
-				.home-top__wf-banner
-					img(src='/assets/images/content/wf-banner.png')
+	.main_home__sale.grid
+		.cols
+			.col
+				.grid-module-4
+					.sale__title
+						.h1.h_upcase Распродажа!
 
-		.row.sale
-			.col-4
-				.sale__title
-					.h1.h_upcase Распродажа!
+					.sale__countdown
+						include ../blocks/countdown
 
-				.sale__countdown
-					include ../blocks/countdown
-
-			.col-8
-				.sale__slider
+			.col
+				.grid-module-8
 					include ../blocks/sales-slider
 
 	.main__new-products.grid

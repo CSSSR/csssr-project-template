@@ -1,5 +1,8 @@
 mixin wf-tab(id, title, subtitle, active)
-	.wf__tab.js-wf-tab(class=active?'wf__tab_active':'' data-id=id)
+	.wf__tab.js-wf-tab(
+		class=active?'wf__tab_active':''
+		data-id=id
+	)&attributes(attributes)
 		.wf-tab
 			.wf-tab__icon(class='wf-tab__icon_'+id)
 			.wf-tab__label
@@ -7,12 +10,12 @@ mixin wf-tab(id, title, subtitle, active)
 				span= subtitle
 
 mixin wheel-filter()
-	.wf.js-wf
+	.wf.wf_primary.js-wf
 		.wf__tabs
-			+wf-tab('car-model', 'Подбор', 'по марке авто', true)
-			+wf-tab('tires', 'Подбор шин', 'по типоразмеру')
-			+wf-tab('discs', 'Подбор дисков', 'по типоразмеру')
-		.wf__body
+			+wf-tab('car-model', 'Подбор', 'по марке авто', true).wf__tab_primary
+			+wf-tab('tires', 'Подбор шин', 'по типоразмеру').wf__tab_primary
+			+wf-tab('discs', 'Подбор дисков', 'по типоразмеру').wf__tab_primary
+		.wf__body.wf__body_primary
 			// подбор шин по марке авто
 			.wf-body.wf-body_car-model.wf-body_active.js-wf-body.js-wf-body_car-model
 				.wf-row
@@ -20,64 +23,45 @@ mixin wheel-filter()
 						.wf-row
 							.wf-col
 								.wf-body__heading
-									.h5 Марка:
+									.h5.h_upcase Марка:
 
 								.wf-body__input
-									select.select_wide
-										option(selected) Выберите
-										option BMW
-										option Mercedes
-										option Nissan
-										option Opel
+									select.select_wide.js-wf-select.js-wf-select_brand(disabled)
 
 							.wf-col
 								.wf-body__heading
-									.h5 Модель:
+									.h5.h_upcase Модель:
 
 								.wf-body__input
-									select.select_wide
-										option(selected) Выберите
-										option X3
-										option M5
-										option 330
-										option 550
+									select.select_wide.js-wf-select.js-wf-select_model(disabled)
 
 						.wf-row
 							.wf-col
 								.wf-body__heading
-									.h5 Год выпуска:
+									.h5.h_upcase Год выпуска:
 
 								.wf-body__input
-									select.select_wide
-										option(selected) Все
-										option 1990
-										option 1991
-										option 1992
-										option 1993
+									select.select_wide.js-wf-select.js-wf-select_year(disabled)
 
 							.wf-col
 								.wf-body__heading
-									.h5 Модификация:
+									.h5.h_upcase Модификация:
 
 								.wf-body__input
-									select.select_wide
-										option(selected) Все
-										option Q
-										option M
-										option Z
+									select.select_wide.js-wf-select.js-wf-select_mod(disabled)
 
 						.wf-row
 							.wf-col
 								button.btn.btn_primary.btn_wide Подобрать
 
 			// подбор шин по типоразмеру
-			.wf-body.wf-body_tires.js-wf-body.js-wf-body_tires
+			.wf-body.js-wf-body.js-wf-body_tires
 				.wf-row
 					.wf-col
 						.wf-row
 							.wf-col.wf-col_small
 								.wf-body__heading
-									.h5 Ширина:
+									.h5.h_upcase Ширина:
 
 								.wf-body__input
 									select.select_wide
@@ -97,7 +81,7 @@ mixin wheel-filter()
 
 							.wf-col.wf-col_small
 								.wf-body__heading
-									.h5 Высота:
+									.h5.h_upcase Высота:
 
 								.wf-body__input
 									select.select_wide
@@ -120,7 +104,7 @@ mixin wheel-filter()
 
 							.wf-col
 								.wf-body__heading
-									.h5 Диаметр:
+									.h5.h_upcase Диаметр:
 
 								.wf-body__input
 									select.select_wide
@@ -133,7 +117,7 @@ mixin wheel-filter()
 								.wf-body__input.js-rear-tires(data-toggle='.js-rear-tires')
 									a.btn.btn_wide
 										+icon('cross').btn__icon.btn__icon_inline
-										span.pseudolink Закрыть
+										span.btn__label Закрыть
 
 						.wf-row
 							.wf-col.wf-col_small-double
@@ -143,18 +127,18 @@ mixin wheel-filter()
 								)
 									a.btn.btn_wide
 										+icon('plus').btn__icon.btn__icon_inline
-										span.pseudolink Разноразмерные шины
+										span.btn__label Разноразмерные шины
 
 							.wf-col
 
 						.wf-row
 							.wf-col.wf-col_small
 								.wf-body__heading
-									.h5 Сезон:
+									.h5.h_upcase Сезон:
 
 							.wf-col.wf-col_small
 								.wf-body__heading
-									.h5 Производитель:
+									.h5.h_upcase Производитель:
 
 							.wf-col
 
@@ -184,18 +168,20 @@ mixin wheel-filter()
 								button.btn.btn_primary.btn_wide Подобрать
 
 					.wf-col.wf-col_help
-						.h4
+						.wf-body__help-heading.h4.h_upcase
 							span Как узнать размер<br>шины
 							.wf-body__info.btn.btn_info: +icon('info').btn__icon.btn__icon_info
+						.wf-body__image.wf-body__image_tire-side
+						.wf-body__image.wf-body__image_tire-top
 
 			// подбор дисков по типоразмеру
-			.wf-body.wf-body_discs.js-wf-body.js-wf-body_discs
+			.wf-body.js-wf-body.js-wf-body_discs
 				.wf-row
 					.wf-col
 						.wf-row
 							.wf-col.wf-col_small
 								.wf-body__heading
-									.h5 Диаметр диска:
+									.h5.h_upcase Диаметр диска:
 
 								.wf-body__input
 									select.select_wide
@@ -207,7 +193,7 @@ mixin wheel-filter()
 
 							.wf-col.wf-col_small
 								.wf-body__heading
-									.h5 PCD:
+									.h5.h_upcase PCD:
 
 								.wf-body__input
 									select.select_wide
@@ -219,7 +205,7 @@ mixin wheel-filter()
 
 							.wf-col
 								.wf-body__heading
-									.h5 Производитель:
+									.h5.h_upcase Производитель:
 
 								.wf-body__input
 									select.select_wide
@@ -231,10 +217,31 @@ mixin wheel-filter()
 
 						.wf-row
 							.wf-col.wf-col_small
-								.wf-body__heading
-									.h5 Ширина:
+								.wf-body__input.js-discs-specs(
+									data-hide-on-init='false'
+									data-toggle='.js-discs-specs'
+								)
+									a.btn.btn_wide
+										+icon('plus').btn__icon.btn__icon_inline
+										span.btn__label Ширина
 
-								.wf-body__input
+							.wf-col.wf-col_small
+								.wf-body__input.js-discs-specs(
+									data-hide-on-init='false'
+									data-toggle='.js-discs-specs'
+								)
+									a.btn.btn_wide
+										+icon('plus').btn__icon.btn__icon_inline
+										span.btn__label Вылет
+
+							.wf-col
+
+						.wf-row
+							.wf-col.wf-col_small
+								.wf-body__heading.js-discs-specs
+									.h5.h_upcase Ширина:
+
+								.wf-body__input.js-discs-specs
 									select.select_wide
 										option(selected) Выберите
 										option 15
@@ -251,10 +258,10 @@ mixin wheel-filter()
 										option 18
 
 							.wf-col.wf-col_small
-								.wf-body__heading
-									.h5 Вылет (ET):
+								.wf-body__heading.js-discs-specs
+									.h5.h_upcase Вылет (ET):
 
-								.wf-body__input
+								.wf-body__input.js-discs-specs
 									select.select_wide
 										option(selected) Выберите
 										option 10
@@ -277,7 +284,317 @@ mixin wheel-filter()
 								.wf-body__input.js-rear-discs(data-toggle='.js-rear-discs')
 									a.btn.btn_wide
 										+icon('cross').btn__icon.btn__icon_inline
+										span.btn__label Закрыть
+
+						.wf-row
+							.wf-col.wf-col_small-double
+								.wf-body__input.js-rear-discs(
+									data-hide-on-init='false'
+									data-toggle='.js-rear-discs'
+									data-show='.js-discs-specs'
+								)
+									a.btn.btn_wide
+										+icon('plus').btn__icon.btn__icon_inline
+										span.btn__label Разноразмерные диски
+
+							.wf-col
+
+						.wf-row
+							.wf-col
+								button.btn.btn_primary.btn_wide Подобрать
+
+					.wf-col.wf-col_help
+						.wf-body__help-heading.h4.h_upcase
+							span Как узнать размер<br>диска
+							.wf-body__info.btn.btn_info: +icon('info').btn__icon.btn__icon_info
+						.wf-body__image.wf-body__image_disc-side
+						.wf-body__image.wf-body__image_disc-top.js-discs-specs
+
+mixin wheel-filter_inner()
+	.wf.js-wf
+		.wf__tabs
+			+wf-tab('car-model', 'Подбор', 'по марке авто', true)
+			+wf-tab('tires', 'Подбор шин', 'по типоразмеру')
+			+wf-tab('discs', 'Подбор дисков', 'по типоразмеру')
+		.wf__body
+			// подбор шин по марке авто
+			.wf-body.wf-body_car-model.wf-body_active.js-wf-body.js-wf-body_car-model
+				.wf-row
+					.wf-col
+						.wf-row
+							.wf-col.wf-col_small
+								.wf-body__heading
+									.h5 Марка:
+
+							.wf-col.wf-col_small
+								.wf-body__heading
+									.h5 Модель:
+
+							.wf-col.wf-col_small
+								.wf-body__heading
+									.h5 Год выпуска:
+
+							.wf-col.wf-col_small
+								.wf-body__heading
+									.h5 Модификация:
+
+							.wf-col
+
+						.wf-row
+							.wf-col.wf-col_small
+								.wf-body__input
+									select.select_wide
+										option(selected) Выберите
+										option BMW
+										option Mercedes
+										option Nissan
+										option Opel
+
+							.wf-col.wf-col_small
+								.wf-body__input
+									select.select_wide
+										option(selected) Выберите
+										option X3
+										option M5
+										option 330
+										option 550
+
+							.wf-col.wf-col_small
+								.wf-body__input
+									select.select_wide
+										option(selected) Все
+										option 1990
+										option 1991
+										option 1992
+										option 1993
+
+							.wf-col.wf-col_small
+								.wf-body__input
+									select.select_wide
+										option(selected) Все
+										option Q
+										option M
+										option Z
+
+							.wf-col
+								.wf-body__input
+									input.checkbox(type='checkbox' id='ch1')
+									label.checkbox__label(for='ch1') Запомнить автомобиль
+
+							.wf-col.wf-col_small
+								.wf-body__input
+									button.btn.btn_primary.btn_wide Подобрать
+
+			// подбор шин по типоразмеру
+			.wf-body.js-wf-body.js-wf-body_tires
+				.wf-row
+					.wf-col
+						.wf-row
+							.wf-col.wf-col_small-double
+								.wf-row
+									.wf-col.wf-col_small
+										.wf-body__heading
+											.h5 Ширина:
+
+										.wf-body__input
+											select.select_wide
+												option(selected) Выберите
+												option 10
+												option 20
+												option 30
+												option 40
+
+										.wf-body__input.js-rear-tires
+											select.select_wide
+												option(selected) Выберите
+												option 10
+												option 20
+												option 30
+												option 40
+
+									.wf-col.wf-col_small
+										.wf-body__heading
+											.h5 Высота:
+
+										.wf-body__input
+											select.select_wide
+												option(selected) Выберите
+												option 100
+												option 200
+												option 300
+												option 400
+
+										.wf-body__input.js-rear-tires
+											select.select_wide
+												option(selected) Выберите
+												option 100
+												option 200
+												option 300
+												option 400
+
+								.wf-row
+									.wf-col
+										.wf-body__input.js-rear-tires(
+											data-hide-on-init='false'
+											data-toggle='.js-rear-tires'
+										)
+											a.btn.btn_wide
+												+icon('plus').btn__icon.btn__icon_inline
+												span.pseudolink Разноразмерные шины
+
+							.wf-col.wf-col_wheelset.js-rear-tires
+								.wf-wheelset
+
+							.wf-col
+								.wf-body__heading
+									.h5 Диаметр:
+
+								.wf-body__input
+									select.select_wide
+										option(selected) Выберите
+										option 15
+										option 16
+										option 17
+										option 18
+
+								.wf-body__input
+									input.checkbox(type='checkbox' id='ch1')
+									label.checkbox__label(for='ch1') RUNFLAT
+
+							.wf-col.wf-col_small-double
+								.wf-row
+									.wf-col.wf-col_small
+										.wf-body__heading
+											.h5 Сезон:
+
+										.wf-body__input
+											select.select_wide
+												option(selected) Выберите
+												option Летняя
+												option Зимняя
+												option Всесезонная
+
+									.wf-col.wf-col_small
+										.wf-body__heading
+											.h5 Производитель:
+
+										.wf-body__input
+											select.select_wide
+												option(selected) Выберите
+												option Bridgestone
+												option Yokohama
+												option Белшина
+
+								.wf-row
+									.wf-col
+										.wf-body__input
+											button.btn.btn_primary.btn_wide Подобрать
+
+						.wf-row
+							.wf-col.wf-col_small
+								.wf-body__input.js-rear-tires(data-toggle='.js-rear-tires')
+									a.btn.btn_wide
+										+icon('cross').btn__icon.btn__icon_inline
 										span.pseudolink Закрыть
+
+							.wf-col
+
+					.wf-col.wf-col_help-internal
+						.wf-body__image.wf-body__image_tire-height
+
+			// подбор дисков по типоразмеру
+			.wf-body.js-wf-body.js-wf-body_discs
+				.wf-row
+					.wf-col
+						.wf-row
+							.wf-col.wf-col_small-double
+								.wf-body__heading
+									.h5 Диаметр:
+
+								.wf-body__input
+									select.select_wide
+										option(selected) Выберите
+										option 15
+										option 16
+										option 17
+										option 18
+
+							.wf-col
+								.wf-body__heading
+									.h5 PCD:
+
+								.wf-body__input
+									select.select_small.select_wide
+										option(selected) Выберите
+										option Летняя
+										option Зимняя
+										option Всесезонная
+
+							.wf-col.wf-col_small-double
+								.wf-body__heading
+									.h5 Производитель:
+
+								.wf-body__input
+									select.select_wide
+										option(selected) Выберите
+										option Bridgestone
+										option Yokohama
+										option Белшина
+
+						.wf-row
+							.wf-col.wf-col_small
+								.wf-body__heading
+									.h5 Ширина:
+
+							.wf-col.wf-col_small
+								.wf-body__heading
+									.h5 Высота:
+
+							.wf-col
+
+						.wf-row
+							.wf-col.wf-col_small
+								.wf-body__input
+									select.select_wide
+										option(selected) Выберите
+										option 10
+										option 20
+										option 30
+										option 40
+
+								.wf-body__input.js-rear-discs
+									select.select_wide
+										option(selected) Выберите
+										option 10
+										option 20
+										option 30
+										option 40
+
+							.wf-col.wf-col_small
+								.wf-body__input
+									select.select_wide
+										option(selected) Выберите
+										option 100
+										option 200
+										option 300
+										option 400
+
+								.wf-body__input.js-rear-discs
+									select.select_wide
+										option(selected) Выберите
+										option 100
+										option 200
+										option 300
+										option 400
+
+							.wf-col.wf-col_wheelset.js-rear-discs
+								.wf-wheelset
+
+							.wf-col
+
+							.wf-col.wf-col_small-double
+								.wf-body__input
+									button.btn.btn_primary.btn_wide Подобрать
 
 						.wf-row
 							.wf-col.wf-col_small-double
@@ -289,13 +606,218 @@ mixin wheel-filter()
 										+icon('plus').btn__icon.btn__icon_inline
 										span.pseudolink Разноразмерные диски
 
+								.wf-body__input.js-rear-discs(data-toggle='.js-rear-discs')
+									a.btn.btn_wide
+										+icon('cross').btn__icon.btn__icon_inline
+										span.pseudolink Закрыть
+
+							.wf-col
+
+					.wf-col.wf-col_help-internal
+						.wf-body__image.wf-body__image_disc-et
+
+mixin wheel-filter_inner-tires-collapsed()
+	.wf.js-wf
+		.wf__tabs
+			+wf-tab('car-model', 'Подбор', 'по марке авто', true)
+			+wf-tab('tires', 'Подбор шин', 'по типоразмеру')
+			+wf-tab('discs', 'Подбор дисков', 'по типоразмеру')
+		.wf__body
+			// подбор шин по марке авто
+			.wf-body.wf-body_car-model.js-wf-body.js-wf-body_car-model
+				.wf-row
+					.wf-col
+						.wf-row
+							.wf-col.wf-col_small
+								.wf-body__heading
+									.h5 Марка:
+
+							.wf-col.wf-col_small
+								.wf-body__heading
+									.h5 Модель:
+
+							.wf-col.wf-col_small
+								.wf-body__heading
+									.h5 Год выпуска:
+
+							.wf-col.wf-col_small
+								.wf-body__heading
+									.h5 Модификация:
+
 							.wf-col
 
 						.wf-row
-							.wf-col
-								button.btn.btn_primary.btn_wide Подобрать
+							.wf-col.wf-col_small
+								.wf-body__input
+									select.select_wide
+										option(selected) Выберите
+										option BMW
+										option Mercedes
+										option Nissan
+										option Opel
 
-					.wf-col.wf-col_help
-						.h4
-							span Как узнать размер<br>диска
-							.wf-body__info.btn.btn_info: +icon('info').btn__icon.btn__icon_info
+							.wf-col.wf-col_small
+								.wf-body__input
+									select.select_wide
+										option(selected) Выберите
+										option X3
+										option M5
+										option 330
+										option 550
+
+							.wf-col.wf-col_small
+								.wf-body__input
+									select.select_wide
+										option(selected) Все
+										option 1990
+										option 1991
+										option 1992
+										option 1993
+
+							.wf-col.wf-col_small
+								.wf-body__input
+									select.select_wide
+										option(selected) Все
+										option Q
+										option M
+										option Z
+
+							.wf-col
+								.wf-body__input
+									input.checkbox(type='checkbox' id='ch1')
+									label.checkbox__label(for='ch1') Запомнить автомобиль
+
+							.wf-col.wf-col_small
+								.wf-body__input
+									button.btn.btn_primary.btn_wide Подобрать
+
+			// подбор шин по типоразмеру
+			.wf-body.wf-body_active.js-wf-body.js-wf-body_tires
+				.wf-row
+					.wf-col
+						.wf-body__heading
+							.h5.h_upcase
+								| Выбранный типоразмер: 215/55 R16 
+								a.btn
+									+icon('plus').btn__icon.btn__icon_inline
+									span.pseudolink Изменить
+
+					.wf-col.wf-col_right
+						a.btn
+							+icon('plus').btn__icon.btn__icon_inline
+							span.pseudolink Смотреть подходящие диски
+
+
+			// подбор дисков по типоразмеру
+			.wf-body.js-wf-body.js-wf-body_discs
+				.wf-row
+					.wf-col
+						.wf-row
+							.wf-col.wf-col_small-double
+								.wf-body__heading
+									.h5 Диаметр:
+
+								.wf-body__input
+									select.select_wide
+										option(selected) Выберите
+										option 15
+										option 16
+										option 17
+										option 18
+
+							.wf-col
+								.wf-body__heading
+									.h5 PCD:
+
+								.wf-body__input
+									select.select_small.select_wide
+										option(selected) Выберите
+										option Летняя
+										option Зимняя
+										option Всесезонная
+
+							.wf-col.wf-col_small-double
+								.wf-body__heading
+									.h5 Производитель:
+
+								.wf-body__input
+									select.select_wide
+										option(selected) Выберите
+										option Bridgestone
+										option Yokohama
+										option Белшина
+
+						.wf-row
+							.wf-col.wf-col_small
+								.wf-body__heading
+									.h5 Ширина:
+
+							.wf-col.wf-col_small
+								.wf-body__heading
+									.h5 Высота:
+
+							.wf-col
+
+						.wf-row
+							.wf-col.wf-col_small
+								.wf-body__input
+									select.select_wide
+										option(selected) Выберите
+										option 10
+										option 20
+										option 30
+										option 40
+
+								.wf-body__input.js-rear-discs
+									select.select_wide
+										option(selected) Выберите
+										option 10
+										option 20
+										option 30
+										option 40
+
+							.wf-col.wf-col_small
+								.wf-body__input
+									select.select_wide
+										option(selected) Выберите
+										option 100
+										option 200
+										option 300
+										option 400
+
+								.wf-body__input.js-rear-discs
+									select.select_wide
+										option(selected) Выберите
+										option 100
+										option 200
+										option 300
+										option 400
+
+							.wf-col.wf-col_wheelset.js-rear-discs
+								.wf-wheelset
+
+							.wf-col
+
+							.wf-col.wf-col_small-double
+								.wf-body__input
+									button.btn.btn_primary.btn_wide Подобрать
+
+						.wf-row
+							.wf-col.wf-col_small-double
+								.wf-body__input.js-rear-discs(
+									data-hide-on-init='false'
+									data-toggle='.js-rear-discs'
+								)
+									a.btn.btn_wide
+										+icon('plus').btn__icon.btn__icon_inline
+										span.pseudolink Разноразмерные диски
+
+								.wf-body__input.js-rear-discs(data-toggle='.js-rear-discs')
+									a.btn.btn_wide
+										+icon('cross').btn__icon.btn__icon_inline
+										span.pseudolink Закрыть
+
+							.wf-col
+
+					.wf-col.wf-col_help-internal
+						.wf-body__image.wf-body__image_disc-et

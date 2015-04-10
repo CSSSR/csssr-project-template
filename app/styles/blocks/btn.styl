@@ -7,6 +7,8 @@
 
 	color inherit
 	font-family $heading-fonts
+	font-size 14px
+	font-weight 700
 	text-align center
 	text-decoration none
 	text-transform uppercase
@@ -59,8 +61,9 @@
 		box-shadow inset 0 1px 0 #fff, inset 0 -2px 0 $rushina-gray
 
 	&_primary
-		text-shadow 0 1px 0 rgba(255,255,255,.75)
 		color #000
+		text-shadow 0 1px 0 rgba(255,255,255,.75)
+		text-transform uppercase
 
 		background-color $rushina-yellow
 		background-image $primary-gradient
@@ -80,6 +83,10 @@
 		background-image none
 		box-shadow inset 0 1px 0 #fff, inset 0 -2px 0 $rushina-gray
 
+	&_rear-discs
+		padding-left 16px
+		padding-right 16px
+
 	&_wide
 		width 100%
 
@@ -89,7 +96,7 @@
 		width 1em
 		height 1em
 
-		vertical-align -.1em
+		vertical-align middle
 
 		&_info
 			width 100%
@@ -97,3 +104,6 @@
 
 			fill currentColor
 			filter drop-shadow(0 -1px 0 rgba(0,0,0,.5));
+
+	&__label
+		vertical-align middle

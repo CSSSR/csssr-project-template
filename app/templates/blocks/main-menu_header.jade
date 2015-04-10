@@ -1,15 +1,31 @@
-.main-menu.main-menu_header.js-menu-header
-	.main-menu__wrap.main-menu__wrap_header.grid
-		.main-menu__tab.main-menu__tab_header.main-menu__tab_home-header
-			+icon('icon_home').main-menu__home-icon.main-menu__home-icon_header
-		.main-menu__tab.main-menu__tab_header.main-menu__tab_company О компании
-		.main-menu__tab.main-menu__tab_header.main-menu__tab_tires-header Шины
-			+icon('icon_menu_open').main-menu__arrow.main-menu__arrow_header
-		.main-menu__tab.main-menu__tab_header.main-menu__tab_discs-header Диски
-			+icon('icon_menu_open').main-menu__arrow.main-menu__arrow_header
-		.main-menu__tab.main-menu__tab_header.main-menu__tab_service Сервис
-		.main-menu__tab.main-menu__tab_header.main-menu__tab_delivery-header Доставка и оплата
-		.main-menu__tab.main-menu__tab_header.main-menu__tab_credit Покупка в кредит
-		.main-menu__tab.main-menu__tab_header.main-menu__tab_info Полезная информация
-		.main-menu__tab.main-menu__tab_header.main-menu__tab_stretch Контакты
-
+nav.main-menu.main-menu_header.js-menu-header
+	ul.main-menu__wrap.main-menu__wrap_header.grid
+		li.main-menu__tab.main-menu__tab_header.main-menu__tab_home-header
+			a(href=jv0).main-menu__link
+				+icon('icon_home').main-menu__home-icon.main-menu__home-icon_header
+		li.main-menu__tab.main-menu__tab_header.main-menu__tab_company
+			a(href=jv0).main-menu__link
+				|О компании
+		li.main-menu__tab.main-menu__tab_header.main-menu__tab_tires-header
+			a(href=jv0 data-toggle='nav/tires').main-menu__link
+				|Шины
+				+icon('icon_menu_open').main-menu__arrow.main-menu__arrow_header
+		li.main-menu__tab.main-menu__tab_header.main-menu__tab_discs-header
+			a(href=jv0).main-menu__link
+				|Диски
+				+icon('icon_menu_open').main-menu__arrow.main-menu__arrow_header
+		li.main-menu__tab.main-menu__tab_header.main-menu__tab_service
+			a(href=jv0).main-menu__link
+				|Сервис
+		li.main-menu__tab.main-menu__tab_header.main-menu__tab_delivery-header
+			a(href=jv0).main-menu__link
+				|Доставка и оплата
+		li.main-menu__tab.main-menu__tab_header.main-menu__tab_credit
+			a(href=jv0).main-menu__link
+				|Покупка в кредит
+		li.main-menu__tab.main-menu__tab_header.main-menu__tab_info
+			a(href=jv0).main-menu__link
+				|Полезная информация
+		li.main-menu__tab.main-menu__tab_header.main-menu__tab_stretch
+			a(href=jv0).main-menu__link
+				|Контакты

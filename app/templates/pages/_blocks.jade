@@ -8,6 +8,20 @@ block page_content
 	.demo-blocks
 		#blocks-top-menu(data-collapse='persist')
 			.grid
+				.h3 Фильтр выдачи / диски
+			.demo-block.demo-block_white
+				.grid
+					include ../blocks/aside-filter-disk
+
+		#blocks-top-menu(data-collapse='persist')
+			.grid
+				.h3 Фильтр выдачи / шины
+			.demo-block.demo-block_white
+				.grid
+					include ../blocks/aside-filter
+
+		#blocks-top-menu(data-collapse='persist')
+			.grid
 				.h3 Дефолтный blocks/top-menu
 			.demo-block
 				include ../blocks/top-menu
@@ -72,6 +86,14 @@ block page_content
 			.demo-block
 				include ../blocks/product-compare
 
+		#blocks-menu-cart(data-collapse='persist')
+			.grid
+				.h3 Корзина в меню blocks/menu-cart
+			.demo-block
+				.grid
+					a(href='https://monosnap.com/image/keWIZw9ZGdravFayY3i9AK0uwvoAau#embed') Макет
+					include ../blocks/menu-cart
+
 		#blocks-feedback(data-collapse='persist')
 			.grid
 				.h3 Обратная связь blocks/feedback
@@ -89,9 +111,10 @@ block page_content
 		#blocks-advantages(data-collapse='persist')
 			.grid
 				.h3 Промо-крутилка
-			.demo-block
+			.demo-block.demo-block_dark
 				.grid
-					include ../blocks/advantages
+					.grid-module-4(style='background-color: red')
+						include ../blocks/advantages
 
 		#block-wf(data-collapse='persist')
 			.grid
@@ -99,6 +122,13 @@ block page_content
 			.demo-block.demo-block_dark
 				.grid
 					+wheel-filter()
+
+		#block-wf-inner(data-collapse='persist')
+			.grid
+				.h3 Виджет подбора товара для внутренних страниц
+			.demo-block.demo-block_dark
+				.grid
+					+wheel-filter_inner()
 
 		#blocks-slider-new-products(data-collapse='persist')
 			.grid
@@ -112,7 +142,8 @@ block page_content
 				.h3 Слайдер распродажи
 			.demo-block
 				.grid
-					include ../blocks/sales-slider
+					.grid-module-8
+						include ../blocks/sales-slider
 
 		#blocks-advantages(data-collapse='persist')
 			.grid
@@ -127,24 +158,23 @@ block page_content
 			.demo-block
 				.grid
 					.cols
-						.col.grid-module-6
+						.col.grid-module-2
 							+tire-card({
 								type:'menu',
 								goods:'tire',
-								img:'assets/images/content/tire-card_img.png',
+								img:'assets/images/content/tire-180x200.jpg',
 								title:'Replica<br> BMW FR1156',
-								caption:'7x16 5/114.3 ET38',
+								caption:'215/65 R16C 109/107T XL',
 								price:'3000',
 								avaliable:'true',
 								play:'true',
 								label:'discount'
 							})
-
-						.col.grid-module-6
+						.col.grid-module-2
 							+tire-card({
 								type:'sale',
 								goods:'tire',
-								img:'assets/images/content/tire-card_img.png',
+								img:'assets/images/content/tire-180x200.jpg',
 								title:'Replica<br> BMW FR1156',
 								caption:'7x16 5/114.3 ET38',
 								price:'1700',
@@ -155,14 +185,150 @@ block page_content
 								option_right:'spike',
 								label:'discount'
 							})
-
-						.col.grid-module-6
-							+tire-card({type:'new',
+						.col.grid-module-2
+							+tire-card({
+								type:'new',
 								goods:'tire',
-								img:'assets/images/content/tire-card_img.png',
+								img:'assets/images/content/tire-180x200.jpg',
 								title:'Replica<br> BMW FR1156',
 								price:'3000',
 								play:'true',
+								label:'new'
+							})
+						.col.grid-module-2
+							+tire-card({
+								type:'choose',
+								goods:'tire',
+								img:'assets/images/content/tire-180x200.jpg',
+								title:'Replica<br> H K11H',
+								caption:'7x16 5/114.3 ET38',
+								price:'1700',
+								avaliable:'true',
+								play:'true',
+								rating: '4',
+								voted:'12'
+							})
+					.cols
+						.col
+							+card-horizontal({
+								goods:'tire',
+								img:'assets/images/content/tire-180x200.jpg',
+								title:'Bridgestone Ecopia EP200',
+								caption:'215/55 R16 <a class=\'card-horizontal-contentlink\' href=\'#\'>93W</a>',
+								rating: '4',
+								voted:'12',
+								avaliable:'true',
+								price:'4&#160;200',
+								oldprice:'3400',
+								logo:'assets/images/content/brand-logos/horizont-card-dunlop.png',
+								count:'2',
+								label:'new',
+								option_left:'winter',
+								option_right:'spike',
+							})
+							+card-horizontal({
+								goods:'tire',
+								pair: 'pair',
+								img:'assets/images/content/tire-180x200.jpg',
+								title:'Bridgestone Ecopia EP200',
+								caption:'215/55 R16 <a class=\'card-horizontal-contentlink\' href=\'#\'>93W</a>',
+								rating: '4',
+								voted:'12',
+								avaliable:'true',
+								price:'4&#160;200',
+								oldprice:'3400',
+								logo:'assets/images/content/brand-logos/horizont-card-dunlop.png',
+								count:'2',
+								label:'new',
+								option_left:'winter',
+								option_right:'spike',
+							})
+
+		#blocks-disk-card(data-collapse='persist')
+			.grid
+				.h3 Карточки дисков
+			.demo-block
+				.grid
+					.cols
+						.col.grid-module-2
+							+tire-card({
+								type:'choose',
+								goods:'disk',
+								img:'assets/images/content/disk-180x160.jpg',
+								title:'Replica<br> BMW FR1156',
+								caption:'7x16 5/114.3 ET42',
+								price:'3000',
+								avaliable:'true',
+								play:'true',
+								label:'new'},
+								['black','yellow','white']
+							)
+						.col.grid-module-2
+							+tire-card({
+								type:'choose',
+								goods:'disk',
+								img:'assets/images/content/disk-180x160.jpg',
+								title:'Replica<br> BMW FR1156',
+								caption:'7x16 5/114.3 ET38',
+								price:'3000',
+								avaliable:'true',
+								play:'true'},
+								['purple','red','yellow']
+							)
+						.col.grid-module-2
+							+tire-card({
+								type:'choose',
+								goods:'disk',
+								img:'assets/images/content/disk-180x160.jpg',
+								title:'Replica<br> BMW FR1156',
+								caption:'7x16 5/114.3 ET38',
+								price:'3000',
+								oldprice:'2600',
+								avaliable:'true',
+								play:'true',
+								label:'discount'},
+								['black','green','purple','red','yellow','white']
+							)
+						.col.grid-module-2
+							+tire-card({
+								type:'choose',
+								goods:'disk',
+								img:'assets/images/content/disk-180x160.jpg',
+								title:'Replica<br> BMW FR1156',
+								caption:'7x16 5/114.3 ET38',
+								price:'3000',
+								avaliable:'true',
+								play:'true'
+							})
+					.cols
+						.col.grid-module-12
+							+card-horizontal({
+								goods:'disk',
+								img:'assets/images/content/disk-180x160.jpg',
+								title:'American Racing AR881',
+								titlecaption:'Литой',
+								caption:'7x16 5/112 ET42 DIA 57.1',
+								rating: '4',
+								voted:'12',
+								avaliable:'true',
+								price:'4&#160;200',
+								oldprice:'3400',
+								logo:'assets/images/content/brand-logos/horizont-card-american-racing.png',
+								label:'new'
+							})
+							+card-horizontal({
+								goods:'disk',
+								pair: 'pair',
+								img:'assets/images/content/disk-180x160.jpg',
+								title:'American Racing AR881',
+								titlecaption:'Литой',
+								caption:'7x16 5/112 ET42 DIA 57.1',
+								rating: '4',
+								voted:'12',
+								avaliable:'true',
+								price:'4&#160;200',
+								oldprice:'3400',
+								logo:'assets/images/content/brand-logos/horizont-card-american-racing.png',
 								label:'new'
 							})
 
@@ -211,12 +377,70 @@ block page_content
 					br
 					include ../blocks/filter-steps_last
 
-		#blocks-sales-slider(data-collapse='persist')
+		#blocks-best-brands(data-collapse='persist')
 			.grid
 				.h3 Слайдер «Лучшие торговые марки»
 			.demo-block
 				.grid
 					include ../blocks/best-brands
+
+		#blocks-h-slider(data-collapse='persist')
+			.grid
+				.h3 Горизонтальный слайдер
+			.demo-block
+				.grid
+					+h-slider({
+						show: 6,
+						scroll: 6
+					}, [
+						'Все бренды дисков',
+						'Все бренды шин'
+					])
+						each i in Array(20)
+							.h-slider__slide
+								| slide
+
+		#blocks-h-slider-noclip(data-collapse='persist')
+			.grid
+				.h3 Горизонтальный слайдер c вылетом кнопок
+			.demo-block
+				.grid
+					+h-slider({
+						noclip_buttons: true,
+						show: 6,
+						scroll: 6
+					}, [
+						'Все бренды дисков',
+						'Все бренды шин'
+					])
+						each i in Array(20)
+							.h-slider__slide
+								| slide
+
+		#blocks-h-slider-h2(data-collapse='persist')
+			.grid
+				.h3 Горизонтальный слайдер c вылетом кнопок и заголовком H2
+			.demo-block
+				.grid
+					.h2.h_upcase Заголовок
+					+h-slider({
+						noclip_buttons: true,
+						show: 6,
+						scroll: 6
+					}, [
+						'Все бренды дисков',
+						'Все бренды шин'
+					])
+						each i in Array(20)
+							.h-slider__slide
+								| slide
+
+		#blocks-sort-labels(data-collapse='persist')
+			.grid
+				.h3 Метка для выбора сортировки
+			.demo-block.demo-block_white
+				.grid
+					include ../blocks/sort-labels
 
 		#blocks-menu-fast-selection(data-collapse='persist')
 			.grid
@@ -230,6 +454,21 @@ block page_content
 			.demo-block.demo-block_white
 				.grid
 					include ../blocks/pagination
+
+		#blocks-note-info(data-collapse='persist')
+			.grid
+				.h3 Справочная информация
+			.demo-block
+				.grid
+					.grid-module-2
+						include ../blocks/note-info
+
+		#blocks-big-description(data-collapse='persist')
+			.grid
+				.h3 Карточка шины - Технологии
+			.demo-block
+				.grid
+					include ../blocks/big-description
 
 block scriptsAfter
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse.js')
