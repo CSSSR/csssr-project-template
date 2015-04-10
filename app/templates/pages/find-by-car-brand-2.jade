@@ -1,0 +1,20 @@
+extends ../layouts/default
+
+block head
+	- pageTitle = 'Подбор шин по марке автомобиля';
+
+block content
+	.main__breadcrumbs.grid
+		//- TODO: add breadcrumbs
+
+	.main__title.grid
+		h1.h1.h_upcase Подбор шин по марке автомобиля
+
+	.main__wf-inner.grid
+		+wheel-filter_inner()
+
+	.main__filter-steps.grid
+		include ../blocks/filter-steps_ford
+
+	.main__brand-list.grid
+		include ../blocks/model-list
