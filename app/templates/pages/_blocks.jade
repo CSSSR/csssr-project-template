@@ -72,6 +72,14 @@ block page_content
 			.demo-block
 				include ../blocks/product-compare
 
+		#blocks-menu-cart(data-collapse='persist')
+			.grid
+				.h3 Корзина в меню blocks/menu-cart
+			.demo-block
+				.grid
+					a(href='https://monosnap.com/image/keWIZw9ZGdravFayY3i9AK0uwvoAau#embed') Макет
+					include ../blocks/menu-cart
+
 		#blocks-feedback(data-collapse='persist')
 			.grid
 				.h3 Обратная связь blocks/feedback
@@ -271,6 +279,11 @@ block page_content
 							.h-slider__slide
 								| slide
 
+		#blocks-menu-fast-selection(data-collapse='persist')
+			.grid
+				.h3 Быстрый подбор из меню
+			.demo-block
+					include ../blocks/menu-fast-selection
 
 block scriptsAfter
 	script(src='/assets/scripts/libs/jQuery-Collapse/src/jquery.collapse.js')

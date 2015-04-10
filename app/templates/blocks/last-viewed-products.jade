@@ -1,13 +1,83 @@
 .last-viewed-products
-	.last-viewed-products-slider
-		.last-viewed-products-slider__left-switch.slick-prev
-		.last-viewed-products-slider__right-switch.slick-next
-		.last-viewed-products-slider__container.slick-slide
-			.last-viewed-products-slider__item
-			.last-viewed-products-slider__item
-			.last-viewed-products-slider__item
-			.last-viewed-products-slider__item
-			.last-viewed-products-slider__item
-			.last-viewed-products-slider__item
-			.last-viewed-products-slider__item
-			.last-viewed-products-slider__item
+	.last-viewed-products-slider.js-slick(
+			data-show = 5
+			data-scroll = 5
+		)
+		.last-viewed-products-slider__left-switch.js-slick__prev
+		.last-viewed-products-slider__right-switch.js-slick__next
+		.last-viewed-products-slider__container.js-slick__container
+
+			div
+				.last-viewed-products-slider__item
+					+tire-card({
+						type:'menu',
+						goods:'tire',
+						img:'assets/images/content/tire-card_img.png',
+						title:'Replica<br> BMW FR1156',
+						caption:'7x16 5/114.3 ET38',
+						price:'3000',
+						avaliable:'true',
+						play:'true'
+					})
+			div
+				.last-viewed-products-slider__item
+					+tire-card({
+						type:'menu',
+						goods:'tire',
+						img:'assets/images/content/tire-card_img.png',
+						title:'Dunlop<br> SP Sport BluResource',
+						caption:'7x16 5/114.3 ET38',
+						price:'2500',
+						avaliable:'true',
+						play:'true'
+					})
+			div
+				.last-viewed-products-slider__item
+					+tire-card({
+						type:'menu',
+						goods:'tire',
+						img:'assets/images/content/tire-card_img.png',
+						title:'Replica<br> H Ki11H',
+						caption:'7x16 5/114.3 ET38',
+						price:'1700',
+						avaliable:'true',
+						play:'true',
+						label:'discount'
+					})
+			div
+				.last-viewed-products-slider__item
+					+tire-card({
+						type:'menu',
+						goods:'tire',
+						img:'assets/images/content/tire-card_img.png',
+						title:'Replica<br> BMW FR1156',
+						caption:'7x16 5/114.3 ET38',
+						price:'3000',
+						avaliable:'true',
+						play:'true'
+					})
+			div
+				.last-viewed-products-slider__item
+					+tire-card({
+						type:'menu',
+						goods:'tire',
+						img:'assets/images/content/tire-card_img.png',
+						title:'Replica<br> BMW FR1156',
+						caption:'7x16 5/114.3 ET38',
+						price:'3000',
+						avaliable:'true',
+						play:'true'
+					})
+			div
+				.last-viewed-products-slider__item
+					+tire-card({
+						type:'menu',
+						goods:'tire',
+						img:'assets/images/content/tire-card_img.png',
+						title:'Replica<br> BMW FR1156',
+						caption:'7x16 5/114.3 ET38',
+						price:'3000',
+						avaliable:'true',
+						play:'true'
+					})
+
