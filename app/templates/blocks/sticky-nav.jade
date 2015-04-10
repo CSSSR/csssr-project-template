@@ -1,0 +1,17 @@
+.sticky-nav.js-sticky-nav
+	.sticky-nav__menu-wrapper
+		.sticky-nav__full-menu
+			include top-menu
+		.sticky-nav__short-menu
+			include top-menu-fix
+	.sticky-nav__submenu.js-menu(data-menu='nav')
+		include main-menu_header
+		include menu-fast-selection
+	.sticky-nav__submenu.js-menu(data-menu='garage')
+		include your-cars
+	.sticky-nav__submenu.js-menu(data-menu='comparsion')
+		include product-compare
+	.sticky-nav__submenu.js-menu(data-menu='history')
+		include last-viewed-products
+	.sticky-nav__submenu.js-menu(data-menu='cart')
+		include menu-cart

@@ -1,0 +1,92 @@
+.sticky-nav
+	position fixed
+	top 0
+	left 0
+	right 0
+	z-index 100
+
+	& [data-menu]
+		display none
+
+	&__menu-wrapper
+		position relative
+		z-index 1
+		backface-visibility visible
+		transform-style preserve-3d
+		transform-origin 50% 50% 0
+		transition transform .5s
+
+	&__full-menu
+		position relative
+
+		backface-visibility visible
+		transform-style preserve-3d
+		transform-origin center 0 0
+		transform rotateX(0) translateZ(1px)
+		transition transform .35s
+
+		&:after
+			content ''
+
+			position absolute
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index -5
+
+			background-color rgb(200,200,200)
+			opacity 0
+
+			transform translateZ(0)
+			transition opacity .2s, transform 0 .35s
+
+	&_fixed &__full-menu
+		z-index -5
+
+		transform rotateX(90deg)
+
+		&:after
+			z-index 5
+
+			opacity 1
+
+			transform translateZ(1px)
+			transition opacity .2s .15s, z-index 0 .35s
+
+	&__short-menu
+		position relative
+
+		margin-top -50px
+		margin-bottom -20px
+
+		backface-visibility visible
+		transform-style preserve-3d
+		transform-origin 50% 0 -50px
+		transform rotateX(-90deg)
+		transition transform .35s
+
+		&:after
+			content ''
+
+			position absolute
+			top 0
+			bottom 0
+			left 0
+			right 0
+			z-index 5
+
+			background-color rgb(32,32,32)
+
+			transition opacity .35s
+
+	&_fixed &__short-menu
+		margin-bottom 0
+		transform rotateX(0) translateZ(1px)
+
+		&:after
+			z-index -5
+
+			opacity 0
+
+			transition opacity .35s, z-index 0 .35s
