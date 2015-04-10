@@ -1,7 +1,5 @@
 .checkbox
-	position absolute
-	visibility hidden
-	cursor pointer
+	display none
 
 	& + label
 		font-family $heading-fonts
@@ -11,15 +9,13 @@
 
 	& + label:before
 		display inline-block
-		position relative
-		height 23px
-		width 23px
-		top 7px
+		height 18px
+		width 18px
 		margin-right 0.32em
 
 		background-image url('../images/checkbox.png')
-		background-size 46px 115px
-		vertical-align baseline
+		background-size 36px 72px
+		vertical-align -4px
 
 		content ''
 
@@ -29,16 +25,16 @@
 
 	&:not(:disabled)
 		&:hover + label:before
-			background-position 0 -23px
+			background-position 0 -18px
 
 		&:checked + label:before
-			background-position -23px 0
+			background-position -18px 0
 
 		&:checked:hover + label:before
-			background-position -23px -23px
+			background-position -18px -18px
 
 		&:checked:active + label:before
-			background-position -23px -46px
+			background-position -18px -36px
 
 
 	&:disabled
@@ -49,7 +45,7 @@
 			color #757575
 
 		& + label:before
-			background-position 0 -69px
+			background-position 0 -54px
 
 		&:checked + label:before
-			background-position -23px -69px
+			background-position -18px -54px
