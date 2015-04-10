@@ -9,55 +9,19 @@
 		margin-right 10px
 
 	&__block
-		border-top 3px solid #ebebeb
-		padding-left 18px
-		padding-top 10px
+		padding 22px 17px 30px
 
-		&:first-child
-			padding-top 0
-			border-top none
+		&:not(:first-child)
+			border-top 3px solid #ebebeb
 
-		&_width
-			font-size 0
-
-	&__checkbox-item
-		&_width
-			width 50%
-			font-size 14px
-			display inline-block
+	&__item
+		padding-bottom 7px
 
 		&_hide
 			display none
 
 	&__title
-		font-family $heading-fonts
-		font-weight bold
-		color #000
-		font-size 14px
-		text-transform uppercase
-		padding-top 22px
 		padding-bottom 15px
-
-	&__show
-		color #0f7cf0
-		text-decoration none
-		border-bottom 1px dotted #0f7cf0
-		position relative
-		display inline-block
-		margin-bottom 13px
-		margin-top 6px
-		font-size 14px
-
-		&:after
-			position absolute
-			content ''
-			top 9px
-			right -16px
-			sprite $arrow-down
-
-		&_hide:after
-			transform rotate(180deg)
-			top 8px
 
 	&__checkbox
 		& + label
@@ -87,54 +51,6 @@
 			& + label:before
 				background-position 0 36px
 
-	&__color
-		display inline-block
-		width 25%
-
-		&-input
-			cursor pointer
-			position absolute
-			visibility hidden
-			&:checked + label:before
-				display block
-		&-label
-			width 26px
-			height 26px
-			margin-bottom 13px
-			display block
-			position relative
-			cursor pointer
-			&:before
-				position absolute
-				content ''
-				top -4px
-				bottom -4px
-				left -4px
-				right -4px
-				border 2px solid #000
-				display none
-
-			&.black
-				background-color #000000
-			&.green
-				background-color #32a232
-			&.purpure
-				background-color #9a3d96
-			&.fiolet
-				background-color #673266
-			&.red
-				background-color #e50607
-			&.yellow
-				background-color #fdd42e
-			&.grey
-				background-color #e2e2e2
-			&.white
-				background-color #ffffff
-
-		&-wrap
-			margin-top 10px
-			font-size 0
-
 	&__dash
 		width 20px
 		height 40px
@@ -146,3 +62,16 @@
 	&__select
 		width 60px
 		overflow hidden
+
+.aside-filter-row
+	display table
+	width 100%
+
+	table-layout fixed
+
+	&__col
+		display table-cell
+
+		&_dash
+			width 17px
+			text-align center

@@ -95,62 +95,47 @@ $(function () {
 		});
 	})();
 
-	// aside bar
+	// collapsable
 	(function () {
-		var root = '.js-filter-checkbox',
-			initialFilterCheckbox = function (filter) {
-				var $toggler = filter.toggler,
-					hideItems = function (i, elem) {
-						var $elem = $(elem),
-							hideMod = $elem.attr('class').split(' ')[0] + '_hide';
+		var hook = '.js-collapsable',
+			$tpl = $('<span/>', {
+				class: 'toggler'
+			});
 
-						if (i >= filter.itemToShow) {
-							$elem.toggleClass(hideMod);
-						}
-					}
+		$(hook).each(function (i, el) {
+			var $el = $(el),
+				$items = $el.children(),
+				$toggler = $tpl.clone(),
+				opt = {},
+				$hideable;
 
-				$toggler.attr('href', 'javascript:void(0);');
+			opt.show = $el.data('show') || 5;
+			opt.limit = $el.data('limit') || opt.show * 2;
+			opt.labels = $el.data('labels') || {
+				show: 'Показать все',
+				hide: 'Скрыть'
+			};
 
-				if (filter.currentStatus === 'hide') {
-					$toggler.toggleClass(filter.hideMod);
-					$toggler.text(filter.closedlabel);
-				} else {
-					$toggler.text(filter.openlabel);
-					filter.items.each(hideItems);
-				}
-
-				filter.toggler.on('click', function () {
-					var $toggler = $(this);
-
-					$toggler.toggleClass(filter.hideMod);
-					filter.items.each(hideItems);
-
-					if (filter.currentStatus === 'show') {
-						filter.currentStatus = 'hide';
-						$toggler.text(filter.closedlabel);
-					} else {
-						filter.currentStatus = 'show';
-						$toggler.text(filter.openlabel);
-					}
-				});
+			if ($items.length < opt.limit) {
+				return;
 			}
 
-		$(root).each(function (i, elem) {
-			var container = {},
-				$elem = $(elem),
-				$container = $(root + '-container', $elem),
-				$toggler = $(root + '-open', $elem);
+			$hideable = $items.slice(opt.show);
+			$hideable.hide();
 
-			console.log();
-			container.itemToShow = $toggler.data('toShow') || 10;
-			container.toggler = $toggler;
-			container.items = $container.children();
-			container.currentStatus = $toggler.data('status') || 'hide';
-			container.openlabel = $toggler.data('show') || 'Показать';
-			container.closedlabel = $toggler.data('hide') || 'Скрыть';
-			container.hideMod = $toggler.attr('class').split(' ')[0] + '_hide' || '_hide';
+			$toggler
+				.on('click', function () {
+					var visible;
 
-			initialFilterCheckbox(container);
+					$hideable.toggle();
+
+					visible = $hideable.is(':visible');
+
+					$toggler.toggleClass('toggler_hide', visible);
+					$toggler.text(visible ? opt.labels.hide : opt.labels.show);
+				})
+				.text(opt.labels.show)
+				.appendTo($el);
 		});
 	})();
 });

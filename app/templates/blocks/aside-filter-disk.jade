@@ -1,147 +1,248 @@
 .aside-filter
 	.aside-filter__block
-		.aside-filter__title Вылет (ET)
-		.select2.aside-filter__select
-			select
-				option(value='10') 10
-				option(value='20') 20
-				option(value='30') 30
-				option(value='40') 40
-		.aside-filter__dash -
-		.select2.aside-filter__select
-			select
-				option(value='10') 10
-				option(value='20') 20
-				option(value='30') 30
-				option(value='40') 40
+		.aside-filter__title
+			.h5.h_upcase Вылет (ET)
+
+		.aside-filter-row
+			.aside-filter-row__col
+				select
+					option(value='10') 10
+					option(value='20') 20
+					option(value='30') 30
+					option(value='40') 40
+
+			.aside-filter-row__col.aside-filter-row__col_dash -
+
+			.aside-filter-row__col
+				select
+					option(value='10') 10
+					option(value='20') 20
+					option(value='30') 30
+					option(value='40') 40
 
 	.aside-filter__block.aside-filter__block_width.js-filter-checkbox
-		.aside-filter__title Ширина диска
-		.js-filter-checkbox-container
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 0(1)
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 4(7)
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 4(7)
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 4(7)
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 0(1)
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 4(7)
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 4(7)
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 4(7)
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 4(7)
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 4(7)
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 4(7)
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 4(7)
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 4(7)
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 4(7)
-			.aside-filter__checkbox-item.aside-filter__checkbox-item_width
-				+checkbox()(class="aside-filter__checkbox") 4(7)
+		.aside-filter__title
+			.h5.h_upcase Ширина диска
 
-		a.aside-filter__show.js-filter-checkbox-open(data-to-show=5 data-status="show" data-show="Показать всех" data-hide="Скрыть")
+		.js-collapsable
+			.aside-filter__item
+				.aside-filter-row
+					.aside-filter-row__col
+						+checkbox() 0(1)
+					.aside-filter-row__col
+						+checkbox() 4(7)
+
+			.aside-filter__item
+				.aside-filter-row
+					.aside-filter-row__col
+						+checkbox() 4(7)
+					.aside-filter-row__col
+						+checkbox() 4(7)
+
+			.aside-filter__item
+				.aside-filter-row
+					.aside-filter-row__col
+						+checkbox() 0(1)
+					.aside-filter-row__col
+						+checkbox() 4(7)
+
+			.aside-filter__item
+				.aside-filter-row
+					.aside-filter-row__col
+						+checkbox() 4(7)
+					.aside-filter-row__col
+						+checkbox() 4(7)
+
+			.aside-filter__item
+				.aside-filter-row
+					.aside-filter-row__col
+						+checkbox() 4(7)
+					.aside-filter-row__col
+						+checkbox() 4(7)
+
+			.aside-filter__item
+				.aside-filter-row
+					.aside-filter-row__col
+						+checkbox() 4(7)
+					.aside-filter-row__col
+						+checkbox() 4(7)
+
+			.aside-filter__item
+				.aside-filter-row
+					.aside-filter-row__col
+						+checkbox() 4(7)
+					.aside-filter-row__col
+						+checkbox() 4(7)
+
+			.aside-filter__item
+				.aside-filter-row
+					.aside-filter-row__col
+						+checkbox() 4(7)
+					.aside-filter-row__col
+						+checkbox() 4(7)
+
+			.aside-filter__item
+				.aside-filter-row
+					.aside-filter-row__col
+						+checkbox() 4(7)
+					.aside-filter-row__col
+						+checkbox() 4(7)
+
+			.aside-filter__item
+				.aside-filter-row
+					.aside-filter-row__col
+						+checkbox() 4(7)
+					.aside-filter-row__col
+						+checkbox() 4(7)
+
+			.aside-filter__item
+				.aside-filter-row
+					.aside-filter-row__col
+						+checkbox() 4(7)
 
 	.aside-filter__block.js-filter-checkbox
-		.aside-filter__title Производители
-		.js-filter-checkbox-container
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Continental (1)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Matador (10)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Michelin (10)
-			.aside-filter__checkbox-item
-				+checkbox()(disabled class="aside-filter__checkbox") Hankook
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Kumho (2)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Kumho (2)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Kumho (2)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Kumho (2)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Kumho (2)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Kumho (2)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		.aside-filter__title
+			.h5.h_upcase Производители
 
-		a.aside-filter__show.js-filter-checkbox-open(data-to-show=2 data-status="show" data-show="Показать всех" data-hide="Скрыть")
+		.js-collapsable
+			.aside-filter__item
+				+checkbox() Continental (1)
+
+			.aside-filter__item
+				+checkbox() Matador (10)
+
+			.aside-filter__item
+				+checkbox() Michelin (10)
+
+			.aside-filter__item
+				+checkbox()(disabled) Hankook
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
 
 	.aside-filter__block.js-filter-checkbox
-		.aside-filter__title Ruplica
+		.aside-filter__title
+			.h5.h_upcase Replica
 
-		.js-filter-checkbox-container
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Continental (1)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Matador (10)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Michelin (10)
-			.aside-filter__checkbox-item
-				+checkbox()(disabled class="aside-filter__checkbox") Hankook
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Kumho (2)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Kumho (2)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Kumho (2)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Kumho (2)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Kumho (2)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Kumho (2)
-			.aside-filter__checkbox-item
-				+checkbox()(class="aside-filter__checkbox") Kumho (2)
+		.js-collapsable
+			.aside-filter__item
+				+checkbox() Continental (1)
 
-		a.aside-filter__show.js-filter-checkbox-open(data-to-show=5 data-show="Показать всех")
+			.aside-filter__item
+				+checkbox() Matador (10)
+
+			.aside-filter__item
+				+checkbox() Michelin (10)
+
+			.aside-filter__item
+				+checkbox()(disabled) Hankook
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
+
+			.aside-filter__item
+				+checkbox() Kumho (2)
 
 	.aside-filter__block
-		.aside-filter__title Тип диска
-		.aside-filter__checkbox-item
-			+checkbox()(class="aside-filter__checkbox") Continental (1)
-		.aside-filter__checkbox-item
-			+checkbox()(class="aside-filter__checkbox") Matador (10)
-		.aside-filter__checkbox-item
-			+checkbox()(class="aside-filter__checkbox") Michelin (10)
+		.aside-filter__title
+			.h5.h_upcase Тип диска
+
+		.aside-filter__item
+			+checkbox() Continental (1)
+
+		.aside-filter__item
+			+checkbox() Matador (10)
+
+		.aside-filter__item
+			+checkbox() Michelin (10)
 
 	.aside-filter__block
-		.aside-filter__title Цвета
-		.aside-filter__color-wrap
-			.aside-filter__color
-				input.aside-filter__color-input#asideFilterBlack(type='checkbox')
-				label.aside-filter__color-label.black(for="asideFilterBlack")
-			.aside-filter__color
-				input.aside-filter__color-input#asideFilterGreen(type='checkbox')
-				label.aside-filter__color-label.green(for="asideFilterGreen")
-			.aside-filter__color
-				input.aside-filter__color-input#asideFilterPurpure(type='checkbox')
-				label.aside-filter__color-label.purpure(for="asideFilterPurpure")
-			.aside-filter__color
-				input.aside-filter__color-input#asideFilterFiolet(type='checkbox')
-				label.aside-filter__color-label.fiolet(for="asideFilterFiolet")
-			.aside-filter__color
-				input.aside-filter__color-input#asideFilterRed(type='checkbox')
-				label.aside-filter__color-label.red(for="asideFilterRed")
-			.aside-filter__color
-				input.aside-filter__color-input#asideFilterYellow(type='checkbox')
-				label.aside-filter__color-label.yellow(for="asideFilterYellow")
-			.aside-filter__color
-				input.aside-filter__color-input#asideFilterGrey(type='checkbox')
-				label.aside-filter__color-label.grey(for="asideFilterGrey")
-			.aside-filter__color
-				input.aside-filter__color-input#asideFilterWhite(type='checkbox')
-				label.aside-filter__color-label.white(for="asideFilterWhite")
+		.aside-filter__title
+			.h5.h_upcase Цвета
+
+		.aside-filter__colors
+			//- TODO: extract to mixin
+			.aside-filter-row
+				.aside-filter-row__col
+					.color-checkbox
+						input.color-checkbox__input#asideFilterBlack(type='checkbox')
+						label.color-checkbox__label.black(for="asideFilterBlack")
+
+				.aside-filter-row__col
+					.color-checkbox
+						input.color-checkbox__input#asideFilterGreen(type='checkbox')
+						label.color-checkbox__label.green(for="asideFilterGreen")
+
+				.aside-filter-row__col
+					.color-checkbox
+						input.color-checkbox__input#asideFilterPurpure(type='checkbox')
+						label.color-checkbox__label.purpure(for="asideFilterPurpure")
+
+				.aside-filter-row__col
+					.color-checkbox
+						input.color-checkbox__input#asideFilterFiolet(type='checkbox')
+						label.color-checkbox__label.fiolet(for="asideFilterFiolet")
+
+			.aside-filter-row
+				.aside-filter-row__col
+					.color-checkbox
+						input.color-checkbox__input#asideFilterRed(type='checkbox')
+						label.color-checkbox__label.red(for="asideFilterRed")
+
+				.aside-filter-row__col
+					.color-checkbox
+						input.color-checkbox__input#asideFilterYellow(type='checkbox')
+						label.color-checkbox__label.yellow(for="asideFilterYellow")
+
+				.aside-filter-row__col
+					.color-checkbox
+						input.color-checkbox__input#asideFilterGrey(type='checkbox')
+						label.color-checkbox__label.grey(for="asideFilterGrey")
+
+				.aside-filter-row__col
+					.color-checkbox
+						input.color-checkbox__input#asideFilterWhite(type='checkbox')
+						label.color-checkbox__label.white(for="asideFilterWhite")
 
