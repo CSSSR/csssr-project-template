@@ -8,6 +8,20 @@ block page_content
 	.demo-blocks
 		#blocks-top-menu(data-collapse='persist')
 			.grid
+				.h3 Фильтр выдачи / диски
+			.demo-block.demo-block_white
+				.grid
+					include ../blocks/aside-filter-disk
+
+		#blocks-top-menu(data-collapse='persist')
+			.grid
+				.h3 Фильтр выдачи / шины
+			.demo-block.demo-block_white
+				.grid
+					include ../blocks/aside-filter
+
+		#blocks-top-menu(data-collapse='persist')
+			.grid
 				.h3 Дефолтный blocks/top-menu
 			.demo-block
 				include ../blocks/top-menu

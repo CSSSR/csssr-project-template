@@ -17,6 +17,7 @@ gulp.task 'scripts', ->
 			'app/scripts/views/wheel-filter.js'
 			'app/scripts/views/slick.js'
 			'app/scripts/views/rating.js'
+			'app/scripts/views/collapsable.js'
 		]
 		.pipe plumber errorHandler: errorHandler
 		.pipe concat 'common.min.js'

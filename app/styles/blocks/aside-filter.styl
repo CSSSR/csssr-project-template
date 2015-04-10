@@ -1,0 +1,77 @@
+.aside-filter
+	position relative
+	width 180px
+	border 3px solid #ebebeb
+	padding-bottom 14px
+
+	&__info
+		display inline-block
+		margin-right 10px
+
+	&__block
+		padding 22px 17px 30px
+
+		&:not(:first-child)
+			border-top 3px solid #ebebeb
+
+	&__item
+		padding-bottom 7px
+
+		&_hide
+			display none
+
+	&__title
+		padding-bottom 15px
+
+	&__checkbox
+		& + label
+			line-height 30px
+
+		& + label:before
+			height 18px
+			width 18px
+			background-size 36px 72px
+			top 5px
+			margin-right 0.62em
+
+		&:not(:disabled)
+			&:hover + label:before
+				background-position 0 -18px
+
+			&:checked + label:before
+				background-position -18px 0
+
+			&:checked:hover + label:before
+				background-position -18px -18px
+
+			&:checked:active + label:before
+				background-position -18px -36px
+
+		&:disabled
+			& + label:before
+				background-position 0 36px
+
+	&__dash
+		width 20px
+		height 40px
+		line-height 40px
+		text-align center
+		display inline-block
+		vertical-align top
+
+	&__select
+		width 60px
+		overflow hidden
+
+.aside-filter-row
+	display table
+	width 100%
+
+	table-layout fixed
+
+	&__col
+		display table-cell
+
+		&_dash
+			width 17px
+			text-align center
