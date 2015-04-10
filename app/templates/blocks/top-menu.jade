@@ -1,18 +1,19 @@
+
 nav.top-menu.top-menu_default.js-top-menu-default
 	ul.top-menu__wraper.grid
-		li.top-menu__tab.top-menu__tab_type_car
+		li.top-menu__tab.top-menu__tab_type_car(data-toggle = 'garage')
 			a(href=jv0).top-menu__link
 				span.top-menu__icon-wrap
 					+icon('menu_01_car').top-menu__icon
 				span.top-menu__label Ваш автомобиль
 
-		li.top-menu__tab.top-menu__tab_type_compare
+		li.top-menu__tab.top-menu__tab_type_compare(data-toggle = 'comparsion')
 			a(href=jv0).top-menu__link
 				span.top-menu__icon-wrap
 					+icon('menu_01_compare').top-menu__icon
 				span.top-menu__label Сравнение
 
-		li.top-menu__tab.top-menu__tab_type_seen
+		li.top-menu__tab.top-menu__tab_type_seen(data-toggle = 'history')
 			a(href=jv0).top-menu__link
 				span.top-menu__icon-wrap
 					+icon('menu_01_seen').top-menu__icon
@@ -33,7 +34,7 @@ nav.top-menu.top-menu_default.js-top-menu-default
 					+icon('menu_01_login').top-menu__icon
 				span.top-menu__label Личный кабинет
 
-		li.top-menu__tab.top-menu__tab_type_cart
+		li.top-menu__tab.top-menu__tab_type_cart(data-toggle = 'cart')
 			a(href=jv0).top-menu__link
 				span.top-menu__icon-wrap
 					+icon('menu_01_cart').top-menu__icon

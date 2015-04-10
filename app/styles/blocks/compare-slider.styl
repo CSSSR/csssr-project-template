@@ -1,51 +1,37 @@
 .compare-slider
 	position relative
-
 	padding-left 81px
 	padding-right 25px
-
-	clearfix()
 
 	&__left-switch
 		position absolute
 		left -20px
 		top 50%
-
 		margin-top -5px
 		sprite($slider-switch-l)
-
 		cursor pointer
-
+		user-select none
 
 	&__right-switch
 		position absolute
 		right -20px
 		top 50%
-
 		margin-top -5px
 		sprite($slider-switch-r)
-
 		cursor pointer
+		user-select none
 
 	&__container
 		width 1000px
+		margin-left -10px
 
 	&__item
 		position relative
-
-		float left
-
 		width 180px
 		height 330px
-
 		margin-top 40px
-		margin-right 20px
-
-
-		background-color white
-
-		&:last-child
-			margin-right 0
+		margin-right 10px
+		margin-left 10px
 
 		&_add
 			border 3px solid #696969
@@ -60,8 +46,6 @@
 		display block
 		sprite($close-icon-compare)
 		cursor pointer
-
-
 
 	&__add-label
 		position relative

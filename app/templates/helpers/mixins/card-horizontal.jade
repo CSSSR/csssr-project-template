@@ -4,12 +4,12 @@ mixin card-horizontal(data)
 			- var imgclass='card-horizontal-img_pair'
 
 	.card-horizontal(class='card-horizontal_'+data.goods)
-		.card-horizontal__imgbox.grid-module-6(class='card-horizontal__imgbox_'+data.pair)
+		.card-horizontal__imgbox.grid-module-2(class='card-horizontal__imgbox_'+data.pair)
 			img.card-horizontal-img(src=data.img class='card-horizontal-img_'+data.goods class=imgclass)
 			.card-horizontal__play
 				+icon('icon_play').card-horizontal__play-icon
 				a.card-horizontal__play-link.card-horizontal-contentlink(href=jv0) Смотреть видео
-		.card-horizontal__content.grid-module-2
+		.card-horizontal__content.grid-module-6
 			.card-horizontal-wrapper
 				.h4.card-horizontal-title!=data.title
 				.card-horizontal-titlecaption!=data.titlecaption
@@ -49,7 +49,7 @@ mixin card-horizontal(data)
 						.card-horizontal__countbox
 							.card-horizontal-count 2
 
-		.card-horizontal__buy.grid-module-6
+		.card-horizontal__buy.grid-module-2
 			a.card-horizontal-btn.btn.btn_primary(href ='javascript:void(0)')='КУПИТЬ (4 шт.)'
 			a.card-horizontal-link(href=jv0) Купить в кредит
 

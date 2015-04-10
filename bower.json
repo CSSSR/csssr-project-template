@@ -12,6 +12,7 @@
   "dependencies": {
     "select2": "3.5.x",
     "slick": "kenwheeler/slick#1.x",
-    "FlipClock": "~0.7.7"
+    "FlipClock": "~0.7.7",
+    "simplyScroll": "logicbox/jquery-simplyscroll#^2.0"
   }
 }

@@ -3,7 +3,7 @@ mixin tire-card(data, items)
 	if data.goods=='disk'
 		- var typemod=typemod+'_'+data.goods
 
-	.card-vertical.grid-module-6(class='card-vertical_'+typemod)
+	.card-vertical.grid-module-2(class='card-vertical_'+typemod)
 		.card-vertical__imgbox(class='card-vertical__imgbox_' + data.goods)
 			img.card-vertical-img(src=data.img)
 			if data.play
@@ -49,7 +49,7 @@ mixin tire-card(data, items)
 					.card-vertical__label_new-caption Новинка
 
 		if data.type=='choose'
-			.card-vertical__extra.grid-module-6
+			.card-vertical__extra.grid-module-2
 				a.card-vertical-btn.btn.btn_primary(href ='javascript:void(0)') Купить
 				a.card-vertical-link(href=jv0) Купить в кредит
 				.card-vertical__rating

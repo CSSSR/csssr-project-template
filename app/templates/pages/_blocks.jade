@@ -86,6 +86,14 @@ block page_content
 			.demo-block
 				include ../blocks/product-compare
 
+		#blocks-menu-cart(data-collapse='persist')
+			.grid
+				.h3 Корзина в меню blocks/menu-cart
+			.demo-block
+				.grid
+					a(href='https://monosnap.com/image/keWIZw9ZGdravFayY3i9AK0uwvoAau#embed') Макет
+					include ../blocks/menu-cart
+
 		#blocks-feedback(data-collapse='persist')
 			.grid
 				.h3 Обратная связь blocks/feedback
@@ -103,9 +111,10 @@ block page_content
 		#blocks-advantages(data-collapse='persist')
 			.grid
 				.h3 Промо-крутилка
-			.demo-block
+			.demo-block.demo-block_dark
 				.grid
-					include ../blocks/advantages
+					.grid-module-4(style='background-color: red')
+						include ../blocks/advantages
 
 		#block-wf(data-collapse='persist')
 			.grid
@@ -126,7 +135,8 @@ block page_content
 				.h3 Слайдер распродажи
 			.demo-block
 				.grid
-					include ../blocks/sales-slider
+					.grid-module-8
+						include ../blocks/sales-slider
 
 		#blocks-advantages(data-collapse='persist')
 			.grid
@@ -141,7 +151,7 @@ block page_content
 			.demo-block
 				.grid
 					.cols
-						.col.grid-module-6
+						.col.grid-module-2
 							+tire-card({
 								type:'menu',
 								goods:'tire',
@@ -153,7 +163,7 @@ block page_content
 								play:'true',
 								label:'discount'
 							})
-						.col.grid-module-6
+						.col.grid-module-2
 							+tire-card({
 								type:'sale',
 								goods:'tire',
@@ -168,7 +178,7 @@ block page_content
 								option_right:'spike',
 								label:'discount'
 							})
-						.col.grid-module-6
+						.col.grid-module-2
 							+tire-card({
 								type:'new',
 								goods:'tire',
@@ -178,7 +188,7 @@ block page_content
 								play:'true',
 								label:'new'
 							})
-						.col.grid-module-6
+						.col.grid-module-2
 							+tire-card({
 								type:'choose',
 								goods:'tire',
@@ -233,7 +243,7 @@ block page_content
 			.demo-block
 				.grid
 					.cols
-						.col.grid-module-6
+						.col.grid-module-2
 							+tire-card({
 								type:'choose',
 								goods:'disk',
@@ -246,7 +256,7 @@ block page_content
 								label:'new'},
 								['black','yellow','white']
 							)
-						.col.grid-module-6
+						.col.grid-module-2
 							+tire-card({
 								type:'choose',
 								goods:'disk',
@@ -258,7 +268,7 @@ block page_content
 								play:'true'},
 								['purple','red','yellow']
 							)
-						.col.grid-module-6
+						.col.grid-module-2
 							+tire-card({
 								type:'choose',
 								goods:'disk',
@@ -272,7 +282,7 @@ block page_content
 								label:'discount'},
 								['black','green','purple','red','yellow','white']
 							)
-						.col.grid-module-6
+						.col.grid-module-2
 							+tire-card({
 								type:'choose',
 								goods:'disk',
@@ -284,7 +294,7 @@ block page_content
 								play:'true'
 							})
 					.cols
-						.col.grid-module-1
+						.col.grid-module-12
 							+card-horizontal({
 								goods:'disk',
 								img:'assets/images/content/disk-180x160.jpg',
@@ -360,12 +370,63 @@ block page_content
 					br
 					include ../blocks/filter-steps_last
 
-		#blocks-sales-slider(data-collapse='persist')
+		#blocks-best-brands(data-collapse='persist')
 			.grid
 				.h3 Слайдер «Лучшие торговые марки»
 			.demo-block
 				.grid
 					include ../blocks/best-brands
+
+		#blocks-h-slider(data-collapse='persist')
+			.grid
+				.h3 Горизонтальный слайдер
+			.demo-block
+				.grid
+					+h-slider({
+						show: 6,
+						scroll: 6
+					}, [
+						'Все бренды дисков',
+						'Все бренды шин'
+					])
+						each i in Array(20)
+							.h-slider__slide
+								| slide
+
+		#blocks-h-slider-noclip(data-collapse='persist')
+			.grid
+				.h3 Горизонтальный слайдер c вылетом кнопок
+			.demo-block
+				.grid
+					+h-slider({
+						noclip_buttons: true,
+						show: 6,
+						scroll: 6
+					}, [
+						'Все бренды дисков',
+						'Все бренды шин'
+					])
+						each i in Array(20)
+							.h-slider__slide
+								| slide
+
+		#blocks-h-slider-h2(data-collapse='persist')
+			.grid
+				.h3 Горизонтальный слайдер c вылетом кнопок и заголовком H2
+			.demo-block
+				.grid
+					.h2.h_upcase Заголовок
+					+h-slider({
+						noclip_buttons: true,
+						show: 6,
+						scroll: 6
+					}, [
+						'Все бренды дисков',
+						'Все бренды шин'
+					])
+						each i in Array(20)
+							.h-slider__slide
+								| slide
 
 		#blocks-sort-labels(data-collapse='persist')
 			.grid
@@ -385,7 +446,7 @@ block page_content
 				.h3 Справочная информация
 			.demo-block
 				.grid
-					.grid-module-6
+					.grid-module-2
 						include ../blocks/note-info
 
 		#blocks-big-description(data-collapse='persist')

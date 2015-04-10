@@ -2,25 +2,34 @@ $(function () {
 
 	'use strict';
 
-	var root = '.js-slick';
+	$.fn.ruShinaSlider = function () {
+		var opt = {};
 
-	$(root).each(function (i, el) {
-		var
-			$el = $(el),
-			opt = {};
+		opt.prevArrow = $('.js-slick__prev', this);
+		opt.nextArrow = $('.js-slick__next', this);
 
-		opt.prevArrow = $(root + '__prev', $el);
-		opt.nextArrow = $(root + '__next', $el);
+		opt.autoplay = Boolean(this.attr('data-autoplay'));
+		opt.autoplaySpeed = Number(this.attr('data-autoplay')) || 5000;
+		opt.speed = Number(this.attr('data-speed')) || 200;
+		opt.infinite = Boolean(this.attr('data-infinite')) || false;
 
-		opt.autoplay = $el.data('autoplay');
-		opt.autoplaySpeed = $el.data('autoplay') || 5000;
-		opt.infinite = $el.data('infinite') || false;
+		opt.slidesToShow = Number(this.attr('data-show')) || 4;
+		opt.slidesToScroll = Number(this.attr('data-scroll')) || opt.slidesToShow;
 
-		opt.slidesToShow = $el.data('show') || 4;
-		opt.slidesToScroll = $el.data('scroll') || opt.slidesToShow;
+		opt.useCSS = true;
 
-		// TODO: set `-container` instead of `__container`
-		$(root + '__container', $el).slick(opt);
+		var slickContaner = $('.js-slick__container', this);
+
+		if (slickContaner.hasClass('slick-initialized')) {
+			slickContaner.slick('unslick');
+		}
+
+		slickContaner.slick(opt);
+	};
+
+	// item slider
+	$('.js-slick').each(function () {
+		$(this).ruShinaSlider();
 	});
 
 });

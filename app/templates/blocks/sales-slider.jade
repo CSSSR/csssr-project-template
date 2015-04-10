@@ -1,69 +1,21 @@
-.sales-slider.js-slick
-	.sales-slider__controls
-		.sales-slider__right-switch.js-slick__next
-			.slider-arrow
-		.sales-slider__left-switch.js-slick__prev
-			.slider-arrow.slider-arrow_left
-		.sales-slider__all-products
-			+btn('Все товары расподажи', true)
-	.sales-slider__container.js-slick__container
-		.sales-slider__item
-			+tire-card({
-				type:'menu',
-				goods:'tire',
-				img:'assets/images/content/tire-card_img.png',
-				title:'Replica<br> BMW FR1156',
-				caption:'7x16 5/114.3 ET38',
-				price:'3000',
-				avaliable:'true',
-				play:'true',
-				label:'discount'
-			})
-		.sales-slider__item
-			+tire-card({
-				type:'menu',
-				goods:'tire',
-				img:'assets/images/content/tire-card_img.png',
-				title:'Replica<br> BMW FR1156',
-				caption:'7x16 5/114.3 ET38',
-				price:'3000',
-				avaliable:'true',
-				play:'true',
-				label:'discount'
-			})
-		.sales-slider__item
-			+tire-card({
-				type:'menu',
-				goods:'tire',
-				img:'assets/images/content/tire-card_img.png',
-				title:'Replica<br> BMW FR1156',
-				caption:'7x16 5/114.3 ET38',
-				price:'3000',
-				avaliable:'true',
-				play:'true',
-				label:'discount'
-			})
-		.sales-slider__item
-			+tire-card({
-				type:'menu',
-				goods:'tire',
-				img:'assets/images/content/tire-card_img.png',
-				title:'Replica<br> BMW FR1156',
-				caption:'7x16 5/114.3 ET38',
-				price:'3000',
-				avaliable:'true',
-				play:'true',
-				label:'discount'
-			})
-		.sales-slider__item
-			+tire-card({
-				type:'menu',
-				goods:'tire',
-				img:'assets/images/content/tire-card_img.png',
-				title:'Replica<br> BMW FR1156',
-				caption:'7x16 5/114.3 ET38',
-				price:'3000',
-				avaliable:'true',
-				play:'true',
-				label:'discount'
-			})
+.sale
+	+h-slider({
+		show: 4,
+		scroll: 1,
+		infinite: true
+	}, [
+		'Все товары распродажи'
+	])
+		each i in Array(8)
+			.h-slider__slide
+				+tire-card({
+					type:'menu',
+					goods:'tire',
+					img:'assets/images/content/tire-card_img.png',
+					title:'Replica<br> BMW FR1156',
+					caption:'7x16 5/114.3 ET38',
+					price:'3000',
+					avaliable:'true',
+					play:'true',
+					label:'discount'
+				})

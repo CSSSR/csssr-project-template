@@ -1,0 +1,50 @@
+.promo-slider
+	position relative
+	border 3px solid $rushina-gray-border
+
+	&__control
+		position absolute
+		top 50%
+		width 42px
+		height 50px
+		z-index 5
+		margin-top -(@height/2)
+		display none
+		border inherit
+		background-color inherit
+		user-select none
+		cursor pointer
+
+		&.slick-disabled
+			cursor default
+			opacity 0.5
+
+		&_prev
+			left -3px
+			border-left none
+			border-radius 0 8px 8px 0
+
+			&::before
+				content ''
+				position absolute
+				top 12px
+				left 12px
+				sprite $arrow-left
+
+		&_next
+			right -3px
+			border-right none
+			border-radius 8px 0 0  8px
+
+			&::before
+				content ''
+				position absolute
+				top 12px
+				right 12px
+				sprite $arrow-right
+
+	&__slides > *
+		display none
+
+		&:first-child
+			display block
