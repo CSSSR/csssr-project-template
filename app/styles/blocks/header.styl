@@ -1,2 +1,16 @@
 .header
-	padding-bottom 30px
+	position relative
+
+	&_solid
+		&:before
+			content ''
+			position absolute
+			top 0
+			bottom 55px
+			left 0
+			right 0
+			z-index -1
+			background-color $rushina-light-gray
+
+	&__main-menu
+		padding-bottom 30px
