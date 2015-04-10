@@ -6,6 +6,14 @@ block page_content
 		a(href='/') Радар
 
 	.demo-blocks
+		#blocks-breadcrumbs(data-collapse='persist')
+			.grid
+				.h3 Хлебные крошки
+			.demo-block.demo-block_white
+				.grid
+					include ../blocks/breadcrumbs
+
+	.demo-blocks
 		#blocks-top-menu(data-collapse='persist')
 			.grid
 				.h3 Фильтр выдачи / диски
