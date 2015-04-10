@@ -1,0 +1,7 @@
+mixin breadcrumbs(path)
+	- var cur = path.pop()
+	.breadcrumbs
+		each item in path
+			span.breadcrumbs__item
+				a.breadcrumbs__link(href=jv0)= item
+		span.breadcrumbs__item= cur
