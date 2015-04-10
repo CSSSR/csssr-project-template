@@ -70,9 +70,10 @@
 		margin-top -3px
 
 		background-color $rushina-light-gray
-		border 3px solid $rushina-yellow
-
 		overflow hidden
+
+		&_primary
+			border 3px solid $rushina-yellow
 
 .wf-body
 	padding 28px
@@ -103,10 +104,12 @@
 		transition all .25s .25s, z-index 0
 
 	&__image
+		display inline-block
+
 		&:not(:last-child)
 			margin-bottom 15px
 
-		for img in 'disc-side' 'disc-top' 'tire-side' 'tire-top'
+		for img in 'disc-et' 'disc-side' 'disc-top' 'tire-height' 'tire-side' 'tire-top'
 			&_{img}
 				sprite lookup('$blueprint-' + img)
 
@@ -135,33 +138,43 @@
 	display table
 	width calc(100% + 20px)
 
-	.wf-col
-		padding-left 10px
-		padding-right 10px
+.wf-col
+	padding-left 10px
+	padding-right 10px
 
-		display table-cell
+	display table-cell
 
-		&_bottom
-			vertical-align bottom
+	vertical-align top
 
-		&_help
-			padding-left 22px
-			padding-right 12px
+	&_bottom
+		vertical-align bottom
 
-			width 149px
+	&_help
+		padding-left 22px
+		padding-right 12px
 
-		&_small
-			width 175px
+		width 149px
 
-		&_small-double
-			width 350px
+	&_help-internal
+		width 305px
 
-		&_wheelset
-			padding 0
+		text-align right
 
-			width 68px
+	&_right
+		text-align right
 
-			vertical-align middle
+	&_small
+		width 175px
+
+	&_small-double
+		width 350px
+
+	&_wheelset
+		padding 0
+
+		width 68px
+
+		vertical-align middle
 
 .wf-tab
 	white-space nowrap
