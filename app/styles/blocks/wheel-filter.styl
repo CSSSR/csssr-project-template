@@ -1,5 +1,7 @@
 .wf
-	width 780px
+	// TODO: possibly this one could be removed
+	&_primary
+		width 780px
 
 	&__tab
 		margin-left 1px
@@ -8,14 +10,11 @@
 
 		position relative
 
-		flex-grow 1
-		flex-basis 100%
-
 		vertical-align middle
 
 		border 3px solid transparent
 
-		&:hover
+		&:not(&_active):hover
 			border-top-color $rushina-yellow
 
 			&:before
@@ -45,8 +44,14 @@
 
 		&_active
 			background-color $rushina-light-gray
-			border-color $rushina-yellow
 			border-bottom none
+
+		&_primary
+			flex-grow 1
+			flex-basis 100%
+
+		&_primary&_active
+			border-color $rushina-yellow
 
 	&__tabs
 		margin-left -1px
@@ -65,9 +70,10 @@
 		margin-top -3px
 
 		background-color $rushina-light-gray
-		border 3px solid $rushina-yellow
-
 		overflow hidden
+
+		&_primary
+			border 3px solid $rushina-yellow
 
 .wf-body
 	padding 28px
@@ -98,12 +104,17 @@
 		transition all .25s .25s, z-index 0
 
 	&__image
+		display inline-block
+
 		&:not(:last-child)
 			margin-bottom 15px
 
-		for img in 'disc-side' 'disc-top' 'tire-side' 'tire-top'
+		for img in 'disc-et' 'disc-side' 'disc-top' 'tire-height' 'tire-side' 'tire-top'
 			&_{img}
 				sprite lookup('$blueprint-' + img)
+
+	&_primary
+		border 3px solid $rushina-yellow
 
 	&__info
 		margin-top -1em
@@ -120,6 +131,12 @@
 	&__help-heading
 		padding-bottom 20px
 
+	&__title-btn
+		display inline-block
+
+		padding-left 20px
+		padding-right 20px
+
 .wf-row
 	margin-left -10px
 	margin-right -10px
@@ -127,33 +144,43 @@
 	display table
 	width calc(100% + 20px)
 
-	.wf-col
-		padding-left 10px
-		padding-right 10px
+.wf-col
+	padding-left 10px
+	padding-right 10px
 
-		display table-cell
+	display table-cell
 
-		&_bottom
-			vertical-align bottom
+	vertical-align top
 
-		&_help
-			padding-left 22px
-			padding-right 12px
+	&_bottom
+		vertical-align bottom
 
-			width 149px
+	&_help
+		padding-left 22px
+		padding-right 12px
 
-		&_small
-			width 175px
+		width 149px
 
-		&_small-double
-			width 350px
+	&_help-internal
+		width 305px
 
-		&_wheelset
-			padding 0
+		text-align right
 
-			width 68px
+	&_right
+		text-align right
 
-			vertical-align middle
+	&_small
+		width 175px
+
+	&_small-double
+		width 350px
+
+	&_wheelset
+		padding 0
+
+		width 68px
+
+		vertical-align middle
 
 .wf-tab
 	white-space nowrap

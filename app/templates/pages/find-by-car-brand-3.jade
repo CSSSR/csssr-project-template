@@ -1,0 +1,34 @@
+extends ../layouts/default
+
+block head
+	- pageTitle = 'Подбор шин по марке автомобиля';
+	- headerMod = 'solid';
+
+block content
+	.main__breadcrumbs.grid
+		+breadcrumbs(['Главная', 'Шины', 'Марки автомобилей', 'Модель FORD'])
+
+	.main__title.grid
+		h1.h1.h_upcase Подбор шин по марке автомобиля
+
+	.main__wf-inner.grid
+		+wheel-filter_inner-car-model-collapsed()
+
+	.main__filter-steps.grid
+		include ../blocks/filter-steps_last
+
+	.main__catalog.grid
+		.cols
+			.col.grid-module-2
+				include ../blocks/aside-filter
+				include ../blocks/note-info
+			.col.grid-module-10
+				.catalog-controls
+					.catalog-controls__col
+						include ../blocks/sort-labels
+					.catalog-controls__col.catalog-controls__col_right
+						include ../blocks/view-switch
+				include ../blocks/catalog/__tires/_table
+
+	.main__pagination.grid
+		include ../blocks/pagination

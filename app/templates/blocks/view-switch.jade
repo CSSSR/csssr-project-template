@@ -1,0 +1,26 @@
+.view-switch
+	.view-switch__caption Вид каталога:
+	.view-switch__toggle
+		.switch
+			.switch__item
+				.switch-item
+					input.switch-item__input(
+						type = 'radio',
+						id = 'view-switch-list',
+						name = 'view-switch',
+						value = 'list',
+						checked = true
+					)
+					label.switch-item__label.switch-item__label_iconic(for = 'view-switch-list')
+						+icon('view-as-list').view-switch__icon
+			.switch__item
+				.switch-item
+					input.switch-item__input(
+						type = 'radio',
+						id = 'view-switch-matrix',
+						name = 'view-switch',
+						value = 'matrix'
+					)
+					label.switch-item__label.switch-item__label_iconic(for = 'view-switch-matrix')
+						+icon('view-as-matrix').view-switch__icon
+	.view-switch__count Найдено 523 предложения

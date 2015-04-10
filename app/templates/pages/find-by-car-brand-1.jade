@@ -1,0 +1,21 @@
+extends ../layouts/default
+
+block head
+	- pageTitle = 'Подбор шин по марке автомобиля';
+	- headerMod = 'solid';
+
+block content
+	.main__breadcrumbs.grid
+		+breadcrumbs(['Главная', 'Шины', 'Марки автомобилей'])
+
+	.main__title.grid
+		h1.h1.h_upcase Подбор шин по марке автомобиля
+
+	.main__wf-inner.grid
+		+wheel-filter_inner()
+
+	.main__filter-steps.grid
+		include ../blocks/filter-steps
+
+	.main__brand-list.grid
+		include ../blocks/brand-list
