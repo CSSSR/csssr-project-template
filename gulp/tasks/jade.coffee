@@ -6,7 +6,7 @@ inheritance  = require 'gulp-jade-inheritance'
 cached       = require 'gulp-cached'
 filter       = require 'gulp-filter'
 rename       = require 'gulp-rename'
-prettify     = require 'gulp-prettify'
+prettify     = require 'gulp-html-prettify'
 pkg          = require '../../package.json'
 errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
@@ -28,8 +28,6 @@ gulp.task 'jade', ->
 			brace_style: 'expand'
 			indent_size: 1
 			indent_char: '\t'
-			indent_with_tabs: true
-			condense: true
 			indent_inner_html: true
 			preserve_newlines: true
 		.pipe rename dirname: '.'
