@@ -1,0 +1,19 @@
+[
+	["browser-sync", "сервер и синхронное тестирование сайта в браузерах"],
+	["del", "очищаем папку dist от старых файлов"],
+	["gulp", "сам Gulp.js"],
+	["gulp-autoprefixer", "подстановка вендорских префиксов в CSS"],
+	["gulp-combine-media-queries", "комбинирование медиа-запросов"],
+	["gulp-concat", "конкатенация файлов"],
+	["gulp-csscomb", "причёска CSS"],
+	["gulp-imagemin", "сжатие ихображений"],
+	["gulp-jade", "шаблонизатор Jade и препроцессор HTML"],
+	["gulp-jscs", "проверка стиля JavaScript"],
+	["gulp-jshint", "проверка JavaScript на качество кода с подсказками"],
+	["gulp-minify-css", "минификация CSS"],
+	["gulp-html-prettify", "причёска HTML"],
+	["gulp-stylus", "препроцессор CSS"],
+	["gulp-uglify", "минификация JavaScript"],
+	["gulp.spritesmith", "генератор спрайтов и CSS переменных"],
+	["rupture", "премиси Rupture для Stylus"]
+]

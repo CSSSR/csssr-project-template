@@ -1,0 +1,79 @@
+[
+	{
+		"folder": "images"
+	}, {
+		"folder": "resources"
+	}, {
+		"folder": "scripts",
+		"content": [
+			{ "file": "common.js" },
+			{ "file": "debug.js" }
+		]
+	}, {
+		"folder": "styles",
+		"content": [
+			{
+				"folder": "base",
+				"content": [
+					{ "file": "base.styl" },
+					{ "file": "fonts.styl" },
+					{ "file": "normalize.styl" }
+				]
+			},
+			{
+				"folder": "blocks",
+				"content": [
+					{ "file": "footer.styl" },
+					{ "file": "header.styl" }
+				]
+			},
+			{
+				"folder": "helpers",
+				"content": [
+					{ "file": "mixins.styl" },
+					{ "file": "variables.styl" }
+				]
+			},
+			{ "file": "common.styl" }
+		]
+	}, {
+		"folder": "templates",
+		"content": [
+			{
+				"folder": "blocks",
+				"content": [
+					{ "file": "footer.jade" },
+					{ "file": "head.jade" },
+					{ "file": "header.jade" },
+					{ "file": "main.jade" },
+					{ "file": "scripts.jade" }
+				]
+			},
+			{
+				"folder": "helpers",
+				"content": [
+					{
+						"folder": "mixins",
+						"content": [
+							{ "file": "scripts.jade" }
+						]
+					},
+					{ "file": "mixins.jade" },
+					{ "file": "variables.jade" }
+				]
+			},
+			{
+				"folder": "layouts",
+				"content": [
+					{ "file": "default.jade" }
+				]
+			},
+			{
+				"folder": "pages",
+				"content": [
+					{ "file": "index.jade" }
+				]
+			}
+		]
+	}
+]

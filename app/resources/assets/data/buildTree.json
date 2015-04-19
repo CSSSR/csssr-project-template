@@ -1,0 +1,24 @@
+[
+	{
+		"folder": "assets",
+		"content": [
+			{ "folder": "images" },
+			{
+				"folder": "scripts",
+				"content": [
+					{
+						"folder": "libs"
+					},
+					{ "file": "common.min.js" }
+				]
+			},
+			{
+				"folder": "styles",
+				"content": [
+					{ "file": "common.min.css" }
+				]
+			}
+		]
+	},
+	{ "file": "index.html" }
+]

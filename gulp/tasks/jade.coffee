@@ -10,7 +10,7 @@ prettify     = require 'gulp-html-prettify'
 pkg          = require '../../package.json'
 errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
-fixture      = require '../utils/fixture'
+gatData      = require '../utils/getData'
 
 gulp.task 'jade', ->
 	gulp.src 'app/templates/**/*.jade'
@@ -20,7 +20,7 @@ gulp.task 'jade', ->
 		.pipe filter (file) -> /templates[\\\/]pages/.test file.path
 		.pipe jade
 			data:
-				fixture: fixture
+				getData: gatData
 				page:
 					copyright: pkg.copyright
 					description: pkg.description
