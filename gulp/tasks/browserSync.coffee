@@ -5,7 +5,7 @@ gutil       = require 'gulp-util'
 gulp.task 'browserSync', ->
 	browserSync
 		files: ['dist/**/*']
-		open: false
+		open: !!gutil.env.open
 		port: gutil.env.port || 3001
 		server:
 			baseDir: [
