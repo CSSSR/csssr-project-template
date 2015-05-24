@@ -15,5 +15,5 @@
 	["gulp-stylus", "препроцессор CSS"],
 	["gulp-uglify", "минификация JavaScript"],
 	["gulp.spritesmith", "генератор спрайтов и CSS переменных"],
-	["rupture", "премиси Rupture для Stylus"]
+	["rupture", "примеси Rupture для Stylus"]
 ]
