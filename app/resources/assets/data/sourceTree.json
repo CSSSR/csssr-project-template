@@ -17,7 +17,7 @@
 				"content": [
 					{ "file": "base.styl" },
 					{ "file": "fonts.styl" },
-					{ "file": "normalize.styl" }
+					{ "file": "optimize.styl" }
 				]
 			},
 			{
