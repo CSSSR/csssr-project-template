@@ -38,6 +38,8 @@ fix-text-size-adjust()
 	background-image linear-gradient(transparent, transparent)
 
 // Set element size
-size(w,h)
+size()
+	var w = arguments[0] || 0
+	var h = arguments[1] || w
 	width w	
 	height h
