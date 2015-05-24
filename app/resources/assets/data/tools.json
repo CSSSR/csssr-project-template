@@ -6,7 +6,7 @@
 	["gulp-combine-media-queries", "комбинирование медиа-запросов"],
 	["gulp-concat", "конкатенация файлов"],
 	["gulp-csscomb", "причёска CSS"],
-	["gulp-imagemin", "сжатие ихображений"],
+	["gulp-imagemin", "сжатие изображений"],
 	["gulp-jade", "шаблонизатор Jade и препроцессор HTML"],
 	["gulp-jscs", "проверка стиля JavaScript"],
 	["gulp-jshint", "проверка JavaScript на качество кода с подсказками"],
