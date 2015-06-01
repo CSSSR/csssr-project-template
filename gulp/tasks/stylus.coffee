@@ -8,17 +8,20 @@ autoprefixer = require 'gulp-autoprefixer'
 cmq          = require 'gulp-combine-media-queries'
 minifyCss    = require 'gulp-minify-css'
 csscomb      = require 'gulp-csscomb'
+rename       = require 'gulp-rename'
 errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
 pkg          = require '../../package.json'
 
 gulp.task 'stylus', ->
-	gulp.src ['common.styl'], cwd: 'app/styles'
+	gulp.src ['app.styl'],
+			cwd: 'styles'
+			nonull: true
 		.pipe plumber errorHandler: errorHandler
 		.pipe stylus
 			errors: true,
 			use: rupture()
-			sourcemap: if gutil.env.debug then {comment: false, inline: true} else false
+			sourcemap: if gutil.env.debug then comment: false, inline: true else false
 		.pipe autoprefixer(
 			'Android >= ' + pkg.browsers.android
 			'Chrome >= ' + pkg.browsers.chrome
@@ -31,4 +34,5 @@ gulp.task 'stylus', ->
 		.pipe gulpif !gutil.env.debug, cmq()
 		.pipe gulpif !gutil.env.debug, minifyCss()
 		.pipe gulpif gutil.env.csscomb, csscomb()
+		.pipe rename suffix: '.min'
 		.pipe gulp.dest paths.styles

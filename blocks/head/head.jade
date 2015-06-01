@@ -1,5 +1,3 @@
-+script([], ['common.min.js'])
-
 head
 	meta(charset='utf-8')
 	meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimal-ui')
@@ -11,6 +9,8 @@ head
 
 	meta(name='format-detection' content='telephone=no')
 	meta(name='format-detection' content='address=no')
+
+	meta(name='google' value='notranslate')
 
 	meta(name='apple-mobile-web-app-capable' content='yes')
 	meta(name='apple-mobile-web-app-status-bar-style' content='black-translucent')
@@ -31,8 +31,10 @@ head
 	link(sizes='16x16'   href='/favicon-16x16.png'   rel='icon' type='image/png')
 	link(sizes='32x32'   href='/favicon-32x32.png'   rel='icon' type='image/png')
 
-	meta(name='application-name' content=pageTitle || page.title)
-	meta(name='msapplication-tooltip' content=pageDescription || page.description)
+	link(rel='manifest' href='/assets/icons/manifest.json')
+
+	meta(name='application-name' content=pageTitle || '')
+	meta(name='msapplication-tooltip' content=pageDescription || '')
 	meta(name='msapplication-TileColor' content='#ffffff')
 	meta(name='msapplication-TileImage' content='/mstile-large.png')
 	meta(name='msapplication-starturl' content='https://csssr.github.io/csssr-project-template/')
@@ -45,10 +47,9 @@ head
 	//- http://realfavicongenerator.net/faq#why_ico_not_declared
 
 	block head
-	title= pageTitle
-	meta(name='description' content=pageDescription)
-	meta(name='keywords' content=pageKeywords)
-	meta(name='copyright' content=pageCopyright)
+	title= pageTitle || ''
+	meta(name='description' content=pageDescription || '')
+	meta(name='keywords' content=pageKeywords || '')
 
 	link(href='https://fonts.googleapis.com/css?family=Cuprum:400,700&subset=latin,cyrillic' rel='stylesheet')
-	link(href='/assets/styles/common.css?' + timestamp rel='stylesheet')
+	link(href='/assets/styles/app.min.css?t=' + timestamp rel='stylesheet')
