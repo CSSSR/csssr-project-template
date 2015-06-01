@@ -1,7 +1,6 @@
 {
   "name": "csssr-project-template",
-  "version": "0.8.5",
-  "title": "CSSSR Project Template",
+  "version": "0.9.0",
   "description": "A template for a quick start.",
   "keywords": [
     "csssr",
@@ -30,7 +29,10 @@
     "node": ">= 0.10.0"
   },
   "devDependencies": {
-    "browser-sync": "^1.9.1",
+    "babel-core": "^5.4.7",
+    "babelify": "^6.1.1",
+    "browser-sync": "^2.7.6",
+    "browserify": "^10.2.1",
     "coffee-script": "^1.9.2",
     "del": "^0.1.3",
     "gulp": "^3.8.11",
@@ -41,6 +43,7 @@
     "gulp-combine-media-queries": "^0.1.0",
     "gulp-concat": "^2.4.3",
     "gulp-csscomb": "^3.0.3",
+    "gulp-eslint": "^0.12.0",
     "gulp-filter": "^2.0.2",
     "gulp-gh-pages": "^0.4.0",
     "gulp-html-prettify": "0.0.1",
@@ -48,8 +51,6 @@
     "gulp-imagemin": "^0.6.2",
     "gulp-jade": "^0.6.1",
     "gulp-jade-inheritance": "^0.5.0",
-    "gulp-jscs": "^1.4.0",
-    "gulp-jshint": "^1.9.0",
     "gulp-minify-css": "^0.3.13",
     "gulp-plumber": "^0.6.6",
     "gulp-rename": "^1.2.0",
@@ -59,19 +60,19 @@
     "gulp-util": "^3.0.2",
     "gulp-zip": "^2.0.3",
     "gulp.spritesmith": "^1.5.0",
-    "jshint-stylish": "^0.4.0",
-    "ngrok": "^0.1.99",
+    "jquery": "^2.1.4",
+    "merge-stream": "^0.1.7",
     "require-dir": "^0.1.0",
     "run-sequence": "^1.0.2",
     "rupture": "^0.6.1"
   },
   "browsers": {
     "android": 4,
-    "chrome": 40,
-    "firefox": 35,
+    "chrome": 42,
+    "firefox": 37,
     "ie": 10,
     "ios": 7,
-    "opera": 27,
+    "opera": 28,
     "safari": 7
   }
 }

@@ -10,7 +10,7 @@ gulp.task 'imagemin', ->
 			'**/*.{png,jpg,gif}'
 			'!sprite/**/*'
 		],
-			cwd: 'app/images'
+			cwd: 'images'
 		.pipe plumber errorHandler: errorHandler
 		.pipe changed paths.images
 		.pipe imagemin

@@ -12,20 +12,18 @@ errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
 getData      = require '../utils/getData'
 
+data =
+	getData: getData
+	jv0: 'javascript:void(0);'
+	timestamp: +new Date()
+
 gulp.task 'jade', ->
-	gulp.src 'app/templates/**/*.jade'
+	gulp.src 'templates/**/*.jade'
 		.pipe plumber errorHandler: errorHandler
 		.pipe cached 'jade'
-		.pipe gulpif global.watch, inheritance basedir: 'app/templates'
+		.pipe gulpif global.watch, inheritance basedir: 'templates'
 		.pipe filter (file) -> /templates[\\\/]pages/.test file.path
-		.pipe jade
-			data:
-				getData: getData
-				page:
-					copyright: pkg.copyright
-					description: pkg.description
-					keywords: pkg.keywords.join ', '
-					title: pkg.title
+		.pipe jade data: data
 		.pipe prettify
 			brace_style: 'expand'
 			indent_size: 1

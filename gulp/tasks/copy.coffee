@@ -15,32 +15,13 @@ gulp.task 'copy:images', ->
 		.pipe gulp.dest paths.images
 
 gulp.task 'copy:resources', ->
-	gulp.src 'app/resources/**/*'
+	gulp.src 'resources/**/*'
 		.pipe changed paths.dist
 		.pipe gulpif !gutil.env.robots, filter (file) ->
-			!/app[\\\/]resources[\\\/]robots\.txt/.test file.path
+			!/resources[\\\/]robots\.txt/.test file.path
 		.pipe gulp.dest paths.dist
 
-gulp.task 'copy:scripts', ->
-	gulp.src ['**/*.js'],
-			base: 'app/scripts'
-			cwd: 'app/scripts'
-		.pipe changed paths.scripts
-		.pipe gulp.dest paths.scripts
-
-gulp.task 'copy:components', ->
-	gulp.src [
-			'jquery/dist/jquery.min.js'
-			'svg4everybody/svg4everybody.min.js'
-		],
-			base: 'components'
-			cwd: 'components'
-		.pipe changed paths.scripts
-		.pipe gulp.dest paths.scripts + '/libs'
-
 gulp.task 'copy', [
-		'copy:components',
-		'copy:images',
-		'copy:resources',
-		'copy:scripts'
+		'copy:images'
+		'copy:resources'
 	]

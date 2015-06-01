@@ -15,14 +15,10 @@ gulp.task 'default', ->
 			'stylusDependences'
 			'jade'
 			'scripts'
-			'jscs'
-			'jshint'
+			'eslint'
 		]
 		'browserSync'
 		'watch'
-		->
-			if gutil.env.ngrok
-				gulp.start 'ngrok'
 	)
 
 gulp.task 'build', ['del'], ->

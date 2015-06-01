@@ -6,7 +6,7 @@ errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
 
 gulp.task 'spritesmith', ->
-	spriteData = gulp.src 'app/images/sprite/**/*.png', read: false
+	spriteData = gulp.src 'images/sprite/**/*.png', read: false
 		.pipe plumber errorHandler: errorHandler
 		.pipe spritesmith
 			imgName: 'sprite.png'

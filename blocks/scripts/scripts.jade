@@ -1,9 +1,10 @@
-- var pageScripts = pageScripts || [[], [], []];
+//- Insert in head of layout
+//- - var pageScripts = pageScripts || [[], [], []];
 
 mixin renderScript(scripts)
 	each src in scripts
 		- var isExternalScript = /^(?:https?\:)?\/\//i;
-		- src = isExternalScript.test(src) ? src : '/assets/scripts/' + src + '?' + timestamp;
+		- src = isExternalScript.test(src) ? src : '/assets/scripts/' + src;
 		script(src=src)
 
 mixin script()

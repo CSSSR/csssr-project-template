@@ -4,19 +4,18 @@ reload      = require('browser-sync').reload
 
 gulp.task 'watch', ->
 	global.watch = true
-	gulp.watch 'app/images/sprite/**/*.png', ['spritesmith']
+	gulp.watch 'images/sprite/**/*.png', ['spritesmith']
 
-	gulp.watch 'app/styles/**/*.styl', ['stylus', -> reload('assets/styles/common.css')]
+	gulp.watch 'styles/**/*.styl', ['stylus', -> reload('assets/styles/common.css')]
 
-	gulp.watch 'app/templates/**/*.jade', -> runSequence 'jade', reload
+	gulp.watch 'templates/**/*.jade', -> runSequence 'jade', reload
 
-	gulp.watch 'app/resources/**/*', ['copy:resources', reload]
+	gulp.watch 'resources/**/*', ['copy:resources', reload]
 
-	gulp.watch 'app/scripts/**/*.js', [
+	gulp.watch 'scripts/**/*.js', [
 			'scripts'
-			'jscs'
-			'jshint'
+			# 'eslint'
 			reload
 		]
 
-	gulp.watch 'app/images/svg/**/*.svg', ['svg', reload]
+	gulp.watch 'icons/**/*.svg', ['svg', reload]
