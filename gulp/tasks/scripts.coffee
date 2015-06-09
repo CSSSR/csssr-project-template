@@ -9,6 +9,7 @@ concat       = require 'gulp-concat'
 uglify       = require 'gulp-uglify'
 merge        = require 'merge-stream'
 rename       = require 'gulp-rename'
+source       = require 'vinyl-source-stream'
 errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
 
@@ -18,4 +19,5 @@ gulp.task 'scripts', ->
 		.require 'scripts/app.js', entry: true
 		.bundle()
 		.on 'error', (err) -> console.log 'Error: ' + err.message
-		.pipe fs.createWriteStream 'dist/assets/scripts/app.min.js'
+		.pipe source 'app.min.js'
+		.pipe gulp.dest paths.scripts
