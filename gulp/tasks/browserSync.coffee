@@ -17,6 +17,5 @@ gulp.task 'browserSync', ->
 				'/assets/images': 'app/images'
 				'/assets/images/svg': 'app/resources/assets/images/svg'
 				'/assets/scripts': 'app/scripts'
-				'/assets/scripts/libs': 'app/components'
 			directory: false
 		tunnel: !!gutil.env.tunnel
