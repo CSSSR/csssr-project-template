@@ -11,6 +11,10 @@
     "jade",
     "stylus"
   ],
+  "scripts": {
+    "start": "gulp --debug",
+    "build": "gulp build"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/CSSSR/csssr-project-template.git"
