@@ -6,16 +6,13 @@
 			{
 				"folder": "scripts",
 				"content": [
-					{
-						"folder": "libs"
-					},
-					{ "file": "common.min.js" }
+					{ "file": "app.min.js" }
 				]
 			},
 			{
 				"folder": "styles",
 				"content": [
-					{ "file": "common.min.css" }
+					{ "file": "app.min.css" }
 				]
 			}
 		]
