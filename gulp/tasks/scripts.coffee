@@ -16,7 +16,7 @@ paths        = require '../paths'
 gulp.task 'scripts', ->
 	browserify debug: gutil.env.debug
 		.transform babelify
-		.require 'scripts/app.js', entry: true
+		.require 'app/scripts/app.js', entry: true
 		.bundle()
 		.on 'error', (err) -> console.log 'Error: ' + err.message
 		.pipe source 'app.min.js'

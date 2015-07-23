@@ -1,0 +1,6 @@
+mixin list(list)
+	ul.list
+		each item in list
+			li.list__item
+				span.mark= item[0]
+				= ' - ' + item[1]

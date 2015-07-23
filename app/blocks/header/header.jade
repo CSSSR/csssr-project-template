@@ -1,0 +1,16 @@
+include ../logo/logo
+include ../dark/dark
+include ../title/title
+include ../description/description
+
+mixin header()
+	.header
+		+logo()
+
+		.header__title
+			+dark()
+				+title()
+					| CSSSR Project Template
+
+		+description()
+			| Шаблон проекта для быстрого старта.
