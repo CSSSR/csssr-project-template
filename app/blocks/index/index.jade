@@ -1,0 +1,38 @@
+include ../content/content
+include ../container/container
+include ../subtitle/subtitle
+include ../heading/heading
+include ../list/list
+include ../col/col
+include ../arrow/arrow
+include ../fork/fork
+include ../tree/tree
+
+mixin index()
+	.index
+		+content()
+			.index__group
+				+subtitle() ЧТО ВКЛЮЧЕНО
+
+			+heading() Инструменты:
+
+			.index__group
+				+list(getData('tools'))
+
+			.index__group
+				+subtitle() СТРУКТУРА ФАЙЛОВ
+
+			+container()
+				+col()
+					+heading() Исходники
+					+tree(getData('sourceTree'))
+
+				+col()
+					.index__arrow
+						+arrow() Компиляция
+
+				+col()
+					+heading() Готовые файлы
+					+tree(getData('buildTree'))
+
+			+fork()

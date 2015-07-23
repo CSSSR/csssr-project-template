@@ -1,0 +1,9 @@
+mixin tree(tree)
+	ul.tree
+		each item in tree
+			if item.folder
+				li.tree__item.tree__item_type_folder=item.folder
+					if item.content
+						+tree(item.content)
+			else if item.file
+				li.tree__item=item.file

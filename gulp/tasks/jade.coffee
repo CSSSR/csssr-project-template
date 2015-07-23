@@ -18,11 +18,11 @@ data =
 	timestamp: +new Date()
 
 gulp.task 'jade', ->
-	gulp.src 'templates/**/*.jade'
+	gulp.src 'app/**/*.jade'
 		.pipe plumber errorHandler: errorHandler
 		.pipe cached 'jade'
-		.pipe gulpif global.watch, inheritance basedir: 'templates'
-		.pipe filter (file) -> /templates[\\\/]pages/.test file.path
+		.pipe gulpif global.watch, inheritance basedir: 'app'
+		.pipe filter (file) -> /app[\\\/]pages/.test file.path
 		.pipe jade data: data
 		.pipe prettify
 			brace_style: 'expand'

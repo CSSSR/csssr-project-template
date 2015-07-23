@@ -6,7 +6,7 @@ paths       = require '../paths'
 path        = require 'path'
 
 gulp.task 'svg', ->
-	gulp.src 'icons/**/*.svg'
+	gulp.src 'app/icons/**/*.svg'
 		.pipe svgSymbols
 			title: false
 			id: 'icon_%f'
@@ -15,6 +15,6 @@ gulp.task 'svg', ->
 				path.join __dirname, '../utils/svg.styl'
 				'default-svg'
 			]
-		.pipe gulpif /\.styl$/, gulp.dest 'styles/helpers'
+		.pipe gulpif /\.styl$/, gulp.dest 'app/styles/helpers'
 		.pipe gulpif /\.svg$/, rename 'icon.svg'
 		.pipe gulpif /\.svg$/, gulp.dest 'dist/assets/images/'
