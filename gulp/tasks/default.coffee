@@ -15,7 +15,7 @@ gulp.task 'default', ->
 			'stylusDependences'
 			'jade'
 			'scripts'
-			'eslint'
+			'lint'
 		]
 		'browserSync'
 		'watch'
