@@ -3,12 +3,11 @@ plumber      = require 'gulp-plumber'
 eslint       = require 'gulp-eslint'
 errorHandler = require '../utils/errorHandler'
 
-gulp.task 'eslint', ->
+gulp.task 'lint', ->
 	gulp.src [
 			'**/*.js'
-			'!libs/**/*'
 		],
-			cwd: 'scripts'
+			cwd: 'app'
 		.pipe plumber errorHandler: errorHandler
 		.pipe eslint()
 		.pipe eslint.format()
