@@ -15,10 +15,10 @@ npm i -g gulp bower
 git clone git@github.com:CSSSR/csssr-project-template.git new-project && cd new-project
 ```
 
-* Установите зависимости, запустив `hook.sh` (находится в папке проекта) или вручную:
+* Установите зависимости:
 
 ```
-npm i && bower i
+npm i
 ```
 
 * Запустите Gulp.js:
@@ -73,7 +73,7 @@ gulp --beep
 * Расшарить локальный сервер через `ngrok`:
 
 ```
-gulp --ngrok
+gulp --tunnel
 ```
 
 * Открыть ссылку в браузере по умолчанию:
