@@ -1,14 +1,16 @@
 .arrow
-	margin 0 auto
-	color #579eda
+	margin-left auto
+	margin-right auto
 	font-size 14px
 	text-align center
+	color #579eda
 
 	&::after
-		content ''
+		margin-left auto
+		margin-right auto
 		display block
-		margin 0 auto
 		sprite $arrow
+		content ''
 
 		+mobile()
 			sprite $arrow-270
