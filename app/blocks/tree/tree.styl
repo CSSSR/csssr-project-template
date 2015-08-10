@@ -1,0 +1,19 @@
+.tree
+	padding-left 10px
+	padding-right 10px
+	list-style none
+
+	&__item
+		margin-left 10px
+		line-height 24px
+
+		&:before
+			margin-right 6px
+			display inline-block
+			vertical-align middle
+			content ''
+			sprite $document-code
+
+		&_type_folder
+			&:before
+				sprite $folder

@@ -14,8 +14,8 @@ paths        = require '../paths'
 pkg          = require '../../package.json'
 
 gulp.task 'stylus', ->
-	gulp.src ['app.styl'],
-			cwd: 'styles'
+	gulp.src '*.styl',
+			cwd: 'app/styles'
 			nonull: true
 		.pipe plumber errorHandler: errorHandler
 		.pipe stylus

@@ -1,0 +1,84 @@
+/*
+Stylus variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon_home_width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon_home = x y offset_x offset_y width height total_width total_height image_path;
+*/
+$arrow-270_x = 0px;
+$arrow-270_y = 0px;
+$arrow-270_offset_x = 0px;
+$arrow-270_offset_y = 0px;
+$arrow-270_width = 32px;
+$arrow-270_height = 32px;
+$arrow-270_total_width = 72px;
+$arrow-270_total_height = 56px;
+$arrow-270_image = '../images/sprite.png';
+$arrow-270 = 0px 0px 0px 0px 32px 32px 72px 56px '../images/sprite.png';
+$arrow_x = 40px;
+$arrow_y = 0px;
+$arrow_offset_x = -40px;
+$arrow_offset_y = 0px;
+$arrow_width = 32px;
+$arrow_height = 32px;
+$arrow_total_width = 72px;
+$arrow_total_height = 56px;
+$arrow_image = '../images/sprite.png';
+$arrow = 40px 0px -40px 0px 32px 32px 72px 56px '../images/sprite.png';
+$document-code_x = 0px;
+$document-code_y = 40px;
+$document-code_offset_x = 0px;
+$document-code_offset_y = -40px;
+$document-code_width = 16px;
+$document-code_height = 16px;
+$document-code_total_width = 72px;
+$document-code_total_height = 56px;
+$document-code_image = '../images/sprite.png';
+$document-code = 0px 40px 0px -40px 16px 16px 72px 56px '../images/sprite.png';
+$folder_x = 24px;
+$folder_y = 40px;
+$folder_offset_x = -24px;
+$folder_offset_y = -40px;
+$folder_width = 16px;
+$folder_height = 16px;
+$folder_total_width = 72px;
+$folder_total_height = 56px;
+$folder_image = '../images/sprite.png';
+$folder = 24px 40px -24px -40px 16px 16px 72px 56px '../images/sprite.png';
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  spriteWidth($icon_home)
+}
+
+.icon-email {
+  sprite($icon_email)
+}
+*/
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}

@@ -1,6 +1,6 @@
 module.exports =
-	appImages: 'images'
-	appStylesHelpers: 'styles/helpers'
+	appImages: 'app/images'
+	appStylesHelpers: 'app/styles/helpers'
 	dist: 'dist'
 	assets: 'dist/assets/'
 	images: 'dist/assets/images'
