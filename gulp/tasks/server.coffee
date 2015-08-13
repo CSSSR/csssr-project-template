@@ -1,7 +1,7 @@
-browserSync   = require 'browser-sync'
-gulp          = require 'gulp'
-gutil         = require 'gulp-util'
-debugInjecter = require '../utils/debugInjecter'
+browserSync = require 'browser-sync'
+gulp        = require 'gulp'
+gutil       = require 'gulp-util'
+debuga      = require 'debuga'
 
 gulp.task 'server', ->
 	browserSync.init
@@ -14,8 +14,6 @@ gulp.task 'server', ->
 				'app/resources'
 				'dist'
 			]
-			routes:
-				'/assets/scripts': 'app/scripts'
 			directory: false
-			middleware: if !!gutil.env.debug then [debugInjecter] else []
+			middleware: if !!gutil.env.debug then [debuga()] else []
 		tunnel: !!gutil.env.tunnel
