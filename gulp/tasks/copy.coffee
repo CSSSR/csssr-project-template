@@ -15,7 +15,7 @@ gulp.task 'copy:images', ->
 		.pipe gulp.dest paths.images
 
 gulp.task 'copy:resources', ->
-	gulp.src 'resources/**/*'
+	gulp.src 'app/resources/**/*'
 		.pipe changed paths.dist
 		.pipe gulpif !gutil.env.robots, filter (file) ->
 			!/resources[\\\/]robots\.txt/.test file.path

@@ -9,13 +9,10 @@ gulp.task 'browserSync', ->
 		port: gutil.env.port || 3000
 		server:
 			baseDir: [
-				'resources'
-				'scripts'
+				'app/resources'
 				'dist'
 			]
 			routes:
-				'/assets/images': 'app/images'
-				'/assets/images/svg': 'app/resources/assets/images/svg'
 				'/assets/scripts': 'app/scripts'
 			directory: false
 		tunnel: !!gutil.env.tunnel

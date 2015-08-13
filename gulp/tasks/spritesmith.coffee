@@ -6,7 +6,7 @@ errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
 
 gulp.task 'spritesmith', ->
-	spriteData = gulp.src 'app/images/sprite/**/*.png', read: false
+	spriteData = gulp.src 'app/sprite/**/*.png', read: false
 		.pipe plumber errorHandler: errorHandler
 		.pipe spritesmith
 			imgName: 'sprite.png'
@@ -20,9 +20,8 @@ gulp.task 'spritesmith', ->
 				format: 'png'
 
 	spriteData.img
-		.pipe imagemin
-			optimizationLevel: 3
-		.pipe gulp.dest paths.appImages
+		.pipe imagemin optimizationLevel: 3
+		.pipe gulp.dest paths.images
 
 	spriteData.css.pipe gulp.dest paths.appStylesHelpers
 
