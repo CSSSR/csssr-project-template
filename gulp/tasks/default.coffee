@@ -2,36 +2,29 @@ runSequence = require 'run-sequence'
 gulp        = require 'gulp'
 gutil       = require 'gulp-util'
 
-gulp.task 'stylusDependences', ->
+gulp.task 'stylesDependences', ->
 	runSequence(
-		'spritesmith'
-		'svg'
-		'stylus'
+		'sprite'
+		'icons'
+		'styles'
 	)
 
 gulp.task 'default', ->
 	runSequence(
 		[
-			'stylusDependences'
-			'jade'
+			'stylesDependences'
+			'templates'
 			'scripts'
 			'lint'
 		]
-		'browserSync'
+		'server'
 		'watch'
 	)
 
 gulp.task 'build', ['del'], ->
 	gulp.start(
-		'stylusDependences'
-		'jade'
+		'stylesDependences'
+		'templates'
 		'scripts'
 		'copy'
-	)
-
-gulp.task 'deploy', ->
-	runSequence(
-		'del'
-		'build'
-		'ghpages'
 	)

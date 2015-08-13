@@ -5,7 +5,7 @@ rename      = require 'gulp-rename'
 paths       = require '../paths'
 path        = require 'path'
 
-gulp.task 'svg', ->
+gulp.task 'icons', ->
 	gulp.src 'app/icons/**/*.svg'
 		.pipe svgSymbols
 			title: false

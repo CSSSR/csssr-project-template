@@ -17,7 +17,7 @@ data =
 	jv0: 'javascript:void(0);'
 	timestamp: +new Date()
 
-gulp.task 'jade', ->
+gulp.task 'templates', ->
 	gulp.src 'app/**/*.jade'
 		.pipe plumber errorHandler: errorHandler
 		.pipe cached 'jade'

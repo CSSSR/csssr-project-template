@@ -13,7 +13,7 @@ errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
 pkg          = require '../../package.json'
 
-gulp.task 'stylus', ->
+gulp.task 'styles', ->
 	gulp.src '*.styl',
 			cwd: 'app/styles'
 			nonull: true

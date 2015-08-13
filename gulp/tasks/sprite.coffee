@@ -5,7 +5,7 @@ imagemin     = require 'gulp-imagemin'
 errorHandler = require '../utils/errorHandler'
 paths        = require '../paths'
 
-gulp.task 'spritesmith', ->
+gulp.task 'sprite', ->
 	spriteData = gulp.src 'app/sprite/**/*.png', read: false
 		.pipe plumber errorHandler: errorHandler
 		.pipe spritesmith
