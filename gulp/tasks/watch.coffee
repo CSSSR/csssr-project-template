@@ -15,7 +15,7 @@ gulp.task 'watch', ->
 
 	gulp.watch 'app/scripts/**/*.js', [
 			'scripts'
-			'eslint'
+			'lint'
 			reload
 		]
 
