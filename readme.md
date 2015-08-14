@@ -3,16 +3,16 @@
 
 ## Старт проекта
 
-* Установи `gulp` и `bower` глобально:
-
-```bash
-npm i -g gulp bower
-```
-
 * Склонируй репозиторий и перейди в папку проекта:
 
 ```
 git clone git@github.com:CSSSR/csssr-project-template.git new-project && cd new-project
+```
+
+* Установи `gulp` глобально:
+
+```bash
+npm i -g gulp
 ```
 
 * Установи зависимости:
