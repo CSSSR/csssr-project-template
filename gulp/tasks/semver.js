@@ -1,21 +1,19 @@
 import gulp from 'gulp';
 import bump from 'gulp-bump';
 
-gulp.task('semver', () => {
+gulp.task('patch', () => {
 	gulp.src('package.json')
 		.pipe(bump())
 		.pipe(gulp.dest('./'));
 });
 
-gulp.task('semver:patch', ['semver']);
-
-gulp.task('semver:minor', () => {
+gulp.task('minor', () => {
 	gulp.src('package.json')
 		.pipe(bump({type: 'minor'}))
 		.pipe(gulp.dest('./'));
 });
 
-gulp.task('semver:major', () => {
+gulp.task('major', () => {
 	gulp.src('package.json')
 		.pipe(bump({type: 'major'}))
 		.pipe(gulp.dest('./'));
