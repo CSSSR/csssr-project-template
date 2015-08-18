@@ -5,7 +5,7 @@ import rename     from 'gulp-rename';
 import paths      from '../paths';
 import path       from 'path';
 
-gulp.task('icons', () => {
+gulp.task('icons', () => (
 	gulp.src('app/icons/**/*.svg')
 		.pipe(svgSymbols({
 			title: false,
@@ -18,5 +18,5 @@ gulp.task('icons', () => {
 		}))
 		.pipe(gulpif(/\.styl$/, gulp.dest('app/styles/helpers')))
 		.pipe(gulpif(/\.svg$/, rename('icon.svg')))
-		.pipe(gulpif(/\.svg$/, gulp.dest('dist/assets/images/')));
-});
+		.pipe(gulpif(/\.svg$/, gulp.dest('dist/assets/images/')))
+));

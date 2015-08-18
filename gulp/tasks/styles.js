@@ -13,7 +13,7 @@ import errorHandler from '../utils/errorHandler';
 import paths        from '../paths';
 import { browsers } from '../../package.json';
 
-gulp.task('styles', () => {
+gulp.task('styles', () => (
 	gulp.src('*.styl', {
 			cwd: 'app/styles',
 			nonull: true
@@ -40,5 +40,5 @@ gulp.task('styles', () => {
 		.pipe(gulpif(!gutil.env.debug, minifyCss()))
 		.pipe(gulpif(gutil.env.csscomb, csscomb()))
 		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest(paths.styles));
-});
+		.pipe(gulp.dest(paths.styles))
+));

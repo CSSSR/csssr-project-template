@@ -25,5 +25,5 @@ gulp.task('sprite', () => {
 		.pipe(imagemin({optimizationLevel: 3}))
 		.pipe(gulp.dest(paths.images));
 
-	spriteData.css.pipe(gulp.dest(paths.appStylesHelpers));
+	return spriteData.css.pipe(gulp.dest(paths.appStylesHelpers));
 });

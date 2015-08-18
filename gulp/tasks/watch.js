@@ -19,5 +19,5 @@ gulp.task('watch', () => {
 		reload
 	]);
 
-	gulp.watch('app/icons/**/*.svg', ['icons', reload]);
+	gulp.watch('app/icons/**/*.svg', ['icons', reload])
 });

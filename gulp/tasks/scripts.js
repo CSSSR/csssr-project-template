@@ -13,12 +13,12 @@ import source       from 'vinyl-source-stream';
 import errorHandler from '../utils/errorHandler';
 import paths        from '../paths';
 
-gulp.task('scripts', () => {
+gulp.task('scripts', () => (
 	browserify({debug: gutil.env.debug})
 		.transform(babelify)
 		.require('app/scripts/app.js', {entry: true})
 		.bundle()
 		.on('error', (err) => console.log('Error: ' + err.message))
 		.pipe(source('app.min.js'))
-		.pipe(gulp.dest(paths.scripts));
-});
+		.pipe(gulp.dest(paths.scripts))
+));

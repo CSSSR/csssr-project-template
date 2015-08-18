@@ -18,7 +18,7 @@ let data = {
 	timestamp: +new Date()
 };
 
-gulp.task('templates', () => {
+gulp.task('templates', () => (
 	gulp.src('app/**/*.jade')
 		.pipe(plumber({errorHandler: errorHandler}))
 		.pipe(cached('jade'))
@@ -33,5 +33,5 @@ gulp.task('templates', () => {
 			preserve_newlines: true
 		}))
 		.pipe(rename({dirname: '.'}))
-		.pipe(gulp.dest(paths.dist));
-});
+		.pipe(gulp.dest(paths.dist))
+));

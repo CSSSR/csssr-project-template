@@ -3,7 +3,7 @@ import gulp        from 'gulp';
 import gutil       from 'gulp-util';
 import debuga      from 'debuga';
 
-gulp.task('server', () => {
+gulp.task('server', () => (
 	browserSync.init({
 		files: ['dist/**/*'],
 		open: !!gutil.env.open,
@@ -18,5 +18,5 @@ gulp.task('server', () => {
 			middleware: !!gutil.env.debug ? [debuga()] : []
 		},
 		tunnel: !!gutil.env.tunnel
-	});
-});
+	})
+));

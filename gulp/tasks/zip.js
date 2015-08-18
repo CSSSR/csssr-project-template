@@ -23,5 +23,5 @@ gulp.task('zip', () => {
 
 	gulp.src('dist/**/*')
 		.pipe(zip(zipName))
-		.pipe(gulp.dest(paths.dist));
+		.pipe(gulp.dest(paths.dist))
 });
