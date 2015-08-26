@@ -11,6 +11,8 @@ gulp.task('watch', () => {
 
 	gulp.watch('app/{pages,blocks}/**/*.jade', () => runSequence('templates', reload));
 
+	gulp.watch('app/data/pages/**/*.json', () => runSequence('templates-clear', 'templates', reload));
+
 	gulp.watch('app/resources/**/*', ['copy:resources', reload]);
 
 	gulp.watch('app/scripts/**/*.js', [

@@ -2,7 +2,7 @@ import path from 'path';
 import fs   from 'fs';
 
 module.exports = (dataFile) => {
-	let pathToData = path.join('.', 'app', 'data');
+	let pathToData = path.join('.', 'app', 'data', 'blocks');
 	let resolvedPath = path.resolve(pathToData);
 	let dataPath = resolvedPath + path.sep;
 	let dataFilePath = path.resolve(path.join(dataPath, /\.json$/.test(dataFile) && dataFile || dataFile + '.json'));
