@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "start": "gulp --debug",
+    "init": "yo csssr-project",
     "build": "gulp build",
     "lint": "gulp lint"
   },
@@ -44,6 +45,7 @@
     "debuga": "^1.0.2",
     "del": "^0.1.3",
     "eslint": "^1.0.0",
+    "generator-csssr-project": "kinday/generator-csssr-project",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "2.3.1",
     "gulp-bump": "^0.3.1",
@@ -75,7 +77,8 @@
     "run-sequence": "^1.0.2",
     "rupture": "^0.6.1",
     "svg4everybody": "jonathantneal/svg4everybody",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "yo": "^1.4.7"
   },
   "browsers": {
     "android": 4,
