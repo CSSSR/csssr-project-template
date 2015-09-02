@@ -25,7 +25,7 @@ let defaultData = {
 };
 
 let getJSONFileName = (file) => {
-	return './app/data/pages/'+ (((path.basename(file.path)).split('.jade'))[0]) + '.json';
+	return './app/pages/'+ (((path.basename(file.path)).split('.jade'))[0]) + '.json';
 }
 
 let requireJSONAsync = (fileName, cb) => {
@@ -34,17 +34,17 @@ let requireJSONAsync = (fileName, cb) => {
 	})
 }
 
-let getPromisedJSON = (filename, json) => {
+let getPromisedJSON = (filename) => {
 	return new Promise((resolve, reject) => {
 		requireJSONAsync(filename, (data) => {
-			json = _.extend(json, data);
-			resolve('resolve ' + filename);
+			resolve(data);
 		})
 	})
 }
 
-gulp.task('templates-clear', () => {
-	delete(cached.caches['jade']);
+gulp.task('templates:clear', () => {
+	// console.log(cached.caches.jade); // TODO: catch correct remplate, bind it with watch task
+	delete(cached.caches.jade);
 	return gulp;
 })
 
@@ -62,13 +62,12 @@ gulp.task('templates', () => {
 
 			json.pageType = (((path.basename(file.path)).split('.jade'))[0]);
 
-			let jsonCommonFileName = getJSONFileName({path:'default'});
-			let jsonPageFileName = getJSONFileName(file);
-
 			Promise.all([
-				getPromisedJSON(jsonCommonFileName, json),
-				getPromisedJSON(jsonPageFileName, json)
-			]).then(() => {
+				getPromisedJSON(getJSONFileName({path:'default'})),
+				getPromisedJSON(getJSONFileName(file))
+			]).then((data) => {
+				json = _.extend(json, data[0], data[1]);
+
 				cb(undefined, json);
 			});
 		}))

@@ -9,9 +9,9 @@ gulp.task('watch', () => {
 
 	gulp.watch('app/{styles,blocks}/**/*.styl', ['styles', () => reload('assets/styles/app.min.css')]);
 
-	gulp.watch('app/{pages,blocks}/**/*.jade', () => runSequence('templates', reload));
+	gulp.watch('app/{pages,blocks,layouts}/**/*.jade', () => runSequence('templates', reload));
 
-	gulp.watch('app/data/pages/**/*.json', () => runSequence('templates-clear', 'templates', reload));
+	gulp.watch(['app/data/**/*.json', 'app/pages/**/*.json'], () => runSequence('templates:clear', 'templates', reload));
 
 	gulp.watch('app/resources/**/*', ['copy:resources', reload]);
 
