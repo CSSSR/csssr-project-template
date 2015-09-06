@@ -53,7 +53,7 @@ gulp.task('templates', () => {
 		.pipe(plumber({errorHandler: errorHandler}))
 		.pipe(cached('jade'))
 		.pipe(gulpif(global.watch, inheritance({basedir: 'app'})))
-		.pipe(filter((file) => /app[\\\/]pages/.test(file.path)))
+		.pipe(filter((file) => /app[\\\/]pages[\\\/][^_]/.test(file.path)))
 		.pipe(data((file, cb) => {
 			let json = _.extend({}, defaultData)
 

@@ -1,6 +1,16 @@
-mixin list(list)
-	ul.list
-		each item in list
-			li.list__item
-				span.mark= item[0]
-				= ' - ' + item[1]
+mixin list(opts)
+	-var opts = opts || {}
+	-var blks = blocks || {}
+	-var list = blks.list || {}
+	-var items = list.items || opts.items || []
+	-var modifiers = opts.modifiers || []
+	-var classes = ['list']
+	-each modifier in modifiers
+		-classes.push(classes[0]+'_'+modifier)
+
+	-if (items.length)
+		ul.list
+			-each item in items
+				li.list__item
+					span.mark= item[0]
+					= ' - ' + item[1]

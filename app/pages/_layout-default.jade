@@ -1,15 +1,15 @@
 - var pageScripts = pageScripts || [[], [], []];
 
-include ../header/header
-include ../main/main
-include ../footer/footer
-include ../scripts/scripts
+include ../blocks/header/header
+include ../blocks/main/main
+include ../blocks/footer/footer
+include ../blocks/scripts/scripts
 
 +script([], ['app.min.js'])
 
 doctype html
 html(lang='ru')
-	include ../head/head
+	include ../blocks/head/head
 	body
 		+main()
 			+header()

@@ -17,7 +17,8 @@ mixin index()
 			+heading() Инструменты:
 
 			.index__group
-				+list(getData('tools'))
+				//- +list({items: getData('tools')})
+				+list()
 
 			.index__group
 				+subtitle() СТРУКТУРА ФАЙЛОВ
