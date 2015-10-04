@@ -4,7 +4,7 @@ import gutil        from 'gulp-util';
 import gulpif       from 'gulp-if';
 import rupture      from 'rupture';
 import stylus       from 'gulp-stylus';
-import autoprefixer from 'gulp-autoprefixer';
+import autoprefixer from 'autoprefixer-stylus';
 import cmq          from 'gulp-group-css-media-queries';
 import minifyCss    from 'gulp-minify-css';
 import csscomb      from 'gulp-csscomb';
@@ -21,21 +21,23 @@ gulp.task('styles', () => (
 		.pipe(plumber({errorHandler: errorHandler}))
 		.pipe(stylus({
 			errors: true,
-			use: rupture(),
+			use: [
+				rupture(),
+				autoprefixer(
+					'Android >= ' + browsers.android,
+					'Chrome >= ' + browsers.chrome,
+					'Firefox >= ' + browsers.firefox,
+					'Explorer >= ' + browsers.ie,
+					'iOS >= ' + browsers.ios,
+					'Opera >= ' + browsers.opera,
+					'Safari >= ' + browsers.safari
+				)
+			],
 			sourcemap: gutil.env.debug ? {
 				comment: false,
 				inline: true
 			} : false
 		}))
-		.pipe(autoprefixer(
-			'Android >= ' + browsers.android,
-			'Chrome >= ' + browsers.chrome,
-			'Firefox >= ' + browsers.firefox,
-			'Explorer >= ' + browsers.ie,
-			'iOS >= ' + browsers.ios,
-			'Opera >= ' + browsers.opera,
-			'Safari >= ' + browsers.safari
-		))
 		.pipe(gulpif(!gutil.env.debug, cmq()))
 		.pipe(gulpif(!gutil.env.debug, minifyCss()))
 		.pipe(gulpif(gutil.env.csscomb, csscomb()))
