@@ -16,18 +16,14 @@ let getBlockJSON = (path) => {
 	return JSON.parse(json);
 }
 
-module.exports = (dataFile) => {
-	let block = getBlockName()
+module.exports = (blockDataType) => {
+	let blockName = getBlockName();
 
-	let pathToData = path.join('.', 'app', 'blocks', block);
+	let pathToData = path.join('.', 'app', 'blocks', blockName);
 	let resolvedPath = path.resolve(pathToData);
 	let dataPath = resolvedPath + path.sep;
-	let dataFilePath = path.resolve(path.join(dataPath, block + '.json'));
+	let dataFile = (blockDataType || blockName) + '.json';
+	let dataFilePath = path.resolve(path.join(dataPath, dataFile));
 
-	// if (dataPath != dataFilePath.slice(0, dataPath.length)) {
-	// 	throw new Error('Data path is not in data directory. Abort due potential data disclosure.');
-	// }
-	console.log(dataFilePath);
-
-	return getBlockJSON(dataFilePath); // JSON.parse(fs.readFileSync(dataFilePath, 'utf8') || '{}');
+	return getBlockJSON(dataFilePath);
 };

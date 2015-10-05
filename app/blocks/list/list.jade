@@ -1,6 +1,6 @@
 mixin list(opts)
 	-var opts = opts || {}
-	-var defaultData = getBlockData()
+	-var defaultData = getBlockData(opts.getData)
 
 	-var items = defaultData.items || opts.items || []
 

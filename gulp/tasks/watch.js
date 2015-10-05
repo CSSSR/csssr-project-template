@@ -14,8 +14,9 @@ gulp.task('watch', () => {
 
 	gulp.watch('app/{blocks,pages}/**/*.jade', () => runSequence('templates', reload));
 
-	gulp.watch('app/{blocks,data,pages}/**/*.json')
+	gulp.watch('app/{blocks,pages}/**/*.json')
 		.on('change', (file) => {
+			// TODO: watch for non-default data
 			global.changedJSON = file.path;
 			console.log('changed json: ' + global.changedJSON);
 			return runSequence('templates:clear', 'templates', reload);
