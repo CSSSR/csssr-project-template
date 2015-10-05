@@ -16,16 +16,27 @@ import pkg          from '../../package.json';
 import errorHandler from '../utils/errorHandler';
 import paths        from '../paths';
 import getData      from '../utils/getData';
+import getBlockData from '../utils/getBlockData';
 
 let defaultData = {
 	getData: getData,
+	getBlockData: getBlockData,
 	jv0: 'javascript:void(0);',
 	timestamp: +new Date(),
 	isDebug: !!gutil.env.debug
 };
 
 let getJSONFileName = (file) => {
-	return './app/pages/'+ (((path.basename(file.path)).split('.jade'))[0]) + '.json';
+	let page = ((path.basename(file.path)).split('.jade'))[0];
+	let jsonFilename = './app/pages/'+ page + '/' + page + '.json';
+
+	if (page === 'default') {
+		jsonFilename = './app/pages/'+ page + '.json';
+	}
+
+	return jsonFilename;
+
+	// return './app/pages/'+ (((path.basename(file.path)).split('.jade'))[0]) + '.json';
 }
 
 let requireJSONAsync = (fileName, cb) => {
@@ -34,17 +45,34 @@ let requireJSONAsync = (fileName, cb) => {
 	})
 }
 
-let getPromisedJSON = (filename) => {
-	return new Promise((resolve, reject) => {
+let getPromisedJSON = (filename) =>
+	new Promise((resolve, reject) => {
 		requireJSONAsync(filename, (data) => {
 			resolve(data);
 		})
 	})
-}
+
 
 gulp.task('templates:clear', () => {
-	// console.log(cached.caches.jade); // TODO: catch correct remplate, bind it with watch task
-	delete(cached.caches.jade);
+	if (Boolean(global.changedJSON) === true) {
+		let pageFilename = global.changedJSON.split('.')[0] + '.jade';
+		// let pageFilePath = pageFilename.split(path.delimiter); // path.sep
+		let pageFilePath = pageFilename.split('\\');
+
+		if (pageFilePath[pageFilePath.length - 1] === 'default.jade') {
+			delete(cached.caches.jade);
+
+		} else {
+			for (let i in cached.caches.jade) {
+				if (pageFilename === i) {
+					delete(cached.caches.jade[pageFilename]);
+				}
+			}
+		}
+
+		delete(global.changedJSON);
+	}
+
 	return gulp;
 })
 
@@ -56,17 +84,34 @@ gulp.task('templates', () => {
 		.pipe(filter((file) => /app[\\\/]pages[\\\/][^_]/.test(file.path)))
 		.pipe(data((file, cb) => {
 			let json = _.extend({}, defaultData)
+			let promises = [];
 
 			if (file.data)
 				json = _.extend(file.data, json)
 
+			promises.push(getPromisedJSON(getJSONFileName({path:'default'})));
+
+			let pageType = (((path.basename(file.path)).split('.jade'))[0]);
+			let typeParts = pageType.split('-');
+			let str = '';
+
 			json.pageType = (((path.basename(file.path)).split('.jade'))[0]);
 
-			Promise.all([
-				getPromisedJSON(getJSONFileName({path:'default'})),
-				getPromisedJSON(getJSONFileName(file))
-			]).then((data) => {
-				json = _.extend(json, data[0], data[1]);
+			for (let i = 0; i < typeParts.length; i++) {
+				if (str !== '') {
+					str += '-';
+				} else {
+					json.pageType = typeParts[i];
+				}
+
+				str += typeParts[i];
+				promises.push(getPromisedJSON(getJSONFileName({path: str})));
+			}
+
+			Promise.all(promises).then((data) => {
+				for (let i = 0; i < data.length; i++) {
+					json = _.extend(json, data[i]);
+				}
 
 				cb(undefined, json);
 			});

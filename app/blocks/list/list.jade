@@ -1,16 +1,25 @@
 mixin list(opts)
 	-var opts = opts || {}
-	-var blks = blocks || {}
-	-var list = blks.list || {}
-	-var items = list.items || opts.items || []
-	-var modifiers = opts.modifiers || []
-	-var classes = ['list']
+	-var defaultData = getBlockData()
+
+	-var items = defaultData.items || opts.items || []
+
+	-var modifiers = opts.mods || []
+	-var ulClasses = ['list']
 	-each modifier in modifiers
-		-classes.push(classes[0]+'_'+modifier)
+		-ulClasses.push(ulClasses[0] + '_' + modifier)
+
 
 	-if (items.length)
-		ul.list
+		ul(class=classes)
 			-each item in items
-				li.list__item
+				-var liClasses = [ulClasses[0] + '__item']
+				-var liMods = item.mods || []
+				-each liMod in liMods
+					-liClasses.push(liClasses[0] + '_' + liMod)
+
+				li(class=liClasses)
 					span.mark= item[0]
 					= ' - ' + item[1]
+	-else
+		| No data for 'list' mixin

@@ -7,11 +7,19 @@ gulp.task('watch', () => {
 
 	gulp.watch('app/sprite/**/*.png', ['sprite']);
 
-	gulp.watch('app/{styles,blocks}/**/*.styl', ['styles', () => reload('assets/styles/app.min.css')]);
+	gulp.watch([
+		'app/{styles,blocks}/**/*.styl',
+		'!app/blocks/_'
+	], ['styles', () => reload('assets/styles/app.min.css')]);
 
-	gulp.watch('app/{pages,blocks,layouts}/**/*.jade', () => runSequence('templates', reload));
+	gulp.watch('app/{blocks,pages}/**/*.jade', () => runSequence('templates', reload));
 
-	gulp.watch(['app/data/**/*.json', 'app/pages/**/*.json'], () => runSequence('templates:clear', 'templates', reload));
+	gulp.watch('app/{blocks,data,pages}/**/*.json')
+		.on('change', (file) => {
+			global.changedJSON = file.path;
+			console.log('changed json: ' + global.changedJSON);
+			return runSequence('templates:clear', 'templates', reload);
+		});
 
 	gulp.watch('app/resources/**/*', ['copy:resources', reload]);
 
