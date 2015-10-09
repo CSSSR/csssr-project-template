@@ -1,6 +1,6 @@
 {
   "name": "csssr-project-template",
-  "version": "0.11.4",
+  "version": "0.11.5",
   "description": "A template for a quick start.",
   "keywords": [
     "csssr",
@@ -49,7 +49,6 @@
     "gulp-bump": "^0.3.1",
     "gulp-cached": "^1.1.0",
     "gulp-changed": "^1.2.1",
-    "gulp-concat": "^2.4.3",
     "gulp-csscomb": "^3.0.3",
     "gulp-eslint": "^1.0.0",
     "gulp-filter": "^2.0.2",
@@ -70,11 +69,12 @@
     "gulp-zip": "^2.0.3",
     "gulp.spritesmith": "^1.5.0",
     "jquery": "^2.1.4",
-    "merge-stream": "^0.1.7",
+    "merge-stream": "^1.0.0",
     "require-dir": "^0.1.0",
     "run-sequence": "^1.0.2",
     "rupture": "^0.6.1",
     "svg4everybody": "jonathantneal/svg4everybody",
+    "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "browsers": {
