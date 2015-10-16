@@ -11,7 +11,6 @@ import csscomb from 'gulp-csscomb';
 import rename from 'gulp-rename';
 import errorHandler from '../utils/errorHandler';
 import paths from '../paths';
-import {browsers} from '../../package.json';
 
 gulp.task('styles', () => (
 	gulp.src('*.styl', {
@@ -23,15 +22,7 @@ gulp.task('styles', () => (
 			errors: true,
 			use: [
 				rupture(),
-				autoprefixer(
-					'Android >= ' + browsers.android,
-					'Chrome >= ' + browsers.chrome,
-					'Firefox >= ' + browsers.firefox,
-					'Explorer >= ' + browsers.ie,
-					'iOS >= ' + browsers.ios,
-					'Opera >= ' + browsers.opera,
-					'Safari >= ' + browsers.safari
-				)
+				autoprefixer()
 			],
 			sourcemap: gutil.env.debug ? {
 				comment: false,

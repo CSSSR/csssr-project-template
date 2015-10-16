@@ -79,14 +79,5 @@
     "svg4everybody": "2.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
-  },
-  "browsers": {
-    "android": 4,
-    "chrome": 42,
-    "firefox": 37,
-    "ie": 10,
-    "ios": 7,
-    "opera": 28,
-    "safari": 7
   }
 }
