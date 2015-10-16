@@ -1,13 +1,13 @@
-import gulp         from 'gulp';
-import plumber      from 'gulp-plumber';
-import spritesmith  from 'gulp.spritesmith';
-import imagemin     from 'gulp-imagemin';
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import spritesmith from 'gulp.spritesmith';
+import imagemin from 'gulp-imagemin';
 import errorHandler from '../utils/errorHandler';
-import paths        from '../paths';
+import paths from '../paths';
 
 gulp.task('sprite', () => {
-	let spriteData = gulp.src('app/sprite/**/*.png', {read: false})
-		.pipe(plumber({errorHandler: errorHandler}))
+	const spriteData = gulp.src('app/sprite/**/*.png', {read: false})
+		.pipe(plumber({errorHandler}))
 		.pipe(spritesmith({
 			imgName: 'sprite.png',
 			cssName: 'sprite.styl',

@@ -1,9 +1,8 @@
-import gulp       from 'gulp';
+import gulp from 'gulp';
 import svgSymbols from 'gulp-svg-symbols';
-import gulpif     from 'gulp-if';
-import rename     from 'gulp-rename';
-import paths      from '../paths';
-import path       from 'path';
+import gulpif from 'gulp-if';
+import rename from 'gulp-rename';
+import path from 'path';
 
 gulp.task('icons', () => (
 	gulp.src('app/icons/**/*.svg')

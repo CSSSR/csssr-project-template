@@ -1,7 +1,7 @@
-import gulp        from 'gulp';
+import gulp from 'gulp';
 import runSequence from 'run-sequence';
-import { reload }  from 'browser-sync';
-import watch       from 'gulp-watch';
+import {reload} from 'browser-sync';
+import watch from 'gulp-watch';
 
 gulp.task('watch', () => {
 	global.watch = true;
@@ -21,7 +21,7 @@ gulp.task('watch', () => {
 	));
 
 	watch('app/resources/**/*', () => runSequence(
-		'copy:resources',
+		'copy',
 		reload
 	));
 

@@ -18,7 +18,10 @@ ecmaFeatures:
     templateStrings: true
     experimentalObjectRestSpread: true
 
-
+globals:
+    window: true
+    global: true
+    __dirname: true
 rules:
     arrow-parens: [1, "as-needed"]
     arrow-spacing: [1, { "before": true, "after": true }]
@@ -101,7 +104,7 @@ rules:
     no-labels: 2
     no-lone-blocks: 2
     no-lonely-if: 2
-    no-implicit-coercion: [2, {"boolean": true, "number": true, "string": true}]
+    no-implicit-coercion: [2, {"boolean": false, "number": true, "string": true}]
     no-loop-func: 2
     no-mixed-requires: [0, false]
     no-mixed-spaces-and-tabs: [2, false]
@@ -129,7 +132,7 @@ rules:
     no-regex-spaces: 1
     no-restricted-modules: 0
     no-return-assign: 2
-    no-script-url: 2
+    no-script-url: 0
     no-self-compare: 2
     no-sequences: 2
     no-shadow: 2
