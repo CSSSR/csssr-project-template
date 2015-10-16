@@ -28,7 +28,7 @@ rules:
     camelcase: 1
     comma-dangle: [2, "never"]
     comma-spacing: [2, {"before": false, "after": true}]
-    comma-style: [2, "first"]
+    comma-style: [2, "last"]
     complexity: [1, 11]
     computed-property-spacing: [2, "never"]
     consistent-return: 0
@@ -45,7 +45,7 @@ rules:
     generator-star-spacing: 0
     guard-for-in: 1
     handle-callback-err: 0
-    id-length: [2, {"min": 1, "max": 10}]
+    id-length: [2, {"min": 1, "max": 20}]
     indent: [2, "tab"]
     key-spacing: [2, { "beforeColon": false, "afterColon": true }]
     lines-around-comment: 0
@@ -85,7 +85,7 @@ rules:
     no-extend-native: 2
     no-extra-bind: 2
     no-extra-boolean-cast: 2
-    no-extra-parens: 1
+    no-extra-parens: 0
     no-extra-semi: 2
     no-fallthrough: 2
     no-floating-decimal: 1
