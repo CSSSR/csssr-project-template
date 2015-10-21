@@ -1,6 +1,5 @@
 import path         from 'path'
 import fs           from 'fs'
-import _            from 'underscore'
 import gulp         from 'gulp';
 import gutil        from 'gulp-util'
 import gulpif       from 'gulp-if';
@@ -35,8 +34,6 @@ let getJSONFileName = (file) => {
 	}
 
 	return jsonFilename;
-
-	// return './app/pages/'+ (((path.basename(file.path)).split('.jade'))[0]) + '.json';
 }
 
 let requireJSONAsync = (fileName, cb) => {
@@ -52,20 +49,31 @@ let getPromisedJSON = (filename) =>
 		})
 	})
 
+let getTmplByJSON = (filename) => {
+	let bpName = path.basename(filename, '.json');
+	const dirName = path.dirname(filename);
+	const tree = dirName.split(path.sep);
+	if (bpName !== 'default')
+		bpName = tree[tree.length - 1]; // [block|page]Name
+
+	tree.push(bpName + '.jade');
+	return path.join(...tree);
+}
 
 gulp.task('templates:clear', () => {
 	if (Boolean(global.changedJSON) === true) {
-		let pageFilename = global.changedJSON.split('.')[0] + '.jade';
-		// let pageFilePath = pageFilename.split(path.delimiter); // path.sep
-		let pageFilePath = pageFilename.split('\\');
+		let jadeFileName = getTmplByJSON(global.changedJSON);
+		let baseName = path.basename(jadeFileName);
 
-		if (pageFilePath[pageFilePath.length - 1] === 'default.jade') {
+		if (baseName === 'default.jade') {
+			console.log('clearing all cache');
 			delete(cached.caches.jade);
 
 		} else {
 			for (let i in cached.caches.jade) {
-				if (pageFilename === i) {
-					delete(cached.caches.jade[pageFilename]);
+				if (jadeFileName === i) {
+					console.log('clearing cache for ' + jadeFileName);
+					delete(cached.caches.jade[jadeFileName]);
 				}
 			}
 		}
@@ -83,11 +91,11 @@ gulp.task('templates', () => {
 		.pipe(gulpif(global.watch, inheritance({basedir: 'app'})))
 		.pipe(filter((file) => /app[\\\/]pages[\\\/][^_]/.test(file.path)))
 		.pipe(data((file, cb) => {
-			let json = _.extend({}, defaultData)
+			let json = Object.assign({}, defaultData)
 			let promises = [];
 
 			if (file.data)
-				json = _.extend(file.data, json)
+				json = Object.assign(file.data, json)
 
 			promises.push(getPromisedJSON(getJSONFileName({path:'default'})));
 
@@ -110,7 +118,7 @@ gulp.task('templates', () => {
 
 			Promise.all(promises).then((data) => {
 				for (let i = 0; i < data.length; i++) {
-					json = _.extend(json, data[i]);
+					json = Object.assign(json, data[i]);
 				}
 
 				cb(undefined, json);
