@@ -1,9 +1,15 @@
-mixin tree(tree)
+mixin tree(opts)
+	-var opts = opts || {}
+	-var defaultData = getBlockData(opts.getData)
+
+	-var items = defaultData.items || opts.items || []
+
 	ul.tree
-		each item in tree
-			if item.folder
+		-each item in items
+			-if (item.folder)
 				li.tree__item.tree__item_type_folder=item.folder
-					if item.content
-						+tree(item.content)
-			else if item.file
+					-if (item.content)
+						+tree({items: item.content})
+
+			-else if (item.file)
 				li.tree__item=item.file

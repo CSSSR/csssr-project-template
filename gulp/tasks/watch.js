@@ -10,7 +10,10 @@ gulp.task('watch', () => {
 		'sprite'
 	));
 
-	watch('app/{styles,blocks}/**/*.styl', () => runSequence(
+	watch([
+		'app/{styles,blocks}/**/*.styl',
+		'!app/blocks/_'
+	], () => runSequence(
 		'styles',
 		() => reload('assets/styles/app.min.css')
 	));
@@ -19,6 +22,12 @@ gulp.task('watch', () => {
 		'templates',
 		reload
 	));
+
+	watch('app/{blocks,pages}/**/*.json')
+		.on('change', (file) => {
+			global.changedJSON = file;
+			return runSequence('templates:clear', 'templates', reload);
+		});
 
 	watch('app/resources/**/*', () => runSequence(
 		'copy',

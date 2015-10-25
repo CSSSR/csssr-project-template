@@ -1,6 +1,25 @@
-mixin list(list)
-	ul.list
-		each item in list
-			li.list__item
-				span.mark= item[0]
-				= ' - ' + item[1]
+mixin list(opts)
+	-var opts = opts || {}
+	-var blockData = getBlockData(opts.getData)
+
+	-var items = blockData.items || opts.items || []
+
+	-var modifiers = opts.mods || []
+	-var ulClasses = ['list']
+	-each modifier in modifiers
+		-ulClasses.push(ulClasses[0] + '_' + modifier)
+
+
+	-if (items.length)
+		ul(class=ulClasses)
+			-each item in items
+				-var liClasses = [ulClasses[0] + '__item']
+				-var liMods = item.mods || []
+				-each liMod in liMods
+					-liClasses.push(liClasses[0] + '_' + liMod)
+
+				li(class=liClasses)
+					span.mark= item[0]
+					= ' - ' + item[1]
+	-else
+		| No data for 'list' mixin

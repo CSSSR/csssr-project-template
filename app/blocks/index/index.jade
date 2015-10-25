@@ -17,7 +17,7 @@ mixin index()
 			+heading() Инструменты:
 
 			.index__group
-				+list(getData('tools'))
+				+list()
 
 			.index__group
 				+subtitle() СТРУКТУРА ФАЙЛОВ
@@ -25,7 +25,7 @@ mixin index()
 			+container()
 				+col()
 					+heading() Исходники
-					+tree(getData('sourceTree'))
+					+tree({getData: 'sourceTree'})
 
 				+col()
 					.index__arrow
@@ -33,6 +33,6 @@ mixin index()
 
 				+col()
 					+heading() Готовые файлы
-					+tree(getData('buildTree'))
+					+tree({getData: 'buildTree'})
 
 			+fork()

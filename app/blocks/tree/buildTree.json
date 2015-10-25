@@ -1,0 +1,23 @@
+{
+	"items": [
+		{
+			"folder": "assets",
+			"content": [
+				{ "folder": "images" },
+				{
+					"folder": "scripts",
+					"content": [
+						{ "file": "app.min.js" }
+					]
+				},
+				{
+					"folder": "styles",
+					"content": [
+						{ "file": "app.min.css" }
+					]
+				}
+			]
+		},
+		{ "file": "index.html" }
+	]
+}
