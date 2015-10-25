@@ -4,7 +4,7 @@ import fs   from 'fs';
 let getBlockName = () => {
 	let err = new Error();
 	let str = err.stack.split('at Object.jade_mixins.');
-	return str[1].split(' ')[0];
+	return str[1].split('.jade_interp')[0];
 }
 
 let getBlockJSON = (path) => {
@@ -22,4 +22,4 @@ module.exports = (blockDataType) => {
 	let dataFilePath = path.resolve(path.join('.', 'app', 'blocks', blockName, dataFile));
 
 	return getBlockJSON(dataFilePath);
-};
+}

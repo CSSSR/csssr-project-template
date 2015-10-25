@@ -1,6 +1,5 @@
 import runSequence from 'run-sequence';
-import gulp        from 'gulp';
-import gutil       from 'gulp-util';
+import gulp from 'gulp';
 
 gulp.task('stylesDependences', () => (
 	runSequence(
@@ -11,7 +10,8 @@ gulp.task('stylesDependences', () => (
 ));
 
 gulp.task('default', () => (
-	runSequence([
+	runSequence(
+		[
 			'stylesDependences',
 			'templates',
 			'scripts',
