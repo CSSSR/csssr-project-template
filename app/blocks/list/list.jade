@@ -1,8 +1,8 @@
 mixin list(opts)
 	-var opts = opts || {}
-	-var defaultData = getBlockData(opts.getData)
+	-var blockData = getBlockData(opts.getData)
 
-	-var items = defaultData.items || opts.items || []
+	-var items = blockData.items || opts.items || []
 
 	-var modifiers = opts.mods || []
 	-var ulClasses = ['list']
@@ -11,7 +11,7 @@ mixin list(opts)
 
 
 	-if (items.length)
-		ul(class=classes)
+		ul(class=ulClasses)
 			-each item in items
 				-var liClasses = [ulClasses[0] + '__item']
 				-var liMods = item.mods || []

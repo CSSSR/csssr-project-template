@@ -18,12 +18,8 @@ let getBlockJSON = (path) => {
 
 module.exports = (blockDataType) => {
 	let blockName = getBlockName();
-
-	let pathToData = path.join('.', 'app', 'blocks', blockName);
-	let resolvedPath = path.resolve(pathToData);
-	let dataPath = resolvedPath + path.sep;
 	let dataFile = (blockDataType || blockName) + '.json';
-	let dataFilePath = path.resolve(path.join(dataPath, dataFile));
+	let dataFilePath = path.resolve(path.join('.', 'app', 'blocks', blockName, dataFile));
 
 	return getBlockJSON(dataFilePath);
 };
