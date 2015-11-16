@@ -1,6 +1,6 @@
 {
   "name": "csssr-project-template",
-  "version": "0.11.6",
+  "version": "0.11.7",
   "description": "A template for a quick start.",
   "keywords": [
     "csssr",
@@ -14,7 +14,8 @@
   "scripts": {
     "start": "gulp --debug",
     "build": "gulp build",
-    "lint": "gulp lint"
+    "lint": "gulp lint",
+    "deploy": "gulp del; gulp build --robots; gulp deploy"
   },
   "repository": {
     "type": "git",

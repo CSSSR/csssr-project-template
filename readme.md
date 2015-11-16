@@ -85,6 +85,12 @@ gulp --open
 gulp zip
 ```
 
+* Деплой всего содержимого папки `dist` в ветку `dist`:
+
+```
+npm run deploy
+```
+
 ## Структура папок и файлов
 
 ```
@@ -114,7 +120,7 @@ gulp zip
 │       │   ├── svg.styl       # Переменные с данными SVG иконок (автогенерация)
 │       │   └── variables.styl # Переменные
 │       └── app.styl           # Главный стилевой файл
-├── dist/                      # Сборка
+├── dist/                      # Сборка (автогенерация)
 │   ├── assets/                # Подключаемые ресурсы
 │   │   ├── fonts/             # Шрифты
 │   │   ├── images/            # Изображения
@@ -129,7 +135,8 @@ gulp zip
 ├── .eslintrc                  # Конфигурация проверки JavaScript в ESLint
 ├── .editorconfig              # Конфигурация настроек редактора кода
 ├── .gitignore                 # Список исключённых файлов из Git
-├── gulpfile.coffee            # Файл для запуска Gulp.js
+├── browserlist                # Список версий браузеров для Autoprefixer
+├── gulpfile.babel.js          # Файл для запуска Gulp.js
 ├── package.json               # Список модулей и прочей информации
 └── readme.md                  # Документация шаблона
 ```

@@ -3,9 +3,5 @@ import runSequence from 'run-sequence';
 import ghpages from 'gulp-gh-pages';
 
 gulp.task('deploy', () => (
-	runSequence(
-		'del',
-		'build',
-		() => gulp.src('dist/**/*').pipe(ghpages({branch: 'dist'}))
-	)
+	gulp.src(['dist/**/*', '!dist/robots.txt']).pipe(ghpages({branch: 'dist'}))
 ));
