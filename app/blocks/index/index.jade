@@ -12,27 +12,33 @@ mixin index()
 	.index
 		+content()
 			.index__group
-				+subtitle() ЧТО ВКЛЮЧЕНО
+				+subtitle()
+					| ЧТО ВКЛЮЧЕНО
 
-			+heading() Инструменты:
+			+heading()
+				| Инструменты:
 
 			.index__group
 				+list(getData('tools'))
 
 			.index__group
-				+subtitle() СТРУКТУРА ФАЙЛОВ
+				+subtitle()
+					| СТРУКТУРА ФАЙЛОВ
 
 			+container()
 				+col()
-					+heading() Исходники
+					+heading()
+						| Исходники
 					+tree(getData('sourceTree'))
 
 				+col()
 					.index__arrow
-						+arrow() Компиляция
+						+arrow()
+							| Компиляция
 
 				+col()
-					+heading() Готовые файлы
+					+heading()
+						| Готовые файлы
 					+tree(getData('buildTree'))
 
 			+fork()
