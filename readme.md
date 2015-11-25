@@ -66,6 +66,11 @@ gulp --debug
 gulp --sourcemaps
 ```
 
+* Уведомления об ошибках eslint
+```
+gulp --notify
+```
+
 * Воспроизводить звук при ошибках:
 
 ```

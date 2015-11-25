@@ -48,13 +48,16 @@ function runWebpack(watch = false) {
 			emitWarning: true,
 			formatter: errors => {
 				if (errors[0].messages) {
-					const error = errors[0].messages.find(msg => msg.severity === 2);
-					if (error) {
-						notifier.notify({
-							title: error.message,
-							message: `${error.line}:${error.column} ${error.source.trim()}`,
-							icon: path.join(__dirname, '../utils/error-icon.png')
-						});
+					console.log(stylish(errors))
+					if (gutil.env.notify) {
+						const error = errors[0].messages.find(msg => msg.severity === 2);
+						if (error) {
+							notifier.notify({
+								title: error.message,
+								message: `${error.line}:${error.column} ${error.source.trim()}`,
+								icon: path.join(__dirname, '../utils/error-icon.png')
+							});
+						}
 					}
 				}
 			}
