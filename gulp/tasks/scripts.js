@@ -48,8 +48,8 @@ function runWebpack(watch = false) {
 					const error = errors[0].messages.find(msg => msg.severity === 2);
 					if (error) {
 						notifier.notify({
-							title: `Error: ${error.line}:${error.column} ${error.message}`,
-							message: `Problem's place: ${error.source.trim()}`,
+							title: error.message,
+							message: `${error.line}:${error.column} ${error.source.trim()}`,
 							icon: path.join(__dirname, '../utils/error-icon.png')
 						});
 					}

@@ -62,7 +62,6 @@
     "gulp-jade": "^1.1.0",
     "gulp-jade-inheritance": "^0.5.3",
     "gulp-minify-css": "^1.2.1",
-    "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.1.0",
