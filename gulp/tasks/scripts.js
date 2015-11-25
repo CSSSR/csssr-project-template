@@ -16,7 +16,7 @@ function runWebpack(watch = false) {
 		output: {
 			filename: 'app.min.js'
 		},
-		devtool: gutil.env.sourcemaps ? 'source-map' : 'eval',
+		devtool: gutil.env.sourcemaps ? '#eval-source-map' : 'eval',
 		debug: true,
 		resolve: {
 			modulesDirectories: [
@@ -25,6 +25,10 @@ function runWebpack(watch = false) {
 			extensions: ['.js', '']
 		},
 		module: {
+			preLoaders: [{
+				test: /\.js$/,
+				loader: "source-map-loader"
+			}],
 			loaders: [{
 				test: /\.js$/,
 				loader: 'babel',
