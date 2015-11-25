@@ -9,7 +9,6 @@ import notifier from 'node-notifier';
 import paths from '../paths';
 
 function runWebpack(watch = false) {
-	console.log(path.join(__dirname, '../error-icon.png'))
 	const webpackConfig = {
 		watch,
 		bail: true,
