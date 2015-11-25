@@ -61,6 +61,11 @@ gulp --port=9000
 gulp --debug
 ```
 
+* Писать sourcemaps
+```
+gulp --sourcemaps
+```
+
 * Воспроизводить звук при ошибках:
 
 ```

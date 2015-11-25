@@ -25,11 +25,7 @@ gulp.task('watch', () => {
 		reload
 	));
 
-	watch('app/{scripts,blocks}/**/*.js', () => gulp.start(
-		'scripts',
-		'lint',
-		reload
-	));
+	gulp.start('watchScripts');
 
 	watch('app/icons/**/*.svg', () => runSequence(
 		'icons',
