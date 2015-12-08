@@ -2,7 +2,8 @@ import path from 'path';
 import gulp from 'gulp';
 import gulpif from 'gulp-if';
 import gutil from 'gulp-util';
-import webpack from 'webpack-stream';
+import webpack from 'webpack';
+import webpackStream from 'webpack-stream';
 import uglify from 'gulp-uglify';
 import stylish from 'eslint/lib/formatters/stylish';
 import notifier from 'node-notifier';
@@ -27,7 +28,7 @@ function runWebpack(watch = false) {
 		module: {
 			preLoaders: [{
 				test: /\.js$/,
-				loader: "source-map-loader"
+				loader: 'source-map-loader'
 			}],
 			loaders: [{
 				test: /\.js$/,
@@ -42,13 +43,17 @@ function runWebpack(watch = false) {
 				exclude: /node_modules/
 			}]
 		},
+		plugins: gutil.env.debug ? [] : [
+			new webpack.optimize.DedupePlugin(),
+			new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}})
+		],
 		eslint: {
 			configFile: path.join(__dirname, '../../.eslintrc'),
 			emitError: true,
 			emitWarning: true,
 			formatter: errors => {
 				if (errors[0].messages) {
-					console.log(stylish(errors))
+					console.log(stylish(errors));
 					if (gutil.env.notify) {
 						const error = errors[0].messages.find(msg => msg.severity === 2);
 						if (error) {
@@ -66,7 +71,7 @@ function runWebpack(watch = false) {
 
 	return gulp
 		.src('app/scripts/app.js')
-		.pipe(webpack(webpackConfig, null, (err, stats) => {
+		.pipe(webpackStream(webpackConfig, null, (err, stats) => {
 			const time = new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
 			const durations = (stats.endTime - stats.startTime);
 			const formatedDurations = durations > 1000 ? `${durations / 1000} s` : `${durations} ms`;
@@ -74,7 +79,6 @@ function runWebpack(watch = false) {
 			const message = `Complited in ${gutil.colors.magenta(formatedDurations)}`;
 			console.log(`${prompt} ${message}`);
 		}))
-		.pipe(gulpif(!gutil.env.debug, uglify()))
 		.pipe(gulp.dest(paths.scripts));
 }
 
