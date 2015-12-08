@@ -37,8 +37,10 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer-stylus": "^0.8.0",
+    "babel": "^5.8.34",
     "babel-core": "^5.8.34",
     "babel-eslint": "^4.1.5",
+    "babel-loader": "^5.4.0",
     "babelify": "^6.4.0",
     "bemto.jade": "^0.2.2",
     "browser-sync": "^2.10.0",
@@ -47,6 +49,7 @@
     "debuga": "^1.0.2",
     "del": "^2.1.0",
     "eslint": "^1.9.0",
+    "eslint-loader": "^1.1.1",
     "gulp": "^3.9.0",
     "gulp-bump": "^1.0.0",
     "gulp-cached": "^1.1.0",
@@ -82,6 +85,7 @@
     "svg4everybody": "^2.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "webpack": "^1.12.9"
+    "webpack": "^1.12.9",
+    "webpack-stream": "^2.3.0"
   }
 }

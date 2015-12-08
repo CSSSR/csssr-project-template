@@ -1,10 +1,8 @@
 import path from 'path';
 import gulp from 'gulp';
-import gulpif from 'gulp-if';
 import gutil from 'gulp-util';
 import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
-import uglify from 'gulp-uglify';
 import stylish from 'eslint/lib/formatters/stylish';
 import notifier from 'node-notifier';
 import paths from '../paths';
@@ -17,7 +15,7 @@ function runWebpack(watch = false) {
 		output: {
 			filename: 'app.min.js'
 		},
-		devtool: gutil.env.sourcemaps ? '#eval-source-map' : 'eval',
+		devtool: (gutil.env.sourcemaps || !gutil.env.debug) ? '#source-map' : '#cheap-module-eval-source-map',
 		debug: true,
 		resolve: {
 			modulesDirectories: [
@@ -49,7 +47,7 @@ function runWebpack(watch = false) {
 		],
 		eslint: {
 			configFile: path.join(__dirname, '../../.eslintrc'),
-			emitError: true,
+			emitError: false,
 			emitWarning: true,
 			formatter: errors => {
 				if (errors[0].messages) {
