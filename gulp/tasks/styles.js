@@ -5,7 +5,7 @@ import gulpif from 'gulp-if';
 import rupture from 'rupture';
 import stylus from 'gulp-stylus';
 import autoprefixer from 'autoprefixer-stylus';
-import cmq from 'gulp-group-css-media-queries';
+import gcmq from 'gulp-group-css-media-queries';
 import minifyCss from 'gulp-minify-css';
 import csscomb from 'gulp-csscomb';
 import rename from 'gulp-rename';
@@ -29,7 +29,7 @@ gulp.task('styles', () => (
 				inline: true
 			} : false
 		}))
-		.pipe(gulpif(!gutil.env.debug, cmq()))
+		.pipe(gulpif(!gutil.env.debug, gcmq()))
 		.pipe(gulpif(!gutil.env.debug, minifyCss()))
 		.pipe(gulpif(gutil.env.csscomb, csscomb()))
 		.pipe(rename({suffix: '.min'}))

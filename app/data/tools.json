@@ -3,7 +3,7 @@
 	["del", "очищаем папку dist от старых файлов"],
 	["gulp", "сам Gulp.js"],
 	["gulp-autoprefixer", "подстановка вендорских префиксов в CSS"],
-	["gulp-combine-media-queries", "комбинирование медиа-запросов"],
+	["gulp-group-css-media-queries", "комбинирование медиа-запросов"],
 	["gulp-concat", "конкатенация файлов"],
 	["gulp-csscomb", "причёска CSS"],
 	["gulp-imagemin", "сжатие изображений"],
