@@ -81,6 +81,7 @@
     "run-sequence": "^1.1.4",
     "rupture": "^0.6.1",
     "source-map-loader": "^0.1.5",
+    "stylus-svg-size-template": "^1.0.0",
     "svg4everybody": "^2.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",

@@ -11,7 +11,7 @@ gulp.task('icons', () => (
 			id: 'icon_%f',
 			className: '%f',
 			templates: [
-				path.join(__dirname, '../utils/svg.styl'),
+				path.join(__dirname, '../../node_modules/stylus-svg-size-template/svg-size.styl'),
 				'default-svg'
 			]
 		}))
