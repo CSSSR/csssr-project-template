@@ -9,16 +9,15 @@ import gcmq from 'gulp-group-css-media-queries';
 import minifyCss from 'gulp-minify-css';
 import csscomb from 'gulp-csscomb';
 import rename from 'gulp-rename';
-import errorHandler from '../utils/errorHandler';
+import errorHandler from 'gulp-plumber-error-handler';
 
 gulp.task('styles', () => (
 	gulp.src('*.styl', {
 		cwd: 'app/styles',
 		nonull: true
 	})
-		.pipe(plumber({errorHandler}))
+		.pipe(plumber({errorHandler: errorHandler('Error in styles task')}))
 		.pipe(stylus({
-			errors: true,
 			use: [
 				rupture(),
 				autoprefixer()

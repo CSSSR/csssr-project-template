@@ -63,6 +63,7 @@
     "gulp-jade-inheritance": "^0.5.3",
     "gulp-minify-css": "^1.2.1",
     "gulp-plumber": "^1.0.1",
+    "gulp-plumber-error-handler": "^1.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.1.0",
     "gulp-svg-symbols": "^1.0.0",

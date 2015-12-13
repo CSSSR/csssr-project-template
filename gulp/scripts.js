@@ -53,7 +53,7 @@ function runWebpack(watch = false) {
 			})
 		],
 		eslint: {
-			configFile: path.join(__dirname, '../../.eslintrc'),
+			configFile: path.join(__dirname, '../.eslintrc'),
 			emitError: false,
 			emitWarning: true,
 			formatter: errors => {

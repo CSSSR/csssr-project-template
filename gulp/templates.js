@@ -7,7 +7,7 @@ import cached from 'gulp-cached';
 import filter from 'gulp-filter';
 import rename from 'gulp-rename';
 import prettify from 'gulp-html-prettify';
-import errorHandler from '../utils/errorHandler';
+import errorHandler from 'gulp-plumber-error-handler';
 import getData from 'jade-get-data';
 
 
@@ -19,7 +19,7 @@ const data = {
 
 gulp.task('templates', () => (
 	gulp.src('app/**/*.jade')
-		.pipe(plumber({errorHandler}))
+		.pipe(plumber({errorHandler: errorHandler('Error in templates task')}))
 		.pipe(cached('jade'))
 		.pipe(gulpif(global.watch, inheritance({basedir: 'app'})))
 		.pipe(filter(file => /app[\\\/]pages/.test(file.path)))
