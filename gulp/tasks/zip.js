@@ -19,7 +19,7 @@ gulp.task('zip', () => {
 	const datetime = gutil.env.zipDateTime ? '-' + getDateTime : '';
 	const zipName = 'dist' + datetime + '.zip';
 
-	gulp.src('dist/**/*')
+	gulp.src(['dist/**/*', '!dist/*.zip'])
 		.pipe(zip(zipName))
 		.pipe(gulp.dest('dist'));
 });
