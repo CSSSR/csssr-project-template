@@ -57,7 +57,7 @@ function runWebpack(watch = false) {
 							notifier.notify({
 								title: error.message,
 								message: `${error.line}:${error.column} ${error.source.trim()}`,
-								icon: path.join(__dirname, '../utils/error-icon.png')
+								icon: path.join(__dirname, '../images/error-icon.png')
 							});
 						}
 					}
