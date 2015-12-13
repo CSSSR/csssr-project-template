@@ -12,7 +12,8 @@ function runWebpack(watch = false) {
 		bail: true,
 		profile: true,
 		output: {
-			filename: 'app.min.js'
+			filename: 'app.min.js',
+			pathinfo: false
 		},
 		devtool: (gutil.env.sourcemaps || !gutil.env.debug) ? '#source-map' : '#cheap-module-eval-source-map',
 		debug: true,
@@ -42,7 +43,14 @@ function runWebpack(watch = false) {
 		},
 		plugins: gutil.env.debug ? [] : [
 			new webpack.optimize.DedupePlugin(),
-			new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}})
+			new webpack.optimize.UglifyJsPlugin({
+				compress: {
+					warnings: false
+				},
+				output: {
+					comments: false
+				}
+			})
 		],
 		eslint: {
 			configFile: path.join(__dirname, '../../.eslintrc'),
