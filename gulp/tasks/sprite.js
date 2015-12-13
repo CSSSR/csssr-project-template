@@ -3,7 +3,6 @@ import plumber from 'gulp-plumber';
 import spritesmith from 'gulp.spritesmith';
 import imagemin from 'gulp-imagemin';
 import errorHandler from '../utils/errorHandler';
-import paths from '../paths';
 
 gulp.task('sprite', () => {
 	const spriteData = gulp.src('app/sprite/**/*.png', {read: false})
@@ -23,7 +22,7 @@ gulp.task('sprite', () => {
 
 	spriteData.img
 		.pipe(imagemin({optimizationLevel: 3}))
-		.pipe(gulp.dest(paths.images));
+		.pipe(gulp.dest('dist/assets/images'));
 
-	return spriteData.css.pipe(gulp.dest(paths.appStylesHelpers));
+	return spriteData.css.pipe(gulp.dest('app/styles/helpers'));
 });

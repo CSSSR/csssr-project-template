@@ -8,7 +8,6 @@ import filter from 'gulp-filter';
 import rename from 'gulp-rename';
 import prettify from 'gulp-html-prettify';
 import errorHandler from '../utils/errorHandler';
-import paths from '../paths';
 import getData from '../utils/getData';
 
 
@@ -33,5 +32,5 @@ gulp.task('templates', () => (
 			preserve_newlines: true
 		}))
 		.pipe(rename({dirname: '.'}))
-		.pipe(gulp.dest(paths.dist))
+		.pipe(gulp.dest('dist'))
 ));

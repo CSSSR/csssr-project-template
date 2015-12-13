@@ -1,7 +1,6 @@
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import zip from 'gulp-zip';
-import paths from '../paths';
 
 const correctNumber = number => number < 10 ? '0' + number : number;
 
@@ -22,5 +21,5 @@ gulp.task('zip', () => {
 
 	gulp.src('dist/**/*')
 		.pipe(zip(zipName))
-		.pipe(gulp.dest(paths.dist));
+		.pipe(gulp.dest('dist'));
 });

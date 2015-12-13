@@ -5,7 +5,6 @@ import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
 import stylish from 'eslint/lib/formatters/stylish';
 import notifier from 'node-notifier';
-import paths from '../paths';
 
 function runWebpack(watch = false) {
 	const webpackConfig = {
@@ -77,7 +76,7 @@ function runWebpack(watch = false) {
 			const message = `Complited in ${gutil.colors.magenta(formatedDurations)}`;
 			console.log(`${prompt} ${message}`);
 		}))
-		.pipe(gulp.dest(paths.scripts));
+		.pipe(gulp.dest('dist/assets/scripts'));
 }
 
 gulp.task('scripts', () => {
