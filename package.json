@@ -13,9 +13,10 @@
   ],
   "scripts": {
     "start": "gulp --debug",
-    "build": "gulp build",
+    "build": "npm run clean && gulp build",
     "lint": "gulp lint",
-    "deploy": "gulp del && gulp build --robots && gulp deploy"
+    "deploy": "npm run clean && gulp build --robots && gulp deploy",
+    "clean": "rm -rf dist/*"
   },
   "repository": {
     "type": "git",
@@ -44,10 +45,8 @@
     "babelify": "^6.4.0",
     "bemto.jade": "^0.2.2",
     "browser-sync": "^2.10.0",
-    "browserify": "^11.2.0",
     "coffee-script": "^1.10.0",
     "debuga": "^1.0.2",
-    "del": "^2.1.0",
     "eslint": "^1.9.0",
     "eslint-loader": "^1.1.1",
     "gulp": "^3.9.0",

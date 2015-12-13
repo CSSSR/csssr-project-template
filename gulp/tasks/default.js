@@ -20,7 +20,7 @@ gulp.task('default', () => (
 	)
 ));
 
-gulp.task('build', ['del'], () => (
+gulp.task('build', () => (
 	gulp.start(
 		'stylesDependences',
 		'templates',
