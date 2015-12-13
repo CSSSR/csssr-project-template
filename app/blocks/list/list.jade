@@ -1,6 +1,8 @@
+include ../mark/mark
+
 mixin list(list)
-	ul.list
+	+b('ul').list&attributes(attributes)
 		each item in list
-			li.list__item
-				span.mark= item[0]
-				= ' - ' + item[1]
+			+e('li').item
+				+mark #{ item[0] }
+				|  - #{ item[1] }

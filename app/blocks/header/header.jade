@@ -4,10 +4,10 @@ include ../title/title
 include ../description/description
 
 mixin header()
-	.header
+	+b.header&attributes(attributes)
 		+logo()
 
-		.header__title
+		+e.title
 			+dark()
 				+title()
 					| CSSSR Project Template
