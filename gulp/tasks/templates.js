@@ -8,11 +8,11 @@ import filter from 'gulp-filter';
 import rename from 'gulp-rename';
 import prettify from 'gulp-html-prettify';
 import errorHandler from '../utils/errorHandler';
-import getData from '../utils/getData';
+import getData from 'jade-get-data';
 
 
 const data = {
-	getData,
+	getData: getData('app/data'),
 	jv0: 'javascript:void(0);',
 	timestamp: Date.now()
 };
