@@ -83,6 +83,6 @@ gulp.task('scripts', () => {
 	return runWebpack(false);
 });
 
-gulp.task('watchScripts', () => {
+gulp.task('scripts:watch', () => {
 	return runWebpack(true);
 });

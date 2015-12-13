@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:CSSSR/csssr-project-template.git"
+    "url": "git+ssh@github.com:CSSSR/csssr-project-template.git"
   },
   "author": {
     "name": "felixexter",
@@ -42,7 +42,6 @@
     "babel-core": "^5.8.34",
     "babel-eslint": "^4.1.5",
     "babel-loader": "^5.4.0",
-    "babelify": "^6.4.0",
     "bemto.jade": "^0.2.2",
     "browser-sync": "^2.10.0",
     "coffee-script": "^1.10.0",
