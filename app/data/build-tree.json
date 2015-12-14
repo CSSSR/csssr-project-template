@@ -2,6 +2,7 @@
 	{
 		"folder": "assets",
 		"content": [
+			{ "folder": "fonts" },
 			{ "folder": "images" },
 			{
 				"folder": "scripts",

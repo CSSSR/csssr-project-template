@@ -1,3 +1,7 @@
+include ../icon/icon
+
 mixin arrow()
 	+b.arrow&attributes(attributes)
-		block
+		+e.text
+			block
+		+icon('arrow').arrow__icon

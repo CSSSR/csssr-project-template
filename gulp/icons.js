@@ -8,7 +8,7 @@ import path from 'path';
 
 gulp.task('icons', () => (
 	gulp.src('app/icons/**/*.svg')
-		.pipe(plumber({errorHandler: errorHandler('Error in icons task')}))
+		.pipe(plumber({errorHandler: errorHandler('Error in \'icons\' task')}))
 		.pipe(svgSymbols({
 			title: false,
 			id: 'icon_%f',

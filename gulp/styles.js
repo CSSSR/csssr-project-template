@@ -16,7 +16,7 @@ gulp.task('styles', () => (
 		cwd: 'app/styles',
 		nonull: true
 	})
-		.pipe(plumber({errorHandler: errorHandler('Error in styles task')}))
+		.pipe(plumber({errorHandler: errorHandler('Error in \'styles\' task')}))
 		.pipe(stylus({
 			use: [
 				rupture(),

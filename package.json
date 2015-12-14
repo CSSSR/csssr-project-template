@@ -1,6 +1,6 @@
 {
   "name": "csssr-project-template",
-  "version": "0.11.8",
+  "version": "0.12.0",
   "description": "A template for a quick start.",
   "keywords": [
     "csssr",
@@ -16,24 +16,28 @@
     "build": "npm run clean && gulp build",
     "lint": "gulp lint",
     "deploy": "npm run clean && gulp build --robots && gulp deploy",
-    "clean": "rm -rf dist/*"
+    "clean": "rm -rf dist/*",
+    "sprite": "rm app/resources/assets/images/sprites/* app/styles/sprites/*.styl & gulp sprite",
+    "zip": "npm run clean && gulp zip",
+    "patch": "gulp patch",
+    "minor": "gulp minor",
+    "major": "gulp major"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh@github.com:CSSSR/csssr-project-template.git"
   },
-  "author": {
-    "name": "felixexter",
-    "url": "https://github.com/felixexter"
-  },
-  "copyright": "©CSSSR",
+  "author": "Felix Exter <felixexter@ya.ru> (https://github.com/felixexter)",
+  "contributors": [
+    "Aleksandr Petrov <dzhiriki@gmail.com> (https://github.com/dzhiriki)"
+  ],
   "bugs": {
     "url": "https://github.com/CSSSR/csssr-project-template/issues/",
     "email": "cpt@csssr.com"
   },
   "homepage": "https://github.com/CSSSR/csssr-project-template/",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">=5.1.0"
   },
   "license": "MIT",
   "devDependencies": {
@@ -44,7 +48,6 @@
     "babel-loader": "^5.4.0",
     "bemto.jade": "^0.2.2",
     "browser-sync": "^2.10.0",
-    "coffee-script": "^1.10.0",
     "debuga": "^1.0.2",
     "eslint": "^1.9.0",
     "eslint-loader": "^1.1.1",
@@ -67,24 +70,22 @@
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.1.0",
     "gulp-svg-symbols": "^1.0.0",
-    "gulp-uglify": "^1.1.0",
     "gulp-util": "^3.0.2",
     "gulp-watch": "^4.3.5",
     "gulp-zip": "^3.0.0",
-    "gulp.spritesmith": "4.2.4",
+    "gulp.spritesmith-multi": "^2.2.0",
     "jade-get-data": "^1.0.0",
     "jquery": "^2.1.4",
     "merge-stream": "^1.0.0",
     "node-notifier": "^4.3.1",
-    "pngsmith": "^0.1.5",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.4",
     "rupture": "^0.6.1",
     "source-map-loader": "^0.1.5",
+    "spritesheet-templates": "^10.0.0",
     "stylus-svg-size-template": "^1.0.0",
     "svg4everybody": "^2.0.0",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
     "webpack": "^1.12.9",
     "webpack-stream": "^2.3.0"
   }

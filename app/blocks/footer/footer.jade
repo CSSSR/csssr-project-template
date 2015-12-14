@@ -1,8 +1,6 @@
-include ../fork/fork
-include ../dark/dark
-
 mixin footer()
 	+b.footer&attributes(attributes)
-		+dark()
-			.footer__copyright
-				| ©felixexter, 2013&mdash;2015
+		+e.copyright
+			+e('a').link(href='https://github.com/felixexter') ©felixexter
+			br
+			+e('a').link(href='http://csssr.ru') CSSSR

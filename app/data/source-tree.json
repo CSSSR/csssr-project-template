@@ -12,12 +12,9 @@
 			}
 		]
 	}, {
-		"folder": "data",
-		"content": [
-			{ "file": "menu.json" }
-		]
+		"folder": "data"
 	}, {
-		"folder": "images"
+		"folder": "icons"
 	}, {
 		"folder": "pages",
 		"content": [
@@ -28,23 +25,19 @@
 	}, {
 		"folder": "scripts",
 		"content": [
-			{ "file": "app.js" },
-			{ "file": "debug.js" }
+			{ "file": "app.js" }
 		]
+	}, {
+		"folder": "sprites"
 	}, {
 		"folder": "styles",
 		"content": [
 			{
-				"folder": "base",
-				"content": [
-					{ "file": "base.styl" },
-					{ "file": "fonts.styl" },
-					{ "file": "optimize.styl" }
-				]
-			}, {
 				"folder": "helpers",
 				"content": [
+					{ "file": "fonts.styl" },
 					{ "file": "mixins.styl" },
+					{ "file": "optimize.styl" },
 					{ "file": "variables.styl" }
 				]
 			}, {

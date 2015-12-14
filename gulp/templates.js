@@ -19,7 +19,7 @@ const data = {
 
 gulp.task('templates', () => (
 	gulp.src('app/**/*.jade')
-		.pipe(plumber({errorHandler: errorHandler('Error in templates task')}))
+		.pipe(plumber({errorHandler: errorHandler('Error in \'templates\' task')}))
 		.pipe(cached('jade'))
 		.pipe(gulpif(global.watch, inheritance({basedir: 'app'})))
 		.pipe(filter(file => /app[\\\/]pages/.test(file.path)))

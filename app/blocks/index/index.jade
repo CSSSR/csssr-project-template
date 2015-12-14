@@ -13,7 +13,7 @@ mixin index()
 		+content()
 			.index__group
 				+subtitle()
-					| ЧТО ВКЛЮЧЕНО
+					| ЧТО В КОРОБКЕ
 
 			+heading()
 				| Инструменты:
@@ -29,16 +29,16 @@ mixin index()
 				+col()
 					+heading()
 						| Исходники
-					+tree(getData('sourceTree'))
+					+tree(getData('source-tree'))
 
 				+col()
 					.index__arrow
 						+arrow()
-							| Компиляция
+							| Сборка
 
 				+col()
 					+heading()
 						| Готовые файлы
-					+tree(getData('buildTree'))
+					+tree(getData('build-tree'))
 
 			+fork()

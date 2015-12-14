@@ -1,16 +1,18 @@
 .arrow
-	margin-left auto
-	margin-right auto
-	font-size 14px
-	text-align center
+	margin-x auto
 	color #579eda
 
-	&::after
-		margin-left auto
-		margin-right auto
+	&__text
+		font-size 18px
+		line-height 1
+		text-align center
+
+	&__icon
+		margin-x auto
 		display block
-		sprite $arrow
-		content ''
+		width 64px
+		height 64px
 
 		+mobile()
-			sprite $arrow_270
+			margin-top 10px
+			transform rotate(90deg)

@@ -1,19 +1,24 @@
 .tree
-	padding-left 10px
-	padding-right 10px
-	list-style none
+	padding-x 10px
 
 	&__item
 		margin-left 10px
+		font-size 14px
 		line-height 24px
+		white-space nowrap
 
-		&:before
-			margin-right 6px
-			display inline-block
-			vertical-align middle
-			content ''
-			sprite $document_code
+	&__icon
+		position relative
+		top -2px
+		display inline-block
+		vertical-align middle
+		size 24px
 
 		&_type_folder
-			&:before
-				sprite $folder
+			color #fc4
+
+		&_type_file
+			color #888
+
+	&__name
+		margin-left 4px
