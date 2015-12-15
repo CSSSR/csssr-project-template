@@ -170,8 +170,8 @@ npm run sprite
 └── app/
     ├── resources/
     │   └── images/
-    │       └── sprites
-    │       	├── emoji.png
+    │       └── sprites/
+    │           ├── emoji.png
     │           └── emoji@2x.png
     └── styles/
         └── sprites/
