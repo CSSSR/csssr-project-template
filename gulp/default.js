@@ -3,7 +3,6 @@ import gulp from 'gulp';
 
 gulp.task('stylesDependences', () => (
 	runSequence(
-		'sprite',
 		'icons',
 		'styles'
 	)
