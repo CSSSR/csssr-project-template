@@ -1,3 +1,4 @@
+import fs from 'fs';
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
 import spritesmith from 'gulp.spritesmith-multi';
@@ -5,12 +6,19 @@ import merge from 'merge-stream';
 import path from 'path';
 import errorHandler from 'gulp-plumber-error-handler';
 
+const spritesDirPath = path.join(__dirname, '../app/sprites');
 const imgPath = '../images/sprites/';
 const tmplName = 'stylus_retina.template.handlebars';
 const tmplPath = '../node_modules/spritesheet-templates/lib/templates';
 const cssTemplate = path.join(__dirname, tmplPath, tmplName);
 
 gulp.task('sprites', () => {
+	const dir = fs.readdirSync(spritesDirPath);
+
+	if (!dir.slice(1).length) {
+		return;
+	}
+
 	const spriteData = gulp.src('app/sprites/**/*.png', {read: false})
 		.pipe(plumber({errorHandler: errorHandler('Error in \'sprite\' task')}))
 		.pipe(spritesmith({
