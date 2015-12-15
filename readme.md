@@ -16,7 +16,7 @@ npm i
 
 ### Запусти шаблон
 ```
-npm start --open
+npm start -- --open
 ```
 
 
