@@ -1,8 +1,9 @@
 import runSequence from 'run-sequence';
 import gulp from 'gulp';
 
-gulp.task('stylesDependences', () => (
+gulp.task('styles:dependencies', () => (
 	runSequence(
+		'sprites',
 		'icons',
 		'styles'
 	)
@@ -11,7 +12,7 @@ gulp.task('stylesDependences', () => (
 gulp.task('default', () => (
 	runSequence(
 		[
-			'stylesDependences',
+			'styles:dependencies',
 			'templates',
 		],
 		'server',
@@ -21,7 +22,7 @@ gulp.task('default', () => (
 
 gulp.task('build', () => (
 	gulp.start(
-		'stylesDependences',
+		'styles:dependencies',
 		'templates',
 		'scripts',
 		'copy'

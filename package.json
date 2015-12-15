@@ -1,6 +1,6 @@
 {
   "name": "csssr-project-template",
-  "version": "0.12.1",
+  "version": "0.12.2",
   "description": "A template for a quick start.",
   "keywords": [
     "csssr",
@@ -17,9 +17,6 @@
     "lint": "gulp lint",
     "deploy": "npm run clean && gulp build && gulp deploy",
     "clean": "rm -rf dist/*",
-    "rmspriteimages": "rm -rf app/resources/assets/images/sprites/*",
-    "rmspritestyles": "find app/styles/sprites/* ! -name 'keep.styl' -delete",
-    "sprite": "npm run rmspriteimages & npm run rmspritestyles & gulp sprite",
     "zip": "npm run clean && gulp zip",
     "patch": "gulp patch",
     "minor": "gulp minor",
@@ -63,7 +60,6 @@
     "gulp-group-css-media-queries": "^1.1.0",
     "gulp-html-prettify": "0.0.1",
     "gulp-if": "^2.0.0",
-    "gulp-imagemin": "^2.4.0",
     "gulp-jade": "^1.1.0",
     "gulp-jade-inheritance": "^0.5.3",
     "gulp-minify-css": "^1.2.1",
@@ -87,7 +83,6 @@
     "spritesheet-templates": "^10.0.0",
     "stylus-svg-size-template": "^1.0.0",
     "svg4everybody": "^2.0.0",
-    "vinyl-buffer": "^1.0.0",
     "webpack": "^1.12.9",
     "webpack-stream": "^2.3.0"
   }

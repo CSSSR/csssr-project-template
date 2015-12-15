@@ -1,8 +1,6 @@
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
 import spritesmith from 'gulp.spritesmith-multi';
-import buffer from 'vinyl-buffer';
-import imagemin from 'gulp-imagemin';
 import merge from 'merge-stream';
 import path from 'path';
 import errorHandler from 'gulp-plumber-error-handler';
@@ -12,7 +10,7 @@ const tmplName = 'stylus_retina.template.handlebars';
 const tmplPath = '../node_modules/spritesheet-templates/lib/templates';
 const cssTemplate = path.join(__dirname, tmplPath, tmplName);
 
-gulp.task('sprite', () => {
+gulp.task('sprites', () => {
 	const spriteData = gulp.src('app/sprites/**/*.png', {read: false})
 		.pipe(plumber({errorHandler: errorHandler('Error in \'sprite\' task')}))
 		.pipe(spritesmith({
@@ -29,13 +27,8 @@ gulp.task('sprite', () => {
 			}
 		}));
 
-	const imgStream = spriteData.img
-		.pipe(buffer())
-		.pipe(imagemin())
-		.pipe(gulp.dest('app/resources/assets/images/sprites'));
-
-	const styleStream = spriteData.css
-		.pipe(gulp.dest('app/styles/sprites'));
+	const imgStream = spriteData.img.pipe(gulp.dest('dist/assets/images/sprites'));
+	const styleStream = spriteData.css.pipe(gulp.dest('app/styles/sprites'));
 
 	return merge(imgStream, styleStream);
 });
