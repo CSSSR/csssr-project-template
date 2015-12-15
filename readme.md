@@ -57,11 +57,6 @@ npm start -- --tunnel
 npm start -- --open
 ```
 
-### Собрать спрайты и CSS переменные из папок в `app/sprites`
-```
-npm run sprite
-```
-
 ### Собрать архив из папки `dist`
 ```
 npm run zip
