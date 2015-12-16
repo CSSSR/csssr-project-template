@@ -5,12 +5,11 @@ include ../description/description
 
 mixin header()
 	+b.header&attributes(attributes)
-		+logo()
+		+logo
 
 		+e.title
-			+dark()
-				+title()
-					| CSSSR Project Template
-
-		+description()
-			| Шаблон проекта для быстрого старта
+			+dark
+				+title
+		+e.description
+			+description
+				| Шаблон проекта для быстрого старта

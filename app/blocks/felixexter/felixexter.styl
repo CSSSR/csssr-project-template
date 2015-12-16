@@ -1,0 +1,68 @@
+.felixexter
+	position relative
+	z-index 1
+	display block
+	overflow hidden
+	width 7em
+	height 6em
+	font-size 4px
+	text-decoration none
+
+	&__box
+		position relative
+		z-index 1
+		top -1.25em
+		display block
+		overflow hidden
+		width 7em
+		height 7em
+		transform rotate(-45deg)
+		backface-visibility hidden
+
+	&__square
+		position absolute
+		display block
+		height 1em
+		width 1em
+		background-color currentColor
+		box-shadow 0 0 1px rgba(#000, .25)
+
+		&_top_left
+			top 1em
+			left 3em
+			background-color #fce17a
+
+		&_top_right
+			top 3em
+			left 5em
+			background-color #fce17a
+
+		&_center_left
+			top 1em
+			left 1em
+			background-color #fc800f
+
+		&_center_center
+			top 3em
+			left 3em
+			background-color #fc800f
+
+		&_center_right
+			top 5em
+			left 5em
+			background-color #fc800f
+
+		&_bottom_left
+			top 3em
+			left 1em
+			background-color #f63d0d
+
+		&_bottom_right
+			top 5em
+			left 3em
+			background-color #f63d0d
+
+		&_bottom_center
+			top 5em
+			left 1em
+			background-color #e01214
