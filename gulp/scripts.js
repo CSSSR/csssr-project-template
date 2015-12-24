@@ -5,11 +5,22 @@ import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
 import stylish from 'eslint/lib/formatters/stylish';
 import notifier from 'node-notifier';
+import plumber from 'gulp-plumber';
+import errorHandler from 'gulp-plumber-error-handler';
+
+function statsLogger(err, stats) {
+	const time = new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
+	const durations = (stats.endTime - stats.startTime);
+	const formatedDurations = durations > 1000 ? `${durations / 1000} s` : `${durations} ms`;
+	const prompt = `[${gutil.colors.gray(time)}] [${gutil.colors.yellow('webpack')}]`;
+	const message = `Complited in ${gutil.colors.magenta(formatedDurations)}`;
+	console.log(`${prompt} ${message}`);
+}
 
 function runWebpack(watch = false) {
 	const webpackConfig = {
 		watch,
-		bail: true,
+		bail: false,
 		profile: true,
 		output: {
 			filename: 'app.min.js',
@@ -54,7 +65,7 @@ function runWebpack(watch = false) {
 		],
 		eslint: {
 			configFile: path.join(__dirname, '../.eslintrc'),
-			emitError: false,
+			emitError: true,
 			emitWarning: true,
 			formatter: errors => {
 				if (errors[0].messages) {
@@ -76,14 +87,8 @@ function runWebpack(watch = false) {
 
 	return gulp
 		.src('app/scripts/app.js')
-		.pipe(webpackStream(webpackConfig, null, (err, stats) => {
-			const time = new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
-			const durations = (stats.endTime - stats.startTime);
-			const formatedDurations = durations > 1000 ? `${durations / 1000} s` : `${durations} ms`;
-			const prompt = `[${gutil.colors.gray(time)}] [${gutil.colors.yellow('webpack')}]`;
-			const message = `Complited in ${gutil.colors.magenta(formatedDurations)}`;
-			console.log(`${prompt} ${message}`);
-		}))
+		.pipe(plumber({errorHandler: errorHandler('Error in \'scripts\' task')}))
+		.pipe(webpackStream(webpackConfig, null, statsLogger))
 		.pipe(gulp.dest('dist/assets/scripts'));
 }
 
