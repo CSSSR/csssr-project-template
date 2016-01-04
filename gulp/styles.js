@@ -6,9 +6,10 @@ import rupture from 'rupture';
 import stylus from 'gulp-stylus';
 import autoprefixer from 'autoprefixer-stylus';
 import gcmq from 'gulp-group-css-media-queries';
-import minifyCss from 'gulp-minify-css';
+import nano from 'gulp-cssnano';
 import csscomb from 'gulp-csscomb';
 import rename from 'gulp-rename';
+import sourcemaps from 'gulp-sourcemaps';
 import errorHandler from 'gulp-plumber-error-handler';
 
 gulp.task('styles', () => (
@@ -17,19 +18,17 @@ gulp.task('styles', () => (
 		nonull: true
 	})
 		.pipe(plumber({errorHandler: errorHandler('Error in \'styles\' task')}))
+		.pipe(gulpif(gutil.env.debug, sourcemaps.init()))
 		.pipe(stylus({
 			use: [
 				rupture(),
 				autoprefixer()
-			],
-			sourcemap: !!gutil.env.debug && {
-				comment: false,
-				inline: true
-			}
+			]
 		}))
 		.pipe(gulpif(!gutil.env.debug, gcmq()))
-		.pipe(gulpif(!gutil.env.debug, minifyCss()))
+		.pipe(gulpif(!gutil.env.debug, nano()))
 		.pipe(gulpif(gutil.env.csscomb, csscomb()))
 		.pipe(rename({suffix: '.min'}))
+		.pipe(gulpif(gutil.env.debug, sourcemaps.write()))
 		.pipe(gulp.dest('dist/assets/styles'))
 ));
