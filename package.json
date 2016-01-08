@@ -85,6 +85,7 @@
     "stylus-svg-size-template": "^1.0.0",
     "svg4everybody": "^2.0.0",
     "webpack": "^1.12.9",
+    "webpack-stats-logger": "^1.0.1",
     "webpack-stream": "^2.3.0"
   }
 }
