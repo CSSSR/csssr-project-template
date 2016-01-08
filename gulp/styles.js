@@ -23,7 +23,8 @@ gulp.task('styles', () => (
 			use: [
 				rupture(),
 				autoprefixer()
-			]
+			],
+			'include css': true
 		}))
 		.pipe(gulpif(!gutil.env.debug, gcmq()))
 		.pipe(gulpif(!gutil.env.debug, nano()))
