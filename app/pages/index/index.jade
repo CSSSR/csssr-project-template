@@ -1,0 +1,49 @@
+include /blocks/content/content
+include /blocks/container/container
+include /blocks/subtitle/subtitle
+include /blocks/heading/heading
+include /blocks/list/list
+include /blocks/col/col
+include /blocks/arrow/arrow
+include /blocks/fork/fork
+include /blocks/tree/tree
+
+extends /layouts/default/default
+
+block head
+	- var pageTitle = 'CSSSR Project Template';
+
+block content
+	+b.index
+		+content()
+			.index__group
+				+subtitle()
+					| ЧТО В КОРОБКЕ
+
+			+heading()
+				| Инструменты
+
+			.index__group
+				+list(getData('tools'))
+
+			.index__group
+				+subtitle()
+					| СТРУКТУРА ФАЙЛОВ
+
+			+container()
+				+col()
+					+heading()
+						| Исходники
+					+tree(getData('source-tree'))
+
+				+col()
+					.index__arrow
+						+arrow()
+							| Сборка
+
+				+col()
+					+heading()
+						| Готовые файлы
+					+tree(getData('build-tree'))
+
+			+fork()
