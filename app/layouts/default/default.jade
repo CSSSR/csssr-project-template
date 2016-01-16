@@ -1,0 +1,18 @@
+include /../node_modules/bemto.jade/bemto.jade
+include /blocks/page/page
+include /blocks/header/header
+include /blocks/box/box
+include /blocks/footer/footer
+include /blocks/scripts/scripts
+
+
+doctype html
+html(lang='ru')
+	include /blocks/head/head
+	+page
+		+box
+			+header
+			block content
+			+footer
+
+		+scripts(['app.min.js'])

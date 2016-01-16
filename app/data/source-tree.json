@@ -16,9 +16,28 @@
 	}, {
 		"folder": "icons"
 	}, {
+		"folder": "layouts",
+		"content": [
+			{
+				"folder": "layout",
+				"content": [
+					{ "file": "layout.jade" },
+					{ "file": "layout.js" },
+					{ "file": "layout.styl" }
+				]
+			}
+		]
+	}, {
 		"folder": "pages",
 		"content": [
-			{ "file": "index.jade" }
+			{
+				"folder": "page",
+				"content": [
+					{ "file": "page.jade" },
+					{ "file": "page.js" },
+					{ "file": "page.styl" }
+				]
+			}
 		]
 	}, {
 		"folder": "resources"

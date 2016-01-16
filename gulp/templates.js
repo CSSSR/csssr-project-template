@@ -10,20 +10,21 @@ import prettify from 'gulp-html-prettify';
 import errorHandler from 'gulp-plumber-error-handler';
 import getData from 'jade-get-data';
 
-
-const data = {
-	getData: getData('app/data'),
-	jv0: 'javascript:void(0);',
-	timestamp: Date.now()
+const config = {
+	basedir: 'app',
+	data: {
+		getData: getData('app/data'),
+		jv0: 'javascript:void(0);',
+		timestamp: Date.now()
+	}
 };
-
 gulp.task('templates', () => (
 	gulp.src('app/**/*.jade')
 		.pipe(plumber({errorHandler: errorHandler('Error in \'templates\' task')}))
 		.pipe(cached('jade'))
 		.pipe(gulpif(global.watch, inheritance({basedir: 'app'})))
 		.pipe(filter(file => /app[\\\/]pages/.test(file.path)))
-		.pipe(jade({data}))
+		.pipe(jade(config))
 		.pipe(prettify({
 			brace_style: 'expand',
 			indent_size: 1,
