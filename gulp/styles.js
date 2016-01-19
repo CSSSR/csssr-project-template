@@ -13,10 +13,7 @@ import sourcemaps from 'gulp-sourcemaps';
 import errorHandler from 'gulp-plumber-error-handler';
 
 gulp.task('styles', () => (
-	gulp.src('*.styl', {
-		cwd: 'app/styles',
-		nonull: true
-	})
+	gulp.src('app/styles/*.styl')
 		.pipe(plumber({errorHandler: errorHandler('Error in \'styles\' task')}))
 		.pipe(gulpif(gutil.env.debug, sourcemaps.init()))
 		.pipe(stylus({
