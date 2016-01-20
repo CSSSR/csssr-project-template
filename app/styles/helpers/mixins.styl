@@ -33,3 +33,20 @@ padding-x($padding)
 padding-y($padding)
 	padding-top $padding
 	padding-bottom $padding
+
+// Text replacement
+squish-text()
+	font 0/0 serif
+	text-shadow none
+	color transparent
+
+// Placeholder styling
+placeholder()
+	&::-webkit-input-placeholder
+		{block}
+	&::-moz-placeholder
+		{block}
+	&:-moz-placeholder
+		{block}
+	&:-ms-input-placeholder
+		{block}
