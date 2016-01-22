@@ -11,7 +11,7 @@ const cwd = path.join(__dirname, '..');
 const spritesDirPath = 'app/sprites';
 const imgPath = '../images/sprites/';
 const tmplName = 'stylus_retina.template.handlebars';
-const tmplPath = '../node_modules/sptitesmith-stylus-retina-template';
+const tmplPath = '../node_modules/spritesmith-stylus-retina-template';
 const cssTemplate = path.join(__dirname, tmplPath, tmplName);
 
 gulp.task('sprites', () => {
