@@ -1,22 +1,20 @@
-[
-	{
-		"folder": "assets",
-		"content": [
-			{ "folder": "fonts" },
-			{ "folder": "images" },
-			{
-				"folder": "scripts",
-				"content": [
-					{ "file": "app.min.js" }
-				]
-			},
-			{
-				"folder": "styles",
-				"content": [
-					{ "file": "app.min.css" }
-				]
-			}
-		]
-	},
-	{ "file": "index.html" }
-]
+[{
+	"folder": "assets",
+	"content": [{
+		"folder": "fonts"
+	}, {
+		"folder": "images"
+	}, {
+		"folder": "scripts",
+		"content": [{
+			"file": "app.min.js"
+		}]
+	}, {
+		"folder": "styles",
+		"content": [{
+			"file": "app.min.css"
+		}]
+	}]
+}, {
+	"file": "index.html"
+}]

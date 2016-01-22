@@ -10,7 +10,6 @@ import prettify from 'gulp-html-prettify';
 import errorHandler from 'gulp-plumber-error-handler';
 import getData from 'jade-get-data';
 
-
 const data = {
 	getData: getData('app/data'),
 	jv0: 'javascript:void(0);',
@@ -23,7 +22,7 @@ gulp.task('templates', () => (
 		.pipe(cached('jade'))
 		.pipe(gulpif(global.watch, inheritance({basedir: 'app'})))
 		.pipe(filter(file => /app[\\\/]pages/.test(file.path)))
-		.pipe(jade({data}))
+		.pipe(jade({basedir: 'app', data}))
 		.pipe(prettify({
 			brace_style: 'expand',
 			indent_size: 1,
