@@ -59,7 +59,6 @@ rules:
     max-params: [0, 3]
     max-statements: [0, 10]
     new-cap: 2
-    new-parens: 2
     no-alert: 2
     no-array-constructor: 2
     no-bitwise: 0
@@ -94,7 +93,6 @@ rules:
     no-floating-decimal: 1
     no-func-assign: 2
     no-implied-eval: 2
-    no-invalid-this: 2
     no-inline-comments: 0
     no-inner-declarations: [2, "functions"]
     no-invalid-regexp: 2
