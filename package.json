@@ -1,6 +1,6 @@
 {
   "name": "csssr-project-template",
-  "version": "0.14.1",
+  "version": "0.15.0",
   "description": "A template for a quick start.",
   "keywords": [
     "csssr-project-template",
@@ -81,6 +81,7 @@
     "gulp-zip": "^3.0.0",
     "gulp.spritesmith-multi": "^2.2.0",
     "jade-get-data": "^1.0.0",
+    "jade-injected": "^1.0.2",
     "jquery": "^2.1.4",
     "merge-stream": "^1.0.0",
     "node-notifier": "^4.3.1",
