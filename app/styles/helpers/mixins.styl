@@ -24,7 +24,7 @@ margin-y($margin)
 	margin-top $margin
 	margin-bottom $margin
 
-// Set pading on left & right
+// Set padding on left & right
 padding-x($padding)
 	padding-left $padding
 	padding-right $padding
@@ -33,3 +33,16 @@ padding-x($padding)
 padding-y($padding)
 	padding-top $padding
 	padding-bottom $padding
+
+// Set crossbrowse color of placeholder
+placeholder($color)
+	&:-ms-input-placeholder
+		color $color
+	&::-webkit-input-placeholder
+		color $color
+	&:-moz-placeholder
+		color $color
+		opacity 1
+	&::-moz-placeholder
+		color $color
+		opacity 1
