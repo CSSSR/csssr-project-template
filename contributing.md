@@ -44,6 +44,6 @@
 
 ## Как ещё можно помочь проекту?
 
-- [Ставь звезду](https://github.com/CSSSR/csssr-project-template/new/master).
+- [Ставь звезду](https://github.com/CSSSR/csssr-project-template/stargazers).
 - Делись [ссылкой на наш репозиторий](https://github.com/CSSSR/csssr-project-template) в соцсетях, форумах и любых других сообществах.
 - И просто рассказывай о нас :)
