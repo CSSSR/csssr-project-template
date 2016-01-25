@@ -212,3 +212,5 @@ npm run deploy
     height: 24px;
 }
 ```
+
+## [Внеси свой вклад в развитие проекта!](https://github.com/CSSSR/csssr-project-template/blob/master/contributing.md)
