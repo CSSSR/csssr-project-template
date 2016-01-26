@@ -22,7 +22,7 @@
 
 ### Вопрос
 
-- Создай вопрос в [ишью](https://github.com/CSSSR/csssr-project-template/issues/new) с лэйблом [`question`](https://github.com/CSSSR/csssr-project-template/issues?utf8=✓&q=label%3Aquestion) (лэйблы только для оунеров).
+- Создай вопрос в [ишью](https://github.com/CSSSR/csssr-project-template/issues/new).
 - Кратко опиши суть вопроса.
 - **Вопрос должен касаться только этого проекта.** Не стоит злоупотреблять ишью ради своей выгоды.  
 Вопросы по вёрстке, программированию, какому-либо инструменту, библиотеке, фреймворку, плагину  
@@ -35,7 +35,7 @@
 
 ### Репорт бага
 
-- Если ты заметил баг, сообщи об этом в [ишью](https://github.com/CSSSR/csssr-project-template/issues/new) с лэйблом [`bug`](https://github.com/CSSSR/csssr-project-template/issues?utf8=✓&q=label%3Abug) (лэйблы только для оунеров).
+- Если ты заметил баг, сообщи об этом в [ишью](https://github.com/CSSSR/csssr-project-template/issues/new).
 - Кратко опиши, с чем он связан.
 - Приложи лог или код с проблемой, предварительно оформив его в маркдауне.
 - Ссылки на строки кода.
@@ -45,7 +45,7 @@
 
 ### Обсуждение идеи пулл-реквеста
 
-- Создай [ишью](https://github.com/CSSSR/csssr-project-template/issues/new) с лэйблами [`pull-request`](https://github.com/CSSSR/csssr-project-template/issues?utf8=✓&q=label%3Apull-request) и [`feature`](https://github.com/CSSSR/csssr-project-template/issues?utf8=✓&q=label%3Afeature) / [`fix`](https://github.com/CSSSR/csssr-project-template/issues?utf8=✓&q=label%3Afix) в зависимости от того, фича это или фикс (лэйблы только для оунеров).
+- Создай [ишью](https://github.com/CSSSR/csssr-project-template/issues/new).
 - Кратко опиши, что ты хочешь предложить.
 - Приложи код, предварительно оформив его в маркдауне.
 - Ссылки на строки кода.
