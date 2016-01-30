@@ -19,6 +19,7 @@
   "scripts": {
     "start": "gulp --debug",
     "build": "npm run clean && gulp build",
+    "make-block": "babel-node make-block.js",
     "lint": "gulp lint",
     "deploy": "npm run clean && gulp build && gulp deploy",
     "cleanspritemixins": "find app/styles/sprites/* ! -name 'DONT DELETE THIS FILE.styl' -delete",

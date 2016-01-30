@@ -27,6 +27,11 @@ npm start -- --open
 npm start
 ```
 
+### Создание нового блока
+```
+npm run make-block [имя-блока]
+```
+
 ### Сборка в папку `dist`
 ```
 npm run build
@@ -125,6 +130,7 @@ npm run deploy
 ├── .gitignore                 # Список исключённых файлов из Git
 ├── browserlist                # Список версий браузеров для Autoprefixer
 ├── gulpfile.babel.js          # Файл для запуска Gulp.js
+├── make-block.js              # Утилита создания новых блоков
 ├── package.json               # Список модулей и прочей информации
 └── readme.md                  # Документация шаблона
 ```
