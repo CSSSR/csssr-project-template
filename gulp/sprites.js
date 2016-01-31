@@ -24,7 +24,7 @@ gulp.task('sprites', () => {
 	const spriteData = gulp.src(['app/sprites/**/*.png', '!app/sprites/*.png'])
 		.pipe(plumber({errorHandler: errorHandler('Error in \'sprites\' task')}))
 		.pipe(spritesmith({
-			spritesmith: (options, sprite, icons) => {
+			spritesmith(options) {
 				options.imgPath = imgPath + options.imgName;
 				options.retinaImgPath = imgPath + options.retinaImgName;
 				options.cssName = options.cssName.replace(/\.css$/, '.styl');
