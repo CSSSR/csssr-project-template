@@ -1,4 +1,5 @@
 import gulp from 'gulp';
+import gutil from 'gulp-util';
 import gulpif from 'gulp-if';
 import plumber from 'gulp-plumber';
 import jade from 'gulp-jade';
@@ -23,7 +24,7 @@ gulp.task('templates', () => (
 		.pipe(gulpif(global.watch, inheritance({basedir: 'app'})))
 		.pipe(filter(file => /app[\\\/]pages/.test(file.path)))
 		.pipe(jade({basedir: 'app', data}))
-		.pipe(prettify({
+		.pipe(gulpif(gutil.env.prettify !== false, prettify({
 			braceStyle: 'expand',
 			indentWithTabs: true,
 			indentInnerHtml: true,
@@ -33,7 +34,7 @@ gulp.task('templates', () => (
 			maxPreserveNewlines: 50,
 			wrapAttributesIndentSize: 1,
 			unformatted: ['use']
-		}))
+		})))
 		.pipe(rename({dirname: '.'}))
 		.pipe(gulp.dest('dist'))
 ));
