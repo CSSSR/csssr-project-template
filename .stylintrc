@@ -1,8 +1,7 @@
 {
-	"reporter": "stylint-stylish",
-	"reporterOptions": {
-		"verbose": true
-	},
+	// do not specify reporter here
+	// because it breaks SublimeLinter-contrib-stylint
+	// use gulp task style:lint instead
 	"blocks": "always", // discuss
 	"brackets": "never",
 	"colons": "never",
@@ -14,12 +13,12 @@
 	"duplicates": true,
 	"efficient": "always",
 	"extendPref": "@extend", // discuss
-	"globalDupe": false, // does not metter because we use BEM
+	"globalDupe": false,
 	"indentPref": false,
 	"leadingZero": "never",
 	"maxErrors": false,
 	"maxWarnings": false,
-	"mixed": false, // bug: throw error when there are few spaces after rule before comment
+	// "mixed": true, // bug: throw error when there are spaces after rule before comment
 	"namingConvention": "BEM",
 	"namingConventionStrict": true,
 	"none": "never", // discuss
@@ -29,7 +28,7 @@
 	"prefixVarsWithDollar": false, // discuss
 	"quotePref": "single",
 	"semicolons": "never",
-	"sortOrder": [
+	"sortOrder": [ // discuss
 		"all", // all: initial should be first
 
 		"position",
