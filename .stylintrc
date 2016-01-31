@@ -2,17 +2,17 @@
 	// do not specify reporter here
 	// because it breaks SublimeLinter-contrib-stylint
 	// use gulp task style:lint instead
-	"blocks": "always", // discuss
+	"blocks": "always", // discuss 1
 	"brackets": "never",
 	"colons": "never",
-	"colors": false, // discuss
+	"colors": false, // discuss 2
 	"commaSpace": "always",
 	"commentSpace": "always",
 	"cssLiteral": "never",
-	"depthLimit": false, // discuss
+	"depthLimit": false, // discuss 3
 	"duplicates": true,
 	"efficient": "always",
-	"extendPref": "@extend", // discuss
+	"extendPref": "@extend", // discuss 4
 	"globalDupe": false,
 	"indentPref": false,
 	"leadingZero": "never",
@@ -21,14 +21,14 @@
 	// "mixed": true, // bug: throw error when there are spaces after rule before comment
 	"namingConvention": "BEM",
 	"namingConventionStrict": true,
-	"none": "never", // discuss
+	"none": "never", // discuss 5
 	"noImportant": true,
 	"parenSpace": "never",
-	"placeholders": "always", // discuss
-	"prefixVarsWithDollar": false, // discuss
+	"placeholders": false,
+	"prefixVarsWithDollar": false, // discuss 6
 	"quotePref": "single",
 	"semicolons": "never",
-	"sortOrder": [ // discuss
+	"sortOrder": [ // discuss 7
 		"all", // all: initial should be first
 
 		"position",
@@ -206,10 +206,10 @@
 		"text-shadow"
 	],
 	"stackedProperties": "never",
-	// "trailingWhitespace": "never", // bug: throw error when there are spaces after rule before comment
+	"trailingWhitespace": "never", // bug: throw error when there are spaces after rule before comment
 	"universal": "never",
-	"valid": true, // discuss
+	"valid": true, // discuss 8
 	"mixins": ["size", "margin-x", "margin-y", "padding-x", "padding-y"],
 	"zeroUnits": "never",
-	"zIndexNormalize": false // discuss
+	"zIndexNormalize": false // discuss 9
 }
