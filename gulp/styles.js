@@ -29,3 +29,14 @@ gulp.task('styles', () => (
 		.pipe(gulpif(gutil.env.debug, sourcemaps.write()))
 		.pipe(gulp.dest('dist/assets/styles'))
 ));
+
+gulp.task('styles:lint', () => (
+	gulp.src('app/**/*.styl')
+		.pipe(stylint({
+			reporter: {
+				reporter: 'stylint-stylish',
+				reporterOptions: {verbose: true}
+			}
+		}))
+		.pipe(stylint.reporter())
+));

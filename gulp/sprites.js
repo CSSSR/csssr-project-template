@@ -1,4 +1,3 @@
-import fs from 'fs';
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
 import spritesmith from 'gulp.spritesmith-multi';

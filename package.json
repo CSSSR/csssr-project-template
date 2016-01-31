@@ -20,7 +20,7 @@
     "start": "gulp --debug",
     "build": "npm run clean && gulp build",
     "lint:js": "eslint app gulp",
-    "lint:css": "stylint app",
+    "lint:css": "gulp styles:lint",
     "lint": "npm-run-all -p lint:*",
     "deploy": "npm run clean && gulp build && gulp deploy",
     "cleanspritemixins": "find app/styles/sprites/* ! -name 'DONT DELETE THIS FILE.styl' -delete",
