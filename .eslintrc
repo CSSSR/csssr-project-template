@@ -48,7 +48,7 @@ rules:
     generator-star-spacing: 0
     guard-for-in: 1
     handle-callback-err: 0
-    id-length: [2, {"min": 1, "max": 20}]
+    id-length: [2, {"min": 1, "max": 30}]
     indent: [2, "tab"]
     key-spacing: [2, { "beforeColon": false, "afterColon": true }]
     lines-around-comment: 0
