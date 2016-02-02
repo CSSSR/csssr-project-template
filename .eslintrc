@@ -1,4 +1,4 @@
-parser: "babel-eslint"
+parser: 'babel-eslint'
 
 env:
     es6: true
@@ -23,36 +23,36 @@ globals:
     global: true
     __dirname: true
 rules:
-    arrow-parens: [1, "as-needed"]
-    arrow-spacing: [1, { "before": true, "after": true }]
+    arrow-parens: [1, 'as-needed']
+    arrow-spacing: [1, {before: true, after: true}]
     accessor-pairs: 2
     block-scoped-var: 2
-    brace-style: [0, "1tbs"]
+    brace-style: [0, '1tbs']
     camelcase: 1
-    comma-dangle: [2, "never"]
-    comma-spacing: [2, {"before": false, "after": true}]
-    comma-style: [2, "last"]
+    comma-dangle: [2, 'never']
+    comma-spacing: [2, {before: false, after: true}]
+    comma-style: [2, 'last']
     complexity: [1, 11]
-    computed-property-spacing: [2, "never"]
+    computed-property-spacing: [2, 'never']
     consistent-return: 0
-    consistent-this: [0, "that"]
+    consistent-this: [0, 'that']
     constructor-super: 2
-    curly: [2, "all"]
+    curly: [2, 'all']
     default-case: 0
     dot-location: 0
-    dot-notation: [2, { "allowKeywords": true }]
+    dot-notation: [2, {allowKeywords: true }]
     eol-last: 2
     eqeqeq: 2
     func-names: 0
-    func-style: [0, "declaration"]
+    func-style: [0, 'declaration']
     generator-star-spacing: 0
     guard-for-in: 1
     handle-callback-err: 0
-    id-length: [2, {"min": 1, "max": 20}]
-    indent: [2, "tab"]
-    key-spacing: [2, { "beforeColon": false, "afterColon": true }]
+    id-length: [2, {min: 1, max: 20}]
+    indent: [2, 'tab', {SwitchCase: 1}]
+    key-spacing: [2, {beforeColon: false, afterColon: true}]
     lines-around-comment: 0
-    linebreak-style: [0, "unix"]
+    linebreak-style: [0, 'unix']
     max-depth: [0, 4]
     max-len: [0, 120, 4]
     max-nested-callbacks: [1, 4]
@@ -94,7 +94,7 @@ rules:
     no-func-assign: 2
     no-implied-eval: 2
     no-inline-comments: 0
-    no-inner-declarations: [2, "functions"]
+    no-inner-declarations: [2, 'functions']
     no-invalid-regexp: 2
     no-irregular-whitespace: 2
     no-iterator: 2
@@ -102,13 +102,13 @@ rules:
     no-labels: 2
     no-lone-blocks: 2
     no-lonely-if: 2
-    no-implicit-coercion: [2, {"boolean": false, "number": true, "string": true}]
+    no-implicit-coercion: [2, {boolean: false, number: true, string: true}]
     no-loop-func: 2
     no-mixed-requires: [0, false]
     no-mixed-spaces-and-tabs: [2, false]
     no-multi-spaces: 2
     no-multi-str: 2
-    no-multiple-empty-lines: [0, {"max": 2}]
+    no-multiple-empty-lines: [0, {max: 2}]
     no-native-reassign: 2
     no-negated-in-lhs: 2
     no-nested-ternary: 2
@@ -150,7 +150,7 @@ rules:
     no-unneeded-ternary: 2
     no-unreachable: 2
     no-unused-expressions: 2
-    no-unused-vars: [2, {"vars": "all", "args": "after-used"}]
+    no-unused-vars: [2, {vars: 'all', args: 'after-used'}]
     no-use-before-define: 2
     no-useless-call: 2
     no-void: 0
@@ -159,32 +159,32 @@ rules:
     no-with: 2
     new-parens: 2
     newline-after-var: 0
-    object-curly-spacing: [1, "never"]
-    object-shorthand: [2, "always"]
-    one-var: [2, "never"]
-    operator-assignment: [2, "always"]
+    object-curly-spacing: [1, 'never']
+    object-shorthand: [2, 'always']
+    one-var: [2, 'never']
+    operator-assignment: [2, 'always']
     operator-linebreak: 0
     padded-blocks: 0
     prefer-const: 1
     prefer-spread: 2
-    quote-props: [2, "as-needed"]
-    quotes: [2, "single"]
+    quote-props: [2, 'as-needed']
+    quotes: [2, 'single']
     radix: 1
-    semi: [2, "always"]
-    semi-spacing: [2, {"before": false, "after": true}]
+    semi: [2, 'always']
+    semi-spacing: [2, {before: false, after: true}]
     sort-vars: 0
-    space-after-keywords: [2, "always"]
-    space-before-blocks: [2, "always"]
-    space-before-function-paren: [2, {"anonymous": "always", "named": "never"}]
+    space-after-keywords: [2, 'always']
+    space-before-blocks: [2, 'always']
+    space-before-function-paren: [2, {anonymous: 'always', named: 'never'}]
     space-in-parens: 0
     space-infix-ops: 2
     space-return-throw-case: 2
-    space-unary-ops: [2, { "words": true, "nonwords": false }]
-    spaced-comment: [1, "always"]
+    space-unary-ops: [2, {words: true, nonwords: false}]
+    spaced-comment: [1, 'always']
     use-isnan: 2
     valid-jsdoc: 0
     valid-typeof: 2
     vars-on-top: 2
     wrap-iife: 0
     wrap-regex: 0
-    yoda: [2, "never"]
+    yoda: [2, 'never']
