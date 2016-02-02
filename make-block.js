@@ -6,14 +6,14 @@ import {createInterface} from 'readline';
 const process = global.process;
 const rl = createInterface(process.stdin, process.stdout);
 
-// Папка с блоками
+// folder with all blocks
 const BLOCKS_DIR = path.join(__dirname, 'app/blocks');
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////
 
+// default content for files in new block
 const fileSources = {
-// Дефолтный контент файлов нового блока
-	jade: `mixin {blockName}()\n  +b.{blockName}&attributes(attributes) Я НОВЫЙ БЛОК {blockName}\n`,
+	jade: `mixin {blockName}()\n  +b.{blockName}&attributes(attributes) I AM NEW BLOCK {blockName}\n`,
 	styl: `.{blockName}\n  background-color {rndColor}\n`
 };
 
@@ -25,8 +25,8 @@ function validateBlockName(blockName) {
 			resolve(isValid);
 		} else {
 			let errMsg = '';
-			errMsg += `ERR>>> Ошибка в имени блока ${blockName}\n`;
-			errMsg += 'ERR>>> Имя блока должно состоять из букв, цифр и минусов.';
+			errMsg += `ERR>>> Incorrect block name ${blockName}\n`;
+			errMsg += 'ERR>>> Block name must include letters, numbers & the minus symbol.';
 			reject(errMsg);
 		}
 	});
@@ -36,10 +36,9 @@ function directoryExist(blockPath, blockName) {
 	return new Promise(function (resolve, reject) {
 		fs.stat(blockPath, function (notExist) {
 			if (notExist) {
-				// Блок не найден, значит можно смело создавать новый
 				resolve();
 			} else {
-				reject(`ERR>>> Блок с именем ${blockName} уже существует.`);
+				reject(`ERR>>> The block ${blockName} already exists.`);
 			}
 		});
 	});
@@ -49,7 +48,7 @@ function createDir(dirPath) {
 	return new Promise(function (resolve, reject) {
 		fs.mkdir(dirPath, function (err) {
 			if (err) {
-				reject(`ERR>>> Ошибка при создании директории ${dirPath}`);
+				reject(`ERR>>> Failed to create folder ${dirPath}`);
 			} else {
 				resolve();
 			}
@@ -71,7 +70,7 @@ function createFiles(blocksPath, blockName) {
 				new Promise(function (resolve, reject) {
 					fs.writeFile(filePath, fileSource, 'utf8', function (err) {
 						if (err) {
-							reject(`ERR>>> Ошибка при создании файла ${filePath}`);
+							reject(`ERR>>> Failed to create file ${filePath}`);
 						} else {
 							resolve();
 						}
@@ -87,7 +86,7 @@ function getFiles(blockPath) {
 	return new Promise(function (resolve, reject) {
 		fs.readdir(blockPath, function (err, files) {
 			if (err) {
-				reject(`ERR>>> Ошибка при получении списка файлов директории ${blockPath}`);
+				reject(`ERR>>> Failed to get file list from folder ${blockPath}`);
 			} else {
 				resolve(files);
 			}
@@ -112,14 +111,14 @@ function initMakeBlock(blockName) {
 			.then(() => getFiles(blockPath))
 			.then(function (files) {
 				console.log('-------------------------------------------------');
-				console.log(`Создан блок app/blocks/${blockName}`);
+				console.log(`The block has just been created in app/blocks/${blockName}`);
 				console.log('-------------------------------------------------');
-// Выводим список созданых файлов
+
+				// Displays a list of files created
 				files.forEach(function (file) {
 					console.log(file);
 				});
 
-// Если добрались до сюда то настало время выходить :)
 				rl.close();
 			});
 }
@@ -127,23 +126,23 @@ function initMakeBlock(blockName) {
 
 // //////////////////////////////////////////////////////////////////////////
 //
-// Начало здесь
+// Start here
 //
 
-// Параметры командной строки
+// Command line arguments
 const blockNameFromCli = process.argv
 		.slice(2)
-		// Сливаем все аргументы в один, чтобы ругнулась валидация на пробелы в имени блока
+		// join all arguments to one string (to simplify the capture user input errors)
 		.join(' ');
 
 
-// Если передали имя блока в параметрах коммандной
-// строки то создаём блок сразу. Иначе - включаем диалоговый режим
+// If the user pass the name of the block in the command-line options
+// that create a block. Otherwise - activates interactive mode
 if (blockNameFromCli !== '') {
 	initMakeBlock(blockNameFromCli)
 			.catch(printErrorMessage);
 } else {
-	rl.setPrompt('Имя блока> ');
+	rl.setPrompt('block-name> ');
 	rl.prompt();
 	rl
 			.on('line', function (line) {
