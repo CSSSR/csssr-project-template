@@ -1,9 +1,8 @@
 'use strict';
 
-import * as fs from 'fs';
-import * as path from 'path';
-import {createInterface} from 'readline';
-const process = global.process;
+import fs from 'fs';
+import path from 'path';
+import { createInterface } from 'readline';
 const rl = createInterface(process.stdin, process.stdout);
 
 // folder with all blocks
@@ -13,42 +12,43 @@ const BLOCKS_DIR = path.join(__dirname, 'app/blocks');
 
 // default content for files in new block
 const fileSources = {
-	jade: `mixin {blockName}()\n  +b.{blockName}&attributes(attributes) I AM NEW BLOCK {blockName}\n`,
-	styl: `.{blockName}\n  background-color {rndColor}\n`
+	jade: `mixin {blockName}()\n\t+b.{blockName}&attributes(attributes)\n\t\t| {blockName}\n`,
+	styl: `.{blockName}\n\tdisplay block\n`
 };
 
 function validateBlockName(blockName) {
-	return new Promise(function (resolve, reject) {
+	return new Promise((resolve, reject) => {
 		const isValid = /^(\d|\w|-)+$/.test(blockName);
 
 		if (isValid) {
 			resolve(isValid);
 		} else {
-			let errMsg = '';
-			errMsg += `ERR>>> Incorrect block name ${blockName}\n`;
-			errMsg += 'ERR>>> Block name must include letters, numbers & the minus symbol.';
+			const errMsg = (
+				`ERR>>> An incorrect block name '${blockName}'\n` +
+				`ERR>>> A block name must include letters, numbers & the minus symbol.`
+			);
 			reject(errMsg);
 		}
 	});
 }
 
 function directoryExist(blockPath, blockName) {
-	return new Promise(function (resolve, reject) {
-		fs.stat(blockPath, function (notExist) {
+	return new Promise((resolve, reject) => {
+		fs.stat(blockPath, notExist => {
 			if (notExist) {
 				resolve();
 			} else {
-				reject(`ERR>>> The block ${blockName} already exists.`);
+				reject(`ERR>>> The block '${blockName}' already exists.`);
 			}
 		});
 	});
 }
 
 function createDir(dirPath) {
-	return new Promise(function (resolve, reject) {
-		fs.mkdir(dirPath, function (err) {
+	return new Promise((resolve, reject) => {
+		fs.mkdir(dirPath, err => {
 			if (err) {
-				reject(`ERR>>> Failed to create folder ${dirPath}`);
+				reject(`ERR>>> Failed to create a folder '${dirPath}'`);
 			} else {
 				resolve();
 			}
@@ -58,19 +58,16 @@ function createDir(dirPath) {
 
 function createFiles(blocksPath, blockName) {
 	const promises = [];
-	Object.keys(fileSources).forEach(function (ext) {
-		const rndColor = '#' + Math.random().toString(16).slice(-3);
-		const fileSource = fileSources[ext]
-				.replace(/\{blockName}/g, blockName)
-				.replace('{rndColor}', rndColor);
+	Object.keys(fileSources).forEach(ext => {
+		const fileSource = fileSources[ext].replace(/\{blockName}/g, blockName);
 		const filename = `${blockName}.${ext}`;
 		const filePath = path.join(blocksPath, filename);
 
 		promises.push(
-				new Promise(function (resolve, reject) {
-					fs.writeFile(filePath, fileSource, 'utf8', function (err) {
+				new Promise((resolve, reject) => {
+					fs.writeFile(filePath, fileSource, 'utf8', err => {
 						if (err) {
-							reject(`ERR>>> Failed to create file ${filePath}`);
+							reject(`ERR>>> Failed to create a file '${filePath}'`);
 						} else {
 							resolve();
 						}
@@ -83,10 +80,10 @@ function createFiles(blocksPath, blockName) {
 }
 
 function getFiles(blockPath) {
-	return new Promise(function (resolve, reject) {
-		fs.readdir(blockPath, function (err, files) {
+	return new Promise((resolve, reject) => {
+		fs.readdir(blockPath, (err, files) => {
 			if (err) {
-				reject(`ERR>>> Failed to get file list from folder ${blockPath}`);
+				reject(`ERR>>> Failed to get a file list from a folder '${blockPath}'`);
 			} else {
 				resolve(files);
 			}
@@ -109,15 +106,14 @@ function initMakeBlock(blockName) {
 			.then(() => createDir(blockPath))
 			.then(() => createFiles(blockPath, blockName))
 			.then(() => getFiles(blockPath))
-			.then(function (files) {
-				console.log('-------------------------------------------------');
-				console.log(`The block has just been created in app/blocks/${blockName}`);
-				console.log('-------------------------------------------------');
+			.then(files => {
+				const line = '-'.repeat(48 + blockName.length);
+				console.log(line);
+				console.log(`The block has just been created in 'app/blocks/${blockName}'`);
+				console.log(line);
 
 				// Displays a list of files created
-				files.forEach(function (file) {
-					console.log(file);
-				});
+				files.forEach(file => console.log(file));
 
 				rl.close();
 			});
@@ -139,16 +135,12 @@ const blockNameFromCli = process.argv
 // If the user pass the name of the block in the command-line options
 // that create a block. Otherwise - activates interactive mode
 if (blockNameFromCli !== '') {
-	initMakeBlock(blockNameFromCli)
-			.catch(printErrorMessage);
+	initMakeBlock(blockNameFromCli).catch(printErrorMessage);
 } else {
-	rl.setPrompt('block-name> ');
+	rl.setPrompt('Block name: ');
 	rl.prompt();
-	rl
-			.on('line', function (line) {
-				const blockName = line.trim();
-
-				initMakeBlock(blockName)
-						.catch(printErrorMessage);
-			});
+	rl.on('line', (line) => {
+		const blockName = line.trim();
+		initMakeBlock(blockName).catch(printErrorMessage);
+	});
 }
