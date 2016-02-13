@@ -5,6 +5,7 @@ import gulpif from 'gulp-if';
 import rupture from 'rupture';
 import stylint from 'gulp-stylint';
 import stylus from 'gulp-stylus';
+import importIfExist from 'stylus-import-if-exist';
 import autoprefixer from 'autoprefixer-stylus';
 import gcmq from 'gulp-group-css-media-queries';
 import nano from 'gulp-cssnano';
@@ -18,6 +19,7 @@ gulp.task('styles', () => (
 		.pipe(gulpif(gutil.env.debug, sourcemaps.init()))
 		.pipe(stylus({
 			use: [
+				importIfExist(),
 				rupture(),
 				autoprefixer()
 			],
