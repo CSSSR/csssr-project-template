@@ -38,7 +38,8 @@
   },
   "author": "Felix Exter <felixexter@ya.ru> (https://github.com/felixexter)",
   "contributors": [
-    "Aleksandr Petrov <dzhiriki@gmail.com> (https://github.com/dzhiriki)"
+    "Aleksandr Petrov <dzhiriki@gmail.com> (https://github.com/dzhiriki)",
+    "Maxim Samoilov <nitive@icloud.com> (https://github.com/nitive)"
   ],
   "bugs": {
     "url": "https://github.com/CSSSR/csssr-project-template/issues/",
@@ -62,6 +63,7 @@
     "debuga": "^1.0.2",
     "eslint": "^1.9.0",
     "eslint-loader": "^1.1.1",
+    "expose-loader": "^0.7.1",
     "gulp": "^3.9.0",
     "gulp-bump": "^1.0.0",
     "gulp-cached": "^1.1.0",
@@ -90,6 +92,7 @@
     "jquery": "^2.1.4",
     "merge-stream": "^1.0.0",
     "node-notifier": "^4.3.1",
+    "npm-install-webpack-plugin": "^2.0.2",
     "npm-run-all": "^1.5.1",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.4",
