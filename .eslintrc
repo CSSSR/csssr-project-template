@@ -3,6 +3,7 @@ parser: 'babel-eslint'
 env:
     es6: true
     browser: true
+    node: true
 
 ecmaFeatures:
     arrowFunctions: true
@@ -18,10 +19,6 @@ ecmaFeatures:
     templateStrings: true
     experimentalObjectRestSpread: true
 
-globals:
-    window: true
-    global: true
-    __dirname: true
 rules:
     arrow-parens: [1, 'as-needed']
     arrow-spacing: [1, {before: true, after: true}]
