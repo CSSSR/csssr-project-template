@@ -2,6 +2,6 @@ include ../icon/icon
 
 mixin title(data)
 	+b('h1').title&attributes(attributes)
-		+e.company CSSSR
-		+icon('csssr').title__logo
-		|  Project Template
+		+e.company.img(src='csssr.png')
+		//- +icon('csssr').title__logo
+		<br/>  Секретный архив учреждения

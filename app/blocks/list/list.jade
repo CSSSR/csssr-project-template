@@ -1,8 +1,13 @@
 include ../mark/mark
+include ../line/line
+include ../underline/underline
+
 
 mixin list(list)
 	+b('ul').list&attributes(attributes)
 		each item in list
 			+e('li').item
 				+mark #{ item[0] }
-				|  &ndash; #{ item[1] }
+				//- |  &ndash; #{ item[1]}
+				+line #{ item[1] }
+				//- +underline

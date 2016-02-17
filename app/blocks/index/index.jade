@@ -7,38 +7,53 @@ include ../col/col
 include ../arrow/arrow
 include ../fork/fork
 include ../tree/tree
+include ../underline/underline
+include ../underline_short/underline_short
 
 mixin index()
 	+b.index
 		+content()
-			.index__group
-				+subtitle()
-					| ЧТО В КОРОБКЕ
+			//- .index__group
+			//- 	+subtitle()
+			//- 		| ЧТО В КОРОБКЕ
 
-			+heading()
-				| Инструменты
+			//- +heading()
+			//- 	| Инструменты
 
 			.index__group
 				+list(getData('tools'))
-
+				+underline
+				+underline_short
+				+underline_short
+			
 			.index__group
 				+subtitle()
-					| СТРУКТУРА ФАЙЛОВ
+					| Практические навыки
 
 			+container()
 				+col()
-					+heading()
-						| Исходники
-					+tree(getData('source-tree'))
+					//- +heading()
+					//- 	| Исходники
+					+tree(getData('source-tree-1'))
 
 				+col()
-					.index__arrow
-						+arrow()
-							| Сборка
-
+					//- .index__arrow
+					//- 	+arrow()
+					//- 		| Сборка
+					
+					+tree(getData('source-tree-2'))
+					
 				+col()
-					+heading()
-						| Готовые файлы
-					+tree(getData('build-tree'))
+					//- +heading()
+					//- 	| Готовые файлы
+					+tree(getData('source-tree-3'))
+					
+			.index__group
+				+subtitle()
+					| Уровень владения JavaScript		
+					
+			+container()
+				.index__group
+					+list(getData('tools-1'))
 
-			+fork()
+			//- +fork()
