@@ -1,0 +1,17 @@
+include ../jscont/jscont
+include ../column/column
+include ../subtitle/subtitle
+
+mixin selector()
+	+b.selector&attributes(attributes)
+		+e.level.img(src='selector.png')
+			//- +e.hatch._left
+			//- +e.hatch._left_center
+			//- +e.hatch._right_center
+			//- +e.hatch._right
+			//- +e.line._grade
+		+e.select
+			+jscont()
+				
+
+//- может быть заменить .box на .level, чтобы не пересекалось

@@ -1,0 +1,21 @@
+include ../column/column
+include ../subtitle/subtitle
+
+mixin jscont()
+	+b.jscont&attributes(attributes)
+		+column()
+			.uno
+				+subtitle().little
+					| Не владею
+		+column()
+			.dos
+				+subtitle().little
+					| Использую готовые решения
+		+column()
+			.tres
+				+subtitle().little
+					| Использую готовые решения и умею их переделывать
+		+column()
+			.quatro
+				+subtitle().little
+					| Пишу сложные скрипты

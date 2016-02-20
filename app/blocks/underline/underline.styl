@@ -1,5 +1,56 @@
 .underline
-	display block
 	position relative
-	left 100px
-	top -5px
+	z-index 1
+	display block
+	// overflow hidden
+	width 7em
+	height 6em
+	font-size 4px
+	top -40px
+	left 98px
+	text-decoration none
+
+	&__box
+		position relative
+		z-index 1
+		// top -1.25em
+		display block
+		// overflow hidden
+		width 7em
+		height 7em
+		transform rotate(-90deg)
+		backface-visibility hidden
+
+	&__line
+		position absolute
+		display block
+		width 0.7em
+		height 586px
+		background-color currentColor
+		box-shadow 0 0 1px rgba(#000, .25)
+
+		&_center_right
+			left 130px
+			top 50px
+			height 535px
+
+		&_top_left
+			left -6px
+
+		&_top_right
+			left 28px
+
+		&_center_left
+			top 80px
+			left 62px
+			height 506px
+
+		&_center_center
+			top 60px
+			left 96px
+			height 525px
+
+		&_bottom_left
+			top 60px
+			left -706px
+			height 200px

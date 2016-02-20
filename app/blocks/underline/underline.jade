@@ -1,11 +1,9 @@
 mixin underline()
 	+b.underline&attributes(attributes)
-		+e('u').img(src='underline.png')
-			
-//- mixin underline(underline_length)
-//- 	+b.underline&attributes(attributes)
-//- 		each item in underline_length
-//- 			if item.long
-//- 				+e('u').img(src='underline_long.png')
-//- 			else if item.normal
-//- 				+e('u').img(src='underline.png')
+		+e.box
+			+e.line._top_left
+			+e.line._top_right
+			+e.line._center_left
+			+e.line._center_right
+			+e.line._center_center
+			+e.line._bottom_left

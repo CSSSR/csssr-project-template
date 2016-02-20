@@ -1,9 +1,9 @@
 [{
 	"folder": "Методология БЭМ"
 }, {
-	"folder": "jQuery"
+	"file": "jQuery"
 }, {
-	"folder": "Использую GRUNT"
+	"file": "Использую GRUNT"
 }, {
 	"folder": "HAML"
 }, {

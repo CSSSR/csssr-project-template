@@ -1,6 +1,5 @@
 include ../mark/mark
-include ../line/line
-include ../underline/underline
+include ../bio/bio
 
 
 mixin list(list)
@@ -9,5 +8,5 @@ mixin list(list)
 			+e('li').item
 				+mark #{ item[0] }
 				//- |  &ndash; #{ item[1]}
-				+line #{ item[1] }
-				//- +underline
+				+bio #{ item[1] }
+				
