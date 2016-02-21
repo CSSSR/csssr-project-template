@@ -28,24 +28,24 @@ mixin index()
 				
 			
 			.index__group
-				+subtitle()
+				.simple
 					| Практические навыки
 				
 				+text()
 				
 				
 			+container()
-				+col()
+				+col().first
 					+tree(getData('source-tree-1'))
 
-				+col()
+				+col().second
 					+tree(getData('source-tree-2'))
 					
-				+col()
+				+col().third
 					+tree(getData('source-tree-3'))
 					
 			.index__group
-				+subtitle()
+				.jssimple
 					| Уровень владения JavaScript		
 			
 			+selector()
