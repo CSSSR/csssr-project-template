@@ -1,16 +1,16 @@
 import { create as browserSync } from 'browser-sync';
 import gulp from 'gulp';
-import gutil from 'gulp-util';
 import debuga from 'debuga';
 
 const bs = browserSync('server');
+const { PORT, OPEN, NODE_ENV, TUNNEL } = process.env;
 
 gulp.task('server', () => (
 	bs.init({
 		files: ['dist/**/*'],
-		open: !!gutil.env.open,
+		open: !!OPEN,
 		reloadOnRestart: true,
-		port: gutil.env.port || 3000,
+		port: PORT || 3000,
 		snippetOptions: {
 			rule: {
 				match: /<\/body>/i
@@ -22,8 +22,8 @@ gulp.task('server', () => (
 				'dist'
 			],
 			directory: false,
-			middleware: gutil.env.debug ? [debuga()] : []
+			middleware: NODE_ENV !== 'production' ? [debuga()] : []
 		},
-		tunnel: !!gutil.env.tunnel
+		tunnel: !!TUNNEL
 	})
 ));

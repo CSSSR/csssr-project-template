@@ -16,7 +16,7 @@ npm i
 
 ### Запусти шаблон
 ```
-npm start -- --open
+npm start
 ```
 
 
@@ -39,27 +39,22 @@ npm run build
 
 ### Локальный сервер на другом порте
 ```
-npm start -- --port=9000
+PORT=9000 npm start
 ```
 
 ### Уведомления об ошибках `ESLint`
 ```
-npm start -- --notify
-```
-
-### Воспроизводить звук при ошибках
-```
-npm start -- --beep
+NOTIFY=true npm start
 ```
 
 ### Расшарить локальный сервер
 ```
-npm start -- --tunnel
+TUNNEL=true npm start
 ```
 
 ### Открыть ссылку в браузере по умолчанию
 ```
-npm start -- --open
+OPEN=true npm start
 ```
 
 ### Собрать архив из папки `dist`

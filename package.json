@@ -1,6 +1,6 @@
 {
   "name": "csssr-project-template",
-  "version": "0.23.3",
+  "version": "0.24.0",
   "description": "A template for a quick start.",
   "keywords": [
     "csssr-project-template",
@@ -18,10 +18,10 @@
   ],
   "scripts": {
     "start": "gulp --debug",
-    "build": "npm run clean && gulp build",
+    "build": "better-npm-run production",
     "make-block": "babel-node make-block.js",
-    "lint:js": "eslint app gulp",
-    "lint:css": "gulp styles:lint",
+    "lint:scripts": "eslint app gulp",
+    "lint:styles": "gulp styles:lint",
     "lint": "npm-run-all -p lint:*",
     "deploy": "npm run clean && gulp build && gulp deploy",
     "clean": "rm -rf dist/* app/styles/sprites/*.styl",
@@ -29,6 +29,14 @@
     "patch": "gulp patch",
     "minor": "gulp minor",
     "major": "gulp major"
+  },
+  "betterScripts": {
+    "production": {
+      "command": "npm run clean && gulp build",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
   },
   "repository": {
     "type": "git",
@@ -81,7 +89,6 @@
     "gulp-stylint": "^3.0.0",
     "gulp-stylus": "^2.1.0",
     "gulp-svg-symbols": "^1.0.0",
-    "gulp-util": "^3.0.2",
     "gulp-watch": "^4.3.5",
     "gulp-zip": "^3.0.0",
     "gulp.spritesmith-multi": "^2.2.0",
