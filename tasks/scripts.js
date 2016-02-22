@@ -11,7 +11,7 @@ function runWebpack(watch = false) {
 	const webpackConfig = makeWebpackConfig({
 		watch,
 		debug: gutil.env.debug,
-		sourcemaps: gutil.env.sourcemaps,
+		sourcemaps: gutil.env.debug,
 		notify: gutil.env.notify
 	});
 
