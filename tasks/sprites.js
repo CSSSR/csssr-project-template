@@ -21,7 +21,7 @@ gulp.task('sprites', () => {
 	}
 
 	const spriteData = gulp.src(['app/sprites/**/*.png', '!app/sprites/*.png'])
-		.pipe(plumber({errorHandler: errorHandler('Error in \'sprites\' task')}))
+		.pipe(plumber({errorHandler: errorHandler(`Error in 'sprites' task`)}))
 		.pipe(spritesmith({
 			spritesmith(options) {
 				options.imgPath = imgPath + options.imgName;

@@ -1,6 +1,5 @@
 import gulp from 'gulp';
-import gutil from 'gulp-util';
-import gulpif from 'gulp-if';
+import gulpIf from 'gulp-if';
 import plumber from 'gulp-plumber';
 import jade from 'gulp-jade';
 import prettify from 'gulp-jsbeautifier';
@@ -19,12 +18,12 @@ const data = {
 
 gulp.task('templates', () => (
 	gulp.src('app/**/*.jade')
-		.pipe(plumber({errorHandler: errorHandler('Error in \'templates\' task')}))
+		.pipe(plumber({errorHandler: errorHandler(`Error in \'templates\' task`)}))
 		.pipe(cached('jade'))
-		.pipe(gulpif(global.watch, inheritance({basedir: 'app'})))
+		.pipe(gulpIf(global.watch, inheritance({basedir: 'app'})))
 		.pipe(filter(file => /app[\\\/]pages/.test(file.path)))
 		.pipe(jade({basedir: 'app', data}))
-		.pipe(gulpif(gutil.env.prettify !== false, prettify({
+		.pipe(gulpIf(process.env.PRETTIFY !== false, prettify({
 			braceStyle: 'expand',
 			indentWithTabs: true,
 			indentInnerHtml: true,

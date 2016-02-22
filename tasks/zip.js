@@ -1,5 +1,4 @@
 import gulp from 'gulp';
-import gutil from 'gulp-util';
 import zip from 'gulp-zip';
 
 const correctNumber = number => number < 10 ? '0' + number : number;
@@ -16,7 +15,7 @@ const getDateTime = () => {
 };
 
 gulp.task('zip', () => {
-	const datetime = gutil.env.zipDateTime ? '-' + getDateTime : '';
+	const datetime = process.env.ZIP_DATE_TIME ? '-' + getDateTime : '';
 	const zipName = 'dist' + datetime + '.zip';
 
 	gulp.src(['dist/**/*', '!dist/*.zip'])
