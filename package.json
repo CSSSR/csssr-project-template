@@ -1,6 +1,6 @@
 {
   "name": "csssr-project-template",
-  "version": "0.23.0",
+  "version": "0.23.1",
   "description": "A template for a quick start.",
   "keywords": [
     "csssr-project-template",
@@ -24,9 +24,7 @@
     "lint:css": "gulp styles:lint",
     "lint": "npm-run-all -p lint:*",
     "deploy": "npm run clean && gulp build && gulp deploy",
-    "cleanspritemixins": "rm app/styles/sprites/*.styl",
-    "cleandist": "rm -rf dist/*",
-    "clean": "npm run cleandist & npm run cleanspritemixins",
+    "clean": "rm -rf dist/* app/styles/sprites/*.styl",
     "zip": "npm run clean && gulp zip",
     "patch": "gulp patch",
     "minor": "gulp minor",
