@@ -24,7 +24,7 @@ gulp.task('styles', () => (
 			'include css': true
 		}))
 		.pipe(gulpif(!gutil.env.debug, gcmq()))
-		.pipe(gulpif(!gutil.env.debug, nano()))
+		.pipe(gulpif(!gutil.env.debug, nano({zindex: false})))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulpif(gutil.env.debug, sourcemaps.write()))
 		.pipe(gulp.dest('dist/assets/styles'))
