@@ -127,7 +127,7 @@ npm run deploy
 ├── gulpfile.babel.js          # Файл для запуска Gulp.js
 ├── make-block.js              # Утилита создания новых блоков
 ├── package.json               # Список модулей и прочей информации
-└── readme.md                  # Документация шаблона
+├── readme.md                  # Документация шаблона
 └── webpack.conf.js            # Конфигурация Webpack.js
 ```
 
