@@ -1,14 +1,21 @@
-import browserSync from 'browser-sync';
+import { create as browserSync } from 'browser-sync';
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import debuga from 'debuga';
 
+const bs = browserSync('server');
+
 gulp.task('server', () => (
-	browserSync.init({
+	bs.init({
 		files: ['dist/**/*'],
 		open: !!gutil.env.open,
 		reloadOnRestart: true,
 		port: gutil.env.port || 3000,
+		snippetOptions: {
+			rule: {
+				match: /<\/body>/i
+			}
+		},
 		server: {
 			baseDir: [
 				'app/resources',
