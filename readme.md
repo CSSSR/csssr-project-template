@@ -111,7 +111,7 @@ npm run deploy
 │   │   ├── scripts/           # Скрипты
 │   │   └── styles/            # Стили
 │   └── index.html             # Страница
-├── gulp/                      # Подключаемые скрипты с задачами для gulpfile.babel.js
+├── tasks/                     # Подключаемые скрипты с задачами для gulpfile.babel.js
 │   ├── copy.js                # Копирование
 │   ├── default.js             # Итоговые списки задач по умолчанию
 │   ├── deploy.js              # Деплой в ветку dist
@@ -133,6 +133,7 @@ npm run deploy
 ├── make-block.js              # Утилита создания новых блоков
 ├── package.json               # Список модулей и прочей информации
 └── readme.md                  # Документация шаблона
+└── webpack.conf.js            # Конфигурация Webpack.js
 ```
 
 

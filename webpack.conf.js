@@ -13,7 +13,7 @@ const eslintFormatter = ({notify}) => errors => {
 				notifier.notify({
 					title: error.message,
 					message: `${error.line}:${error.column} ${error.source.trim()}`,
-					icon: path.join(__dirname, 'gulp/images/error-icon.png')
+					icon: path.join(__dirname, 'tasks/images/error-icon.png')
 				});
 			}
 		}
