@@ -1,18 +1,19 @@
 .title
 	position relative
-	// padding 20px
 	font-family 'Courier New'
 	font-size 10px
 	line-height 1
-
-	// text-align center
 
 	&__company
 		position absolute
 		top 60px
 		left 45px
-		// font-size 0
-		// opacity 0
+
+		+mobile()
+			position static
+			margin-left 10px
+			margin-top 10px
+			padding-bottom 20px
 
 	.low
 		position absolute
@@ -20,8 +21,7 @@
 		top 109px
 		left 51px
 		margin-top -12px
-	// &__logo
-	// 	width 84px
-	// 	height 20px
 
-// понять, почему margin-top текста на 12 больше, пока ставлю на -12, чтобы поднять
+		+mobile()
+			top 60px
+			left 15px
