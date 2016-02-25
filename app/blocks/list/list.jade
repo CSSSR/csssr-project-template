@@ -1,0 +1,8 @@
+include ../mark/mark
+
+mixin list(list)
+	+b('ul').list&attributes(attributes)
+		each item in list
+			+e('li').item
+				+mark #{ item[0] }
+				|  &ndash; #{ item[1] }

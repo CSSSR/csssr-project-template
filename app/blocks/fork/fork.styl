@@ -1,0 +1,46 @@
+.fork
+	&::selection
+		background-color transparent
+
+	+from-width(541px)
+		position absolute
+		top 0
+		right 0
+		display block
+		overflow hidden
+		width 200px
+		height 200px
+
+	&__link
+		padding-x 40px
+		padding-y 5px
+		display block
+		font-size 16px
+		line-height 32px
+		text-align center
+		text-decoration none
+		transition-duration .25s
+		transition-timing-function ease-out
+		transition-property color, background-color
+
+		+mobile()
+			margin-top 40px
+			color #e74c3c
+			border-radius 4px
+			will-change transform
+
+			&:active
+				transform scale(.975)
+
+		+from-width(541px)
+			position absolute
+			top 50px
+			right -54px
+			width 250px
+			color #fff
+			background-color #333
+			transform rotate(45deg)
+
+		&:hover
+			color #fff
+			background-color #e74c3c

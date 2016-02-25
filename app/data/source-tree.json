@@ -1,0 +1,47 @@
+[{
+	"folder": "blocks",
+	"content": [{
+		"folder": "block",
+		"content": [{
+			"file": "block.jade"
+		}, {
+			"file": "block.js"
+		}, {
+			"file": "block.styl"
+		}]
+	}]
+}, {
+	"folder": "data"
+}, {
+	"folder": "icons"
+}, {
+	"folder": "pages",
+	"content": [{
+		"file": "index.jade"
+	}]
+}, {
+	"folder": "resources"
+}, {
+	"folder": "scripts",
+	"content": [{
+		"file": "app.js"
+	}]
+}, {
+	"folder": "sprites"
+}, {
+	"folder": "styles",
+	"content": [{
+		"folder": "helpers",
+		"content": [{
+			"file": "fonts.styl"
+		}, {
+			"file": "mixins.styl"
+		}, {
+			"file": "optimize.styl"
+		}, {
+			"file": "variables.styl"
+		}]
+	}, {
+		"file": "app.styl"
+	}]
+}]
