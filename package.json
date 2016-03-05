@@ -1,6 +1,6 @@
 {
   "name": "csssr-project-template",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "description": "A template for a quick start.",
   "keywords": [
     "csssr-project-template",
@@ -65,6 +65,7 @@
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.5.0",
     "bemto.jade": "^1.0.0",
+    "better-npm-run": "0.0.7",
     "browser-sync": "^2.10.0",
     "debuga": "^1.0.2",
     "eslint": "^1.9.0",
