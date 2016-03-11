@@ -19,7 +19,7 @@
   "scripts": {
     "start": "gulp --debug",
     "build": "gulp build",
-    "production": "NODE_ENV=production npm-run-all clean build",
+    "production": "cross-env NODE_ENV=production npm-run-all clean build",
     "make-block": "babel-node make-block.js",
     "lint:scripts": "eslint app gulp",
     "lint:styles": "gulp styles:lint",
@@ -61,6 +61,7 @@
     "babel-preset-es2015": "^6.5.0",
     "bemto.jade": "^1.0.0",
     "browser-sync": "^2.10.0",
+    "cross-env": "^1.0.7",
     "debuga": "^1.0.2",
     "eslint": "^1.9.0",
     "eslint-loader": "^1.1.1",
