@@ -24,7 +24,7 @@
     "lint:scripts": "eslint app gulp",
     "lint:styles": "gulp styles:lint",
     "lint": "npm-run-all -p lint:*",
-    "predeploy": "npm-run-all clean build",
+    "predeploy": "npm-run-all clean production",
     "deploy": "gulp deploy",
     "clean": "rimraf dist app/styles/sprites/*.styl",
     "prezip": "npm run production",
