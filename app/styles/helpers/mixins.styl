@@ -42,3 +42,201 @@ retinaBackground($image, $ext = 'png') {
 		background-image url('../images/' + $image + '@2x.' + $ext)
 	}
 }
+// Create triangle
+triangle(width = 10px, height = 10px, direction = 'bottom', color = #000)
+
+	// Base triangle styles
+	width 0
+	height 0
+	background 0
+	border-style solid
+
+	// Styles for each direction
+	directions = {
+		top: {
+			border-width: 0 (width * .5) height (width * .5),
+			border-color: transparent transparent color transparent
+		},
+		topRight: {
+			border-width: 0 width height 0,
+			border-color: transparent color transparent transparent
+		},
+		right: {
+			border-width: (height * .5) 0 (height *.5) width,
+			border-color: transparent transparent transparent color
+		},
+		bottomRight: {
+			border-width: 0 0 height width,
+			border-color: transparent transparent color transparent
+		},
+		bottom: {
+			border-width: height (width * .5) 0 (width * .5),
+			border-color: color transparent transparent transparent
+		},
+		bottomLeft: {
+			border-width: width 0 0 height,
+			border-color: transparent transparent transparent color
+		},
+		left: {
+			border-width: (height * .5) width (height * .5) 0,
+			border-color: transparent color transparent transparent
+		},
+		topLeft: {
+			border-width: height width 0 0,
+			border-color: color transparent transparent transparent
+		}
+	}
+
+	// Mixin styles for passed direction
+	styles = directions[direction]
+	{styles}
+	
+// Convert PX to REM
+
+// Default Variables
+$base--font-size ?= 16px
+
+rem($value, $base = $base--font-size)
+  $max = length($value)
+
+  $remValues = ()
+  for $i in (0...$max)
+    push($remValues, _convert-to-rem( $value[$i], $base ))
+
+  return $remValues
+
+_convert-to-rem($px, $base)
+  if $is-ie && $is-ie--version <= 8
+    ($px)px
+  else if (typeof($px) == 'unit')
+    if ((unit($px) == '' || unit($px) == 'px') && ($px != 0))
+      return (round($px / $base, 3))rem
+    else
+      return 0
+
+// Центрирование по горизонтали блока заданной ширины
+container()
+	padding-left 186px
+	padding-right 30px
+	
+	+below($desktop-cutoff)
+		padding-left 30px
+		
+	+mobile()
+		padding-left 15px
+		padding-right 15px
+
+// Центрирование по горизонтали
+center()
+	margin-right auto
+	margin-left auto
+
+// Центрирование абсолютно позиционированного элемента по вертикали
+absolute-center()
+	position absolute
+	top 50%
+	transform translateY(-50%)
+
+// Применяется к родительскому блоку, в который вложено n inline-block потомков.
+// Эти потомки будут распределены по ширине родительского блока
+justify()
+	font-size 1px
+	line-height 0
+
+	zoom 1
+
+	text-align justify
+	text-align-last justify
+	text-justify newspaper
+
+	&:after
+		display inline-block
+		visibility hidden
+
+		overflow hidden
+
+		width 100%
+		height 0
+
+		content ''
+		
+
+// Применяется к inline-block элементам, вложенным в родителя с применённым justify.
+// Следует указать нужный размер шрифта в блоках, так как в justify он сбрасывается
+justify-child(font-size = 16px)
+	font-size font-size
+	line-height normal
+
+	display inline-block
+
+	vertical-align top
+	
+
+// Красивое обрезание лишнего текста
+text-overflow()
+	overflow hidden
+	white-space nowrap
+	text-overflow ellipsis
+	
+
+// Скрытие текста у блока
+hidetext()
+	font 0/0 a
+	text-shadow none
+	color transparent
+	
+
+// Запрет выделения текста
+noselection()
+	user-select none
+	-webkit-touch-callout none
+
+	&:hover
+		cursor default
+		
+
+// Задаёт цвет плейсхолдера
+placeholder-color(color)
+	&:-moz-placeholder,
+	&::-moz-placeholder
+		color color
+		opacity 1
+		
+	&::-webkit-input-placeholder
+		color color
+		
+// Хак для включения аппаратного ускорения.
+// Поддержка браузерами: IE10+
+gpu()
+	transform translate3d(0, 0, 0)
+	
+// Фоновая картинка
+image-bg(name)
+	background-image url('../images/' + name)
+	background-size cover
+
+
+// Создание ссылки
+link(color, hover)
+	color color
+	border-bottom 1px solid rgba(color, .15)
+	
+	&:hover
+		color hover
+		border-bottom-color rgba(hover, .15)
+
+// Хелперы для флексбокса
+flex-center()
+	display flex
+	align-items center
+	justify-content center
+
+
+flexible()
+	flex-grow 1
+	flex-shrink 1
+
+
+unflexible()
+	flex-grow 0
+	flex-shrink 0
