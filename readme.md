@@ -37,11 +37,6 @@ npm run make-block [имя-блока]
 npm run build
 ```
 
-### Production cборка в папку `dist`
-```
-npm run production
-```
-
 ### Локальный сервер на другом порте
 ```
 PORT=9000 npm start
