@@ -16,7 +16,7 @@ npm i
 
 ### Запусти шаблон
 ```
-npm start -- --open
+npm start
 ```
 
 
@@ -37,29 +37,29 @@ npm run make-block [имя-блока]
 npm run build
 ```
 
+### Production cборка в папку `dist`
+```
+npm run production
+```
+
 ### Локальный сервер на другом порте
 ```
-npm start -- --port=9000
+PORT=9000 npm start
 ```
 
 ### Уведомления об ошибках `ESLint`
 ```
-npm start -- --notify
-```
-
-### Воспроизводить звук при ошибках
-```
-npm start -- --beep
+NOTIFY=true npm start
 ```
 
 ### Расшарить локальный сервер
 ```
-npm start -- --tunnel
+TUNNEL=true npm start
 ```
 
 ### Открыть ссылку в браузере по умолчанию
 ```
-npm start -- --open
+OPEN=true npm start
 ```
 
 ### Собрать архив из папки `dist`
@@ -111,7 +111,7 @@ npm run deploy
 │   │   ├── scripts/           # Скрипты
 │   │   └── styles/            # Стили
 │   └── index.html             # Страница
-├── gulp/                      # Подключаемые скрипты с задачами для gulpfile.babel.js
+├── tasks/                     # Подключаемые скрипты с задачами для gulpfile.babel.js
 │   ├── copy.js                # Копирование
 │   ├── default.js             # Итоговые списки задач по умолчанию
 │   ├── deploy.js              # Деплой в ветку dist
@@ -132,7 +132,8 @@ npm run deploy
 ├── gulpfile.babel.js          # Файл для запуска Gulp.js
 ├── make-block.js              # Утилита создания новых блоков
 ├── package.json               # Список модулей и прочей информации
-└── readme.md                  # Документация шаблона
+├── readme.md                  # Документация шаблона
+└── webpack.conf.js            # Конфигурация Webpack.js
 ```
 
 
