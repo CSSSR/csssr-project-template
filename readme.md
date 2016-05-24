@@ -9,8 +9,6 @@
 git clone git@github.com:CSSSR/csssr-project-template.git new-project && cd new-project
 ```
 
-<<<<<<< HEAD
-=======
 ##### *Для пользователей Windows*
 Перед тем как устанавливать модули `NPM` убедись, что:
 
@@ -24,7 +22,7 @@ git clone git@github.com:CSSSR/csssr-project-template.git new-project && cd new-
 
 Для более подробной информации перейди по [ссылке](https://github.com/nodejs/node-gyp/issues/629#issuecomment-153196245) от куда была взята информация. 
 
->>>>>>> new
+
 ### Установи модули
 ```
 npm i
