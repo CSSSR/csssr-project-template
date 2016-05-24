@@ -10,8 +10,10 @@ git clone git@github.com:CSSSR/csssr-project-template.git new-project && cd new-
 ```
 
 ##### *Для пользователей Windows*
-Перед тем как устанавливать модули `NPM` убедись, что: 
+Перед тем как устанавливать модули `NPM` убедись, что:
+
 1. Установлен [Pyton 2.7](https://www.python.org/downloads/) и добавлен в `PATH`, `npm config set python python2.7`
+
 2. Установлен [Visual Studio++ Build Tools Technical Preview](https://www.visualstudio.com/en-us/downloads/update2-prereleases#AdditionalPageSections_66), во время установки выбрать пункт `Modofy` и поставить галочки `Windows 8.1 SDK` и `Windows 10 SDK` 
 	> Windows 7 дополнительно требует установки [.NET Framework 4.5.1](https://www.microsoft.com/en-us/download/details.aspx?id=40773)
 
