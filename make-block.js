@@ -12,7 +12,7 @@ const BLOCKS_DIR = path.join(__dirname, 'app/blocks');
 
 // default content for files in new block
 const fileSources = {
-	jade: `mixin {blockName}()\n\t+b.{blockName}&attributes(attributes)\n\t\t| {blockName}\n`,
+	jade: `mixin {blockName}()\n\t+b.{blockName}&attributes(attributes)\n\t\tblock\n`,
 	styl: `.{blockName}\n\tdisplay block\n`
 };
 
