@@ -99,7 +99,7 @@ function printErrorMessage(errText) {
 // //////////////////////////////////////////////////////////////////////////
 
 function initMakeBlock(candidateBlockName) {
-	const blockNames = candidateBlockName.trim().split(' ');
+	const blockNames = candidateBlockName.trim().split(/\s+/);
 
 	const makeBlock = blockName => {
 		const blockPath = path.join(BLOCKS_DIR, blockName);
@@ -147,7 +147,7 @@ const blockNameFromCli = process.argv
 if (blockNameFromCli !== '') {
 	initMakeBlock(blockNameFromCli).catch(printErrorMessage);
 } else {
-	rl.setPrompt('Block name: ');
+	rl.setPrompt('Block(s) name: ');
 	rl.prompt();
 	rl.on('line', (line) => {
 		initMakeBlock(line).catch(printErrorMessage);
