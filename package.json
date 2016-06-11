@@ -62,7 +62,7 @@
     "browser-sync": "^2.10.0",
     "cross-env": "^1.0.7",
     "debuga": "^1.0.2",
-    "eslint": "^1.9.0",
+    "eslint": "^2.12.0",
     "eslint-loader": "^1.1.1",
     "expose-loader": "^0.7.1",
     "gulp": "^3.9.0",
