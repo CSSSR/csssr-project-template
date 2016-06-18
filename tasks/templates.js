@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import gulpIf from 'gulp-if';
 import plumber from 'gulp-plumber';
 import jade from 'gulp-jade';
+import pugLint from 'gulp-pug-lint';
 import prettify from 'gulp-jsbeautifier';
 import inheritance from 'gulp-jade-inheritance';
 import cached from 'gulp-cached';
@@ -37,3 +38,9 @@ gulp.task('templates', () => (
 		.pipe(rename({dirname: '.'}))
 		.pipe(gulp.dest('dist'))
 ));
+
+gulp.task('templates:lint', () =>
+	gulp
+		.src('app/**/*.jade')
+		.pipe(pugLint())
+);
