@@ -12,7 +12,7 @@ const BLOCKS_DIR = path.join(__dirname, 'app/blocks');
 
 // default content for files in new block
 const fileSources = {
-	jade: `mixin {blockName}()\n\t+b.{blockName}&attributes(attributes)\n\t\t| {blockName}\n`,
+	jade: `mixin {blockName}()\n\t+b.{blockName}&attributes(attributes)\n\t\tblock\n`,
 	styl: `.{blockName}\n\tdisplay block\n`
 };
 
@@ -98,10 +98,13 @@ function printErrorMessage(errText) {
 
 // //////////////////////////////////////////////////////////////////////////
 
-function initMakeBlock(blockName) {
-	const blockPath = path.join(BLOCKS_DIR, blockName);
+function initMakeBlock(candidateBlockName) {
+	const blockNames = candidateBlockName.trim().split(/\s+/);
 
-	return validateBlockName(blockName)
+	const makeBlock = blockName => {
+		const blockPath = path.join(BLOCKS_DIR, blockName);
+
+		return validateBlockName(blockName)
 			.then(() => directoryExist(blockPath, blockName))
 			.then(() => createDir(blockPath))
 			.then(() => createFiles(blockPath, blockName))
@@ -117,6 +120,14 @@ function initMakeBlock(blockName) {
 
 				rl.close();
 			});
+	};
+
+	if (blockNames.length === 1) {
+		return makeBlock(blockNames[0]);
+	}
+
+	const promises = blockNames.map(name => makeBlock(name));
+	return Promise.all(promises);
 }
 
 
@@ -131,16 +142,14 @@ const blockNameFromCli = process.argv
 		// join all arguments to one string (to simplify the capture user input errors)
 		.join(' ');
 
-
 // If the user pass the name of the block in the command-line options
 // that create a block. Otherwise - activates interactive mode
 if (blockNameFromCli !== '') {
 	initMakeBlock(blockNameFromCli).catch(printErrorMessage);
 } else {
-	rl.setPrompt('Block name: ');
+	rl.setPrompt('Block(s) name: ');
 	rl.prompt();
 	rl.on('line', (line) => {
-		const blockName = line.trim();
-		initMakeBlock(blockName).catch(printErrorMessage);
+		initMakeBlock(line).catch(printErrorMessage);
 	});
 }
