@@ -1,12 +1,12 @@
 import gulp from 'gulp';
-import webpackStream from 'webpack-stream';
-import plumber from 'gulp-plumber';
 import errorHandler from 'gulp-plumber-error-handler';
 import statsLogger from 'webpack-stats-logger';
 import makeWebpackConfig from '../webpack.conf.js';
+import webpack from 'webpack';
 
 const { NODE_ENV, NOTIFY } = process.env;
 const isDebug = NODE_ENV !== 'production';
+const scriptsErrorHandler = errorHandler(`Error in 'scripts' task`);
 
 function runWebpack(watch = false) {
 
@@ -17,11 +17,15 @@ function runWebpack(watch = false) {
 		notify: NOTIFY
 	});
 
-	return gulp
-		.src('app/scripts/app.js')
-		.pipe(plumber({errorHandler: errorHandler(`Error in 'scripts' task`)}))
-		.pipe(webpackStream(webpackConfig, null, statsLogger))
-		.pipe(gulp.dest('dist/assets/scripts'));
+	return webpack(webpackConfig, (error, stats) => {
+		const jsonStats = stats.toJson();
+		if (jsonStats.errors.length) {
+			jsonStats.errors.forEach(message => {
+				scriptsErrorHandler.call({emit() {/* noop */}}, {message});
+			});
+		}
+		statsLogger(error, stats);
+	});
 }
 
 gulp.task('scripts', () => {
