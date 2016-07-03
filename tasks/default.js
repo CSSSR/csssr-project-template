@@ -23,8 +23,8 @@ gulp.task('default', () => (
 gulp.task('build', () => (
 	gulp.start(
 		'styles:dependencies',
-		'templates',
 		'scripts',
+		'templates',
 		'copy'
 	)
 ));

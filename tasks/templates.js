@@ -10,11 +10,11 @@ import filter from 'gulp-filter';
 import rename from 'gulp-rename';
 import errorHandler from 'gulp-plumber-error-handler';
 import getData from 'jade-get-data';
+import staticHash from 'gulp-static-hash';
 
 const data = {
 	getData: getData('app/data'),
-	jv0: 'javascript:void(0);',
-	timestamp: Date.now()
+	jv0: 'javascript:void(0);'
 };
 
 gulp.task('templates', () => (
@@ -35,6 +35,10 @@ gulp.task('templates', () => (
 			wrapAttributesIndentSize: 1,
 			unformatted: ['use']
 		})))
+		.pipe(staticHash({
+			asset: 'dist',
+			exts: ['js', 'css']
+		}))
 		.pipe(rename({dirname: '.'}))
 		.pipe(gulp.dest('dist'))
 ));
