@@ -158,10 +158,10 @@ rules:
     semi-spacing: [2, {before: false, after: true}]
     sort-vars: 0
     keyword-spacing: [2, {before: false, after: true, overrides: {
-		    return: {after: true},
-		    throw: {after: true},
-		    case: {after: true}
-		}}]
+            return: {after: true},
+            throw: {after: true},
+            case: {after: true}
+        }}]
     space-before-function-paren: [2, {anonymous: 'always', named: 'never'}]
     space-in-parens: 0
     space-infix-ops: 2
