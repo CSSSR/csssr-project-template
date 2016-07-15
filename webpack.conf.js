@@ -3,6 +3,7 @@ import stylish from 'eslint/lib/formatters/stylish';
 import notifier from 'node-notifier';
 import webpack from 'webpack';
 import NpmInstallPlugin from 'npm-install-webpack-plugin';
+import HappyPack from 'happypack';
 
 const eslintFormatter = ({notify}) => errors => {
 	if (errors[0].messages) {
@@ -28,11 +29,13 @@ export default function makeWebpackConfig({
 	eslint = true
 }) {
 	return {
+		entry: path.resolve('./app/scripts/app.js'),
 		watch,
 		debug,
 		bail: false,
 		profile: true,
 		output: {
+			path: path.resolve('./dist/assets/scripts/'),
 			filename: 'app.min.js',
 			pathinfo: false
 		},
@@ -50,7 +53,7 @@ export default function makeWebpackConfig({
 			}],
 			loaders: [{
 				test: /\.js$/,
-				loader: 'babel',
+				loader: 'happypack/loader',
 				exclude: /node_modules/
 			}, {
 				test: /\.json$/,
@@ -65,6 +68,12 @@ export default function makeWebpackConfig({
 			}].filter(loader => loader)
 		},
 		plugins: [
+			new HappyPack({
+				loaders: ['babel'],
+				threads: 4,
+				verbose: false,
+				cache: true
+			}),
 			new webpack.DefinePlugin({
 				'process.env': {
 					NODE_ENV: JSON.stringify(process.env.NODE_ENV)
