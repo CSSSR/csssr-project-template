@@ -35,10 +35,10 @@ gulp.task('templates', () => (
 			wrapAttributesIndentSize: 1,
 			unformatted: ['use']
 		})))
-		.pipe(staticHash({
+		.pipe(gulpIf(process.env.NODE_ENV === 'production', staticHash({
 			asset: 'dist',
 			exts: ['js', 'css']
-		}))
+		})))
 		.pipe(rename({dirname: '.'}))
 		.pipe(gulp.dest('dist'))
 ));
