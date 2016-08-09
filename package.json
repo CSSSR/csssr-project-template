@@ -1,9 +1,9 @@
 {
-  "name": "csssr-project-template",
+  "name": "project-template",
   "version": "0.26.0",
   "description": "A template for a quick start.",
   "keywords": [
-    "csssr-project-template",
+    "project-template",
     "cpt",
     "csssr",
     "project",
