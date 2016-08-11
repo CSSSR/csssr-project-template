@@ -21,10 +21,10 @@ gulp.task('default', () => (
 ));
 
 gulp.task('build', () => (
-	gulp.start(
+	runSequence(
 		'styles:dependencies',
-		'templates',
 		'scripts',
-		'copy'
+		'copy',
+		'templates'
 	)
 ));
