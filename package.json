@@ -94,6 +94,7 @@
     "gulp-zip": "^3.0.0",
     "gulp.spritesmith-multi": "^2.2.0",
     "happypack": "^2.1.1",
+    "husky": "^0.11.9",
     "jade-get-data": "^1.0.0",
     "jade-injected": "^1.0.2",
     "jquery": "^2.1.4",
