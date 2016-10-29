@@ -84,7 +84,7 @@
     "gulp-jsbeautifier": "^1.0.1",
     "gulp-plumber": "^1.0.1",
     "gulp-plumber-error-handler": "^1.0.0",
-    "gulp-pug-lint": "^0.1.6",
+    "gulp-pug-linter": "^0.4.1",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-static-hash": "^0.1.4",
