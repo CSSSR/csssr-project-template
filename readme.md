@@ -78,6 +78,8 @@ npm run clean
 npm run deploy
 ```
 
+## Git hooks
+Используется husky. Перед каждым `git push` запускается линтер.
 
 ## Структура папок и файлов
 ```
