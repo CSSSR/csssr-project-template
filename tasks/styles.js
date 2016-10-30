@@ -40,4 +40,5 @@ gulp.task('styles:lint', () => (
 			reporterOptions: {verbose: true}
 		}))
 		.pipe(stylint.reporter())
+		.pipe(stylint.reporter('fail', {failOnWarning: true}))
 ));
