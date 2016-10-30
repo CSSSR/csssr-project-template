@@ -32,7 +32,8 @@
     "zip": "gulp zip",
     "patch": "gulp patch",
     "minor": "gulp minor",
-    "major": "gulp major"
+    "major": "gulp major",
+    "prepush": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -83,7 +84,7 @@
     "gulp-jsbeautifier": "^1.0.1",
     "gulp-plumber": "^1.0.1",
     "gulp-plumber-error-handler": "^1.0.0",
-    "gulp-pug-lint": "^0.1.6",
+    "gulp-pug-linter": "^0.4.1",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-static-hash": "^0.1.4",
@@ -94,6 +95,7 @@
     "gulp-zip": "^3.0.0",
     "gulp.spritesmith-multi": "^2.2.0",
     "happypack": "^2.1.1",
+    "husky": "^0.11.9",
     "jade-get-data": "^1.0.0",
     "jade-injected": "^1.0.2",
     "jquery": "^2.1.4",
