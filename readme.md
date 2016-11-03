@@ -85,6 +85,10 @@ npm run clean
 npm run deploy
 ```
 
+## Git hooks
+Используется [husky](https://github.com/typicode/husky). Перед каждым `git push` запускается линтер.
+Если линтер падает с ошибкой, `git push` не пройдет. Пропустить линтинг можно, используя `git push --no-verify`.
+
 
 ## Структура папок и файлов
 ```
