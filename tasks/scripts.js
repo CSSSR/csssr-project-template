@@ -25,7 +25,11 @@ function runWebpack(watch = false) {
 				});
 			}
 			statsLogger(error, stats);
-			callback();
+
+			// slove the issue #169
+			if (watch === false) {
+				callback();
+			}
 		});
 	};
 }
