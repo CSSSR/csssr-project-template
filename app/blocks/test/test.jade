@@ -1,9 +1,13 @@
 include ../question/question
+include ../result/result
 
-mixin test(picSrc, picName, questions)
+mixin test(picSrc, picName, question)
 	+b('main').test&attributes(attributes)
 		block
 
-		img(class='test__picture' src=picSrc alt=picName onerror="this.onerror=null;this.src='https://monosnap.com/file/KejcEMuS8qCMYZe9y2HNvNgWhHV6Gv';")
+		img(class='test__picture' src=picSrc alt=picName onerror="this.onerror=null; this.src='https://monosnap.com/file/KejcEMuS8qCMYZe9y2HNvNgWhHV6Gv'")
 
-		+question('Содержимое какого элемента можно увидеть в окне браузера?', 5, 5)
+		if question
+			+question(question, 5, 5)
+		else
+			+result
