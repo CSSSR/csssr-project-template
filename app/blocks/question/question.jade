@@ -7,8 +7,8 @@ mixin question(question, current, max)
 	+b('form').question&attributes(attributes)
 		block
 
-		div.question__counter вопрос #{current}/#{max}
-		div.question__text #{question}
+		.question__counter вопрос #{current}/#{max}
+		.question__text #{question}
 		ul.question__answer-list
 			+answer-item('<!doctype>', 'answer-1')
 			+answer-item('<meta>', 'answer-2')
