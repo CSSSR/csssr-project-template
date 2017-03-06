@@ -1,13 +1,17 @@
 include ../header/header
 include ../test/test
 
-mixin page()
+mixin page(question, answers, nextQuestion, questionCounter, questionMax, picSrc, picName)
 	+b('body').page&attributes(attributes)
 		block
 
 		+header
 		+test(
-			'http://www.planwallpaper.com/static/images/abstract-colourful-cool-wallpapers-55ec7905a6a4f.jpg',
-			'minion',
-			'Содержимое какого элемента можно увидеть в оне браузера?'
+			question,
+			answers,
+			nextQuestion,
+			questionCounter,
+			questionMax,
+			picSrc,
+			picName
 		)

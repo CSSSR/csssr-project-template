@@ -41,9 +41,7 @@
 		&::before
 		&::after
 			position absolute
-			top 50%
 			left 0
-			transform translateY(-50%)
 			content ''
 			border-radius 50%
 
@@ -53,6 +51,7 @@
 			border 1px solid soft-blue
 
 		&::after
+			top 25px
 			left 5px
 			display none
 			width 6px
@@ -64,11 +63,14 @@
 
 	&__btn
 		margin-x(auto)
-		margin-top 30px
+		margin-y(30px)
 		display block
 		width 163px
 		height 34px
 		font-size 14px
+		line-height 34px
+		text-align center
+		text-decoration none
 		color #ffffff
 		border none
 
@@ -91,6 +93,7 @@
 			bottom 0
 			width 100%
 			height 48px
+			line-height 48px
 
 		&__counter
 			margin-top 20px
@@ -104,3 +107,7 @@
 
 		&__answer-item
 			padding-y(15px)
+
+		&__answer-label
+			&::after
+				top 20px
