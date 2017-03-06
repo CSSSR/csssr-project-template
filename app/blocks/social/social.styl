@@ -1,8 +1,8 @@
 .social
 	margin 0 auto
 	margin-bottom 30px
-	width 141px
 	display flex
+	width 141px
 
 	&__item
 		display block
@@ -15,24 +15,23 @@
 		font-size 0
 
 		&_google
-			retinaSprite $google_group
+			retinaSprite($google_group)
 
 		&_vk
-			retinaSprite $vk_group
+			retinaSprite($vk_group)
 
 		&_fb
-			retinaSprite $facebook_group
+			retinaSprite($facebook_group)
 
 		&_twitter
-			retinaSprite $twitter_group
+			retinaSprite($twitter_group)
 
 @media (max-width: 641px)
 	.social
 		width 192px
 		&__link
-			background-image url("../images/sprites/social.png")
-			width 36px
-			height 36px
+			size(36px)
+			background-image url('../images/sprites/social.png')
 			&_google
 				background-position 69px 0
 
@@ -53,5 +52,5 @@
 			&_vk
 			&_fb
 			&_twitter
-				background-image url("../images/sprites/social@2x.png")
+				background-image url('../images/sprites/social@2x.png')
 				background-size 113px 112px
