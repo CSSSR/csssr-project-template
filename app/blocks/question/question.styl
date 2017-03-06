@@ -1,0 +1,79 @@
+.question
+	display block
+
+	&__counter
+		margin-x(auto)
+		margin-top 30px
+		font-size 12px
+		font-weight 600
+		line-height 1
+		text-align center
+		text-transform uppercase
+		letter-spacing 1px
+		color blue-grey
+
+	&__text
+		margin-top 5px
+		margin-bottom 30px
+		font-size 16px
+		font-weight 600
+		line-height 1.5
+		text-align center
+		color charcoal-grey
+
+	&__answer-list
+		font-size 14px
+		line-height 1.14
+		color charcoal-grey
+
+	&__answer-item
+		position relative
+		padding-y(20px)
+		display block
+		border-bottom 1px solid pale-grey
+
+	&__answer-input
+		display none
+
+	&__answer-label
+		padding-left 26px
+
+		&::before
+		&::after
+			position absolute
+			top 50%
+			left 0
+			transform translateY(-50%)
+			content ''
+			border-radius 50%
+
+		&::before
+			width 14px
+			height 14px
+			border 1px solid soft-blue
+
+		&::after
+			left 5px
+			display none
+			width 6px
+			height 6px
+			background-color soft-blue
+
+	&__answer-input:checked + &__answer-label::after
+		display block
+
+	&__btn
+		margin-x(auto)
+		margin-top 30px
+		display block
+		width 163px
+		height 34px
+		font-size 14px
+		color #ffffff
+		border none
+
+		&_next
+			background-color soft-blue
+
+		&_last
+			background-color greenish-teal

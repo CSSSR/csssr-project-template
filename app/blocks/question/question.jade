@@ -1,0 +1,17 @@
+mixin answer-item(answer, id)
+	li.question__answer-item
+		input(class='question__answer-input' type='radio' name='answer' value=id id=id)
+		label(class='question__answer-label' for=id)= answer
+
+mixin question(question, current, max)
+	+b('form').question&attributes(attributes)
+		block
+
+		div.question__counter вопрос #{current}/#{max}
+		div.question__text #{question}
+		ul.question__answer-list
+			+answer-item('<!doctype>', 'answer-1')
+			+answer-item('<meta>', 'answer-2')
+			+answer-item('<title>', 'answer-3')
+			+answer-item('Дратути', 'answer-4')
+		button(class='question__btn question__btn_next' type='submit') Следующий вопрос

@@ -1,0 +1,9 @@
+include ../question/question
+
+mixin test(picSrc, picName, questions)
+	+b('main').test&attributes(attributes)
+		block
+
+		img(class='test__picture' src=picSrc alt=picName onerror="this.onerror=null;this.src='https://monosnap.com/file/KejcEMuS8qCMYZe9y2HNvNgWhHV6Gv';")
+
+		+question('Содержимое какого элемента можно увидеть в окне браузера?', 5, 5)
