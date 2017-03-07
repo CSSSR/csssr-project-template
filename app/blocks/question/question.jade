@@ -1,17 +1,30 @@
 mixin answer-item(answer, id)
-	li.question__answer-item
-		input(class='question__answer-input' type='radio' name='answer' value=id id=id)
-		label(class='question__answer-label' for=id)= answer
+	li(class='question__answer-item')
+		input(
+			class='question__answer-input'
+			type='radio'
+			name='answer'
+			value='answer_#{id}'
+			id='answer_#{id}'
+			onchange="document.getElementsByClassName('question__btn')[0].classList.remove('question__btn_disabled')"
+		)
+		label(class='question__answer-label' for='answer_#{id}')= answer
 
-mixin question(question, current, max)
+mixin answer-list(answers)
+	- var index = 0
+	ul.question__answer-list
+		each answer in answers
+			+answer-item(answer, index = index + 1 )
+
+mixin question(question, questionCounter, questionMax, answers, nextQuestion)
 	+b('form').question&attributes(attributes)
 		block
 
-		.question__counter вопрос #{current}/#{max}
+		.question__counter вопрос #{questionCounter}/#{questionMax}
 		.question__text #{question}
-		ul.question__answer-list
-			+answer-item('<!doctype>', 'answer-1')
-			+answer-item('<meta>', 'answer-2')
-			+answer-item('<title>', 'answer-3')
-			+answer-item('Дратути', 'answer-4')
-		button(class='question__btn question__btn_next' type='submit') Следующий вопрос
+		+answer-list(answers)
+
+		if questionCounter === questionMax
+			a(class='question__btn question__btn_last question__btn_disabled' type='submit' href=nextQuestion) Завершить тест
+		else
+			a(class='question__btn question__btn_next question__btn_disabled' type='submit' href=nextQuestion) Следующий вопрос

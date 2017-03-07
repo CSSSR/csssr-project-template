@@ -1,0 +1,13 @@
+include /../node_modules/bemto.jade/bemto
+include /../node_modules/jade-injected/jade-injected
+include ../page/page
+include ../scripts/scripts
+
+- var pageMock = {question:'Перепроверяю ли я код перед компиляцией?',answers:['Редко', 'Каждый раз', 'Никогда, мой код идеален', 'Ой, всё!']}
+
+doctype html
+html(lang='ru')
+	include ../head/head
+	+page(pageMock.question, pageMock.answers, 'question4.html', '3', '5')
+		block content
+		+scripts(['app.min.js'])
