@@ -1,11 +1,12 @@
 mixin answer-item(answer, id)
-	li.question__answer-item
+	li(class='question__answer-item')
 		input(
 			class='question__answer-input'
 			type='radio'
 			name='answer'
 			value='answer_#{id}'
 			id='answer_#{id}'
+			onchange="document.getElementsByClassName('question__btn')[0].classList.remove('question__btn_disabled')"
 		)
 		label(class='question__answer-label' for='answer_#{id}')= answer
 
@@ -24,6 +25,6 @@ mixin question(question, questionCounter, questionMax, answers, nextQuestion)
 		+answer-list(answers)
 
 		if questionCounter === questionMax
-			a(class='question__btn question__btn_last' type='submit' href=nextQuestion) Завершить тест
+			a(class='question__btn question__btn_last question__btn_disabled' type='submit' href=nextQuestion) Завершить тест
 		else
-			a(class='question__btn question__btn_next' type='submit' href=nextQuestion) Следующий вопрос
+			a(class='question__btn question__btn_next question__btn_disabled' type='submit' href=nextQuestion) Следующий вопрос
