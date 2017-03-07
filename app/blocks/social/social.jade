@@ -1,12 +1,17 @@
 mixin social-link(socialNetwork, adress)
+	- adress = adress || '#'
 	li.social__item
-		a(class='social__link social__link_#{socialNetwork}' href=adress)= socialNetwork
+		a(class='social__link social__link_#{socialNetwork} js-social-#{socialNetwork}' href=adress target='_blank')&attributes(attributes)= socialNetwork
 
-mixin social()
+mixin social(data)
+	- data = data || {}
+	- var url = data.url || ''
+	- var title = data.title || ''
+	- var text = data.text || ''
+	- var image = data.image || ''
 	+b('ul').social&attributes(attributes)
 		block
 
-		+social-link('vk', 'https://vk.com/csssr')
-		+social-link('fb', 'https://ru-ru.facebook.com/csssr/')
-		+social-link('twitter', 'https://twitter.com/csssr_ru')
-		+social-link('google', 'https://plus.google.com/+CsssrRu')
+		+social-link('vk', 'https://vk.com/share.php?url=' + url + '&title=' + title + '&description=' + text+ '&image=' + image + '&noparse=true')
+		+social-link('fb')(data-url=url data-title=title data-text=text data-image=image)
+		+social-link('twitter', 'https://twitter.com/intent/tweet?text=' + text + '&url=' + url)
