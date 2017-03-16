@@ -214,7 +214,7 @@
 	// "trailingWhitespace": "never", // bug: throw error when there are spaces after rule before comment
 	"universal": "never",
 	"valid": true, // discuss 8
-	"mixins": ["size", "margin-x", "margin-y", "padding-x", "padding-y"],
+	"mixins": ["size", "margin-x", "margin-y", "padding-x", "padding-y", "sprite", "retinaSprite"],
 	"zeroUnits": "never",
 	"zIndexNormalize": false
 }
