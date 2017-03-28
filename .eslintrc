@@ -1,8 +1,3 @@
-parserOptions:
-    ecmaVersion: 6
-    sourceType: 'module'
-    ecmaFeatures:
-        experimentalObjectRestSpread: true
 parser: "babel-eslint"
 env:
     es6: true
