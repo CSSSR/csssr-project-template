@@ -1,0 +1,30 @@
+mixin answer-item(answer, id)
+	li(class='question__answer-item')
+		input(
+			class='question__answer-input'
+			type='radio'
+			name='answer'
+			value='answer_#{id}'
+			id='answer_#{id}'
+			onchange="document.getElementsByClassName('question__btn')[0].classList.remove('question__btn_disabled')"
+		)
+		label(class='question__answer-label' for='answer_#{id}')= answer
+
+mixin answer-list(answers)
+	- var index = 0
+	ul.question__answer-list
+		each answer in answers
+			+answer-item(answer, index = index + 1 )
+
+mixin question(question, questionCounter, questionMax, answers, nextQuestion)
+	+b('form').question&attributes(attributes)
+		block
+
+		.question__counter вопрос #{questionCounter}/#{questionMax}
+		.question__text #{question}
+		+answer-list(answers)
+
+		if questionCounter === questionMax
+			a(class='question__btn question__btn_last question__btn_disabled' type='submit' href=nextQuestion) Завершить тест
+		else
+			a(class='question__btn question__btn_next question__btn_disabled' type='submit' href=nextQuestion) Следующий вопрос

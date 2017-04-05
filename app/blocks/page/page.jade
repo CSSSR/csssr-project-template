@@ -1,3 +1,17 @@
-mixin page()
+include ../header/header
+include ../test/test
+
+mixin page(question, answers, nextQuestion, questionCounter, questionMax, picSrc, picName)
 	+b('body').page&attributes(attributes)
 		block
+
+		+header
+		+test(
+			question,
+			answers,
+			nextQuestion,
+			questionCounter,
+			questionMax,
+			picSrc,
+			picName
+		)

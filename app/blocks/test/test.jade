@@ -1,0 +1,14 @@
+include ../question/question
+include ../result/result
+
+mixin test(question, answers, nextQuestion, questionCounter, questionMax, picSrc, picName)
+	+b('main').test&attributes(attributes)
+		block
+
+		if picSrc
+			img(class='test__picture' src=picSrc alt=picName)
+
+		if question
+			+question(question, questionCounter, questionMax, answers, nextQuestion)
+		else
+			+result
