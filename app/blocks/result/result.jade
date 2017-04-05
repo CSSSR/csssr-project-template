@@ -1,0 +1,10 @@
+include ../social/social
+
+mixin result()
+	+b.result&attributes(attributes)
+		block
+
+	p.result__text Понравился тест? Поделись им с друзьями
+	+social
+
+	a(class='result__btn' href='#') Пройти заново

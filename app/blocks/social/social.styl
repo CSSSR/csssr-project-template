@@ -1,0 +1,56 @@
+.social
+	margin 0 auto
+	margin-bottom 30px
+	display flex
+	width 141px
+
+	&__item
+		display block
+
+		&:not(:last-child)
+			margin-right 15px
+
+	&__link
+		display block
+		font-size 0
+
+		&_google
+			retinaSprite($google_group)
+
+		&_vk
+			retinaSprite($vk_group)
+
+		&_fb
+			retinaSprite($facebook_group)
+
+		&_twitter
+			retinaSprite($twitter_group)
+
+@media (max-width: 641px)
+	.social
+		width 192px
+		&__link
+			size(36px)
+			background-image url('../images/sprites/social.png')
+			&_google
+				background-position 69px 0
+
+			&_vk
+				background-position 69px 68px
+
+			&_fb
+				background-position 0 0
+
+			&_twitter
+				background-position 0 68px
+
+
+@media (max-width: 641px), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+	.social
+		&__link
+			&_google
+			&_vk
+			&_fb
+			&_twitter
+				background-image url('../images/sprites/social@2x.png')
+				background-size 113px 112px

@@ -1,0 +1,12 @@
+mixin social-link(socialNetwork, adress)
+	li.social__item
+		a(class='social__link social__link_#{socialNetwork}' href=adress)= socialNetwork
+
+mixin social()
+	+b('ul').social&attributes(attributes)
+		block
+
+		+social-link('vk', 'https://vk.com/csssr')
+		+social-link('fb', 'https://ru-ru.facebook.com/csssr/')
+		+social-link('twitter', 'https://twitter.com/csssr_ru')
+		+social-link('google', 'https://plus.google.com/+CsssrRu')

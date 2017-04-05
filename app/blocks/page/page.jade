@@ -1,3 +1,12 @@
+include ../header/header
+include ../test/test
+
 mixin page()
 	+b('body').page&attributes(attributes)
 		block
+
+		+header
+		+test(
+			'http://www.planwallpaper.com/static/images/abstract-colourful-cool-wallpapers-55ec7905a6a4f.jpg',
+			'minion'
+		)
