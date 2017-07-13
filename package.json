@@ -106,7 +106,7 @@
     "npm-install-webpack-plugin": "^2.0.2",
     "npm-run-all": "^1.8.0",
     "pug-lint": "^2.2.2",
-    "require-dir": "^0.3.0",
+    "require-dir": "^0.3.2",
     "rimraf": "^2.5.0",
     "run-sequence": "^1.2.2",
     "rupture": "^0.6.1",
