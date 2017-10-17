@@ -20,6 +20,12 @@
     "node": ">=4.0.0",
     "npm": ">=2.0.0"
   },
+  "repository": "git@github.com:CSSSR/csssr-project-template.git",
+  "bugs": {
+    "url": "https://github.com/CSSSR/csssr-project-template/issues/",
+    "email": "cpt@csssr.com"
+  },
+  "homepage": "https://github.com/CSSSR/csssr-project-template/",
   "scripts": {
     "start": "gulp --debug",
     "build": "gulp build",
@@ -39,20 +45,11 @@
     "major": "gulp major",
     "prepush": "npm run lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh@github.com:CSSSR/csssr-project-template.git"
-  },
   "author": "Felix Exter <felixexter@ya.ru> (https://github.com/felixexter)",
   "contributors": [
     "Aleksandr Petrov <dzhiriki@gmail.com> (https://github.com/dzhiriki)",
     "Maxim Samoilov <nitive@icloud.com> (https://github.com/nitive)"
   ],
-  "bugs": {
-    "url": "https://github.com/CSSSR/csssr-project-template/issues/",
-    "email": "cpt@csssr.com"
-  },
-  "homepage": "https://github.com/CSSSR/csssr-project-template/",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer-stylus": "^0.9.0",
