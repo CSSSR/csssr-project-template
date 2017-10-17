@@ -16,6 +16,10 @@
     "stylus"
   ],
   "version": "0.26.2",
+  "engines": {
+    "node": ">=4.0.0",
+    "npm": ">=2.0.0"
+  },
   "scripts": {
     "start": "gulp --debug",
     "build": "gulp build",
@@ -49,10 +53,6 @@
     "email": "cpt@csssr.com"
   },
   "homepage": "https://github.com/CSSSR/csssr-project-template/",
-  "engines": {
-    "node": ">=4.0.0",
-    "npm": ">=2.0.0"
-  },
   "license": "MIT",
   "devDependencies": {
     "autoprefixer-stylus": "^0.9.0",
