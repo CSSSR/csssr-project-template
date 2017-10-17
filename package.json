@@ -41,6 +41,8 @@
       "types": "conventional-commit-types"
     }
   },
+  "license": "MIT",
+  "private": true,
   "scripts": {
     "start": "gulp --debug",
     "build": "gulp build",
@@ -60,7 +62,6 @@
     "major": "gulp major",
     "prepush": "npm run lint"
   },
-  "license": "MIT",
   "devDependencies": {
     "autoprefixer-stylus": "^0.9.0",
     "babel": "^6.5.0",
