@@ -32,6 +32,15 @@
     "Maxim Samoilov <nitive@icloud.com> (https://github.com/nitive)",
     "Denis Novikov <dnovikov1808@gmail.com> (https://github.com/denisnovikov)"
   ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    },
+    "validate-commit-msg": {
+      "maxSubjectLength": 72,
+      "types": "conventional-commit-types"
+    }
+  },
   "scripts": {
     "start": "gulp --debug",
     "build": "gulp build",
