@@ -1,97 +1,126 @@
 # CSSSR Project Template
-**Шаблон проекта для быстрого старта**
 
+> Шаблон проекта для быстрого старта
 
 ## Старт проекта
 
-### Склонируй репозиторий и перейди в папку проекта
-```
-git clone git@github.com:CSSSR/csssr-project-template.git new-project && cd new-project
+### Клонирвание репозитория и переход в папку проекта
+
+```sh
+$ git clone https://github.com/CSSSR/csssr-project-template.git new-project && cd ./new-project
+# or
+$ git clone https://github.com/CSSSR/csssr-project-template.git new-project
+$ cd ./new-project
 ```
 
-### Установи модули
+### Установка необходимых модулей
 
+```sh
+$ yarn
+# or
+$ npm i .
 ```
-npm i
-```
-
-или в разы в быстрее c [yarn](https://github.com/yarnpkg/yarn)
-
-```
-yarn install
-```
-
-### Запусти шаблон
-```
-npm start
-```
-
 
 ## Команды для запуска
 
 ### Запуск с отслеживанием изменений
-```
-npm start
+
+```sh
+$ yarn start
+# or
+$ npm start
 ```
 
 ### Создание нового блока
+
 Для создания нескольких блоков, названия нужно указывать через пробел.
-```
-npm run make-block [имя-блока] [имя-блока]
+
+```sh
+$ yarn run make-block [имя-блока] [имя-блока]
+# or
+$ npm run make-block [имя-блока] [имя-блока]
 ```
 
 ### Сборка в папку `dist`
-```
-npm run build
+
+```sh
+$ yarn build
+# or
+$ npm run build
 ```
 
 ### Production cборка в папку `dist`
-```
-npm run production
+
+```sh
+$ yarn production
+# or
+$ npm run production
 ```
 
 ### Локальный сервер на другом порте
-```
-PORT=9000 npm start
+
+```sh
+$ PORT=9000 yarn start
+# or
+$ PORT=9000 npm start
 ```
 
 ### Уведомления об ошибках `ESLint`
-```
-NOTIFY=true npm start
+
+```sh
+$ NOTIFY=true yarn start
+# or
+$ NOTIFY=true npm start
 ```
 
 ### Расшарить локальный сервер
-```
-TUNNEL=true npm start
+
+```sh
+$ TUNNEL=true yarn start
+# or
+$ TUNNEL=true npm start
 ```
 
 ### Открыть ссылку в браузере по умолчанию
-```
-OPEN=true npm start
+
+```sh
+$ OPEN=true yarn start
+# or
+$ OPEN=true npm start
 ```
 
 ### Собрать архив из папки `dist`
-```
-npm run zip
+
+```sh
+$ yarn zip
+# or
+$ npm run zip
 ```
 
 ### Очистка папки `dist`
-```
-npm run clean
+
+```sh
+$ yarn clean
+# or
+$ npm run clean
 ```
 
 ### Деплой всего содержимого папки `dist` в ветку `dist`
-```
-npm run deploy
+
+```sh
+$ yarn deploy
+# or
+$ npm run deploy
 ```
 
 ## Git hooks
-Используется [husky](https://github.com/typicode/husky). Перед каждым `git push` запускается линтер.
-Если линтер падает с ошибкой, `git push` не пройдет. Пропустить линтинг можно, используя `git push --no-verify`.
 
+Используется [husky](https://github.com/typicode/husky). Перед каждым `git push` запускается линтер. Если линтер
+падает с ошибкой, `git push` не пройдет. Пропустить линтинг можно, используя `git push --no-verify`.
 
 ## Структура папок и файлов
-```
+
+```text
 ├── app/                       # Исходники
 │   ├── blocks/                # Блоки
 │   │   └── block/             # Блок
@@ -148,15 +177,17 @@ npm run deploy
 └── webpack.conf.js            # Конфигурация Webpack.js
 ```
 
-
 ## Как собираются и используются PNG спрайты
 
 В шаблоне предусмотрена сборка нескольких PNG спрайтов и их данных в CSS переменные.
 
 ### Добавление PNG иконок
 
-Для создания спрайта нужно добавить папку в `app/sprites` и в неё PNG иконки. Важно, чтобы иконки были с чётными высотой и шириной кратными двум. Retina иконки добавлять в эту папку рядом с обычными и в конце названия файла добавить `@2x`, например:
-```
+Для создания спрайта нужно добавить папку в `./app/sprites` и в неё PNG иконки. Важно, чтобы иконки были с чётными
+высотой и шириной кратными двум. Retina иконки добавлять в эту папку рядом с обычными и в конце названия файла
+добавить `@2x`, например:
+
+```text
 └── app/
     └── sprites/
         └── emoji/
@@ -170,8 +201,11 @@ npm run deploy
 
 ### Сборка спрайта
 
-* В папке `dist/assets/images/sprites` появятся два спрайта: обычный и Retina с `@2x` и в `app/styles/sprites` один стилевой файл с примесями. Все файлы будут с такими же названиями, как у папки, в которой находятся его иконки. Например:
-```
+В папке `./dist/assets/images/sprites` появятся два спрайта: обычный и Retina с `@2x` и в `./app/styles/sprites` один
+стилевой файл с примесями. Все файлы будут с такими же названиями, как у папки, в которой находятся его иконки.
+Например:
+
+```text
 ├── app/
 │    └── styles/
 │       └── sprites/
@@ -185,19 +219,23 @@ npm run deploy
 
 ```
 
-* В сборочных папках останутся только актуальные спрайты и стили в случае, если удалить исходные папки с иконками.
+> В сборочных папках останутся только актуальные спрайты и стили в случае, если удалить исходные папки с иконками.
 
 ### Использование спрайтов
 
-#### Retina спрайты
+### Retina спрайты
 
-Для подключения иконки используется примесь `retinaSprite` со значением `$icon_group`, где `icon` это название PNG иконки, например:
-```css
+Для подключения иконки используется примесь `retinaSprite` со значением `$icon_group`, где `icon` это название PNG
+иконки, например:
+
+```stylus
 .joy
     retinaSprite $joy_group
 ```
 
-В собранном виде в CSS добавятся обычный спрайт и медиа-запрос, чтобы отображать Retina спрайт только при необходимости и это будет выглядеть так:
+В собранном виде в CSS добавятся обычный спрайт и медиа-запрос, чтобы отображать Retina спрайт только при
+необходимости и это будет выглядеть так:
+
 ```css
 .joy {
     background-image: url("../images/sprites/emoji.png");
@@ -214,15 +252,17 @@ npm run deploy
 }
 ```
 
-#### Обычные спрайты
+### Обычные спрайты
 
 Для подключения иконки используется примесь `sprite` со значением `$icon`, где `icon` это название PNG иконки, например:
-```css
+
+```stylus
 .joy
     sprite $joy
 ```
 
 В собранном виде в CSS добавится только обычный спрайт и это будет выглядеть так:
+
 ```css
 .joy {
     background-image: url("../images/sprites/emoji.png");
@@ -232,4 +272,6 @@ npm run deploy
 }
 ```
 
-## [Внеси свой вклад в развитие проекта!](https://github.com/CSSSR/csssr-project-template/blob/master/contributing.md)
+[Внеси свой вклад в развитие проекта!][CONTRIBUTING]
+
+[CONTRIBUTING]: ./contributing.md
