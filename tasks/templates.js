@@ -14,7 +14,9 @@ import staticHash from 'gulp-static-hash';
 
 const data = {
 	getData: getData('app/data'),
-	jv0: 'javascript:void(0);'
+	jv0: 'javascript:void(0);',
+	// dev-mode variable for using in jade
+	__DEV__: process.env.NODE_ENV !== 'production'
 };
 
 gulp.task('templates', () => (
