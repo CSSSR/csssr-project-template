@@ -21,7 +21,7 @@ gulp.task('default', () => (
 ));
 
 gulp.task('build', () => (
-	runSequence(
+	gulp.start(
 		'styles:dependencies',
 		'scripts',
 		'copy',
