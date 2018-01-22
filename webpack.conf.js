@@ -84,8 +84,7 @@ export default function makeWebpackConfig({
 				__DEV__: JSON.stringify(process.env.NODE_ENV !== 'production')
 			})
 		].concat(debug ? [
-			new NpmInstallPlugin({saveDev: true}),
-			new webpack.HotModuleReplacementPlugin()
+			new NpmInstallPlugin({saveDev: true})
 		] : [
 			new webpack.optimize.DedupePlugin(),
 			new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}, output: {comments: false}})
