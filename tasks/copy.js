@@ -3,7 +3,7 @@ import changed from 'gulp-changed';
 import filter from 'gulp-filter';
 import gulpIf from 'gulp-if';
 
-const { INCLUDE_ROBOTS } = process.env;
+const {INCLUDE_ROBOTS} = process.env;
 
 gulp.task('copy', () => (
 	gulp.src('app/resources/**/*')

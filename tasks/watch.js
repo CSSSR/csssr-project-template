@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import runSequence from 'run-sequence';
-import { get as browserSync } from 'browser-sync';
+import {get as browserSync} from 'browser-sync';
 import watch from 'gulp-watch';
 
 const bs = browserSync('server');
