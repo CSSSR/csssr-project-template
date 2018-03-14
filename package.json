@@ -33,7 +33,8 @@
     "patch": "gulp patch",
     "minor": "gulp minor",
     "major": "gulp major",
-    "prepush": "npm run lint"
+    "prepush": "npm run lint",
+    "clear-all-log": "rm -f *.log*"
   },
   "repository": {
     "type": "git",
@@ -50,8 +51,9 @@
   },
   "homepage": "https://github.com/CSSSR/csssr-project-template/",
   "engines": {
-    "node": ">=4.0.0",
-    "npm": ">=2.0.0"
+    "node": ">=4.0.0 || ^8.10",
+    "npm": ">=2.0.0 || ^3.10",
+    "yarn": "^1.5"
   },
   "license": "MIT",
   "devDependencies": {
