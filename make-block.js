@@ -110,9 +110,10 @@ function initMakeBlock(candidateBlockName) {
 			.then(() => createFiles(blockPath, blockName))
 			.then(() => getFiles(blockPath))
 			.then(files => {
-				const line = '-'.repeat(48 + blockName.length);
+				const msg = `The block has just been created in 'blocks/${blockName}'`;
+				const line = '-'.repeat(msg.length);
 				console.log(line);
-				console.log(`The block has just been created in 'app/blocks/${blockName}'`);
+				console.log(msg);
 				console.log(line);
 
 				// Displays a list of files created
