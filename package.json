@@ -17,7 +17,7 @@
     "stylus"
   ],
   "scripts": {
-    "start": "gulp --debug",
+    "start": "gulp --inspect",
     "build": "gulp build",
     "production": "cross-env NODE_ENV=production npm-run-all clean build",
     "make-block": "babel-node make-block.js",
@@ -122,5 +122,8 @@
     "webpack": "^1.12.9",
     "webpack-stats-logger": "^1.0.1",
     "webpack-stream": "^3.1.0"
+  },
+  "resolutions": {
+    "natives": "1.1.4"
   }
 }
